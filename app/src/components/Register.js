@@ -4,7 +4,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
-import AuthService from "../services/auth.service";
+import { useAuth } from "../contexts/AuthContext";
 
 const required = value => {
   if (!value) {
@@ -68,7 +68,10 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [successful, setSuccessful] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+
+  const { register } = useAuth();
 
   const onChangeEmail = e => {
     const email = e.target.value;
@@ -99,6 +102,7 @@ const Register = () => {
     e.preventDefault();
 
     setMessage("");
+    setLoading(true);
     setSuccessful(false);
 
     form.current.validateAll();
@@ -106,18 +110,22 @@ const Register = () => {
     if (password !== passwordConfirmation) {
       setMessage("Password confirmation does not match the password.");
       setSuccessful(false);
+      setLoading(false);
       return;
     }
 
-    try {
-      const response = await AuthService.register(email, name, username, password, passwordConfirmation);
-      setMessage(response.data.message);
-      setSuccessful(true);
-    } catch (error) {
-      const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
-      setMessage(resMessage);
-      setSuccessful(false);
-    }
+    register(email, name, username, password, passwordConfirmation)
+      .then(response => {
+        setMessage(response);
+        setSuccessful(true);
+        setLoading(false);
+      })
+      .catch(error => {
+        const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+        setMessage(resMessage);
+        setSuccessful(false);
+        setLoading(false);
+      });
   };
 
   return (
@@ -221,7 +229,13 @@ const Register = () => {
               </div>
 
               <div className="mb-3">
-                <button className="btn btn-primary btn-block">Sign Up</button>
+                <button
+                  className="btn btn-primary btn-block"
+                  disabled={loading}
+                >
+                  {loading && <span className="spinner-border spinner-border-sm"></span>}
+                  <span>Sign Up </span>
+                </button>
               </div>
             </div>
           )}
