@@ -3,14 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
-import AuthService from "../services/auth.service";
+import { useAuth } from "../contexts/AuthContext";
 
 const required = value => {
   if (!value) {
     return (
       <div
-        className="alert alert-danger"
+        className="mt-1 alert alert-danger"
         role="alert"
       >
         This field is required!
@@ -30,6 +29,8 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+  const { login } = useAuth();
+
   const onChangeEmail = e => {
     const email = e.target.value;
     setEmail(email);
@@ -48,18 +49,18 @@ const Login = () => {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      AuthService.login(email, password).then(
-        () => {
+      login(email, password)
+        .then(() => {
+          setLoading(false);
+          setMessage("");
           navigate("/profile");
           window.location.reload();
-        },
-        error => {
+        })
+        .catch(error => {
           const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
-
           setLoading(false);
           setMessage(resMessage);
-        },
-      );
+        });
     } else {
       setLoading(false);
     }
