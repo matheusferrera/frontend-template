@@ -54,19 +54,20 @@ const login = (email, password) => {
  * @return {Promise} A promise that resolves with the response from the API.
  */
 const logout = access_token => {
-  console.log("Service chamou logout", access_token);
   return axios
-    .post(API_URL + "v1/logout", {
-      headers: {
-        Authorization: "Bearer " + access_token,
+    .post(
+      API_URL + "v1/logout",
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + access_token,
+        },
       },
-    })
+    )
     .then(response => {
-      console.log("Service Logout response:", response);
       return response.data.message;
     })
     .catch(error => {
-      console.error("Service Error on logout:", error);
       throw error;
     });
 };
@@ -89,10 +90,11 @@ const getAuthUser = access_token => {
       if (response.data.message !== "Usuário encontrado") {
         return null;
       }
+      // console.log("Service usuario", response.data.user);
       return response.data.user;
     })
     .catch(error => {
-      console.error("Error fetching authenticated user:", error);
+      // console.error("Error fetching authenticated user:", error);
       throw error;
     });
 };

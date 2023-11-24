@@ -1,33 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 import progredirLogo from "../assets/images/novo_logo_progredir.png";
 
 const NavBar = () => {
-  const [showModeratorBoard, setShowModeratorBoard] = useState(false);
-  const [showAdminBoard, setShowAdminBoard] = useState(false);
+  const navigate = useNavigate();
 
-  const { user, logout, token } = useAuth();
-
-  useEffect(() => {
-    if (user) {
-      setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
-      setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
-    }
-  }, []);
+  const { user, logout, token: access_token } = useAuth();
 
   const handleLogout = () => {
-    console.log("Navbar chamou logout", token);
-
-    logout(token)
+    logout(access_token)
       .then(response => {
-        console.log("app then", response);
-        setShowModeratorBoard(false);
-        setShowAdminBoard(false);
+        alert("Logout realizado com sucesso!");
+        console.log("Logout: ", response);
+        navigate("/login");
+        window.location.reload();
       })
       .catch(error => {
-        console.log("app error", error);
         const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
         console.log(resMessage);
       });
@@ -55,28 +46,6 @@ const NavBar = () => {
             Home
           </Link>
         </li>
-
-        {showModeratorBoard && (
-          <li className="nav-item">
-            <Link
-              to={"/mod"}
-              className="nav-link"
-            >
-              Moderator Board
-            </Link>
-          </li>
-        )}
-
-        {showAdminBoard && (
-          <li className="nav-item">
-            <Link
-              to={"/admin"}
-              className="nav-link"
-            >
-              Admin Board
-            </Link>
-          </li>
-        )}
 
         {user && (
           <li className="nav-item">

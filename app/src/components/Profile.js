@@ -11,7 +11,7 @@ const Profile = () => {
         <div className="container">
           <header className="jumbotron">
             <h3>
-              <strong>{user.username}</strong> Profile
+              Usuário: <strong>{user.username}</strong>
             </h3>
           </header>
           <p>

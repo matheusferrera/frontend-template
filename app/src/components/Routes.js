@@ -1,16 +1,16 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+import { useAuth } from "../contexts/AuthContext";
+
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
 import Profile from "./Profile";
-import BoardUser from "./BoardUser";
-import BoardModerator from "./BoardModerator";
-import BoardAdmin from "./BoardAdmin";
 import NotFound from "./NotFound";
+import Logout from "./Logout";
 
-const AppRoutes = () => {
+const ProtectedRoutes = () => {
   return (
     <Routes>
       <Route
@@ -23,17 +23,21 @@ const AppRoutes = () => {
       />
       <Route
         path="/login"
-        element={<Login />}
+        element={<Profile />}
       />
       <Route
         path="/register"
-        element={<Register />}
+        element={<Profile />}
+      />
+      <Route
+        path="/logout"
+        element={<Logout />}
       />
       <Route
         path="/profile"
         element={<Profile />}
       />
-      <Route
+      {/* <Route
         path="/user"
         element={<BoardUser />}
       />
@@ -44,13 +48,37 @@ const AppRoutes = () => {
       <Route
         path="/admin"
         element={<BoardAdmin />}
-      />
+      /> */}
       <Route
         path="*"
         element={<NotFound />}
       />
     </Routes>
   );
+};
+
+const AuthRoutes = () => {
+  return (
+    <Routes>
+      <Route
+        path="/login"
+        element={<Login />}
+      />
+      <Route
+        path="/register"
+        element={<Register />}
+      />
+      <Route
+        path="*"
+        element={<Login />}
+      />
+    </Routes>
+  );
+};
+
+const AppRoutes = () => {
+  const { token } = useAuth();
+  return token ? <ProtectedRoutes /> : <AuthRoutes />;
 };
 
 export default AppRoutes;

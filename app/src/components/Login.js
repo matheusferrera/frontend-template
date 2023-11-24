@@ -19,7 +19,7 @@ const required = value => {
 };
 
 const Login = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const form = useRef();
   const checkBtn = useRef();
@@ -35,6 +35,7 @@ const Login = () => {
     const email = e.target.value;
     setEmail(email);
   };
+
   const onChangePassword = e => {
     const password = e.target.value;
     setPassword(password);
