@@ -40,11 +40,6 @@ export const AuthProvider = ({ children }) => {
         return authService.getAuthUser(token);
       })
       .then(userDetails => {
-        // Adicionando permissões de admin por enquanto
-        if (userDetails) {
-          userDetails.roles = ["ROLE_MODERATOR", "ROLE_ADMIN"];
-        }
-
         setUser(userDetails);
         localStorage.setItem("user", JSON.stringify(userDetails));
       })
@@ -64,28 +59,21 @@ export const AuthProvider = ({ children }) => {
    * @return {undefined} No return value.
    */
   const logout = token => {
-    console.log("Auth Context chamou logout", token);
-
     return authService
       .logout(token)
       .then(response => {
-        const confirmationMessage = response.data.message;
-        console.log("Auth Context Logout successful:", confirmationMessage);
-
-        // Lembrar de descomentar
-        // setUser(null);
-        // setToken(null);
-        // localStorage.removeItem("user");
-        // localStorage.removeItem("token");
+        setUser(null);
+        setToken(null);
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        return response;
       })
       .catch(error => {
-        console.error("Auth Context Logout error:", error);
-
-        // Lembrar de descomentar
-        // setUser(null);
-        // setToken(null);
-        // localStorage.removeItem("user");
-        // localStorage.removeItem("token");
+        setUser(null);
+        setToken(null);
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        console.error("Logout error:", error);
         throw error;
       });
   };
@@ -110,8 +98,30 @@ export const AuthProvider = ({ children }) => {
       });
   };
 
+  /**
+   * Retrieves the authenticated user details using the provided token.
+   *
+   * @param {string} token - The authentication token.
+   * @return {Promise} A promise that resolves with the user details or rejects with an error.
+   */
+  const getAuthUser = token => {
+    return authService
+      .getAuthUser(token)
+      .then(userDetails => {
+        // console.log("Auth Context usuario:", userDetails);
+        setUser(userDetails);
+        localStorage.setItem("user", JSON.stringify(userDetails));
+      })
+      .catch(error => {
+        setUser(null);
+        localStorage.removeItem("user");
+        console.error("Error fetching authenticated user:", error);
+        throw error;
+      });
+  };
+
   // Return the child components wrapped in AuthContext.Provider
-  return <AuthContext.Provider value={{ user, token, login, logout, register }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, token, login, logout, register, getAuthUser }}>{children}</AuthContext.Provider>;
 };
 
 /**
@@ -120,5 +130,11 @@ export const AuthProvider = ({ children }) => {
  * @return {AuthContext} The authentication context.
  */
 export const useAuth = () => {
-  return useContext(AuthContext);
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider.");
+  }
+
+  return context;
 };
