@@ -1,70 +1,42 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
+import { Formik, Field, Form } from "formik";
+import * as Yup from "yup";
 import { useAuth } from "../contexts/AuthContext";
-
-const required = value => {
-  if (!value) {
-    return (
-      <div
-        className="mt-1 alert alert-danger"
-        role="alert"
-      >
-        This field is required!
-      </div>
-    );
-  }
-};
+import { useState } from "react";
 
 const Login = () => {
-  const navigate = useNavigate();
-
-  const form = useRef();
-  const checkBtn = useRef();
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
-
   const { login } = useAuth();
 
-  const onChangeEmail = e => {
-    const email = e.target.value;
-    setEmail(email);
+  const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+
+  const initialValues = {
+    email: "",
+    password: "",
   };
 
-  const onChangePassword = e => {
-    const password = e.target.value;
-    setPassword(password);
-  };
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email("Email é inválido").required("Campo de email é obrigatório"),
+    password: Yup.string().min(6, "Senha deve ter no mínimo 6 caracteres").required("Senha é obrigatória"),
+  });
 
-  const handleLogin = e => {
-    e.preventDefault();
-
-    setMessage("");
+  const handleSubmit = (values, { setSubmitting }) => {
     setLoading(true);
-
-    form.current.validateAll();
-
-    if (checkBtn.current.context._errors.length === 0) {
-      login(email, password)
-        .then(() => {
-          setLoading(false);
-          setMessage("");
-          navigate("/profile");
-          window.location.reload();
-        })
-        .catch(error => {
-          const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
-          setLoading(false);
-          setMessage(resMessage);
-        });
-    } else {
-      setLoading(false);
-    }
+    login(values.email, values.password)
+      .then(() => {
+        navigate("/profile");
+        window.location.reload();
+      })
+      .catch(error => {
+        const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+        alert(resMessage);
+      })
+      .finally(() => {
+        setLoading(false);
+        setSubmitting(false);
+      });
   };
 
   return (
@@ -76,69 +48,65 @@ const Login = () => {
           className="profile-img-card"
         />
 
-        <Form
-          onSubmit={handleLogin}
-          ref={form}
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
         >
-          <div className="mb-3">
-            <label
-              htmlFor="email"
-              className="form-label"
-            >
-              email
-            </label>
-            <Input
-              type="email"
-              className="form-control"
-              name="email"
-              value={email}
-              onChange={onChangeEmail}
-              validations={[required]}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label
-              htmlFor="password"
-              className="form-label"
-            >
-              Password
-            </label>
-            <Input
-              type="password"
-              className="form-control"
-              name="password"
-              value={password}
-              onChange={onChangePassword}
-              validations={[required]}
-            />
-          </div>
-
-          <div className="mb-3">
-            <button
-              className="btn btn-primary btn-block"
-              disabled={loading}
-            >
-              {loading && <span className="spinner-border spinner-border-sm"></span>}
-              <span>Login</span>
-            </button>
-          </div>
-
-          {message && (
-            <div className="mb-3">
-              <div
-                className="alert alert-danger"
-                role="alert"
-              >
-                {message}
+          {({ values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label
+                  htmlFor="email"
+                  className="form-label"
+                >
+                  Email
+                </label>
+                <Field
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  value={values.email}
+                  type="text"
+                  className={errors.email && touched.email ? "text-input error" : "text-input"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.email && touched.email && <div className="input-feedback">{errors.email}</div>}
               </div>
-            </div>
+
+              <div className="mb-3">
+                <label
+                  htmlFor="password"
+                  className="form-label"
+                >
+                  Senha
+                </label>
+                <Field
+                  id="password"
+                  name="password"
+                  type="password"
+                  value={values.password}
+                  placeholder="Senha"
+                  className={errors.password && touched.password ? "text-input error" : "text-input"}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.password && touched.password && <div className="input-feedback">{errors.password}</div>}
+              </div>
+
+              <div className="mb-3">
+                <button
+                  type="submit"
+                  disabled={loading || isSubmitting}
+                >
+                  {loading && <span className="spinner-border spinner-border-sm"></span>}
+                  <span>Login</span>
+                </button>
+              </div>
+            </Form>
           )}
-          <CheckButton
-            style={{ display: "none" }}
-            ref={checkBtn}
-          />
-        </Form>
+        </Formik>
       </div>
     </div>
   );
