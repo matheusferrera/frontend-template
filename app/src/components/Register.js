@@ -1,130 +1,49 @@
-import React, { useState, useRef } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
-import { isEmail } from "validator";
-
+import React from "react";
+import { Formik, Field, Form } from "formik";
+import { useNavigate } from "react-router-dom";
+import * as Yup from "yup";
 import { useAuth } from "../contexts/AuthContext";
-
-const required = value => {
-  if (!value) {
-    return (
-      <div
-        className="my-1 alert alert-danger"
-        role="alert"
-      >
-        This field is required!
-      </div>
-    );
-  }
-};
-
-const validEmail = value => {
-  if (!isEmail(value)) {
-    return (
-      <div
-        className="my-1 alert alert-danger"
-        role="alert"
-      >
-        This is not a valid email.
-      </div>
-    );
-  }
-};
-
-const vusername = value => {
-  if (value.length < 3 || value.length > 20) {
-    return (
-      <div
-        className="my-1 alert alert-danger"
-        role="alert"
-      >
-        The username must be between 3 and 20 characters.
-      </div>
-    );
-  }
-};
-
-const vpassword = value => {
-  if (value.length < 6 || value.length > 40) {
-    return (
-      <div
-        className="my-1 alert alert-danger"
-        role="alert"
-      >
-        The password must be between 6 and 40 characters.
-      </div>
-    );
-  }
-};
+import { useState } from "react";
 
 const Register = () => {
-  const form = useRef();
-  const checkBtn = useRef();
-
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [successful, setSuccessful] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
-
   const { register } = useAuth();
 
-  const onChangeEmail = e => {
-    const email = e.target.value;
-    setEmail(email);
+  const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+
+  const initialValues = {
+    email: "",
+    name: "",
+    username: "",
+    password: "",
+    passwordConfirmation: "",
   };
 
-  const onChangeName = e => {
-    const name = e.target.value;
-    setName(name);
-  };
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email("Forneça um email válido").required("Email é obrigatório"),
+    name: Yup.string().required("Nome é obrigatório"),
+    username: Yup.string().required("Username é obrigatório"),
+    password: Yup.string().min(6, "Senha deve ter no mínimo 6 caracteres").required("Senha é obrigatória"),
+    passwordConfirmation: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Senhas devem ser iguais")
+      .required("Confirmação de senha é obrigatória"),
+  });
 
-  const onChangeUsername = e => {
-    const username = e.target.value;
-    setUsername(username);
-  };
-
-  const onChangePassword = e => {
-    const password = e.target.value;
-    setPassword(password);
-  };
-
-  const onChangePasswordConfirmation = e => {
-    const passwordConfirmation = e.target.value;
-    setPasswordConfirmation(passwordConfirmation);
-  };
-
-  const handleRegister = async e => {
-    e.preventDefault();
-
-    setMessage("");
+  const handleSubmit = (values, { setSubmitting }) => {
     setLoading(true);
-    setSuccessful(false);
-
-    form.current.validateAll();
-
-    if (password !== passwordConfirmation) {
-      setMessage("Password confirmation does not match the password.");
-      setSuccessful(false);
-      setLoading(false);
-      return;
-    }
-
-    register(email, name, username, password, passwordConfirmation)
+    register(values.email, values.name, values.username, values.password, values.passwordConfirmation)
       .then(response => {
-        setMessage(response);
-        setSuccessful(true);
-        setLoading(false);
+        navigate("/login");
+        alert(response);
       })
       .catch(error => {
         const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
-        setMessage(resMessage);
-        setSuccessful(false);
+        alert(resMessage);
+      })
+      .finally(() => {
         setLoading(false);
+        setSubmitting(false);
       });
   };
 
@@ -137,124 +56,129 @@ const Register = () => {
           className="profile-img-card"
         />
 
-        <Form
-          onSubmit={handleRegister}
-          ref={form}
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
         >
-          {!successful && (
-            <div>
-              <div className="mb-3">
-                <label
-                  htmlFor="email"
-                  className="form-label"
-                >
-                  Email
-                </label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="email"
-                  value={email}
-                  onChange={onChangeEmail}
-                  validations={[required, validEmail]}
-                />
-              </div>
+          {({ values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <div>
+                <div className="mb-3">
+                  <label
+                    htmlFor="email"
+                    className="form-label"
+                  >
+                    Email
+                  </label>
+                  <Field
+                    id="email"
+                    type="text"
+                    className={errors.email && touched.email ? "text-input error" : "text-input"}
+                    name="email"
+                    placeholder="Email"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.email && touched.email && <div className="input-feedback">{errors.email}</div>}
+                </div>
 
-              <div className="mb-3">
-                <label
-                  htmlFor="name"
-                  className="form-label"
-                >
-                  Name
-                </label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="name"
-                  value={name}
-                  onChange={onChangeName}
-                  validations={[required]}
-                />
-              </div>
+                <div className="mb-3">
+                  <label
+                    htmlFor="name"
+                    className="form-label"
+                  >
+                    Nome
+                  </label>
+                  <Field
+                    id="name"
+                    type="text"
+                    className={errors.name && touched.name ? "text-input error" : "text-input"}
+                    name="name"
+                    placeholder="Nome"
+                    value={values.name}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                </div>
+                {errors.name && touched.name && <div className="input-feedback">{errors.name}</div>}
 
-              <div className="mb-3">
-                <label
-                  htmlFor="username"
-                  className="form-label"
-                >
-                  Username
-                </label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="username"
-                  value={username}
-                  onChange={onChangeUsername}
-                  validations={[required, vusername]}
-                />
-              </div>
+                <div className="mb-3">
+                  <label
+                    htmlFor="username"
+                    className="form-label"
+                  >
+                    Nome de usuário
+                  </label>
+                  <Field
+                    id="username"
+                    type="text"
+                    className={errors.username && touched.username ? "text-input error" : "text-input"}
+                    name="username"
+                    placeholder="Nome de usuário"
+                    value={values.username}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.username && touched.username && <div className="input-feedback">{errors.username}</div>}
+                </div>
 
-              <div className="mb-3">
-                <label
-                  htmlFor="password"
-                  className="form-label"
-                >
-                  Password
-                </label>
-                <Input
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  value={password}
-                  onChange={onChangePassword}
-                  validations={[required, vpassword]}
-                />
-              </div>
+                <div className="mb-3">
+                  <label
+                    htmlFor="password"
+                    className="form-label"
+                  >
+                    Senha
+                  </label>
+                  <Field
+                    id="password"
+                    type="password"
+                    className={errors.password && touched.password ? "text-input error" : "text-input"}
+                    name="password"
+                    placeholder="Senha"
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.password && touched.password && <div className="input-feedback">{errors.password}</div>}
+                </div>
 
-              <div className="mb-3">
-                <label
-                  htmlFor="passwordConfirmation"
-                  className="form-label"
-                >
-                  Password Confirmation
-                </label>
-                <Input
-                  type="password"
-                  className="form-control"
-                  name="passwordConfirmation"
-                  value={passwordConfirmation}
-                  onChange={onChangePasswordConfirmation}
-                  validations={[required, vpassword]}
-                />
-              </div>
+                <div className="mb-3">
+                  <label
+                    htmlFor="passwordConfirmation"
+                    className="form-label"
+                  >
+                    Confirmação de senha
+                  </label>
+                  <Field
+                    id="passwordConfirmation"
+                    type="password"
+                    className={errors.passwordConfirmation && touched.passwordConfirmation ? "text-input error" : "text-input"}
+                    name="passwordConfirmation"
+                    placeholder="Confirmação de senha"
+                    value={values.passwordConfirmation}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.passwordConfirmation && touched.passwordConfirmation && (
+                    <div className="input-feedback">{errors.passwordConfirmation}</div>
+                  )}
+                </div>
 
-              <div className="mb-3">
-                <button
-                  className="btn btn-primary btn-block"
-                  disabled={loading}
-                >
-                  {loading && <span className="spinner-border spinner-border-sm"></span>}
-                  <span>Sign Up </span>
-                </button>
+                <div className="mb-3">
+                  <button
+                    type="submit"
+                    disabled={loading || isSubmitting}
+                  >
+                    {loading && <span className="spinner-border spinner-border-sm"></span>}
+                    <span>Registrar</span>
+                  </button>
+                </div>
               </div>
-            </div>
+            </Form>
           )}
-
-          {message && (
-            <div className="mb-3">
-              <div
-                className={successful ? "alert alert-success" : "my-1 alert alert-danger"}
-                role="alert"
-              >
-                {message}
-              </div>
-            </div>
-          )}
-          <CheckButton
-            style={{ display: "none" }}
-            ref={checkBtn}
-          />
-        </Form>
+        </Formik>
       </div>
     </div>
   );
