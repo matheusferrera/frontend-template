@@ -27,7 +27,6 @@ const Login = () => {
     login(values.email, values.password)
       .then(() => {
         navigate("/profile");
-        window.location.reload();
       })
       .catch(error => {
         const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();

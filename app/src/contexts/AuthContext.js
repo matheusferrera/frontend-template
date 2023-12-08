@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 import authService from "../services/auth.service";
+import isEqual from "lodash/isEqual";
 
 const AuthContext = createContext();
 
@@ -15,16 +16,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
 
-  useEffect(() => {
-    // Check localStorage on initial load
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    const storedToken = localStorage.getItem("token");
-    if (storedUser && storedToken) {
-      setUser(storedUser);
-      setToken(storedToken);
-    }
-  }, []);
-
   /**
    * Function to handle user login.
    * @param {string} email - The user's email.
@@ -35,20 +26,27 @@ export const AuthProvider = ({ children }) => {
     return authService
       .login(email, password)
       .then(token => {
-        setToken(token);
-        localStorage.setItem("token", token);
-        return authService.getAuthUser(token);
+        // Ensure that token is truthy before setting it
+        if (token) {
+          setToken(token);
+          return authService.getAuthUser(token);
+        } else {
+          throw new Error("Invalid token received");
+        }
       })
       .then(userDetails => {
-        setUser(userDetails);
-        localStorage.setItem("user", JSON.stringify(userDetails));
+        // Ensure that userDetails is truthy before setting user
+        if (userDetails) {
+          setUser(userDetails);
+        } else {
+          throw new Error("Invalid user details received");
+        }
       })
       .catch(error => {
         setUser(null);
         setToken(null);
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
         console.error("Login error:", error);
+        // Rethrow the error to propagate it to the calling code
         throw error;
       });
   };
@@ -64,15 +62,11 @@ export const AuthProvider = ({ children }) => {
       .then(response => {
         setUser(null);
         setToken(null);
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
         return response;
       })
       .catch(error => {
         setUser(null);
         setToken(null);
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
         console.error("Logout error:", error);
         throw error;
       });
@@ -108,13 +102,13 @@ export const AuthProvider = ({ children }) => {
     return authService
       .getAuthUser(token)
       .then(userDetails => {
-        // console.log("Auth Context usuario:", userDetails);
-        setUser(userDetails);
-        localStorage.setItem("user", JSON.stringify(userDetails));
+        // Check if the user data has changed before updating the context
+        if (!isEqual(userDetails, user)) {
+          setUser(userDetails);
+        }
       })
       .catch(error => {
         setUser(null);
-        localStorage.removeItem("user");
         console.error("Error fetching authenticated user:", error);
         throw error;
       });
