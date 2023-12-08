@@ -8,10 +8,10 @@ import progredirLogo from "../assets/images/novo_logo_progredir.png";
 const NavBar = () => {
   const navigate = useNavigate();
 
-  const { user, logout, token: access_token } = useAuth();
+  const { user, logout, token } = useAuth();
 
   const handleLogout = () => {
-    logout(access_token)
+    logout(token)
       .then(response => {
         alert("Logout realizado com sucesso!");
         console.log("Logout: ", response);

@@ -4,10 +4,10 @@ import { useAuth } from "../contexts/AuthContext";
 
 const Logout = () => {
   const navigate = useNavigate();
-  const { token: access_token, logout } = useAuth();
+  const { token, logout } = useAuth();
 
   useEffect(() => {
-    logout(access_token);
+    logout(token);
     navigate("/login");
   }, [logout]);
 
