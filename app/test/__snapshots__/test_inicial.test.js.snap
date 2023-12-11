@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Teste de componentes Home renderizada corretamente 1`] = `
+<div
+  className="container"
+>
+  <header
+    className="jumbotron"
+  >
+    <h3>
+      Página em construção
+    </h3>
+  </header>
+</div>
+`;
+
+exports[`Teste de componentes Login renderizada corretamente 1`] = `
+<div
+  className="col-md-12"
+>
+  <div
+    className="card card-container"
+  >
+    <img
+      alt="profile-img"
+      className="profile-img-card"
+      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+    />
+    <form
+      action="#"
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="mb-3"
+      >
+        <label
+          className="form-label"
+          htmlFor="email"
+        >
+          Email
+        </label>
+        <input
+          className="text-input"
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Email"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="mb-3"
+      >
+        <label
+          className="form-label"
+          htmlFor="password"
+        >
+          Senha
+        </label>
+        <input
+          className="text-input"
+          id="password"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Senha"
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        className="mb-3"
+      >
+        <button
+          disabled={false}
+          type="submit"
+        >
+          <span>
+            Login
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Teste de componentes Not found renderizada corretamente 1`] = `
+<div>
+  <h1>
+    404 - Página não encontrada
+  </h1>
+  <p>
+    Ops! A página que você está procurando não existe.
+  </p>
+</div>
+`;
+
+exports[`Teste de componentes Register renderizada corretamente 1`] = `
+<div
+  className="col-md-12"
+>
+  <div
+    className="card card-container"
+  >
+    <img
+      alt="profile-img"
+      className="profile-img-card"
+      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+    />
+    <form
+      action="#"
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <input
+            className="text-input"
+            id="email"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="name"
+          >
+            Nome
+          </label>
+          <input
+            className="text-input"
+            id="name"
+            name="name"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Nome"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="username"
+          >
+            Nome de usuário
+          </label>
+          <input
+            className="text-input"
+            id="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Nome de usuário"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="password"
+          >
+            Senha
+          </label>
+          <input
+            className="text-input"
+            id="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Senha"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="passwordConfirmation"
+          >
+            Confirmação de senha
+          </label>
+          <input
+            className="text-input"
+            id="passwordConfirmation"
+            name="passwordConfirmation"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Confirmação de senha"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <button
+            disabled={false}
+            type="submit"
+          >
+            <span>
+              Registrar
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
