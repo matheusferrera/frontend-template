@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo } from "react";
+
 import { useAuth } from "../contexts/AuthContext";
 
 const Profile = () => {

@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState } from "react";
-import authService from "../services/auth.service";
+
 import isEqual from "lodash/isEqual";
+
+import authService from "../services/auth.service";
 
 const AuthContext = createContext();
 
