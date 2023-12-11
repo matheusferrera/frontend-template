@@ -1,14 +1,13 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Route,Routes } from "react-router-dom";
 
 import { useAuth } from "../contexts/AuthContext";
-
 import Home from "./Home";
 import Login from "./Login";
-import Register from "./Register";
-import Profile from "./Profile";
-import NotFound from "./NotFound";
 import Logout from "./Logout";
+import NotFound from "./NotFound";
+import Profile from "./Profile";
+import Register from "./Register";
 
 const ProtectedRoutes = () => {
   return (

@@ -22,10 +22,16 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ["react"],
+  plugins: ["react", "simple-import-sort"],
   rules: {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        groups: [["^react"], ["^antd"], ["^@?\\w"], ["@/(.*)"], ["^[./]"]],
+      },
+    ],
   },
   settings: {
     react: {

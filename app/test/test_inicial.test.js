@@ -1,14 +1,16 @@
-import renderer from "react-test-renderer";
+import { act } from "react-dom/test-utils";
 import { BrowserRouter as Router } from "react-router-dom";
+import renderer from "react-test-renderer";
+
+import { waitFor } from "@testing-library/react";
+import axios from "axios";
+
 import Home from "../src/components/Home";
+import Login from "../src/components/Login";
 import NotFound from "../src/components/NotFound";
 import Register from "../src/components/Register";
-import Login from "../src/components/Login";
 import { AuthProvider } from "../src/contexts/AuthContext";
-import { act } from "react-dom/test-utils";
 import customAxios from "./__mocks__/axios";
-import axios from "axios";
-import { waitFor } from "@testing-library/react";
 
 jest.mock("axios"); // Mockando o módulo axios
 

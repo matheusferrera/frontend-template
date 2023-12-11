@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
 
 import progredirLogo from "../assets/images/novo_logo_progredir.png";
+import { useAuth } from "../contexts/AuthContext";
 
 const NavBar = () => {
   const navigate = useNavigate();
