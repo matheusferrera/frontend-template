@@ -1,21 +1,44 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import MenuItem from "@mui/material/MenuItem";
+
 import { useAuth } from "../contexts/AuthContext";
+
+// const OldLogout = () => {
+//   const navigate = useNavigate();
+//   const { token, logout } = useAuth();
+
+//   useEffect(() => {
+//     logout(token);
+//     navigate("/login");
+//   }, [logout]);
+
+//   return (
+//     <div>
+//       <p>Logging out...</p>
+//     </div>
+//   );
+// };
 
 const Logout = () => {
   const navigate = useNavigate();
   const { token, logout } = useAuth();
 
-  useEffect(() => {
+  const onClick = () => {
     logout(token);
     navigate("/login");
-  }, [logout]);
+  };
 
   return (
-    <div>
-      <p>Logging out...</p>
-    </div>
+    <MenuItem
+      disableRipple
+      disableTouchRipple
+      onClick={onClick}
+      sx={{ typography: "body2", color: "error.main", py: 1.5 }}
+    >
+      Logout
+    </MenuItem>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Field, Form,Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 import { useAuth } from "../contexts/AuthContext";
@@ -43,11 +43,11 @@ const Login = () => {
   return (
     <div className="col-md-12">
       <div className="card card-container">
-        <img
+        {/* <img
           src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
           alt="profile-img"
           className="profile-img-card"
-        />
+        /> */}
 
         <Formik
           initialValues={initialValues}
