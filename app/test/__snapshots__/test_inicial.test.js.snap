@@ -21,11 +21,6 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
   <div
     className="card card-container"
   >
-    <img
-      alt="profile-img"
-      className="profile-img-card"
-      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-    />
     <form
       action="#"
       onReset={[Function]}
@@ -106,11 +101,6 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
   <div
     className="card card-container"
   >
-    <img
-      alt="profile-img"
-      className="profile-img-card"
-      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-    />
     <form
       action="#"
       onReset={[Function]}
