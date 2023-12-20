@@ -24,3 +24,5 @@ yarn-error.log*
 
 old-src/
 src-ui/
+
+.vscode/
