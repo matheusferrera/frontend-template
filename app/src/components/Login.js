@@ -1,11 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 import { useAuth } from "../contexts/AuthContext";
+import AvisoDePrivacidadeModal from "./AvisoDePrivacidadeModal";
+import TermoDeUsoModal from "./TermoDeUsoModal";
 
 const Login = () => {
   const { login } = useAuth();
@@ -13,6 +14,15 @@ const Login = () => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
+
+  const [termoDeUsoModal, setTermoDeUsoModal] = useState(false);
+  const [avisoDePrivacidadeModal, setAvisoDePrivacidadeModal] = useState(false);
+
+  const handleTermoDeUsoShow = () => setTermoDeUsoModal(true);
+  const handleTermoDeUsoClose = () => setTermoDeUsoModal(false);
+
+  const handleAvisoDePrivacidadeShow = () => setAvisoDePrivacidadeModal(true);
+  const handleAvisoDePrivacidadeClose = () => setAvisoDePrivacidadeModal(false);
 
   const initialValues = {
     email: "",
@@ -96,6 +106,33 @@ const Login = () => {
                 {errors.password && touched.password && <div className="input-feedback">{errors.password}</div>}
               </div>
 
+              <div className="col-sm-12">
+                <label className="d-flex align-items-center">
+                  <Field
+                    type="checkbox"
+                    name="toggle"
+                  />
+                  <div className="d-flex exemplo">
+                    <span> Estou ciente e concordo com o</span>
+                    <a
+                      className=""
+                      href="#"
+                      onClick={handleTermoDeUsoShow}
+                    >
+                      Termo de Uso
+                    </a>
+                    <span>e</span>
+                    <a
+                      className=""
+                      href="#"
+                      onClick={handleAvisoDePrivacidadeShow}
+                    >
+                      Aviso de Privacidade
+                    </a>
+                  </div>
+                </label>
+              </div>
+
               <div className="mb-3">
                 <button
                   type="submit"
@@ -109,6 +146,15 @@ const Login = () => {
           )}
         </Formik>
       </div>
+      {/* Modals */}
+      <TermoDeUsoModal
+        showModal={termoDeUsoModal}
+        handleClose={handleTermoDeUsoClose}
+      />
+      <AvisoDePrivacidadeModal
+        showModal={avisoDePrivacidadeModal}
+        handleClose={handleAvisoDePrivacidadeClose}
+      />
     </div>
   );
 };
