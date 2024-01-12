@@ -2,17 +2,43 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import LoadingButton from '@mui/lab/LoadingButton';
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from '@mui/material/CardContent';
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Stack from "@mui/material/Stack";
+import { alpha, useTheme } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 import { useAuth } from "../contexts/AuthContext";
+import { bgGradient } from "../theme/css";
+import AvisoDePrivacidadeModal from "./AvisoDePrivacidadeModal";
+import Iconify from "./iconify";
+import TermoDeUsoModal from "./TermoDeUsoModal";
 
 const Register = () => {
   const { register } = useAuth();
-
+  const theme = useTheme();
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const [termoDeUsoModal, setTermoDeUsoModal] = useState(false);
+  const [avisoDePrivacidadeModal, setAvisoDePrivacidadeModal] = useState(false);
+
+  const handleTermoDeUsoShow = () => setTermoDeUsoModal(true);
+  const handleTermoDeUsoClose = () => setTermoDeUsoModal(false);
+
+  const handleAvisoDePrivacidadeShow = () => setAvisoDePrivacidadeModal(true);
+  const handleAvisoDePrivacidadeClose = () => setAvisoDePrivacidadeModal(false);
 
   const initialValues = {
     email: "",
@@ -20,6 +46,8 @@ const Register = () => {
     username: "",
     password: "",
     passwordConfirmation: "",
+    reCaptcha: false,
+    toggle: false,
   };
 
   const validationSchema = Yup.object().shape({
@@ -30,6 +58,8 @@ const Register = () => {
     passwordConfirmation: Yup.string()
       .oneOf([Yup.ref("password"), null], "Senhas devem ser iguais")
       .required("Confirmação de senha é obrigatória"),
+    reCaptcha: Yup.boolean().oneOf([true], "Você precisa validar o reCaptcha"),
+    toggle: Yup.boolean().oneOf([true], "Você precisa concordar com o Termo de Uso e Aviso de Privacidade"),
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
@@ -49,140 +79,232 @@ const Register = () => {
       });
   };
 
-  return (
-    <div className="col-md-12">
-      <div className="card card-container">
-        {/* <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img"
-          className="profile-img-card"
-        /> */}
+  const renderForm = (
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      {({ values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
+        <Form>
+          <Stack spacing={3}>
+            <TextField
+              id="email"
+              name="email"
+              label="Email"
+              placeholder="Email"
+              value={values.email}
+              type="text"
+              error={errors.email && touched.email}
+              helperText={errors.email && touched.email && errors.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
 
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
-          {({ values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
-            <Form onSubmit={handleSubmit}>
-              <div>
-                <div className="mb-3">
-                  <label
-                    htmlFor="email"
-                    className="form-label"
-                  >
-                    Email
-                  </label>
-                  <Field
-                    id="email"
-                    type="text"
-                    className={errors.email && touched.email ? "text-input error" : "text-input"}
-                    name="email"
-                    placeholder="Email"
-                    value={values.email}
+            <TextField
+              id="name"
+              name="name"
+              label="Nome"
+              placeholder="Nome"
+              value={values.name}
+              type="text"
+              error={errors.name && touched.name}
+              helperText={errors.name && touched.name && errors.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+
+            <TextField
+              id="username"
+              name="username"
+              label="Username"
+              placeholder="Username"
+              value={values.username}
+              type="text"
+              error={errors.username && touched.username}
+              helperText={errors.username && touched.username && errors.username}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+
+            <TextField
+              id="password"
+              name="password"
+              label="Password"
+              type={showPassword ? "text" : "password"}
+              placeholder="Senha"
+              value={values.password}
+              error={errors.password && touched.password}
+              helperText={errors.password && touched.password && errors.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={() => setShowPassword(!showPassword)}
+                      edge="end"
+                    >
+                      <Iconify icon={showPassword ? "eva:eye-fill" : "eva:eye-off-fill"} />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+
+            <TextField
+              id="passwordConfirmation"
+              name="passwordConfirmation"
+              label="Confirmação de Senha"
+              type={showPassword ? "text" : "password"}
+              placeholder="Confirmação de Senha"
+              value={values.passwordConfirmation}
+              error={errors.passwordConfirmation && touched.passwordConfirmation}
+              helperText={errors.passwordConfirmation && touched.passwordConfirmation && errors.passwordConfirmation}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={() => setShowPassword(!showPassword)}
+                      edge="end"
+                    >
+                      <Iconify icon={showPassword ? "eva:eye-fill" : "eva:eye-off-fill"} />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Stack>
+
+          <Card sx={{ mb: 1 }}>
+            <CardContent>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    id="reCaptcha"
+                    name="reCaptcha"
+                    checked={values.reCaptcha}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    color="primary"
                   />
-                  {errors.email && touched.email && <div className="input-feedback">{errors.email}</div>}
-                </div>
+                }
+                label="Não sou um robô"
+              />
+              {touched.reCaptcha && errors.reCaptcha && <div style={{ color: "#FF5630" }}>{errors.reCaptcha}</div>}
+            </CardContent>
+          </Card>
 
-                <div className="mb-3">
-                  <label
-                    htmlFor="name"
-                    className="form-label"
-                  >
-                    Nome
-                  </label>
-                  <Field
-                    id="name"
-                    type="text"
-                    className={errors.name && touched.name ? "text-input error" : "text-input"}
-                    name="name"
-                    placeholder="Nome"
-                    value={values.name}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </div>
-                {errors.name && touched.name && <div className="input-feedback">{errors.name}</div>}
-
-                <div className="mb-3">
-                  <label
-                    htmlFor="username"
-                    className="form-label"
-                  >
-                    Nome de usuário
-                  </label>
-                  <Field
-                    id="username"
-                    type="text"
-                    className={errors.username && touched.username ? "text-input error" : "text-input"}
-                    name="username"
-                    placeholder="Nome de usuário"
-                    value={values.username}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.username && touched.username && <div className="input-feedback">{errors.username}</div>}
-                </div>
-
-                <div className="mb-3">
-                  <label
-                    htmlFor="password"
-                    className="form-label"
-                  >
-                    Senha
-                  </label>
-                  <Field
-                    id="password"
-                    type="password"
-                    className={errors.password && touched.password ? "text-input error" : "text-input"}
-                    name="password"
-                    placeholder="Senha"
-                    value={values.password}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.password && touched.password && <div className="input-feedback">{errors.password}</div>}
-                </div>
-
-                <div className="mb-3">
-                  <label
-                    htmlFor="passwordConfirmation"
-                    className="form-label"
-                  >
-                    Confirmação de senha
-                  </label>
-                  <Field
-                    id="passwordConfirmation"
-                    type="password"
-                    className={errors.passwordConfirmation && touched.passwordConfirmation ? "text-input error" : "text-input"}
-                    name="passwordConfirmation"
-                    placeholder="Confirmação de senha"
-                    value={values.passwordConfirmation}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  {errors.passwordConfirmation && touched.passwordConfirmation && (
-                    <div className="input-feedback">{errors.passwordConfirmation}</div>
-                  )}
-                </div>
-
-                <div className="mb-3">
-                  <button
-                    type="submit"
-                    disabled={loading || isSubmitting}
-                  >
-                    {loading && <span className="spinner-border spinner-border-sm"></span>}
-                    <span>Registrar</span>
-                  </button>
-                </div>
+          <div className="col-sm-12">
+            <label className="d-flex align-items-center">
+              <Field
+                type="checkbox"
+                id="toggle"
+                name="toggle"
+                checked={values.toggle}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="me-2"
+                color="primary"
+              />
+              <div className="d-flex exemplo">
+                &nbsp;<span>Estou ciente e concordo com o</span>&nbsp;
+                <a
+                  className=""
+                  href="#"
+                  onClick={handleTermoDeUsoShow}
+                >
+                  Termo de Uso
+                </a>
+                &nbsp;<span>e</span>&nbsp;
+                <a
+                  className=""
+                  href="#"
+                  onClick={handleAvisoDePrivacidadeShow}
+                >
+                  Aviso de Privacidade
+                </a>
               </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
-    </div>
+            </label>
+          </div>
+          {touched.toggle && errors.toggle && <div style={{ color: "#FF5630" }}>{errors.toggle}</div>}
+
+          <LoadingButton
+            fullWidth
+            size="large"
+            type="submit"
+            variant="contained"
+            color="primary"
+            onClick={handleSubmit}
+            loading={loading || isSubmitting}
+            sx={{ mt: 2 }}
+          >
+            {loading && <span className="spinner-border spinner-border-sm"></span>}
+            Registrar
+          </LoadingButton>
+        </Form>
+      )
+      }
+    </Formik >
+  )
+
+  return (
+    <Box
+      sx={{
+        ...bgGradient({
+          color: alpha(theme.palette.background.default, 0.9),
+        }),
+        height: 1,
+      }}
+    >
+      {/* <Logo
+        sx={{
+          position: "fixed",
+          top: { xs: 16, md: 24 },
+          left: { xs: 16, md: 24 },
+        }}
+      /> */}
+
+      <Stack
+        alignItems="center"
+        justifyContent="center"
+        sx={{ height: 1 }}
+      >
+        <Card
+          sx={{
+            p: 5,
+            width: 1,
+            maxWidth: 625,
+            height: 1,
+            maxHeight: 900
+          }}
+        >
+          <Typography variant="h3">Registrar-se</Typography>
+
+          <Typography
+            variant="body2"
+            sx={{ mt: 2, mb: 5 }}
+            color="text.secondary"
+          >
+            Crie o seu perfil Progredir
+          </Typography>
+
+          {renderForm}
+
+          {/* Modals */}
+          <TermoDeUsoModal
+            showModal={termoDeUsoModal}
+            handleClose={handleTermoDeUsoClose}
+          />
+          <AvisoDePrivacidadeModal
+            showModal={avisoDePrivacidadeModal}
+            handleClose={handleAvisoDePrivacidadeClose}
+          />
+        </Card>
+      </Stack>
+    </Box>
   );
 };
 
