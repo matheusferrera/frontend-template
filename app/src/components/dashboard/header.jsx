@@ -13,7 +13,7 @@ import { bgBlur } from "../../theme/css";
 import AccountPopover from "../dashboard-common/account-popover";
 import ThemeSwitcher from "../dashboard-common/theme-switcher";
 import Iconify from "../iconify";
-import { HEADER,NAV } from "./config-layout";
+import { HEADER, NAV } from "./config-layout";
 
 // ----------------------------------------------------------------------
 

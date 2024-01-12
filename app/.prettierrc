@@ -15,7 +15,9 @@
   "proseWrap": "always",
   "overrides": [
     {
-      "files": "*.md",
+      "files": [
+        "**/*.md"
+      ],
       "options": {
         "proseWrap": "never"
       }
