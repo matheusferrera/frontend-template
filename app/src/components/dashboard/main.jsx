@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
 
 import { useResponsive } from "../../hooks/use-responsive";
-import { HEADER,NAV } from "./config-layout";
+import { HEADER, NAV } from "./config-layout";
 
 // ----------------------------------------------------------------------
 

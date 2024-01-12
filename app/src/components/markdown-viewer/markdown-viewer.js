@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 import PropTypes from "prop-types";
+import remarkGfm from "remark-gfm";
+
+import styles from "./markdown-viewer.module.css";
 
 const MarkdownViewer = ({ filePath }) => {
   const [markdownContent, setMarkdownContent] = useState("");
@@ -10,11 +13,11 @@ const MarkdownViewer = ({ filePath }) => {
     // Load the Markdown file content
     fetch(filePath)
       .then(response => {
-        console.log(response);
+        // console.log(response);
         return response.text();
       })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setMarkdownContent(data);
       })
       .catch(error => console.error("Error loading Markdown file:", error));
@@ -22,7 +25,12 @@ const MarkdownViewer = ({ filePath }) => {
 
   return (
     <div>
-      <ReactMarkdown>{markdownContent}</ReactMarkdown>
+      <ReactMarkdown
+        className={styles.markdown}
+        remarkPlugins={[remarkGfm]}
+      >
+        {markdownContent}
+      </ReactMarkdown>
     </div>
   );
 };

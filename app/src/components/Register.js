@@ -2,10 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import LoadingButton from '@mui/lab/LoadingButton';
+import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardContent from '@mui/material/CardContent';
+import CardContent from "@mui/material/CardContent";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import IconButton from "@mui/material/IconButton";
@@ -245,10 +245,9 @@ const Register = () => {
             Registrar
           </LoadingButton>
         </Form>
-      )
-      }
-    </Formik >
-  )
+      )}
+    </Formik>
+  );
 
   return (
     <Box
@@ -278,7 +277,7 @@ const Register = () => {
             width: 1,
             maxWidth: 625,
             height: 1,
-            maxHeight: 900
+            maxHeight: 900,
           }}
         >
           <Typography variant="h3">Registrar-se</Typography>

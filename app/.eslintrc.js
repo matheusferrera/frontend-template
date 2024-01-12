@@ -38,4 +38,5 @@ module.exports = {
       version: "detect",
     },
   },
+  ignorePatterns: ["**/*.md"],
 };
