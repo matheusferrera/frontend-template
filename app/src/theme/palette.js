@@ -6,21 +6,22 @@ import { alpha } from "@mui/material/styles";
 
 export const grey = {
   0: "#FFFFFF",
-  100: "#F9FAFB",
+  100: "#F7FAFC", //"#F9FAFB",
   200: "#F4F6F8",
   300: "#DFE3E8",
   400: "#C4CDD5",
   500: "#919EAB",
-  600: "#637381",
+  600: "#CCCCCC", // "#637381",
+  601: "#888888",
   700: "#454F5B",
-  800: "#212B36",
+  800: "#333333", // "#212B36",
   900: "#161C24",
 };
 
 export const primary = {
   lighter: "#D0ECFE",
   light: "#73BAFB",
-  main: "#1877F2",
+  main: "#2670E8", //"#1877F2",
   dark: "#0C44AE",
   darker: "#042174",
   contrastText: "#FFFFFF",
@@ -110,6 +111,7 @@ export function palette(mode) {
       primary: isDark ? "#FFFFFF" : grey[800],
       secondary: isDark ? grey[500] : grey[600],
       disabled: isDark ? grey[300] : grey[500],
+      grey: isDark ? grey[300] : grey[601],
     },
     background: {
       paper: isDark ? "#121212" : "#FFFFFF",

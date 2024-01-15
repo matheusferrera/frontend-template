@@ -13,10 +13,9 @@ import { account } from "../../_mock/account";
 import { usePathname } from "../../hooks/use-pathname";
 import { useResponsive } from "../../hooks/use-responsive";
 import Iconify from "../iconify";
-import Logo from "../logo";
 import RouterLink from "../router-link";
 import Scrollbar from "../scrollbar";
-import { NAV } from "./config-layout";
+import { HEADER, NAV } from "./config-layout";
 import navConfig from "./config-navigation";
 
 // ----------------------------------------------------------------------
@@ -84,6 +83,7 @@ export default function Nav({ openNav, onCloseNav }) {
     <Scrollbar
       sx={{
         height: 1,
+        marginTop: `${HEADER.H_DESKTOP}px`,
         "& .simplebar-content": {
           height: 1,
           display: "flex",
@@ -91,8 +91,6 @@ export default function Nav({ openNav, onCloseNav }) {
         },
       }}
     >
-      <Logo sx={{ mt: 1 }} />
-
       {renderAccount}
 
       {renderMenu}

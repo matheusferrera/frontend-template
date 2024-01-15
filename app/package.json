@@ -35,8 +35,8 @@
     "test": "jest",
     "test:update": "jest -u",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
+    "lint": "eslint src/**/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix src/**/**/*.{js,jsx,ts,tsx,json}",
     "lint:test:fix": "eslint --fix test/**/*.{js,jsx,ts,tsx,json}",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc",
     "format:test": "prettier --write test/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc"

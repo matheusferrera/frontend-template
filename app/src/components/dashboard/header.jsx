@@ -13,6 +13,7 @@ import { bgBlur } from "../../theme/css";
 import AccountPopover from "../dashboard-common/account-popover";
 import ThemeSwitcher from "../dashboard-common/theme-switcher";
 import Iconify from "../iconify";
+import Logo from "../logo";
 import { HEADER, NAV } from "./config-layout";
 
 // ----------------------------------------------------------------------
@@ -22,16 +23,14 @@ export default function Header({ onOpenNav }) {
 
   const lgUp = useResponsive("up", "lg");
 
+  const logoWidth = 50;
+  const logoStyle = {
+    ml: lgUp ? `calc((${NAV.WIDTH}px / 2) - ${logoWidth}px)` : undefined,
+  };
+
   const renderContent = (
     <>
-      {!lgUp && (
-        <IconButton
-          onClick={onOpenNav}
-          sx={{ mr: 1 }}
-        >
-          <Iconify icon="eva:menu-2-fill" />
-        </IconButton>
-      )}
+      <Logo sx={logoStyle} />
 
       {/* <Searchbar /> */}
 
@@ -47,23 +46,32 @@ export default function Header({ onOpenNav }) {
         {/* <NotificationsPopover /> */}
         <AccountPopover />
       </Stack>
+
+      {/* menu hamburguer fica à esquerda */}
+      {!lgUp && (
+        <IconButton
+          onClick={onOpenNav}
+          sx={{ ml: 1, color: "primary.main" }}
+        >
+          <Iconify icon="eva:menu-fill" />
+        </IconButton>
+      )}
     </>
   );
 
   return (
     <AppBar
       sx={{
-        boxShadow: "none",
+        boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)",
         height: HEADER.H_MOBILE,
         zIndex: theme.zIndex.appBar + 1,
         ...bgBlur({
-          color: theme.palette.background.default,
+          color: theme.palette.common.white,
         }),
         transition: theme.transitions.create(["height"], {
           duration: theme.transitions.duration.shorter,
         }),
         ...(lgUp && {
-          width: `calc(100% - ${NAV.WIDTH + 1}px)`,
           height: HEADER.H_DESKTOP,
         }),
       }}
