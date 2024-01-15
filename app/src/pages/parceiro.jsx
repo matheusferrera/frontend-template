@@ -1,18 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-import Register from "../components/Register";
-
+import Parceiro from "../components/Parceiro";
 // ----------------------------------------------------------------------
 
-export default function LoginPage() {
+export default function ParceiroPage() {
   return (
     <>
       <Helmet>
-        <title> Registrar </title>
+        <title> Parceiro </title>
       </Helmet>
 
-      <Register />
+      <Parceiro />
     </>
   );
 }

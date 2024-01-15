@@ -10,15 +10,15 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
+import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
-import { alpha, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import { Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import * as Yup from "yup";
 
 import { useAuth } from "../contexts/AuthContext";
-import { bgGradient } from "../theme/css";
 import AvisoDePrivacidadeModal from "./AvisoDePrivacidadeModal";
 import Iconify from "./iconify";
 import TermoDeUsoModal from "./TermoDeUsoModal";
@@ -130,7 +130,7 @@ const Register = () => {
             <TextField
               id="password"
               name="password"
-              label="Password"
+              label="Senha"
               type={showPassword ? "text" : "password"}
               placeholder="Senha"
               value={values.password}
@@ -178,7 +178,7 @@ const Register = () => {
             />
           </Stack>
 
-          <Card sx={{ mb: 1 }}>
+          <Card sx={{ mt: 2, mb: 1, borderRadius: "4px", border: "1px solid #DCDCDC", background: "#F9F9F9" }}>
             <CardContent>
               <FormControlLabel
                 control={
@@ -197,38 +197,45 @@ const Register = () => {
             </CardContent>
           </Card>
 
-          <div className="col-sm-12">
-            <label className="d-flex align-items-center">
-              <Field
-                type="checkbox"
+          <FormControlLabel
+            sx={{ marginRight: "0px !important" }}
+            control={
+              <Checkbox
                 id="toggle"
                 name="toggle"
                 checked={values.toggle}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className="me-2"
                 color="primary"
               />
-              <div className="d-flex exemplo">
-                &nbsp;<span>Estou ciente e concordo com o</span>&nbsp;
-                <a
-                  className=""
+            }
+            label={
+              <Typography variant="body1">
+                Estou ciente e concordo com o
+                <Link
+                  component="a"
                   href="#"
                   onClick={handleTermoDeUsoShow}
+                  color={theme.palette.primary.main}
+                  underline="always"
+                  sx={{ mx: 1 }}
                 >
                   Termo de Uso
-                </a>
-                &nbsp;<span>e</span>&nbsp;
-                <a
-                  className=""
+                </Link>
+                e
+                <Link
+                  component="a"
                   href="#"
                   onClick={handleAvisoDePrivacidadeShow}
+                  color={theme.palette.primary.main}
+                  underline="always"
+                  sx={{ mx: 1 }}
                 >
                   Aviso de Privacidade
-                </a>
-              </div>
-            </label>
-          </div>
+                </Link>
+              </Typography>
+            }
+          />
           {touched.toggle && errors.toggle && <div style={{ color: "#FF5630" }}>{errors.toggle}</div>}
 
           <LoadingButton
@@ -251,12 +258,12 @@ const Register = () => {
 
   return (
     <Box
-      sx={{
-        ...bgGradient({
-          color: alpha(theme.palette.background.default, 0.9),
-        }),
-        height: 1,
-      }}
+    // sx={{
+    //   ...bgGradient({
+    //     color: alpha(theme.palette.background.default, 0.9),
+    //   }),
+    //   height: 1,
+    // }}
     >
       {/* <Logo
         sx={{
@@ -284,8 +291,7 @@ const Register = () => {
 
           <Typography
             variant="body2"
-            sx={{ mt: 2, mb: 5 }}
-            color="text.secondary"
+            sx={{ mt: 2, mb: 3, color: "text.grey" }}
           >
             Crie o seu perfil Progredir
           </Typography>

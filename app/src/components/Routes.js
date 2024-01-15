@@ -7,6 +7,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Logout from "./Logout";
 import NotFound from "./NotFound";
+import Parceiro from "./Parceiro";
 import Profile from "./Profile";
 import Register from "./Register";
 
@@ -20,6 +21,10 @@ const AuthRoutes = () => {
       <Route
         path="/register"
         element={<Register />}
+      />
+      <Route
+        path="/parceiro"
+        element={<Parceiro />}
       />
       <Route
         path="*"
