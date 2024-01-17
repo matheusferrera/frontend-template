@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
 
 import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import IconButton from "@mui/material/IconButton";
@@ -31,6 +31,8 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const recaptchaRef = React.createRef();
+
   const [termoDeUsoModal, setTermoDeUsoModal] = useState(false);
   const [avisoDePrivacidadeModal, setAvisoDePrivacidadeModal] = useState(false);
 
@@ -46,7 +48,6 @@ const Register = () => {
     username: "",
     password: "",
     passwordConfirmation: "",
-    reCaptcha: false,
     toggle: false,
   };
 
@@ -58,12 +59,21 @@ const Register = () => {
     passwordConfirmation: Yup.string()
       .oneOf([Yup.ref("password"), null], "Senhas devem ser iguais")
       .required("Confirmação de senha é obrigatória"),
-    reCaptcha: Yup.boolean().oneOf([true], "Você precisa validar o reCaptcha"),
     toggle: Yup.boolean().oneOf([true], "Você precisa concordar com o Termo de Uso e Aviso de Privacidade"),
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
+    const token = recaptchaRef.current.getValue();
+
     setLoading(true);
+
+    if (!token) {
+      alert("Por favor, confirme que você não é um robô");
+      setLoading(false);
+      setSubmitting(false);
+      return;
+    }
+
     register(values.email, values.name, values.username, values.password, values.passwordConfirmation)
       .then(response => {
         navigate("/login");
@@ -178,24 +188,12 @@ const Register = () => {
             />
           </Stack>
 
-          <Card sx={{ mt: 2, mb: 1, borderRadius: "4px", border: "1px solid #DCDCDC", background: "#F9F9F9" }}>
-            <CardContent>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    id="reCaptcha"
-                    name="reCaptcha"
-                    checked={values.reCaptcha}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    color="primary"
-                  />
-                }
-                label="Não sou um robô"
-              />
-              {touched.reCaptcha && errors.reCaptcha && <div style={{ color: "#FF5630" }}>{errors.reCaptcha}</div>}
-            </CardContent>
-          </Card>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey="6LfH51EpAAAAAHhmahtgrjoaaKrO3n-hn9eCDGsv"
+            onChange={handleChange}
+            className="mt-2"
+          />
 
           <FormControlLabel
             sx={{ marginRight: "0px !important" }}
