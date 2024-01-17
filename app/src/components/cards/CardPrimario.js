@@ -4,10 +4,9 @@ import { Box, Card, CardContent, CardHeader, CardMedia, Typography } from "@mui/
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
-import imageUrl from "../../assets/images/in_the_office.png";
 import { useResponsive } from "../../hooks/use-responsive";
 
-const CardPrimario = ({ title, content }) => {
+const CardPrimario = ({ title, content, imageUrl }) => {
   const theme = useTheme();
 
   const lgUp = useResponsive("up", "lg");
@@ -74,6 +73,7 @@ const CardPrimario = ({ title, content }) => {
 CardPrimario.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
+  imageUrl: PropTypes.string,
 };
 
 export default CardPrimario;
