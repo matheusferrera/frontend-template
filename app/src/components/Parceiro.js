@@ -5,6 +5,7 @@ import { Box, Container, Grid, Link, Typography } from "@mui/material";
 
 import imagemMoca from "../assets/images/group_44.png";
 import imagemMoco from "../assets/images/group_46.png";
+import imagemPrimaria from "../assets/images/in_the_office.png";
 import CardBreadcrumb from "./cards/CardBreadcrumb";
 import CardPrimario from "./cards/CardPrimario";
 import CardSecundario from "./cards/CardSecundario";
@@ -33,6 +34,7 @@ const Parceiro = () => {
       <CardPrimario
         title="Rede de Parceiros da Inclusão Socioeconomica"
         content="A situação do seu cadastro é: [Situação do Cadastro] desde 99/99/9999"
+        imageUrl={imagemPrimaria}
       />
 
       <Typography

@@ -17,6 +17,11 @@ const navConfig = [
     icon: "solar:user-circle-bold",
   },
   {
+    title: "cidadão",
+    path: "/cidadao",
+    icon: "solar:user-circle-bold",
+  },
+  {
     title: "login",
     path: "/login",
     icon: "material-symbols:login",
