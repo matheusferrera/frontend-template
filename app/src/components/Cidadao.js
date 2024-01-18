@@ -3,9 +3,9 @@ import React from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
 
-import imagemPrimaria from "../assets/images/dispens.png";
-import imagemMoca from "../assets/images/group_44.png";
-import imagemMoco from "../assets/images/group_46.png";
+import imagemPrimaria from "../assets/images/Ilustra-Cidadao.png";
+import imagemMoco from "../assets/images/Ilustra-Cursos.png";
+import imagemMoca from "../assets/images/Ilustra-Emprego.png";
 import CardBreadcrumb from "./cards/CardBreadcrumb";
 import CardPrimario from "./cards/CardPrimario";
 import CardSecundario from "./cards/CardSecundario";
