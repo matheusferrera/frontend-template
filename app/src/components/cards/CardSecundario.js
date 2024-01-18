@@ -31,16 +31,21 @@ const CardSecundario = ({ title, subtitle, description, backgroundColor, imageUr
           alignItems={{ xs: "flex-start", sm: "center" }}
         >
           <Typography
-            variant="h3"
-            sx={{ fontSize: "4rem !important" }}
+            variant="h1"
+            sx={{ fontWeight: 700 }}
           >
             {title}
           </Typography>
 
           <Box>
-            <Typography variant="h5">{subtitle}</Typography>
+            <Typography variant="h3">{subtitle}</Typography>
 
-            <Typography variant="body1">{description}</Typography>
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "normal" }}
+            >
+              {description}
+            </Typography>
           </Box>
         </Stack>
         {imageUrl && (

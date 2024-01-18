@@ -14,7 +14,7 @@ import CardServicos from "./cards/CardServicos";
 const Parceiro = () => {
   return (
     <Container
-      maxWidth="xl"
+      maxWidth="lg"
       sx={{ mt: 0 }}
     >
       <CardBreadcrumb
