@@ -22,7 +22,7 @@ const CardPrimario = ({ title, content, imageUrl }) => {
                 textTransform: "uppercase",
                 fontWeight: 700,
                 lineHeight: "normal",
-                width: lgUp ? "800px" : undefined,
+                width: lgUp ? "600px" : undefined,
               }}
             >
               {title}

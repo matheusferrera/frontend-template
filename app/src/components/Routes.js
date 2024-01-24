@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 
 import { useAuth } from "../contexts/AuthContext";
+import Administrador from "./Administrador";
 import Cidadao from "./Cidadao";
 import DashboardLayout from "./dashboard";
 import Home from "./Home";
@@ -22,6 +23,10 @@ const AuthRoutes = () => {
       <Route
         path="/register"
         element={<Register />}
+      />
+      <Route
+        path="/admin"
+        element={<Administrador />}
       />
       <Route
         path="/parceiro"

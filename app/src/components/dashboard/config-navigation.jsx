@@ -10,6 +10,11 @@ const navConfig = [
     path: "/profile",
     icon: "solar:user-circle-bold",
   },
+  {
+    title: "admin",
+    path: "/admin",
+    icon: "solar:user-circle-bold",
+  },
 
   {
     title: "parceiro",
