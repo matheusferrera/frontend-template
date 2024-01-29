@@ -8,7 +8,7 @@ const Profile = () => {
   // Memoize the getAuthUser function
   const memoizedGetAuthUser = useMemo(() => getAuthUser, [getAuthUser, user]);
 
-  // // Fetch authenticated user information when the component mounts
+  // Fetch authenticated user information when the component mounts
   useEffect(() => {
     if (token) {
       memoizedGetAuthUser(token).catch(error => {

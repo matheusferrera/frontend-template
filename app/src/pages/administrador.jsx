@@ -5,13 +5,13 @@ import Administrador from "../components/Administrador";
 // ----------------------------------------------------------------------
 
 export default function AdminPage() {
-    return (
-        <>
-            <Helmet>
-                <title> Administrador </title>
-            </Helmet>
+  return (
+    <>
+      <Helmet>
+        <title> Administrador </title>
+      </Helmet>
 
-            <Administrador />
-        </>
-    );
+      <Administrador />
+    </>
+  );
 }

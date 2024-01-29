@@ -100,6 +100,78 @@ const getAuthUser = access_token => {
 };
 
 /**
+ * Retrieves data for a specific partner using the provided access token and partner ID.
+ *
+ * @param {string} access_token - The access token for authentication
+ * @param {number} id - The ID of the partner to retrieve data for
+ * @return {Promise} A Promise that resolves to the data of the specified partner
+ */
+const getParceiro = (access_token, id) => {
+  return axios
+    .get(API_URL + `v1/parceiros/index/${id}`, {
+      headers: {
+        Authorization: "Bearer " + access_token,
+      },
+    })
+    .then(response => {
+      // console.log("Service parceiro", response.data);
+      return response.data;
+    })
+    .catch(error => {
+      // console.error("Error fetching parceiro data:", error);
+      throw error;
+    });
+};
+
+/**
+ * Retrieves admin data using the provided access token and ID.
+ *
+ * @param {string} access_token - The access token for authorization
+ * @param {number} id - The ID of the admin to retrieve
+ * @return {Promise} The admin data response
+ */
+const getAdmin = (access_token, id) => {
+  return axios
+    .get(API_URL + `v1/admins/index/${id}`, {
+      headers: {
+        Authorization: "Bearer " + access_token,
+      },
+    })
+    .then(response => {
+      // console.log("Service admin", response.data);
+      return response.data;
+    })
+    .catch(error => {
+      // console.error("Error fetching admin data:", error);
+      throw error;
+    });
+};
+
+/**
+ * Retrieves a trabalhador using the provided access token and ID.
+ *
+ * @param {string} access_token - The access token for authentication
+ * @param {number} id - The ID of the trabalhador to retrieve
+ * @return {Promise} A Promise that resolves to the data of the retrieved trabalhador
+ */
+const getTrabalhador = (access_token, id) => {
+  return axios
+    .get(API_URL + `v1/trabs/index/${id}`, {
+      headers: {
+        Authorization: "Bearer " + access_token,
+      },
+    })
+    .then(response => {
+      // console.log("Service trabalhador", response.data);
+      return response.data;
+    })
+    .catch(error => {
+      // console.error("Error fetching trabalhador data:", error);
+      throw error;
+    });
+};
+
+/**
  * Retrieves the current user from the local storage.
  *
  * @return {Object} The current user object or undefined if the user is null or undefined.
@@ -116,6 +188,9 @@ const AuthService = {
   logout,
   getCurrentUser,
   getAuthUser,
+  getParceiro,
+  getAdmin,
+  getTrabalhador,
 };
 
 export default AuthService;

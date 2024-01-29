@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }) => {
   // State variables to store user and token
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
+  const [parceiroData, setParceiroData] = useState(null);
 
   /**
    * Function to handle user login.
@@ -116,8 +117,34 @@ export const AuthProvider = ({ children }) => {
       });
   };
 
+  /**
+   * Retrieves the parceiro data using the provided token.
+   *
+   * @param {string} token - The authentication token.
+   * @return {Promise} A promise that resolves with the parceiro data or rejects with an error.
+   */
+  const getParceiroData = token => {
+    return authService
+      .getParceiro(token, 1) // enviando o id do parceiro
+      .then(dadosParceiro => {
+        // Check if the user data has changed before updating the context
+        if (!isEqual(dadosParceiro, parceiroData)) {
+          setParceiroData(dadosParceiro);
+        }
+      })
+      .catch(error => {
+        setParceiroData(null);
+        console.error("Error fetching parceiro data:", error);
+        throw error;
+      });
+  };
+
   // Return the child components wrapped in AuthContext.Provider
-  return <AuthContext.Provider value={{ user, token, login, logout, register, getAuthUser }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ user, token, parceiroData, login, logout, register, getAuthUser, getParceiroData }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 /**

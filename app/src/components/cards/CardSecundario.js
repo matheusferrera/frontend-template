@@ -1,20 +1,14 @@
 import React from "react";
 
-import { Box, Card, CardContent, CardMedia, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
-import { useResponsive } from "../../hooks/use-responsive";
-
 const CardSecundario = ({ title, subtitle, description, backgroundColor, imageUrl }) => {
-  const theme = useTheme();
-
-  const lgUp = useResponsive("up", "lg");
-
   return (
     <Card>
       <CardContent
         sx={{
-          backgroundColor: backgroundColor || theme.palette.primary.main,
+          backgroundColor: backgroundColor || "primary.main",
           color: "white",
           boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)",
           display: "flex",
@@ -51,14 +45,15 @@ const CardSecundario = ({ title, subtitle, description, backgroundColor, imageUr
         {imageUrl && (
           <CardMedia
             component="img"
-            alt="Custom Card Image"
-            height="90px"
+            alt="Imagem do CardMedia"
+            height="120px"
             src={imageUrl}
             sx={{
-              background: backgroundColor || theme.palette.primary.main,
+              background: backgroundColor || "primary.main",
               objectFit: "fill",
-              width: lgUp ? "90px" : "200px",
+              width: "auto !important",
               padding: "0px !important",
+              minWidth: "70px",
             }}
           />
         )}
