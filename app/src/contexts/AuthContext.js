@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [parceiroData, setParceiroData] = useState(null);
+  const [adminData, setAdminData] = useState(null);
 
   /**
    * Function to handle user login.
@@ -139,9 +140,33 @@ export const AuthProvider = ({ children }) => {
       });
   };
 
+  /**
+   * Retrieves the admin data using the provided token.
+   *
+   * @param {string} token - The authentication token.
+   * @return {Promise} A promise that resolves with the admin data or rejects with an error.
+   */
+  const getAdminData = token => {
+    return authService
+      .getAdmin(token, 1)
+      .then(dadosAdmin => {
+        // Check if the user data has changed before updating the context
+        if (!isEqual(dadosAdmin, adminData)) {
+          setAdminData(dadosAdmin);
+        }
+      })
+      .catch(error => {
+        setAdminData(null);
+        console.error("Error fetching admin data:", error);
+        throw error;
+      });
+  };
+
   // Return the child components wrapped in AuthContext.Provider
   return (
-    <AuthContext.Provider value={{ user, token, parceiroData, login, logout, register, getAuthUser, getParceiroData }}>
+    <AuthContext.Provider
+      value={{ user, token, parceiroData, adminData, login, logout, register, getAuthUser, getParceiroData, getAdminData }}
+    >
       {children}
     </AuthContext.Provider>
   );

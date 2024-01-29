@@ -50,22 +50,24 @@ const CardPrimario = ({ title, content, imageUrl }) => {
           />
         )}
       </Box>
-      <CardContent
-        sx={{
-          background: "white",
-          boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)",
-        }}
-      >
-        <Typography
-          variant="body1"
+      {content && (
+        <CardContent
           sx={{
-            fontWeight: 600,
-            lineHeight: "normal",
+            background: "white",
+            boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)",
           }}
         >
-          {content}
-        </Typography>
-      </CardContent>
+          <Typography
+            variant="body1"
+            sx={{
+              fontWeight: 600,
+              lineHeight: "normal",
+            }}
+          >
+            {content}
+          </Typography>
+        </CardContent>
+      )}
     </Card>
   );
 };
