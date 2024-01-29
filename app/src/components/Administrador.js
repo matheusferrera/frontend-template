@@ -1,15 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import InfoIcon from "@mui/icons-material/Info";
 import { Box, Container, Link, Typography } from "@mui/material";
 
 import imagemPrimaria from "../assets/images/Ilustra-Admin.png";
+import { useAuth } from "../contexts/AuthContext";
 import CardBreadcrumb from "./cards/CardBreadcrumb";
 import CardPrimario from "./cards/CardPrimario";
 import CardServicos from "./cards/CardServicos";
 import CardVisaoGeral from "./cards/CardVisaoGeral";
 
 const Administrador = () => {
+  const { adminData, token, getAdminData } = useAuth();
+  const [fetched, setFetched] = useState(false); // Track if data has been fetched
+  const [dadosConsolidados, setDadosConsolidados] = useState({
+    listaPermissao: {
+      permissao1: false,
+      permissao2: false,
+    },
+    listaVisaoGeral: {
+      "Parceiros Pendentes": 15,
+      "Cursos Pendentes": 20,
+      "Novas Vagas de Trabalho": 100,
+      "Novos Interessados em Empreendedorismo": 10,
+      "Parceiros Aprovados": 5,
+      "Cursos Aprovados": 35,
+      "Vagas Encerrando em até 10 dias": 23,
+      "Interesses excluídos": 5,
+      "Parceiros Reprovados": 25,
+      "Vagas sem Validade": 23,
+      "Interessados em Empreendedorismo": 20,
+      "Parceiros Inativados": 2,
+      "Cursos Inativados": 20,
+      "Vagas Inativadas": 20,
+    },
+  });
+
+  useEffect(() => {
+    if (token && !fetched) {
+      getAdminData(token)
+        .then(() => setFetched(true))
+        .catch(error => {
+          console.error("Error fetching admin data:", error);
+        });
+    }
+  }, [token, fetched]); // Only run if token or fetched status changes
+
+  useEffect(() => {
+    if (adminData) {
+      const { permissao_list, visao_geral_list } = adminData;
+      setDadosConsolidados({
+        listaPermissao: permissao_list,
+        listaVisaoGeral: visao_geral_list,
+      });
+    }
+  }, [adminData]);
+
   return (
     <Container
       maxWidth="lg"
@@ -30,8 +76,7 @@ const Administrador = () => {
       </Typography>
 
       <CardPrimario
-        title="Progredir Administradtivo"
-        content="A situação do seu cadastro é: [Situação do Cadastro] desde 99/99/9999"
+        title="Administrativo"
         imageUrl={imagemPrimaria}
       />
 
@@ -44,7 +89,10 @@ const Administrador = () => {
         Visão Geral
       </Typography>
 
-      <CardVisaoGeral backgroundColor="#ffffff" />
+      <CardVisaoGeral
+        backgroundColor="common.white"
+        services={dadosConsolidados.listaVisaoGeral}
+      />
 
       <Typography
         variant="h4"

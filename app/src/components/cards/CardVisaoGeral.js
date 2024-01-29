@@ -1,83 +1,55 @@
 import React from "react";
 
-import { Card, Grid, Typography } from "@mui/material";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
+import PropTypes from "prop-types";
 
-const services = [
-  { title: "Parceiros Pendentes", number: 15 },
-  { title: "Cursos Pendentes", number: 20 },
-  { title: "Novas Vagas de Trabalho", number: 100 },
-  { title: "Novos Interessados em Empreendedorismo", number: 10 },
-  { title: "Parceiros Aprovados", number: 5 },
-  { title: "Cursos Aprovados", number: 35 },
-  { title: "Vagas Encerrando em até 10 dias", number: 23 },
-  { title: "Interesses excluídos", number: 5 },
-  { title: "Parceiros Reporvados", number: 25 },
-  { title: "Vagas sem Validade", number: 23 },
-  { title: "Interessados em empreenderorismo", number: 20 },
-  { title: "Parceiros Inativados", number: 2 },
-  { title: "Cursos Inativados", number: 20 },
-  { title: "Vagas Inativadas", number: 20 },
-];
-
-const CardVisaoGeral = () => {
+const CardVisaoGeral = ({ services }) => {
   return (
     <Grid
       container
-      spacing={2}
+      spacing={1.5}
       mt={2}
-      sx={{
-        width: "fixed",
-        maxWidth: "1008px",
-        height: "auto",
-        maxHeight: "248px",
-        marginLeft: "1px",
-      }}
+      xs={12}
     >
-      {services.map((services, index) => (
-        <Grid key={index}>
-          <Card
-            sx={{
-              backgroundColor: "#ffffff",
-              border: "1px solid",
-              borderRadius: "4px",
-              borderColor: "#D3D3D3",
-              maxWidth: "400px",
-              maxHeight: "45px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "relative",
-              color: "primary.main",
-              boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)",
-              padding: "16px 8px",
-              marginRight: "14px",
-              marginBottom: "14px",
-            }}
-          >
-            <Typography
-              align="left"
+      {Object.entries(services).map(([title, number], index) => (
+        <Grid
+          item
+          key={index}
+        >
+          {/* {service.hasChanged && (
+            <Box
               sx={{
-                mb: 0.5,
-                marginRight: "5px",
-                fontSize: "22px",
-                fontWeight: "700",
-                height: "30px",
-                fontStyle: "normal",
+                position: "relative",
+                width: "12px",
+                height: "12px",
+                backgroundColor: "primary.main",
+                borderRadius: "50%",
+                top: "10px",
+                zIndex: 10,
+              }}
+            ></Box>
+          )} */}
+          <Card sx={{ borderRadius: "8px", boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)" }}>
+            <CardContent
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
                 color: "primary.main",
+                paddingTop: "6px",
+                paddingBottom: "6px !important",
+                gap: "8px",
+                position: "relative",
               }}
             >
-              {services.number}
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "16px",
-                fontWeight: "600",
-                fontStyle: "bold",
-                color: "primary.main",
-              }}
-            >
-              {services.title}
-            </Typography>
+              <Typography
+                variant="h4"
+                sx={{ fontSize: "22px" }}
+              >
+                {number}
+              </Typography>
+              <Typography variant="subtitle1">{title}</Typography>
+            </CardContent>
           </Card>
         </Grid>
       ))}
@@ -85,4 +57,12 @@ const CardVisaoGeral = () => {
   );
 };
 
+CardVisaoGeral.propTypes = {
+  services: PropTypes.objectOf(
+    PropTypes.shape({
+      number: PropTypes.number,
+      title: PropTypes.string,
+    }),
+  ).isRequired,
+};
 export default CardVisaoGeral;
