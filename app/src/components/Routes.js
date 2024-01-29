@@ -25,18 +25,6 @@ const AuthRoutes = () => {
         element={<Register />}
       />
       <Route
-        path="/admin"
-        element={<Administrador />}
-      />
-      <Route
-        path="/parceiro"
-        element={<Parceiro />}
-      />
-      <Route
-        path="/cidadao"
-        element={<Cidadao />}
-      />
-      <Route
         path="*"
         element={<Login />}
       />
@@ -70,6 +58,18 @@ const ProtectedRoutes = () => {
       <Route
         path="/profile"
         element={<Profile />}
+      />
+      <Route
+        path="/admin"
+        element={<Administrador />}
+      />
+      <Route
+        path="/parceiro"
+        element={<Parceiro />}
+      />
+      <Route
+        path="/cidadao"
+        element={<Cidadao />}
       />
       <Route
         path="*"

@@ -39,7 +39,7 @@ const CardPrimario = ({ title, content, imageUrl }) => {
         {lgUp && (
           <CardMedia
             component="img"
-            alt="Custom Card Image"
+            alt="Imagem do Card"
             height="250"
             src={imageUrl}
             sx={{

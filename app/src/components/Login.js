@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
@@ -26,7 +26,10 @@ import TermoDeUsoModal from "./TermoDeUsoModal";
 const Login = () => {
   const { login } = useAuth();
   const theme = useTheme();
+
   const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -68,7 +71,12 @@ const Login = () => {
 
     login(values.email, values.password)
       .then(() => {
-        navigate("/profile");
+        if (currentPath) {
+          // Redirects back to the previous unauthenticated routes
+          navigate(currentPath);
+        } else {
+          navigate("/profile");
+        }
       })
       .catch(error => {
         const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
