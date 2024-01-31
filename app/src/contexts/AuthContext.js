@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [parceiroData, setParceiroData] = useState(null);
   const [adminData, setAdminData] = useState(null);
+  const [cidadaoData, setCidadaoData] = useState(null);
 
   /**
    * Function to handle user login.
@@ -162,10 +163,35 @@ export const AuthProvider = ({ children }) => {
       });
   };
 
+  /**
+   * Retrieves the cidadao data using the provided token.
+   *
+   * @param {string} token - The authentication token.
+   * @return {Promise} A promise that resolves with the cidadao data or rejects with an error.
+   */
+  const getCidadaoData = token => {
+    return authService
+      .getTrabalhador(token, 1) // enviando o id do cidadao
+      .then(dadosCidadao => {
+        // Check if the user data has changed before updating the context
+        if (!isEqual(dadosCidadao, cidadaoData)) {
+          setCidadaoData(dadosCidadao);
+        }
+      })
+      .catch(error => {
+        setCidadaoData(null);
+        console.error("Error fetching cidadão data:", error);
+        throw error;
+      });
+  };
+
   // Return the child components wrapped in AuthContext.Provider
   return (
     <AuthContext.Provider
-      value={{ user, token, parceiroData, adminData, login, logout, register, getAuthUser, getParceiroData, getAdminData }}
+      value={{
+        user, token, parceiroData, adminData, cidadaoData, login, logout, register, getAuthUser, getParceiroData, getAdminData,
+        getCidadaoData
+      }}
     >
       {children}
     </AuthContext.Provider>
