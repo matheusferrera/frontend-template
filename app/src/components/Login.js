@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -16,6 +17,7 @@ import { useTheme } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { Form, Formik } from "formik";
+import PropTypes from "prop-types";
 import * as Yup from "yup";
 
 import { useAuth } from "../contexts/AuthContext";
@@ -23,13 +25,11 @@ import AvisoDePrivacidadeModal from "./AvisoDePrivacidadeModal";
 import Iconify from "./iconify";
 import TermoDeUsoModal from "./TermoDeUsoModal";
 
-const Login = () => {
+const Login = ({ redirectPath = "/profile" }) => {
   const { login } = useAuth();
   const theme = useTheme();
 
   const navigate = useNavigate();
-  const location = useLocation();
-  const currentPath = location.pathname;
 
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -71,12 +71,7 @@ const Login = () => {
 
     login(values.email, values.password)
       .then(() => {
-        if (currentPath) {
-          // Redirects back to the previous unauthenticated routes
-          navigate(currentPath);
-        } else {
-          navigate("/profile");
-        }
+        navigate(redirectPath);
       })
       .catch(error => {
         const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
@@ -218,12 +213,12 @@ const Login = () => {
 
   return (
     <Box
-    // sx={{
-    //   ...bgGradient({
-    //     color: alpha(theme.palette.background.default, 0.9),
-    //   }),
-    //   height: 1,
-    // }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "100vh",
+      }}
     >
       <Stack
         alignItems="center"
@@ -247,10 +242,16 @@ const Login = () => {
           >
             Acesse aqui sua conta Progredir
           </Typography>
-
           {renderForm}
 
-          {/* Modals */}
+          <Button
+            variant="outlined"
+            sx={{ mt: 2 }}
+            href="/register"
+          >
+            Criar conta
+          </Button>
+
           <TermoDeUsoModal
             showModal={termoDeUsoModal}
             handleClose={handleTermoDeUsoClose}
@@ -263,6 +264,10 @@ const Login = () => {
       </Stack>
     </Box>
   );
+};
+
+Login.propTypes = {
+  redirectPath: PropTypes.string,
 };
 
 export default Login;

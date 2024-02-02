@@ -1,0 +1,32 @@
+stages:
+  - code_quality
+  # - test
+  # - build
+
+lint_and_format:
+  image: node:alpine3.19 
+  stage: code_quality
+  before_script:
+    - cd app/
+    - npm install eslint prettier eslint-plugin-react --save-dev
+  script:
+    - npm run lint
+    - npm run format
+
+# unit_tests:
+#   image: node:alpine3.19 
+#   stage: test
+#   before_script:
+#     - cd app/
+#     - npm install
+#   script:
+#     - npm test
+
+# react_build:
+#   image: node:alpine3.19 
+#   stage: build
+#   before_script:
+#     - cd app/
+#     - npm install
+#   script:
+#     - npm run-script build

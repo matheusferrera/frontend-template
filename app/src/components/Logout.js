@@ -5,22 +5,6 @@ import MenuItem from "@mui/material/MenuItem";
 
 import { useAuth } from "../contexts/AuthContext";
 
-// const OldLogout = () => {
-//   const navigate = useNavigate();
-//   const { token, logout } = useAuth();
-
-//   useEffect(() => {
-//     logout(token);
-//     navigate("/login");
-//   }, [logout]);
-
-//   return (
-//     <div>
-//       <p>Logging out...</p>
-//     </div>
-//   );
-// };
-
 const Logout = () => {
   const navigate = useNavigate();
   const { token, logout } = useAuth();

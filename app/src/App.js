@@ -2,6 +2,7 @@ import React from "react";
 
 import AppRoutes from "./components/Routes";
 import { AuthProvider } from "./contexts/AuthContext";
+import { DataProvider } from "./contexts/DataContext";
 import { useScrollToTop } from "./hooks/use-scroll-to-top";
 import ThemeProvider from "./theme";
 
@@ -12,9 +13,11 @@ const App = () => {
   useScrollToTop();
   return (
     <AuthProvider>
-      <ThemeProvider>
-        <AppRoutes />
-      </ThemeProvider>
+      <DataProvider>
+        <ThemeProvider>
+          <AppRoutes />
+        </ThemeProvider>
+      </DataProvider>
     </AuthProvider>
   );
 };
