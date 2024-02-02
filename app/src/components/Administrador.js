@@ -5,13 +5,15 @@ import { Box, Container, Link, Typography } from "@mui/material";
 
 import imagemPrimaria from "../assets/images/Ilustra-Admin.png";
 import { useAuth } from "../contexts/AuthContext";
+import { useData } from "../contexts/DataContext";
 import CardBreadcrumb from "./cards/CardBreadcrumb";
 import CardPrimario from "./cards/CardPrimario";
 import CardServicos from "./cards/CardServicos";
 import CardVisaoGeral from "./cards/CardVisaoGeral";
 
 const Administrador = () => {
-  const { adminData, token, getAdminData } = useAuth();
+  const { token } = useAuth();
+  const { adminData, getAdminData } = useData();
   const [fetched, setFetched] = useState(false); // Track if data has been fetched
   const [dadosConsolidados, setDadosConsolidados] = useState({
     listaPermissao: {

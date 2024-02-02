@@ -7,13 +7,15 @@ import imagemPrimaria from "../assets/images/Ilustra-Cidadao.png";
 import imagemMoco from "../assets/images/Ilustra-Cursos.png";
 import imagemMoca from "../assets/images/Ilustra-Emprego.png";
 import { useAuth } from "../contexts/AuthContext";
+import { useData } from "../contexts/DataContext";
 import CardBreadcrumb from "./cards/CardBreadcrumb";
 import CardPrimario from "./cards/CardPrimario";
 import CardSecundario from "./cards/CardSecundario";
 import CardServicos from "./cards/CardServicos";
 
 const Cidadao = () => {
-  const { cidadaoData, token, getCidadaoData } = useAuth();
+  const { token } = useAuth();
+  const { cidadaoData, getCidadaoData } = useData();
   const [fetched, setFetched] = useState(false); // Track if data has been fetched
   const [dadosConsolidados, setDadosConsolidados] = useState({
     situacao: "Carregando...",

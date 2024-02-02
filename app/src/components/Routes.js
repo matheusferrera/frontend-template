@@ -4,21 +4,34 @@ import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Administrador from "./Administrador";
 import Cidadao from "./Cidadao";
-import DashboardLayout from "./dashboard";
 import Home from "./Home";
+import HubLogin from "./HubLogin";
 import Login from "./Login";
 import Logout from "./Logout";
 import NotFound from "./NotFound";
 import Parceiro from "./Parceiro";
 import Profile from "./Profile";
 import Register from "./Register";
+import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";
 
 const AuthRoutes = () => {
   return (
     <Routes>
       <Route
+        path="/parceiro_login"
+        element={<Login redirectPath="/parceiro" />}
+      />
+      <Route
+        path="/admin_login"
+        element={<Login redirectPath="/admin" />}
+      />
+      <Route
+        path="/cidadao_login"
+        element={<Login redirectPath="/cidadao" />}
+      />
+      <Route
         path="/login"
-        element={<Login />}
+        element={<HubLogin />}
       />
       <Route
         path="/register"
@@ -26,7 +39,7 @@ const AuthRoutes = () => {
       />
       <Route
         path="*"
-        element={<Login />}
+        element={<HubLogin />}
       />
     </Routes>
   );
@@ -84,12 +97,14 @@ const AppRoutes = () => {
 
   const routes = useRoutes([
     {
-      element: (
-        <DashboardLayout>
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <Outlet />
-          </React.Suspense>
-        </DashboardLayout>
+      element: token ? (
+        <DashboardLayoutWithSuspense>
+          <Outlet />
+        </DashboardLayoutWithSuspense>
+      ) : (
+        <NoDashboardLayout>
+          <Outlet />
+        </NoDashboardLayout>
       ),
       children: [{ path: "*", element: token ? <ProtectedRoutes /> : <AuthRoutes /> }],
     },

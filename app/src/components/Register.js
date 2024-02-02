@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -256,21 +257,13 @@ const Register = () => {
 
   return (
     <Box
-    // sx={{
-    //   ...bgGradient({
-    //     color: alpha(theme.palette.background.default, 0.9),
-    //   }),
-    //   height: 1,
-    // }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "100vh",
+      }}
     >
-      {/* <Logo
-        sx={{
-          position: "fixed",
-          top: { xs: 16, md: 24 },
-          left: { xs: 16, md: 24 },
-        }}
-      /> */}
-
       <Stack
         alignItems="center"
         justifyContent="center"
@@ -296,7 +289,14 @@ const Register = () => {
 
           {renderForm}
 
-          {/* Modals */}
+          <Button
+            variant="outlined"
+            sx={{ mt: 2 }}
+            href="/login"
+          >
+            Já possuo conta
+          </Button>
+
           <TermoDeUsoModal
             showModal={termoDeUsoModal}
             handleClose={handleTermoDeUsoClose}
