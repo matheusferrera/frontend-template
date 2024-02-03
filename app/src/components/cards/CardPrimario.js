@@ -53,7 +53,7 @@ const CardPrimario = ({ title, content, imageUrl }) => {
       {content && (
         <CardContent
           sx={{
-            background: "white",
+            background: "common.white",
             boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)",
           }}
         >

@@ -38,6 +38,9 @@ export const AuthProvider = ({ children }) => {
       .then(userDetails => {
         // Ensure that userDetails is truthy before setting user
         if (userDetails) {
+          if (!userDetails.photo_path) {
+            userDetails.photo_path = "/assets/images/avatars/avatar_25.jpg";
+          }
           setUser(userDetails);
         } else {
           throw new Error("Invalid user details received");
@@ -103,6 +106,9 @@ export const AuthProvider = ({ children }) => {
     return authService
       .getAuthUser(token)
       .then(userDetails => {
+        if (!userDetails.photo_path) {
+          userDetails.photo_path = "/assets/images/avatars/avatar_25.jpg";
+        }
         // Check if the user data has changed before updating the context
         if (!isEqual(userDetails, user)) {
           setUser(userDetails);

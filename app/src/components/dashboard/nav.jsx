@@ -9,7 +9,7 @@ import { alpha } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
-import { account } from "../../_mock/account";
+import { useAuth } from "../../contexts/AuthContext";
 import { usePathname } from "../../hooks/use-pathname";
 import { useResponsive } from "../../hooks/use-responsive";
 import Iconify from "../iconify";
@@ -22,8 +22,15 @@ import navConfig from "./config-navigation";
 
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
-
   const upLg = useResponsive("up", "lg");
+  const { user } = useAuth();
+
+  const account = {
+    displayName: user?.name,
+    email: user?.email,
+    photoURL: user?.photo_path,
+    role: user?.role,
+  };
 
   useEffect(() => {
     if (openNav) {

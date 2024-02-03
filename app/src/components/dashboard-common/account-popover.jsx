@@ -11,7 +11,7 @@ import Popover from "@mui/material/Popover";
 import { alpha } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-import { account } from "../../_mock/account";
+import { useAuth } from "../../contexts/AuthContext";
 import Logout from "../Logout";
 
 // ----------------------------------------------------------------------
@@ -39,6 +39,14 @@ const MENU_OPTIONS = [
 export default function AccountPopover() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(null);
+  const { user } = useAuth();
+
+  const account = {
+    displayName: user?.name,
+    email: user?.email,
+    photoURL: user?.photo_path,
+    role: user?.role,
+  };
 
   const handleOpen = event => {
     setOpen(event.currentTarget);
@@ -74,7 +82,7 @@ export default function AccountPopover() {
             border: theme => `solid 2px ${theme.palette.background.default}`,
           }}
         >
-          {account.displayName.charAt(0).toUpperCase()}
+          {account.displayName ? account.displayName.charAt(0).toUpperCase() : ""}
         </Avatar>
       </IconButton>
 
