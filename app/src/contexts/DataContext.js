@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 import isEqual from "lodash/isEqual";
 
 import authService from "../services/auth.service";
+import { useAuth } from "./AuthContext";
 
 const DataContext = createContext();
 
@@ -17,6 +18,7 @@ export const DataProvider = ({ children }) => {
   const [parceiroData, setParceiroData] = useState(null);
   const [adminData, setAdminData] = useState(null);
   const [cidadaoData, setCidadaoData] = useState(null);
+  const { logout } = useAuth();
 
   /**
    * Retrieves the parceiro data using the provided token.
@@ -33,6 +35,9 @@ export const DataProvider = ({ children }) => {
         }
       })
       .catch(error => {
+        if (error.response.data.message === "Token inválido") {
+          logout(token);
+        }
         setParceiroData(null);
         console.error("Error fetching parceiro data:", error);
         throw error;
@@ -54,6 +59,9 @@ export const DataProvider = ({ children }) => {
         }
       })
       .catch(error => {
+        if (error.response.data.message === "Token inválido") {
+          logout(token);
+        }
         setAdminData(null);
         console.error("Error fetching admin data:", error);
         throw error;
@@ -75,6 +83,9 @@ export const DataProvider = ({ children }) => {
         }
       })
       .catch(error => {
+        if (error.response.data.message === "Token inválido") {
+          logout(token);
+        }
         setCidadaoData(null);
         console.error("Error fetching cidadão data:", error);
         throw error;

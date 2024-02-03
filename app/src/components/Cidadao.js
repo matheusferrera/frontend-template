@@ -8,13 +8,14 @@ import imagemMoco from "../assets/images/Ilustra-Cursos.png";
 import imagemMoca from "../assets/images/Ilustra-Emprego.png";
 import { useAuth } from "../contexts/AuthContext";
 import { useData } from "../contexts/DataContext";
+import { formatDate } from "../utils/format-time";
 import CardBreadcrumb from "./cards/CardBreadcrumb";
 import CardPrimario from "./cards/CardPrimario";
 import CardSecundario from "./cards/CardSecundario";
 import CardServicos from "./cards/CardServicos";
 
 const Cidadao = () => {
-  const { token } = useAuth();
+  const { user, token } = useAuth();
   const { cidadaoData, getCidadaoData } = useData();
   const [fetched, setFetched] = useState(false); // Track if data has been fetched
   const [dadosConsolidados, setDadosConsolidados] = useState({
@@ -26,6 +27,8 @@ const Cidadao = () => {
       permissao2: false,
     },
   });
+
+  const formattedDate = formatDate(user.created_at);
 
   useEffect(() => {
     if (token && !fetched) {
@@ -69,7 +72,7 @@ const Cidadao = () => {
 
       <CardPrimario
         title="Programa Redução da Pobreza"
-        content={`A situação do seu cadastro é: ${dadosConsolidados.situacao} desde 99/99/9999`}
+        content={`A situação do seu cadastro é: ${dadosConsolidados.situacao} desde ${formattedDate}`}
         imageUrl={imagemPrimaria}
       />
 
