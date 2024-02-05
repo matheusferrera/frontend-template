@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
 import { useAuth } from "../../contexts/AuthContext";
+import { useNavContent } from "../../contexts/NavContentContext";
 import { usePathname } from "../../hooks/use-pathname";
 import { useResponsive } from "../../hooks/use-responsive";
 import Iconify from "../iconify";
@@ -24,6 +25,9 @@ export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
   const upLg = useResponsive("up", "lg");
   const { user } = useAuth();
+  const { navContent } = useNavContent();
+
+  const renderNavContent = navContent ? navContent : navConfig;
 
   const account = {
     displayName: user?.name,
@@ -77,7 +81,7 @@ export default function Nav({ openNav, onCloseNav }) {
       spacing={0.5}
       sx={{ px: 2 }}
     >
-      {navConfig.map(item => (
+      {renderNavContent.map(item => (
         <NavItem
           key={item.title}
           item={item}
