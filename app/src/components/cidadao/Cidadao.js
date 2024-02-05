@@ -3,16 +3,18 @@ import React, { useEffect, useState } from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
 
-import imagemPrimaria from "../assets/images/Ilustra-Cidadao.png";
-import imagemMoco from "../assets/images/Ilustra-Cursos.png";
-import imagemMoca from "../assets/images/Ilustra-Emprego.png";
-import { useAuth } from "../contexts/AuthContext";
-import { useData } from "../contexts/DataContext";
-import { formatDate } from "../utils/format-time";
-import CardBreadcrumb from "./cards/CardBreadcrumb";
-import CardPrimario from "./cards/CardPrimario";
-import CardSecundario from "./cards/CardSecundario";
-import CardServicos from "./cards/CardServicos";
+import imagemPrimaria from "../../assets/images/Ilustra-Cidadao.png";
+import imagemMoco from "../../assets/images/Ilustra-Cursos.png";
+import imagemMoca from "../../assets/images/Ilustra-Emprego.png";
+import { useAuth } from "../../contexts/AuthContext";
+import { useData } from "../../contexts/DataContext";
+import { useNavContent } from "../../contexts/NavContentContext";
+import { formatDate } from "../../utils/format-time";
+import CardBreadcrumb from "../cards/CardBreadcrumb";
+import CardPrimario from "../cards/CardPrimario";
+import CardSecundario from "../cards/CardSecundario";
+import CardServicos from "../cards/CardServicos";
+import cidadaoNav from "./CidadaoNav";
 
 const Cidadao = () => {
   const { user, token } = useAuth();
@@ -27,6 +29,7 @@ const Cidadao = () => {
       permissao2: false,
     },
   });
+  const { setNavContent } = useNavContent();
 
   const formattedDate = formatDate(user.created_at);
 
@@ -51,6 +54,11 @@ const Cidadao = () => {
       });
     }
   }, [cidadaoData]);
+
+  useEffect(() => {
+    setNavContent(cidadaoNav);
+  }, []);
+
   return (
     <Container
       maxWidth="lg"

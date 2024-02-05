@@ -2,14 +2,14 @@ import React from "react";
 import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 
 import { useAuth } from "../contexts/AuthContext";
-import Administrador from "./Administrador";
-import Cidadao from "./Cidadao";
+import Administrador from "./administrador/Administrador";
+import Cidadao from "./cidadao/Cidadao";
 import Home from "./Home";
 import HubLogin from "./HubLogin";
 import Login from "./Login";
 import Logout from "./Logout";
 import NotFound from "./NotFound";
-import Parceiro from "./Parceiro";
+import Parceiro from "./parceiro/Parceiro";
 import Profile from "./Profile";
 import Register from "./Register";
 import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";

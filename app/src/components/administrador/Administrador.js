@@ -3,13 +3,15 @@ import React, { useEffect, useState } from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import { Box, Container, Link, Typography } from "@mui/material";
 
-import imagemPrimaria from "../assets/images/Ilustra-Admin.png";
-import { useAuth } from "../contexts/AuthContext";
-import { useData } from "../contexts/DataContext";
-import CardBreadcrumb from "./cards/CardBreadcrumb";
-import CardPrimario from "./cards/CardPrimario";
-import CardServicos from "./cards/CardServicos";
-import CardVisaoGeral from "./cards/CardVisaoGeral";
+import imagemPrimaria from "../../assets/images/Ilustra-Admin.png";
+import { useAuth } from "../../contexts/AuthContext";
+import { useData } from "../../contexts/DataContext";
+import { useNavContent } from "../../contexts/NavContentContext";
+import CardBreadcrumb from "../cards/CardBreadcrumb";
+import CardPrimario from "../cards/CardPrimario";
+import CardServicos from "../cards/CardServicos";
+import CardVisaoGeral from "../cards/CardVisaoGeral";
+import administradorNav from "./AdministradorNav";
 
 const Administrador = () => {
   const { token } = useAuth();
@@ -37,6 +39,7 @@ const Administrador = () => {
       "Vagas Inativadas": 20,
     },
   });
+  const { setNavContent } = useNavContent();
 
   useEffect(() => {
     if (token && !fetched) {
@@ -57,6 +60,10 @@ const Administrador = () => {
       });
     }
   }, [adminData]);
+
+  useEffect(() => {
+    setNavContent(administradorNav);
+  }, []);
 
   return (
     <Container
