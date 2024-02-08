@@ -1,4 +1,4 @@
-export const RegisterMockData = {
+export const registerMockData = {
   data: {
     results: [
       {
