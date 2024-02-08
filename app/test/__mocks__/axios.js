@@ -1,10 +1,10 @@
-import jest from "@jest/globals";
-
-import { loginMockData } from "../mockData";
+/* eslint-disable no-undef */
+import { loginMockData, registerMockData } from "../mockData";
 
 // Cria um objeto simulado que atua como uma versão personalizada do Axios
 const customAxios = {
-  get: jest.fn().mockResolvedValue(loginMockData),
+  mockLogin: jest.fn().mockResolvedValue(loginMockData),
+  mockRegister: jest.fn().mockResolvedValue(registerMockData),
 };
 
 export default customAxios;
