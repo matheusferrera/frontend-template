@@ -1,36 +1,27 @@
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { BrowserRouter as Router } from "react-router-dom";
 
 import { describe, expect, it, jest } from "@jest/globals";
 import { fireEvent, render, screen } from "@testing-library/react";
 import axios from "axios";
 
 import Login from "../src/components/Login";
-import { AuthProvider } from "../src/contexts/AuthContext";
-import { DataProvider } from "../src/contexts/DataContext";
-import { NavContentProvider } from "../src/contexts/NavContentContext";
 import ThemeProvider from "../src/theme";
 import { loginMockData } from "./mockData";
+import { TestWrapper } from "./testWrapper";
 
-jest.mock("axios"); // Mockando o módulo axios
+// jest.mock("axios"); // Mockando o módulo axios
 jest.mock("../src/components/AvisoDePrivacidadeModal");
 jest.mock("../src/components/TermoDeUsoModal");
 
 describe("Teste de login", () => {
   it("Teste de login usando mock", async () => {
     render(
-      <Router>
-        <AuthProvider>
-          <DataProvider>
-            <NavContentProvider>
-              <ThemeProvider>
-                <Login />
-              </ThemeProvider>
-            </NavContentProvider>
-          </DataProvider>
-        </AuthProvider>
-      </Router>,
+      <TestWrapper>
+        <ThemeProvider>
+          <Login />
+        </ThemeProvider>
+      </TestWrapper>,
     );
 
     const emailInput = screen.getByLabelText("Email");

@@ -1,0 +1,926 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
+>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-ywhdiz-MuiTypography-root"
+  >
+    Seja bem-vindo ao
+  </h4>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1sc1gp4-MuiPaper-root-MuiCard-root"
+  >
+    <div
+      className="MuiBox-root css-k008qs"
+    >
+      <div
+        className="MuiCardHeader-root css-1ean1qp-MuiCardHeader-root"
+      >
+        <div
+          className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+        >
+          <h2
+            className="MuiTypography-root MuiTypography-h2 css-1r70bye-MuiTypography-root"
+          >
+            Programa Redução da Pobreza
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root css-k6kic3-MuiCardContent-root"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-15qqw0x-MuiTypography-root"
+      >
+        A situação do seu cadastro é: Carregando... desde NaN/NaN/NaN
+      </p>
+    </div>
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+  >
+    Serviços ofertados
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-4muqlg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="SchoolIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Cursos
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="RocketLaunchIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9.19 6.35c-2.04 2.29-3.44 5.58-3.57 5.89L2 10.69l4.05-4.05c.47-.47 1.15-.68 1.81-.55l1.33.26zM11.17 17s3.74-1.55 5.89-3.7c5.4-5.4 4.5-9.62 4.21-10.57-.95-.3-5.17-1.19-10.57 4.21C8.55 9.09 7 12.83 7 12.83L11.17 17zm6.48-2.19c-2.29 2.04-5.58 3.44-5.89 3.57L13.31 22l4.05-4.05c.47-.47.68-1.15.55-1.81l-.26-1.33zM9 18c0 .83-.34 1.58-.88 2.12C6.94 21.3 2 22 2 22s.7-4.94 1.88-6.12C4.42 15.34 5.17 15 6 15c1.66 0 3 1.34 3 3zm4-9c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Empreendedorismo
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="BusinessCenterIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 16v-1H3.01L3 19c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2v-4h-7v1h-4zm10-9h-4.01V5l-2-2h-4l-2 2v2H4c-1.1 0-2 .9-2 2v3c0 1.11.89 2 2 2h6v-2h4v2h6c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-6 0h-4V5h4v2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Trabalho
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ManageAccountsIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="10"
+              cy="8"
+              r="4"
+            />
+            <path
+              d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Estágios
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="PersonAddIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Jovem Aprendiz
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+  >
+    Serviços disponíveis
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-12c6nxs-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13g8ul4-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-5x7opq-MuiCardContent-root"
+        >
+          <div
+            className="MuiStack-root css-1wh9imp-MuiStack-root"
+          >
+            <h1
+              className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
+            >
+              ...
+            </h1>
+            <div
+              className="MuiBox-root css-0"
+            >
+              <h3
+                className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
+              >
+                Vagas de Emprego
+              </h3>
+              <h6
+                className="MuiTypography-root MuiTypography-h6 css-1en8a1y-MuiTypography-root"
+              >
+                Disponíveis em diversas áreas
+              </h6>
+            </div>
+          </div>
+          <img
+            alt="Imagem do CardMedia"
+            className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-egfnts-MuiCardMedia-root"
+            height="120px"
+            src="<div>Imagem</div>"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13g8ul4-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-1anrgfo-MuiCardContent-root"
+        >
+          <div
+            className="MuiStack-root css-1wh9imp-MuiStack-root"
+          >
+            <h1
+              className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
+            >
+              ...
+            </h1>
+            <div
+              className="MuiBox-root css-0"
+            >
+              <h3
+                className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
+              >
+                Vagas de Cursos
+              </h3>
+              <h6
+                className="MuiTypography-root MuiTypography-h6 css-1en8a1y-MuiTypography-root"
+              >
+                Disponíveis em diversas áreas
+              </h6>
+            </div>
+          </div>
+          <img
+            alt="Imagem do CardMedia"
+            className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-1cn2blb-MuiCardMedia-root"
+            height="120px"
+            src="<div>Imagem</div>"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root css-1rgaj84"
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="InfoIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+      />
+    </svg>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1no9ono-MuiTypography-root"
+    >
+      No caso de dúvidas e/ou problemas, acesse
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Perguntas Frequentes
+      </a>
+      . Caso o problema persista, envie e-mail para redeprogredir.senisp@cidadania.gov.br
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
+>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-ywhdiz-MuiTypography-root"
+  >
+    Seja bem-vindo a
+  </h4>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1sc1gp4-MuiPaper-root-MuiCard-root"
+  >
+    <div
+      className="MuiBox-root css-k008qs"
+    >
+      <div
+        className="MuiCardHeader-root css-1ean1qp-MuiCardHeader-root"
+      >
+        <div
+          className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+        >
+          <h2
+            className="MuiTypography-root MuiTypography-h2 css-1r70bye-MuiTypography-root"
+          >
+            Rede de Parceiros da Inclusão Socioeconomica
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root css-k6kic3-MuiCardContent-root"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-15qqw0x-MuiTypography-root"
+      >
+        A situação do seu cadastro é: ... desde NaN/NaN/NaN
+      </p>
+    </div>
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+  >
+    Serviços ofertados
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-4muqlg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="SchoolIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Cursos
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="RocketLaunchIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9.19 6.35c-2.04 2.29-3.44 5.58-3.57 5.89L2 10.69l4.05-4.05c.47-.47 1.15-.68 1.81-.55l1.33.26zM11.17 17s3.74-1.55 5.89-3.7c5.4-5.4 4.5-9.62 4.21-10.57-.95-.3-5.17-1.19-10.57 4.21C8.55 9.09 7 12.83 7 12.83L11.17 17zm6.48-2.19c-2.29 2.04-5.58 3.44-5.89 3.57L13.31 22l4.05-4.05c.47-.47.68-1.15.55-1.81l-.26-1.33zM9 18c0 .83-.34 1.58-.88 2.12C6.94 21.3 2 22 2 22s.7-4.94 1.88-6.12C4.42 15.34 5.17 15 6 15c1.66 0 3 1.34 3 3zm4-9c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Empreendedorismo
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="BusinessCenterIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 16v-1H3.01L3 19c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2v-4h-7v1h-4zm10-9h-4.01V5l-2-2h-4l-2 2v2H4c-1.1 0-2 .9-2 2v3c0 1.11.89 2 2 2h6v-2h4v2h6c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-6 0h-4V5h4v2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Trabalho
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ManageAccountsIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="10"
+              cy="8"
+              r="4"
+            />
+            <path
+              d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Estágios
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="PersonAddIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Jovem Aprendiz
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+  >
+    Serviços disponíveis
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-12c6nxs-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13g8ul4-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-5x7opq-MuiCardContent-root"
+        >
+          <div
+            className="MuiStack-root css-1wh9imp-MuiStack-root"
+          >
+            <h1
+              className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
+            >
+              ...
+            </h1>
+            <div
+              className="MuiBox-root css-0"
+            >
+              <h3
+                className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
+              >
+                Vagas de Emprego
+              </h3>
+              <h6
+                className="MuiTypography-root MuiTypography-h6 css-1en8a1y-MuiTypography-root"
+              >
+                Disponíveis em diversas áreas
+              </h6>
+            </div>
+          </div>
+          <img
+            alt="Imagem do CardMedia"
+            className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-egfnts-MuiCardMedia-root"
+            height="120px"
+            src="<div>Imagem</div>"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13g8ul4-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-1anrgfo-MuiCardContent-root"
+        >
+          <div
+            className="MuiStack-root css-1wh9imp-MuiStack-root"
+          >
+            <h1
+              className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
+            >
+              ...
+            </h1>
+            <div
+              className="MuiBox-root css-0"
+            >
+              <h3
+                className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
+              >
+                Vagas de Cursos
+              </h3>
+              <h6
+                className="MuiTypography-root MuiTypography-h6 css-1en8a1y-MuiTypography-root"
+              >
+                Disponíveis em diversas áreas
+              </h6>
+            </div>
+          </div>
+          <img
+            alt="Imagem do CardMedia"
+            className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-1cn2blb-MuiCardMedia-root"
+            height="120px"
+            src="<div>Imagem</div>"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root css-1rgaj84"
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="InfoIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+      />
+    </svg>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1no9ono-MuiTypography-root"
+    >
+      No caso de dúvidas e/ou problemas, acesse
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Perguntas Frequentes
+      </a>
+      . Caso o problema persista, envie e-mail para redeprogredir.senisp@cidadania.gov.br
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Teste de componentes Página de administrador renderizada corretamente 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
+>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-ywhdiz-MuiTypography-root"
+  >
+    Seja bem-vindo ao
+  </h4>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1sc1gp4-MuiPaper-root-MuiCard-root"
+  >
+    <div
+      className="MuiBox-root css-k008qs"
+    >
+      <div
+        className="MuiCardHeader-root css-1ean1qp-MuiCardHeader-root"
+      >
+        <div
+          className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+        >
+          <h2
+            className="MuiTypography-root MuiTypography-h2 css-1r70bye-MuiTypography-root"
+          >
+            Administrativo
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+  >
+    Visão Geral
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1yofze3-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-pcamu6-MuiCardContent-root"
+        >
+          <h4
+            className="MuiTypography-root MuiTypography-h4 css-1pk5i0d-MuiTypography-root"
+          >
+            5
+          </h4>
+          <h6
+            className="MuiTypography-root MuiTypography-subtitle1 css-1ip3ks4-MuiTypography-root"
+          >
+            Mock
+          </h6>
+        </div>
+      </div>
+    </div>
+    )
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+  >
+    Serviços ofertados
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-4muqlg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="SchoolIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Cursos
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="RocketLaunchIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9.19 6.35c-2.04 2.29-3.44 5.58-3.57 5.89L2 10.69l4.05-4.05c.47-.47 1.15-.68 1.81-.55l1.33.26zM11.17 17s3.74-1.55 5.89-3.7c5.4-5.4 4.5-9.62 4.21-10.57-.95-.3-5.17-1.19-10.57 4.21C8.55 9.09 7 12.83 7 12.83L11.17 17zm6.48-2.19c-2.29 2.04-5.58 3.44-5.89 3.57L13.31 22l4.05-4.05c.47-.47.68-1.15.55-1.81l-.26-1.33zM9 18c0 .83-.34 1.58-.88 2.12C6.94 21.3 2 22 2 22s.7-4.94 1.88-6.12C4.42 15.34 5.17 15 6 15c1.66 0 3 1.34 3 3zm4-9c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Empreendedorismo
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="BusinessCenterIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 16v-1H3.01L3 19c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2v-4h-7v1h-4zm10-9h-4.01V5l-2-2h-4l-2 2v2H4c-1.1 0-2 .9-2 2v3c0 1.11.89 2 2 2h6v-2h4v2h6c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-6 0h-4V5h4v2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Trabalho
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ManageAccountsIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="10"
+              cy="8"
+              r="4"
+            />
+            <path
+              d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Estágios
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+    >
+      <div
+        className="MuiBox-root css-15iu2kj"
+      />
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="PersonAddIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+          >
+            Jovem Aprendiz
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root css-1rgaj84"
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="InfoIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+      />
+    </svg>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1no9ono-MuiTypography-root"
+    >
+      No caso de dúvidas e/ou problemas, acesse
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Perguntas Frequentes
+      </a>
+      . Caso o problema persista, envie e-mail para redeprogredir.senisp@cidadania.gov.br
+    </p>
+  </div>
+</div>
+`;
