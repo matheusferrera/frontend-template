@@ -1,4 +1,5 @@
-/* eslint-disable no-undef */
+import { jest } from "@jest/globals";
+
 import { loginMockData, registerMockData, userMockData } from "../test/mockData";
 
 // Cria um objeto simulado que atua como uma versão personalizada do Axios

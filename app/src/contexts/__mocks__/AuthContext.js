@@ -1,9 +1,8 @@
-/* eslint-disable no-undef */
+import React from "react";
 
-import React from 'react';
+import { jest } from "@jest/globals";
 
 import { loginMockData, registerMockData, userMockData } from "../../../test/mockData";
-
 
 export const AuthContext = React.createContext({
   user: jest.fn().mockResolvedValue(userMockData),

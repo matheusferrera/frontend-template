@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React from "react";
 
 const TermoDeUsoModal = ({ showModal, handleClose }) => {
-    return (
+  return (
+    <div>
+      {showModal && (
         <div>
-            {showModal && (
-                <div>
-                    This is a mocked TermoDeUsoModal
-                    <button onClick={handleClose}>Close</button>
-                </div>
-            )}
+          This is a mocked TermoDeUsoModal
+          <button onClick={handleClose}>Close</button>
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default TermoDeUsoModal;

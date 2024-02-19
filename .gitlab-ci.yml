@@ -1,6 +1,6 @@
 stages:
   - code_quality
-  # - test
+  - test
   # - build
 
 lint_and_format:
@@ -13,14 +13,14 @@ lint_and_format:
     - npm run lint
     - npm run format
 
-# unit_tests:
-#   image: node:alpine3.19 
-#   stage: test
-#   before_script:
-#     - cd app/
-#     - npm install
-#   script:
-#     - npm test
+unit_tests:
+  image: node:alpine3.19 
+  stage: test
+  before_script:
+    - cd app/
+    - npm install
+  script:
+    - npm test
 
 # react_build:
 #   image: node:alpine3.19 

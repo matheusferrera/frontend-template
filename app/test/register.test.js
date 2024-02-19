@@ -6,7 +6,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import axios from "axios";
 
 import Register from "../src/components/Register";
-import ThemeProvider from "../src/theme";
 import { registerMockData } from "./mockData";
 import { TestWrapper } from "./testWrapper";
 
@@ -18,9 +17,7 @@ describe("Teste de registro", () => {
   it("Teste de registro usando mock", async () => {
     render(
       <TestWrapper>
-        <ThemeProvider>
-          <Register />
-        </ThemeProvider>
+        <Register />
       </TestWrapper>,
     );
 

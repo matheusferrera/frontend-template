@@ -6,7 +6,6 @@ import { describe, expect, it, jest } from "@jest/globals";
 import Administrador from "../src/components/administrador/Administrador";
 import Cidadao from "../src/components/cidadao/Cidadao";
 import Parceiro from "../src/components/parceiro/Parceiro";
-import ThemeProvider from "../src/theme";
 import { TestWrapper } from "./testWrapper";
 
 jest.mock("../src/assets/images/Ilustra-Admin.png", () => "<div>Imagem</div>");
@@ -21,9 +20,7 @@ describe("Teste de componentes", () => {
   it("Página de administrador renderizada corretamente", () => {
     const component = renderer.create(
       <TestWrapper>
-        <ThemeProvider>
-          <Administrador />
-        </ThemeProvider>
+        <Administrador />
       </TestWrapper>,
     );
 
@@ -34,9 +31,7 @@ describe("Teste de componentes", () => {
   it("Página de Cidadão renderizada corretamente", async () => {
     const component = renderer.create(
       <TestWrapper>
-        <ThemeProvider>
-          <Cidadao />
-        </ThemeProvider>
+        <Cidadao />
       </TestWrapper>,
     );
 
@@ -47,9 +42,7 @@ describe("Teste de componentes", () => {
   it("Página de Parceiro renderizada corretamente", async () => {
     const component = renderer.create(
       <TestWrapper>
-        <ThemeProvider>
-          <Parceiro />
-        </ThemeProvider>
+        <Parceiro />
       </TestWrapper>,
     );
 
