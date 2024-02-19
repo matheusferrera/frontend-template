@@ -6,7 +6,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import axios from "axios";
 
 import Login from "../src/components/Login";
-import ThemeProvider from "../src/theme";
 import { loginMockData } from "./mockData";
 import { TestWrapper } from "./testWrapper";
 
@@ -18,9 +17,7 @@ describe("Teste de login", () => {
   it("Teste de login usando mock", async () => {
     render(
       <TestWrapper>
-        <ThemeProvider>
-          <Login />
-        </ThemeProvider>
+        <Login />
       </TestWrapper>,
     );
 

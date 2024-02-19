@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 import isEqual from "lodash/isEqual";
 
@@ -17,6 +17,16 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
 
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+    const storedUser = localStorage.getItem("user");
+
+    if (storedToken && storedUser) {
+      setUser(JSON.parse(storedUser));
+      setToken(storedToken);
+    }
+  }, []);
+
   /**
    * Function to handle user login.
    * @param {string} email - The user's email.
@@ -30,6 +40,7 @@ export const AuthProvider = ({ children }) => {
         // Ensure that token is truthy before setting it
         if (token) {
           setToken(token);
+          localStorage.setItem("token", token);
           return authService.getAuthUser(token);
         } else {
           throw new Error("Invalid token received");
@@ -42,6 +53,7 @@ export const AuthProvider = ({ children }) => {
             userDetails.photo_path = "/assets/images/avatars/avatar_25.jpg";
           }
           setUser(userDetails);
+          localStorage.setItem("user", JSON.stringify(userDetails));
         } else {
           throw new Error("Invalid user details received");
         }
@@ -49,6 +61,8 @@ export const AuthProvider = ({ children }) => {
       .catch(error => {
         setUser(null);
         setToken(null);
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
         console.error("Login error:", error);
         // Rethrow the error to propagate it to the calling code
         throw error;
@@ -66,6 +80,8 @@ export const AuthProvider = ({ children }) => {
       .then(response => {
         setUser(null);
         setToken(null);
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
         return response;
       })
       .catch(error => {
@@ -112,10 +128,12 @@ export const AuthProvider = ({ children }) => {
         // Check if the user data has changed before updating the context
         if (!isEqual(userDetails, user)) {
           setUser(userDetails);
+          localStorage.setItem("user", JSON.stringify(userDetails));
         }
       })
       .catch(error => {
         setUser(null);
+        localStorage.removeItem("user");
         console.error("Error fetching authenticated user:", error);
         throw error;
       });

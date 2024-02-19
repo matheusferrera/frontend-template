@@ -6,16 +6,19 @@ import PropTypes from "prop-types";
 import { AuthProvider } from "../src/contexts/AuthContext";
 import { DataProvider } from "../src/contexts/DataContext";
 import { NavContentProvider } from "../src/contexts/NavContentContext";
+import ThemeProvider from "../src/theme";
 
 export const TestWrapper = ({ children }) => {
   return (
-    <Router>
-      <AuthProvider>
-        <DataProvider>
-          <NavContentProvider>{children}</NavContentProvider>
-        </DataProvider>
-      </AuthProvider>
-    </Router>
+    <AuthProvider>
+      <DataProvider>
+        <NavContentProvider>
+          <ThemeProvider>
+            <Router>{children}</Router>
+          </ThemeProvider>
+        </NavContentProvider>
+      </DataProvider>
+    </AuthProvider>
   );
 };
 

@@ -7,7 +7,6 @@ import Home from "../src/components/Home";
 import Login from "../src/components/Login";
 import NotFound from "../src/components/NotFound";
 import Register from "../src/components/Register";
-import ThemeProvider from "../src/theme";
 import { TestWrapper } from "./testWrapper";
 
 jest.mock("../src/components/AvisoDePrivacidadeModal");
@@ -29,9 +28,7 @@ describe("Teste de componentes", () => {
   it("Register renderizada corretamente", () => {
     const component = renderer.create(
       <TestWrapper>
-        <ThemeProvider>
-          <Register />
-        </ThemeProvider>
+        <Register />
       </TestWrapper>,
     );
     const tree = component.toJSON();
@@ -41,9 +38,7 @@ describe("Teste de componentes", () => {
   it("Login renderizada corretamente", () => {
     const component = renderer.create(
       <TestWrapper>
-        <ThemeProvider>
-          <Login />
-        </ThemeProvider>
+        <Login />
       </TestWrapper>,
     );
     const tree = component.toJSON();

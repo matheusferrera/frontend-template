@@ -4,10 +4,7 @@ import { Card, CardContent, Grid, Typography } from "@mui/material";
 
 const CardVisaoGeral = () => {
   return (
-    <Grid
-      container
-    >
-
+    <Grid container>
       <Grid
         item
         key="1"
@@ -36,7 +33,7 @@ const CardVisaoGeral = () => {
         </Card>
       </Grid>
       )
-    </Grid >
+    </Grid>
   );
 };
 
