@@ -19,3 +19,15 @@ export const loginMockData = {
     },
   },
 };
+
+export const userMockData = {
+  user: {
+    id: 1,
+    name: "Felipe Moura",
+    email: "felipems97@hotmail.com",
+    created_at: "2024-01-24T18:03:31.000000Z",
+    updated_at: "2024-01-24T18:03:31.000000Z",
+    username: "felipems999",
+    photo_path: null,
+  },
+};
