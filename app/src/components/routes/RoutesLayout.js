@@ -3,7 +3,7 @@ import { Suspense } from "react";
 
 import PropTypes from "prop-types";
 
-import DashboardLayout from "./dashboard";
+import DashboardLayout from "../dashboard";
 
 /**
  * Dashboard layout with suspense.

@@ -1,12 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useNavigate } from "react-router-dom";
 
 import LoadingButton from "@mui/lab/LoadingButton";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import IconButton from "@mui/material/IconButton";
@@ -20,30 +16,12 @@ import { Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 
-import { useAuth } from "../contexts/AuthContext";
-import AvisoDePrivacidadeModal from "./AvisoDePrivacidadeModal";
-import Iconify from "./iconify";
-import TermoDeUsoModal from "./TermoDeUsoModal";
+import Iconify from "../iconify";
 
-const Login = ({ redirectPath = "/profile" }) => {
-  const { login } = useAuth();
+const LoginForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoShow, handleAvisoDePrivacidadeShow }) => {
   const theme = useTheme();
 
-  const navigate = useNavigate();
-
-  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
-  const recaptchaRef = React.createRef();
-
-  const [termoDeUsoModal, setTermoDeUsoModal] = useState(false);
-  const [avisoDePrivacidadeModal, setAvisoDePrivacidadeModal] = useState(false);
-
-  const handleTermoDeUsoShow = () => setTermoDeUsoModal(true);
-  const handleTermoDeUsoClose = () => setTermoDeUsoModal(false);
-
-  const handleAvisoDePrivacidadeShow = () => setAvisoDePrivacidadeModal(true);
-  const handleAvisoDePrivacidadeClose = () => setAvisoDePrivacidadeModal(false);
 
   const initialValues = {
     email: "",
@@ -57,33 +35,7 @@ const Login = ({ redirectPath = "/profile" }) => {
     toggle: Yup.bool().oneOf([true], "Você precisa aceitar os termos e condições"),
   });
 
-  const handleSubmit = (values, { setSubmitting }) => {
-    const token = recaptchaRef.current.getValue();
-
-    setLoading(true);
-
-    if (!token) {
-      alert("Por favor, confirme que você não é um robô");
-      setLoading(false);
-      setSubmitting(false);
-      return;
-    }
-
-    login(values.email, values.password)
-      .then(() => {
-        navigate(redirectPath);
-      })
-      .catch(error => {
-        const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
-        alert(resMessage);
-      })
-      .finally(() => {
-        setLoading(false);
-        setSubmitting(false);
-      });
-  };
-
-  const renderForm = (
+  return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -210,64 +162,14 @@ const Login = ({ redirectPath = "/profile" }) => {
       )}
     </Formik>
   );
-
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <Stack
-        alignItems="center"
-        justifyContent="center"
-        sx={{ height: 1 }}
-      >
-        <Card
-          sx={{
-            p: 5,
-            width: 1,
-            maxWidth: 625,
-            height: 1,
-            maxHeight: 700,
-          }}
-        >
-          <Typography variant="h3">Bem-vindo(a)</Typography>
-
-          <Typography
-            variant="body2"
-            sx={{ mt: 2, mb: 3, color: "text.grey" }}
-          >
-            Acesse aqui sua conta Progredir
-          </Typography>
-          {renderForm}
-
-          <Button
-            variant="outlined"
-            sx={{ mt: 2 }}
-            href="/register"
-          >
-            Criar conta
-          </Button>
-
-          <TermoDeUsoModal
-            showModal={termoDeUsoModal}
-            handleClose={handleTermoDeUsoClose}
-          />
-          <AvisoDePrivacidadeModal
-            showModal={avisoDePrivacidadeModal}
-            handleClose={handleAvisoDePrivacidadeClose}
-          />
-        </Card>
-      </Stack>
-    </Box>
-  );
 };
 
-Login.propTypes = {
-  redirectPath: PropTypes.string,
+LoginForm.propTypes = {
+  handleSubmit: PropTypes.func,
+  recaptchaRef: PropTypes.object,
+  loading: PropTypes.bool,
+  handleAvisoDePrivacidadeShow: PropTypes.func,
+  handleTermoDeUsoShow: PropTypes.func,
 };
 
-export default Login;
+export default LoginForm;

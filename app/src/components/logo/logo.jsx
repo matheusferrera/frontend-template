@@ -6,7 +6,7 @@ import Link from "@mui/material/Link";
 import PropTypes from "prop-types";
 
 import progredirLogo from "../../assets/images/02_VERSÕES_h_1.png";
-import RouterLink from "../router-link";
+import RouterLink from "../dashboard/router-link";
 // ----------------------------------------------------------------------
 
 const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {

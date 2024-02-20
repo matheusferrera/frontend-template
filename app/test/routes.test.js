@@ -4,13 +4,13 @@ import renderer from "react-test-renderer";
 import { describe, expect, it, jest } from "@jest/globals";
 
 import Home from "../src/components/Home";
-import Login from "../src/components/Login";
+import Login from "../src/components/login/Login";
 import NotFound from "../src/components/NotFound";
-import Register from "../src/components/Register";
+import Register from "../src/components/register/Register";
 import { TestWrapper } from "./testWrapper";
 
-jest.mock("../src/components/AvisoDePrivacidadeModal");
-jest.mock("../src/components/TermoDeUsoModal");
+jest.mock("../src/components/modals/AvisoDePrivacidadeModal");
+jest.mock("../src/components/modals/TermoDeUsoModal");
 
 describe("Teste de componentes", () => {
   it("Home renderizada corretamente", () => {
