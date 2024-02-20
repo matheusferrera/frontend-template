@@ -698,32 +698,8 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
     Visão Geral
   </h4>
   <div
-    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
-  >
-    <div
-      className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
-    >
-      <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1yofze3-MuiPaper-root-MuiCard-root"
-      >
-        <div
-          className="MuiCardContent-root css-pcamu6-MuiCardContent-root"
-        >
-          <h4
-            className="MuiTypography-root MuiTypography-h4 css-1pk5i0d-MuiTypography-root"
-          >
-            5
-          </h4>
-          <h6
-            className="MuiTypography-root MuiTypography-subtitle1 css-1ip3ks4-MuiTypography-root"
-          >
-            Mock
-          </h6>
-        </div>
-      </div>
-    </div>
-    )
-  </div>
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1.5 css-b5n4ta-MuiGrid-root"
+  />
   <h4
     className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
   >

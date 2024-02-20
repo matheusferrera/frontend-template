@@ -22,22 +22,7 @@ const Administrador = () => {
       permissao1: false,
       permissao2: false,
     },
-    listaVisaoGeral: {
-      "Parceiros Pendentes": 15,
-      "Cursos Pendentes": 20,
-      "Novas Vagas de Trabalho": 100,
-      "Novos Interessados em Empreendedorismo": 10,
-      "Parceiros Aprovados": 5,
-      "Cursos Aprovados": 35,
-      "Vagas Encerrando em até 10 dias": 23,
-      "Interesses excluídos": 5,
-      "Parceiros Reprovados": 25,
-      "Vagas sem Validade": 23,
-      "Interessados em Empreendedorismo": 20,
-      "Parceiros Inativados": 2,
-      "Cursos Inativados": 20,
-      "Vagas Inativadas": 20,
-    },
+    listaVisaoGeral: {},
   });
   const { setNavContent } = useNavContent();
 

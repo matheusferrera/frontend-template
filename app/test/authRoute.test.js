@@ -13,7 +13,6 @@ jest.mock("../src/assets/images/Ilustra-Cidadao.png", () => "<div>Imagem</div>")
 jest.mock("../src/assets/images/Ilustra-Cursos.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/Ilustra-Emprego.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/Ilustra-Parceiro.png", () => "<div>Imagem</div>");
-jest.mock("../src/components/cards/CardVisaoGeral.js");
 jest.mock("../src/contexts/AuthContext.js");
 
 describe("Teste de componentes", () => {

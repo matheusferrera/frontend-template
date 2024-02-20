@@ -9,7 +9,6 @@ const CardVisaoGeral = ({ services }) => {
       container
       spacing={1.5}
       mt={2}
-      xs={12}
     >
       {Object.entries(services).map(([title, number], index) => (
         <Grid
@@ -58,11 +57,6 @@ const CardVisaoGeral = ({ services }) => {
 };
 
 CardVisaoGeral.propTypes = {
-  services: PropTypes.objectOf(
-    PropTypes.shape({
-      number: PropTypes.number,
-      title: PropTypes.string,
-    }),
-  ).isRequired,
+  services: PropTypes.any.isRequired
 };
 export default CardVisaoGeral;
