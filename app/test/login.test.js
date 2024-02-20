@@ -5,13 +5,13 @@ import { describe, expect, it, jest } from "@jest/globals";
 import { fireEvent, render, screen } from "@testing-library/react";
 import axios from "axios";
 
-import Login from "../src/components/Login";
+import Login from "../src/components/login/Login";
 import { loginMockData } from "./mockData";
 import { TestWrapper } from "./testWrapper";
 
 // jest.mock("axios"); // Mockando o módulo axios
-jest.mock("../src/components/AvisoDePrivacidadeModal");
-jest.mock("../src/components/TermoDeUsoModal");
+jest.mock("../src/components/modals/AvisoDePrivacidadeModal");
+jest.mock("../src/components/modals/TermoDeUsoModal");
 
 describe("Teste de login", () => {
   it("Teste de login usando mock", async () => {

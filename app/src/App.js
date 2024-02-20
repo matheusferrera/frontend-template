@@ -1,6 +1,6 @@
 import React from "react";
 
-import AppRoutes from "./components/Routes";
+import AppRoutes from "./components/routes/Routes";
 import { AuthProvider } from "./contexts/AuthContext";
 import { DataProvider } from "./contexts/DataContext";
 import { NavContentProvider } from "./contexts/NavContentContext";

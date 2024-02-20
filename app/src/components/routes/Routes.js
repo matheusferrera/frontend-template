@@ -1,17 +1,17 @@
 import React from "react";
 import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 
-import { useAuth } from "../contexts/AuthContext";
-import Administrador from "./administrador/Administrador";
-import Cidadao from "./cidadao/Cidadao";
-import Home from "./Home";
-import HubLogin from "./HubLogin";
-import Login from "./Login";
-import Logout from "./Logout";
-import NotFound from "./NotFound";
-import Parceiro from "./parceiro/Parceiro";
-import Profile from "./Profile";
-import Register from "./Register";
+import { useAuth } from "../../contexts/AuthContext";
+import Administrador from "../administrador/Administrador";
+import Cidadao from "../cidadao/Cidadao";
+import Home from "../Home";
+import HubLogin from "../login/HubLogin";
+import Login from "../login/Login";
+import Logout from "../Logout";
+import NotFound from "../NotFound";
+import Parceiro from "../parceiro/Parceiro";
+import Profile from "../Profile";
+import Register from "../register/Register";
 import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";
 
 const AuthRoutes = () => {

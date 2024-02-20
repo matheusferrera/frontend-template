@@ -2,15 +2,15 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import AvisoDePrivacidadePath from "../assets/texto/politica-de-privacidade.md";
+import termosDeUsoPath from "../../assets/texto/termo-de-uso.md";
+import MarkdownViewer from "../markdown-viewer/markdown-viewer";
 import CustomModal from "./CustomModal";
-import MarkdownViewer from "./markdown-viewer/markdown-viewer";
 
-const AvisoDePrivacidadeModal = ({ showModal, handleClose }) => {
-  const modalTitle = "Aviso de Privacidade";
+const TermoDeUsoModal = ({ showModal, handleClose }) => {
+  const modalTitle = "Termo de Uso";
   const modalContent = (
     <>
-      <MarkdownViewer filePath={AvisoDePrivacidadePath} />
+      <MarkdownViewer filePath={termosDeUsoPath} />
     </>
   );
 
@@ -27,9 +27,9 @@ const AvisoDePrivacidadeModal = ({ showModal, handleClose }) => {
   );
 };
 
-AvisoDePrivacidadeModal.propTypes = {
+TermoDeUsoModal.propTypes = {
   showModal: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
 };
 
-export default AvisoDePrivacidadeModal;
+export default TermoDeUsoModal;
