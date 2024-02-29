@@ -11,6 +11,11 @@ const paceiroNav = [
     icon: "fa6-solid:handshake",
   },
   {
+    title: "Listar Parceiros",
+    path: "/parceiro/listar_parceiros",
+    icon: "mdi:account-group",
+  },
+  {
     title: "Vagas de Trabalho",
     path: "/",
     icon: "material-symbols:work",

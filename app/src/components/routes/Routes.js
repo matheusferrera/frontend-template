@@ -9,10 +9,12 @@ import HubLogin from "../login/HubLogin";
 import Login from "../login/Login";
 import Logout from "../Logout";
 import NotFound from "../NotFound";
+import ListarParceiros from "../parceiro/ListarParceiros";
 import Parceiro from "../parceiro/Parceiro";
 import Profile from "../Profile";
 import Register from "../register/Register";
 import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";
+
 
 const AuthRoutes = () => {
   return (
@@ -75,6 +77,10 @@ const ProtectedRoutes = () => {
       <Route
         path="/admin"
         element={<Administrador />}
+      />
+      <Route
+        path="/parceiro/listar_parceiros"
+        element={<ListarParceiros />}
       />
       <Route
         path="/parceiro"
