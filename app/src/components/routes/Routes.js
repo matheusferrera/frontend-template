@@ -4,6 +4,7 @@ import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import Administrador from "../administrador/Administrador";
 import Cidadao from "../cidadao/Cidadao";
+import FAQ from "../FAQ";
 import Home from "../Home";
 import HubLogin from "../login/HubLogin";
 import Login from "../login/Login";
@@ -38,6 +39,10 @@ const AuthRoutes = () => {
       <Route
         path="/register"
         element={<Register />}
+      />
+      <Route
+        path="/faq"
+        element={<FAQ />}
       />
       <Route
         path="*"
@@ -89,6 +94,10 @@ const ProtectedRoutes = () => {
       <Route
         path="/cidadao"
         element={<Cidadao />}
+      />
+      <Route
+        path="/faq"
+        element={<FAQ />}
       />
       <Route
         path="*"

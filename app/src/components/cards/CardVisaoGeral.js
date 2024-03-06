@@ -57,6 +57,6 @@ const CardVisaoGeral = ({ services }) => {
 };
 
 CardVisaoGeral.propTypes = {
-  services: PropTypes.any.isRequired
+  services: PropTypes.any.isRequired,
 };
 export default CardVisaoGeral;

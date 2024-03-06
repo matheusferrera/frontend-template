@@ -151,7 +151,7 @@ const Cidadao = () => {
           No caso de dúvidas e/ou problemas, acesse
           <Link
             component="a"
-            href="#"
+            href="/faq"
             color="primary.main"
             underline="always"
             sx={{ ml: 1 }}
