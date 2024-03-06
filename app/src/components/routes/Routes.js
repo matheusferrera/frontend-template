@@ -16,7 +16,6 @@ import Profile from "../Profile";
 import Register from "../register/Register";
 import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";
 
-
 const AuthRoutes = () => {
   return (
     <Routes>

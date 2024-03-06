@@ -1,12 +1,14 @@
 import React from "react";
 
-import InfoIcon from '@mui/icons-material/Info';
-import SaveIcon from '@mui/icons-material/Save';
+import InfoIcon from "@mui/icons-material/Info";
+import SaveIcon from "@mui/icons-material/Save";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { Button, Card, Checkbox, FormControlLabel, FormGroup, Grid, Link, Stack, TextField, Typography } from "@mui/material";
 import { Form, Formik } from "formik";
-import PropTypes from "prop-types"
-import * as Yup from "yup"
+import PropTypes from "prop-types";
+import * as Yup from "yup";
+
+import { formatCPF, validarCPF } from "./utils.js";
 
 const FormListarParceiros = ({ loading, handleSubmit }) => {
   const initialValues = {
@@ -56,7 +58,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
     cidade: Yup.string().required("Cidade é obrigatório"),
     telefone: Yup.string().required("Telefone é obrigatório"),
     nomeRepresentante: Yup.string().required("Nome do representante é obrigatório"),
-    cpf: Yup.string().required("CPF do representante é obrigatório"),
+    cpf: Yup.string()
+      .min(13, "O CPF deve ter 11 dígitos")
+      .required("CPF do representante é obrigatório")
+      .test("Validar-CPF", "O CPF informado não é válido", value => validarCPF(value) == true),
     telefoneRepresentante: Yup.string().required("Telefone do representante é obrigatório"),
     ufRepresentante: Yup.string().required("UF do representante é obrigatório"),
     cidadeRepresentante: Yup.string().required("Cidade do representante é obrigatório"),
@@ -66,8 +71,8 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
     areaAtuacao: Yup.string().required("Área de atuação do parceiro é obrigatório"),
     naturezaJuridica: Yup.string().required("Natureza jurídica é obrigatório"),
     toggleCienteNormas: Yup.boolean().oneOf([true], "Você precisa concordar com as normas"),
-    toggleCienteGratuito: Yup.boolean().oneOf([true], "Você precisa informar que está ciente da condição")
-  })
+    toggleCienteGratuito: Yup.boolean().oneOf([true], "Você precisa informar que está ciente da condição"),
+  });
 
   return (
     <Formik
@@ -83,27 +88,38 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
               sx={{
                 borderRadius: "8px",
                 padding: "16px",
-                mt: "24px"
+                mt: "24px",
               }}
             >
               <Typography
                 variant="h4"
                 sx={{
                   fontSize: "20",
-                  mb: "16px"
+                  mb: "16px",
                 }}
               >
                 DADOS
               </Typography>
-              <Grid spacing={1} container>
-                <Grid item xs={12} sm={12}>
+              <Grid
+                spacing={1}
+                container
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                >
                   <FormGroup>
                     <Typography
                       sx={{
                         mb: "8px",
                       }}
                     >
-                      * Email <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                      * Email{" "}
+                      <InfoIcon
+                        color="primary"
+                        sx={{ width: "15px", height: "15px" }}
+                      />
                     </Typography>
                     <TextField
                       id="email"
@@ -118,7 +134,11 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
                     <Typography
                       sx={{
@@ -140,11 +160,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Razão Social
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Razão Social</Typography>
                     <TextField
                       id="razaoSocial"
                       name="razaoSocial"
@@ -158,11 +180,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }} >
-                      Nome Fantasia
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>Nome Fantasia</Typography>
                     <TextField
                       id="nomeFantasia"
                       name="nomeFantasia"
@@ -174,11 +198,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={3}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * CEP
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* CEP</Typography>
                     <TextField
                       id="cep"
                       name="cep"
@@ -192,11 +218,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Endereço
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Endereço</Typography>
                     <TextField
                       id="endereco"
                       name="endereco"
@@ -210,11 +238,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={3}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      Número
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>Número</Typography>
                     <TextField
                       id="numero"
                       name="numero"
@@ -226,11 +256,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      Complemento
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>Complemento</Typography>
                     <TextField
                       id="complemento"
                       name="complemento"
@@ -242,11 +274,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Bairro
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Bairro</Typography>
                     <TextField
                       id="bairro"
                       name="bairro"
@@ -260,11 +294,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={2}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * UF
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* UF</Typography>
                     <TextField
                       id="uf"
                       name="uf"
@@ -278,11 +314,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={2}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Cidade
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Cidade</Typography>
                     <TextField
                       id="cidade"
                       name="cidade"
@@ -296,11 +334,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Telefone
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Telefone</Typography>
                     <TextField
                       id="telefone"
                       name="telefone"
@@ -314,11 +354,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={3}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      Site
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>Site</Typography>
                     <TextField
                       id="site"
                       name="site"
@@ -329,11 +371,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={3}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      Rede Social
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>Rede Social</Typography>
                     <TextField
                       id="redeSocial"
                       name="redeSocial"
@@ -351,24 +395,33 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
               sx={{
                 borderRadius: "8px",
                 padding: "16px",
-                mt: "24px"
+                mt: "24px",
               }}
             >
               <Typography
                 variant="h4"
                 sx={{
                   fontSize: "20",
-                  mb: "16px"
+                  mb: "16px",
                 }}
               >
-                REPRESENTANTE <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                REPRESENTANTE{" "}
+                <InfoIcon
+                  color="primary"
+                  sx={{ width: "15px", height: "15px" }}
+                />
               </Typography>
-              <Grid spacing={1} container>
-                <Grid item xs={12} sm={9}>
+              <Grid
+                spacing={1}
+                container
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={9}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      *Nome
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>*Nome</Typography>
                     <TextField
                       id="nomeRepresentante"
                       name="nomeRepresentante"
@@ -382,29 +435,36 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={3}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * CPF
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* CPF</Typography>
                     <TextField
                       id="cpf"
                       name="cpf"
-                      value={values.cpf}
+                      value={formatCPF(values.cpf)}
                       placeholder="Insira o CPF"
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        maxLength: 14,
+                      }}
                       error={errors.cpf && touched.cpf}
                       helperText={errors.cpf && touched.cpf && errors.cpf}
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={5}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={5}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Telefone
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Telefone</Typography>
                     <TextField
                       id="telefoneRepresentante"
                       name="telefoneRepresentante"
@@ -418,11 +478,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={3}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * UF
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* UF</Typography>
                     <TextField
                       id="ufRepresentante"
                       name="ufRepresentante"
@@ -436,11 +498,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Cidade
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Cidade</Typography>
                     <TextField
                       id="cidadeRepresentante"
                       name="cidadeRepresentante"
@@ -462,24 +526,33 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                 width: "100%",
                 borderRadius: "8px",
                 padding: "16px",
-                mt: "25px"
+                mt: "25px",
               }}
             >
               <Typography
                 variant="h4"
                 sx={{
                   fontSize: "20",
-                  mb: "16px"
+                  mb: "16px",
                 }}
               >
-                PONTO FOCAL <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                PONTO FOCAL{" "}
+                <InfoIcon
+                  color="primary"
+                  sx={{ width: "15px", height: "15px" }}
+                />
               </Typography>
-              <Grid spacing={1} container>
-                <Grid item xs={12} sm={4}>
+              <Grid
+                spacing={1}
+                container
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Nome
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Nome</Typography>
                     <TextField
                       id="nomePontoFocal"
                       name="nomePontoFocal"
@@ -493,11 +566,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      *Email
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>*Email</Typography>
                     <TextField
                       id="emailPontoFocal"
                       name="emailPontoFocal"
@@ -511,11 +586,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Telefone
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Telefone</Typography>
                     <TextField
                       id="telefonePontoFocal"
                       name="telefonePontoFocal"
@@ -536,15 +613,20 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
               sx={{
                 width: "100%",
                 padding: "16px",
-                mt: "25px"
+                mt: "25px",
               }}
             >
-              <Grid spacing={1} container>
-                <Grid item xs={12} sm={6}>
+              <Grid
+                spacing={1}
+                container
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Área de Atuação do Parceiro
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Área de Atuação do Parceiro</Typography>
                     <TextField
                       id="areaAtuacao"
                       name="areaAtuacao"
@@ -558,11 +640,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     />
                   </FormGroup>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>
-                      * Natureza Jurídica
-                    </Typography>
+                    <Typography sx={{ mb: "8px" }}>* Natureza Jurídica</Typography>
                     <TextField
                       id="naturezaJuridica"
                       name="naturezaJuridica"
@@ -582,19 +666,22 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
               sx={{
                 width: "100%",
                 padding: "16px",
-                mt: "25px"
+                mt: "25px",
               }}
             >
               <Typography
                 sx={{
                   fontSize: "14px",
-                  mb: "16px"
+                  mb: "16px",
                 }}
               >
                 * Que tipo de serviço essa instituição irá ofertar?
               </Typography>
               <FormGroup>
-                <Grid container sx={{ width: "100%" }}>
+                <Grid
+                  container
+                  sx={{ width: "100%" }}
+                >
                   <FormControlLabel
                     control={
                       <Checkbox
@@ -608,7 +695,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Vagas de Emprego &nbsp;
-                        <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
                       </Typography>
                     }
                     sx={{
@@ -616,7 +706,7 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       borderRadius: "4px",
                       borderColor: "#CCCCCC",
                       margin: "4px 24px 4px 4px",
-                      pr: "10px"
+                      pr: "10px",
                     }}
                   />
                   <FormControlLabel
@@ -632,7 +722,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Vagas de Estágio &nbsp;
-                        <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
                       </Typography>
                     }
                     sx={{
@@ -640,7 +733,7 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       borderRadius: "4px",
                       borderColor: "#CCCCCC",
                       margin: "4px 24px 4px 4px",
-                      pr: "10px"
+                      pr: "10px",
                     }}
                   />
                   <FormControlLabel
@@ -656,7 +749,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Vagas de Jovem Aprendiz &nbsp;
-                        <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
                       </Typography>
                     }
                     sx={{
@@ -664,7 +760,7 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       borderRadius: "4px",
                       borderColor: "#CCCCCC",
                       margin: "4px 24px 4px 4px",
-                      pr: "10px"
+                      pr: "10px",
                     }}
                   />
                   <FormControlLabel
@@ -680,7 +776,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Cursos &nbsp;
-                        <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
                       </Typography>
                     }
                     sx={{
@@ -688,7 +787,7 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       borderRadius: "4px",
                       borderColor: "#CCCCCC",
                       margin: "4px 24px 4px 4px",
-                      pr: "10px"
+                      pr: "10px",
                     }}
                   />
                   <FormControlLabel
@@ -704,7 +803,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Financeiros e Pagamentos &nbsp;
-                        <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
                       </Typography>
                     }
                     sx={{
@@ -712,7 +814,7 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       borderRadius: "4px",
                       borderColor: "#CCCCCC",
                       margin: "4px 24px 4px 4px",
-                      pr: "10px"
+                      pr: "10px",
                     }}
                   />
                   <FormControlLabel
@@ -728,7 +830,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Mobilização de Público &nbsp;
-                        <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
                       </Typography>
                     }
                     sx={{
@@ -736,7 +841,7 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       borderRadius: "4px",
                       borderColor: "#CCCCCC",
                       margin: "4px 24px 4px 4px",
-                      pr: "10px"
+                      pr: "10px",
                     }}
                   />
                   <FormControlLabel
@@ -752,7 +857,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Mobilização de Parceiro &nbsp;
-                        <InfoIcon color="primary" sx={{ width: "15px", height: "15px" }} />
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
                       </Typography>
                     }
                     sx={{
@@ -760,14 +868,21 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       borderRadius: "4px",
                       borderColor: "#CCCCCC",
                       margin: "4px 24px 4px 4px",
-                      pr: "10px"
+                      pr: "10px",
                     }}
                   />
                 </Grid>
               </FormGroup>
               <hr />
-              <Grid spacing={1} container>
-                <Grid item xs={12} sm={12}>
+              <Grid
+                spacing={1}
+                container
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                >
                   <Card
                     color="#ffffff"
                     sx={{
@@ -788,16 +903,16 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       }
                       label={
                         <Typography variant="body1">
-                          Declaro, para os devidos fins, estar ciente e conforme com todos os termos,
-                          cláusulas, condições e normas das <Link href="#">Portarias MDS nº 386/2017</Link>,
-                          <Link href="#"> nº 490/2017</Link>,
-                          <Link href="#"> nº 1.321/2018</Link> e do <Link href="#">Edital de Chamada Pública do MDS nº 01/2017</Link>
-                          , e manifesto o
-                          interesse em me credenciar como INTEGRANTE DA REDE DE PARCEIROS DO DESENVOLVIMENTO SOCIAL.
+                          Declaro, para os devidos fins, estar ciente e conforme com todos os termos, cláusulas, condições e normas das{" "}
+                          <Link href="#">Portarias MDS nº 386/2017</Link>,<Link href="#"> nº 490/2017</Link>,
+                          <Link href="#"> nº 1.321/2018</Link> e do <Link href="#">Edital de Chamada Pública do MDS nº 01/2017</Link>, e
+                          manifesto o interesse em me credenciar como INTEGRANTE DA REDE DE PARCEIROS DO DESENVOLVIMENTO SOCIAL.
                         </Typography>
                       }
                     />
-                    {touched.toggleCienteNormas && errors.toggleCienteNormas && <div style={{ color: "#FF5630" }}>{errors.toggleCienteNormas}</div>}
+                    {touched.toggleCienteNormas && errors.toggleCienteNormas && (
+                      <div style={{ color: "#FF5630" }}>{errors.toggleCienteNormas}</div>
+                    )}
                     <FormControlLabel
                       control={
                         <Checkbox
@@ -810,31 +925,57 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       }
                       label={
                         <Typography variant="body1">
-                          Declaro, para os devidos fins, que estou ciente que todos os serviços ofertados
-                          por esta Instituição ao público inscrito no Programa Redução da Pobreza serão gratuitos.
+                          Declaro, para os devidos fins, que estou ciente que todos os serviços ofertados por esta Instituição ao público
+                          inscrito no Programa Redução da Pobreza serão gratuitos.
                         </Typography>
                       }
                       sx={{ mt: "24px" }}
                     />
-                    {touched.toggleCienteGratuito && errors.toggleCienteGratuito && <div style={{ color: "#FF5630" }}>{errors.toggleCienteGratuito}</div>}
+                    {touched.toggleCienteGratuito && errors.toggleCienteGratuito && (
+                      <div style={{ color: "#FF5630" }}>{errors.toggleCienteGratuito}</div>
+                    )}
                   </Card>
                 </Grid>
-                <Grid container spacing={1} sx={{ mt: "5px" }}>
-                  <Grid item xs={0} sm={7}></Grid>
-                  <Grid item xs={12} sm={5}>
-                    <Grid container spacing={2}>
-                      <Grid item sm={4} xs={12}>
+                <Grid
+                  container
+                  spacing={1}
+                  sx={{ mt: "5px" }}
+                >
+                  <Grid
+                    item
+                    xs={0}
+                    sm={7}
+                  ></Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={5}
+                  >
+                    <Grid
+                      container
+                      spacing={2}
+                    >
+                      <Grid
+                        item
+                        sm={4}
+                        xs={12}
+                      >
                         <Button
                           size="large"
                           type="submit"
                           variant="outlined"
                           color="primary"
                           fullWidth
-                          sx={{ border: "solid 1px", borderRadius: "24px" }}>
+                          sx={{ border: "solid 1px", borderRadius: "24px" }}
+                        >
                           Cancelar
                         </Button>
                       </Grid>
-                      <Grid item sm={8} xs={12}>
+                      <Grid
+                        item
+                        sm={8}
+                        xs={12}
+                      >
                         <LoadingButton
                           size="large"
                           type="submit"
@@ -857,15 +998,14 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
             </Card>
           </Stack>
         </Form>
-      )
-      }
-    </Formik >
+      )}
+    </Formik>
   );
-}
+};
 
 FormListarParceiros.propTypes = {
   loading: PropTypes.bool,
   handleSubmit: PropTypes.func,
-}
+};
 
 export default FormListarParceiros;
