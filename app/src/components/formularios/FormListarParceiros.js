@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 import InfoIcon from "@mui/icons-material/Info";
 import SaveIcon from "@mui/icons-material/Save";
@@ -8,6 +9,7 @@ import { Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 
+import FinanceiroModal from "../modals/FinanceiroModal";
 import { formatCPF, validarCPF } from "./utils.js";
 
 const FormListarParceiros = ({ loading, handleSubmit }) => {
@@ -73,6 +75,25 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
     toggleCienteNormas: Yup.boolean().oneOf([true], "Você precisa concordar com as normas"),
     toggleCienteGratuito: Yup.boolean().oneOf([true], "Você precisa informar que está ciente da condição"),
   });
+
+  const [financeiroModal, setFinanceiroModal] = useState(false);
+  const [financeiro, setFinanceiro] = useState(false);
+
+  const handleFinanceiro = () => {
+    setFinanceiroModal(true);
+  };
+
+  const handleFinanceiroClose = () => {
+    initialValues.financeiro = false;
+    setFinanceiro(false);
+    setFinanceiroModal(false);
+  };
+
+  const handleFinanceiroContinuar = () => {
+    initialValues.financeiro = true;
+    setFinanceiro(true);
+    setFinanceiroModal(false);
+  };
 
   return (
     <Formik
@@ -795,11 +816,13 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       <Checkbox
                         id="financeiro"
                         name="financeiro"
-                        checked={values.financeiro}
-                        onChange={handleChange}
+                        value={financeiro}
+                        checked={financeiro}
+                        onBlur={handleBlur}
                         color="primary"
                       />
                     }
+                    onClick={handleFinanceiro}
                     label={
                       <Typography>
                         Financeiros e Pagamentos &nbsp;
@@ -816,6 +839,11 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       margin: "4px 24px 4px 4px",
                       pr: "10px",
                     }}
+                  />
+                  <FinanceiroModal
+                    showModal={financeiroModal}
+                    handleContinuar={handleFinanceiroContinuar}
+                    handleClose={handleFinanceiroClose}
                   />
                   <FormControlLabel
                     control={
