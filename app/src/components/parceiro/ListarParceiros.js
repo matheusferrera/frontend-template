@@ -48,14 +48,13 @@ const ListarParceiros = () => {
   }, []);
 
   const handleSubmit = (values, { setSubmitting }) => {
-    setLoading(true)
+    setLoading(true);
 
-    console.log(values)
+    console.log(values);
 
-    setSubmitting(false)
-    setLoading(false)
-
-  }
+    setSubmitting(false);
+    setLoading(false);
+  };
 
   return (
     <Box
@@ -74,11 +73,10 @@ const ListarParceiros = () => {
       />
       <FormListarParceiros
         loading={loading}
-        handleSubmit={handleSubmit} />
+        handleSubmit={handleSubmit}
+      />
     </Box>
-
-  )
-
+  );
 };
 
 export default ListarParceiros;
