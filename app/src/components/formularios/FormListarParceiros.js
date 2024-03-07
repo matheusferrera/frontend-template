@@ -4,7 +4,7 @@ import { useState } from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import SaveIcon from "@mui/icons-material/Save";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { Button, Card, Checkbox, FormControlLabel, FormGroup, Grid, Link, Stack, TextField, Typography } from "@mui/material";
+import { Button, Card, Checkbox, FormControlLabel, FormGroup, Grid, Link, Stack, TextField, Tooltip, Typography } from "@mui/material";
 import { Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
@@ -137,10 +137,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                       }}
                     >
                       * Email{" "}
-                      <InfoIcon
-                        color="primary"
-                        sx={{ width: "15px", height: "15px" }}
-                      />
+                      <Tooltip
+                        title="E-mail do representante da empresa"
+                        placement="right"
+                      >
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
+                      </Tooltip>
                     </Typography>
                     <TextField
                       id="email"
@@ -427,10 +432,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                 }}
               >
                 REPRESENTANTE{" "}
-                <InfoIcon
-                  color="primary"
-                  sx={{ width: "15px", height: "15px" }}
-                />
+                <Tooltip
+                  title="Responsável pelo cadastramento da instituição na rede de parceiros no portal SISPRP"
+                  placement="right"
+                >
+                  <InfoIcon
+                    color="primary"
+                    sx={{ width: "15px", height: "15px" }}
+                  />
+                </Tooltip>
               </Typography>
               <Grid
                 spacing={1}
@@ -558,10 +568,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                 }}
               >
                 PONTO FOCAL{" "}
-                <InfoIcon
-                  color="primary"
-                  sx={{ width: "15px", height: "15px" }}
-                />
+                <Tooltip
+                  title="Responsável operacional pelos serviços ofertados em parceria com o Programa Redução da Pobreza"
+                  placement="right"
+                >
+                  <InfoIcon
+                    color="primary"
+                    sx={{ width: "15px", height: "15px" }}
+                  />
+                </Tooltip>
               </Typography>
               <Grid
                 spacing={1}
@@ -716,10 +731,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Vagas de Emprego &nbsp;
-                        <InfoIcon
-                          color="primary"
-                          sx={{ width: "15px", height: "15px" }}
-                        />
+                        <Tooltip
+                          title="Para oferta de vaga(s) formal(is) de emprego com carteira assinada."
+                          placement="right"
+                        >
+                          <InfoIcon
+                            color="primary"
+                            sx={{ width: "15px", height: "15px" }}
+                          />
+                        </Tooltip>
                       </Typography>
                     }
                     sx={{
@@ -743,10 +763,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Vagas de Estágio &nbsp;
-                        <InfoIcon
-                          color="primary"
-                          sx={{ width: "15px", height: "15px" }}
-                        />
+                        <Tooltip
+                          title="Para oferta de vaga(s) de estágio (nível médio e superior)."
+                          placement="right"
+                        >
+                          <InfoIcon
+                            color="primary"
+                            sx={{ width: "15px", height: "15px" }}
+                          />
+                        </Tooltip>
                       </Typography>
                     }
                     sx={{
@@ -770,10 +795,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Vagas de Jovem Aprendiz &nbsp;
-                        <InfoIcon
-                          color="primary"
-                          sx={{ width: "15px", height: "15px" }}
-                        />
+                        <Tooltip
+                          title="Para oferta de vaga(s) de trabalho para Jovem Aprendiz (14 a 24 anos)."
+                          placement="right"
+                        >
+                          <InfoIcon
+                            color="primary"
+                            sx={{ width: "15px", height: "15px" }}
+                          />
+                        </Tooltip>
                       </Typography>
                     }
                     sx={{
@@ -797,10 +827,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Cursos &nbsp;
-                        <InfoIcon
-                          color="primary"
-                          sx={{ width: "15px", height: "15px" }}
-                        />
+                        <Tooltip
+                          title="Para oferta de cursos (presenciais ou a distância) para o público do Programa Redução da Pobreza/Cadastro Único."
+                          placement="right"
+                        >
+                          <InfoIcon
+                            color="primary"
+                            sx={{ width: "15px", height: "15px" }}
+                          />
+                        </Tooltip>
                       </Typography>
                     }
                     sx={{
@@ -826,10 +861,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Financeiros e Pagamentos &nbsp;
-                        <InfoIcon
-                          color="primary"
-                          sx={{ width: "15px", height: "15px" }}
-                        />
+                        <Tooltip
+                          title="Para instituições que operam com oferta de microcrédito produtivo orientado para empreendedores formais ou informais."
+                          placement="right"
+                        >
+                          <InfoIcon
+                            color="primary"
+                            sx={{ width: "15px", height: "15px" }}
+                          />
+                        </Tooltip>
                       </Typography>
                     }
                     sx={{
@@ -858,10 +898,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Mobilização de Público &nbsp;
-                        <InfoIcon
-                          color="primary"
-                          sx={{ width: "15px", height: "15px" }}
-                        />
+                        <Tooltip
+                          title="Para instituições com capacidade para mobilizar público e oferecer os serviços do Programa Redução da Pobreza no seu município."
+                          placement="right"
+                        >
+                          <InfoIcon
+                            color="primary"
+                            sx={{ width: "15px", height: "15px" }}
+                          />
+                        </Tooltip>
                       </Typography>
                     }
                     sx={{
@@ -885,10 +930,15 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     label={
                       <Typography>
                         Mobilização de Parceiro &nbsp;
-                        <InfoIcon
-                          color="primary"
-                          sx={{ width: "15px", height: "15px" }}
-                        />
+                        <Tooltip
+                          title="Para associações, confederações, cooperativas, grupos, e entidades com potencial para articular a adesão de novos integrantes da Rede."
+                          placement="right"
+                        >
+                          <InfoIcon
+                            color="primary"
+                            sx={{ width: "15px", height: "15px" }}
+                          />
+                        </Tooltip>
                       </Typography>
                     }
                     sx={{
