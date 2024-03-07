@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import * as Yup from "yup";
 
 import FinanceiroModal from "../modals/FinanceiroModal";
-import { formatCPF, validarCPF } from "./utils.js";
+import { formatCEP, formatCNPJ, formatCPF, formatTelefone, validarCPF } from "./utils.js";
 
 const FormListarParceiros = ({ loading, handleSubmit }) => {
   const initialValues = {
@@ -51,25 +51,25 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Forneça um email válido").required("Email é obrigatório"),
-    cnpj: Yup.string().required("CNPJ é obrigatório"),
+    cnpj: Yup.string().min(18, "O CNPJ deve ter 14 dígitos").required("CNPJ é obrigatório"),
     razaoSocial: Yup.string().required("Razão social é obrigatório"),
-    cep: Yup.string().required("CEP é obrigatório"),
+    cep: Yup.string().min(10, "O CEP deve ter 8 dígitos").required("CEP é obrigatório"),
     endereco: Yup.string().required("Endereço é obrigatório"),
     bairro: Yup.string().required("Bairro é obrigatório"),
     uf: Yup.string().required("UF é obrigatório"),
     cidade: Yup.string().required("Cidade é obrigatório"),
-    telefone: Yup.string().required("Telefone é obrigatório"),
+    telefone: Yup.string().min(14, "Insira um telefone válido").required("Telefone é obrigatório"),
     nomeRepresentante: Yup.string().required("Nome do representante é obrigatório"),
     cpf: Yup.string()
-      .min(13, "O CPF deve ter 11 dígitos")
+      .min(14, "O CPF deve ter 11 dígitos")
       .required("CPF do representante é obrigatório")
       .test("Validar-CPF", "O CPF informado não é válido", value => validarCPF(value) == true),
-    telefoneRepresentante: Yup.string().required("Telefone do representante é obrigatório"),
+    telefoneRepresentante: Yup.string().min(14, "Insira um telefone válido").required("Telefone do representante é obrigatório"),
     ufRepresentante: Yup.string().required("UF do representante é obrigatório"),
     cidadeRepresentante: Yup.string().required("Cidade do representante é obrigatório"),
     nomePontoFocal: Yup.string().required("Nome do Ponto Focal é obrigatório"),
     emailPontoFocal: Yup.string().email("Forneça um email válido").required("Email do Ponto Focal é obrigatório"),
-    telefonePontoFocal: Yup.string().required("Telefone do Ponto Focal é obrigatório"),
+    telefonePontoFocal: Yup.string().min(14, "Insira um telefone válido").required("Telefone do Ponto Focal é obrigatório"),
     areaAtuacao: Yup.string().required("Área de atuação do parceiro é obrigatório"),
     naturezaJuridica: Yup.string().required("Natureza jurídica é obrigatório"),
     toggleCienteNormas: Yup.boolean().oneOf([true], "Você precisa concordar com as normas"),
@@ -171,11 +171,14 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     <TextField
                       id="cnpj"
                       name="cnpj"
-                      value={values.cnpj}
+                      value={formatCNPJ(values.cnpj)}
                       placeholder="Insira o CNPJ"
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        maxLength: 18,
+                      }}
                       error={errors.cnpj && touched.cnpj}
                       helperText={errors.cnpj && touched.cnpj && errors.cnpj}
                     />
@@ -229,11 +232,14 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     <TextField
                       id="cep"
                       name="cep"
-                      value={values.cep}
+                      value={formatCEP(values.cep)}
                       placeholder="Insira o CEP"
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        maxLength: 10,
+                      }}
                       error={errors.cep && touched.cep}
                       helperText={errors.cep && touched.cep && errors.cep}
                     />
@@ -365,11 +371,14 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     <TextField
                       id="telefone"
                       name="telefone"
-                      value={values.telefone}
+                      value={formatTelefone(values.telefone)}
                       placeholder="Insira o Telefone"
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        maxLength: 15,
+                      }}
                       error={errors.telefone && touched.telefone}
                       helperText={errors.telefone && touched.telefone && errors.telefone}
                     />
@@ -489,11 +498,14 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     <TextField
                       id="telefoneRepresentante"
                       name="telefoneRepresentante"
-                      value={values.telefoneRepresentante}
+                      value={formatTelefone(values.telefoneRepresentante)}
                       placeholder="Insira o Telefone"
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        maxLength: 15,
+                      }}
                       error={errors.telefoneRepresentante && touched.telefoneRepresentante}
                       helperText={errors.telefoneRepresentante && touched.telefoneRepresentante && errors.telefoneRepresentante}
                     />
@@ -617,11 +629,14 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                     <TextField
                       id="telefonePontoFocal"
                       name="telefonePontoFocal"
-                      value={values.telefonePontoFocal}
+                      value={formatTelefone(values.telefonePontoFocal)}
                       placeholder="Insira o Telefone"
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        maxLength: 15,
+                      }}
                       error={errors.telefonePontoFocal && touched.telefonePontoFocal}
                       helperText={errors.telefonePontoFocal && touched.telefonePontoFocal && errors.telefonePontoFocal}
                     />

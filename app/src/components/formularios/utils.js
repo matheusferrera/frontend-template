@@ -6,7 +6,39 @@ export function formatCPF(value) {
   return onlyNums
     .replace(/(\d{3})(\d)/, "$1.$2")
     .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})(\d{2})$/, "$1-$2");
+    .replace(/(\d{3})(\d)/, "$1-$2");
+}
+
+export function formatCNPJ(value) {
+  // Remove todos os caracteres que não são números
+  const onlyNums = value.replace(/\D/g, "");
+
+  // Aplica a máscara de CNPJ
+  return onlyNums
+    .replace(/(\d{2})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})(\d)/, "$1/$2")
+    .replace(/(\d{4})(\d)/, "$1-$2");
+}
+
+export function formatCEP(value) {
+  // Remove todos os caracteres que não são números
+  const onlyNums = value.replace(/\D/g, "");
+
+  // Aplica a máscara de CEP
+  return onlyNums.replace(/(\d{2})(\d)/, "$1.$2").replace(/(\d{3})(\d)/, "$1-$2");
+}
+
+export function formatTelefone(value) {
+  // Remove todos os caracteres que não são números
+  const onlyNums = value.replace(/\D/g, "");
+
+  // Aplica a máscara de Telefone
+  if (onlyNums.length <= 10) {
+    return onlyNums.replace(/(\d{2})(\d)/, "($1) $2").replace(/(\d{4})(\d)/, "$1-$2");
+  } else {
+    return onlyNums.replace(/(\d{2})(\d)/, "($1) $2").replace(/(\d{5})(\d)/, "$1-$2");
+  }
 }
 
 export function validarCPF(cpf) {
