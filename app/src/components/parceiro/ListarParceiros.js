@@ -14,6 +14,7 @@ const ListarParceiros = () => {
   const { adminData, getAdminData } = useData();
   const [fetched, setFetched] = useState(false); // Track if data has been fetched
   const [loading, setLoading] = useState(false);
+  const [confirmacaoModal, setConfirmacaoModal] = useState(false);
   const [, setDadosConsolidados] = useState({
     listaPermissao: {
       permissao1: false,
@@ -49,6 +50,7 @@ const ListarParceiros = () => {
 
   const handleSubmit = (values, { setSubmitting }) => {
     setLoading(true);
+    setConfirmacaoModal(true);
 
     console.log(values);
 
@@ -74,6 +76,8 @@ const ListarParceiros = () => {
       <FormListarParceiros
         loading={loading}
         handleSubmit={handleSubmit}
+        confirmacaoModal={confirmacaoModal}
+        setConfirmacaoModal={setConfirmacaoModal}
       />
     </Box>
   );
