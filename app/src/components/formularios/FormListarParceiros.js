@@ -9,10 +9,11 @@ import { Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 
+import ConfirmacaoModal from "../modals/ConfirmacaoModal";
 import FinanceiroModal from "../modals/FinanceiroModal";
 import { formatCEP, formatCNPJ, formatCPF, formatTelefone, validarCPF } from "./utils.js";
 
-const FormListarParceiros = ({ loading, handleSubmit }) => {
+const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfirmacaoModal }) => {
   const initialValues = {
     email: "",
     cnpj: "",
@@ -93,6 +94,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
     initialValues.financeiro = true;
     setFinanceiro(true);
     setFinanceiroModal(false);
+  };
+
+  const handleConfirmacaoClose = () => {
+    setConfirmacaoModal(false);
   };
 
   return (
@@ -1083,6 +1088,10 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
                           <SaveIcon sx={{ mb: "4px", mr: "4px", width: "20px", height: "20px" }} />
                           Salvar Informações
                         </LoadingButton>
+                        <ConfirmacaoModal
+                          showModal={confirmacaoModal}
+                          handleClose={handleConfirmacaoClose}
+                        />
                       </Grid>
                     </Grid>
                   </Grid>
@@ -1099,6 +1108,8 @@ const FormListarParceiros = ({ loading, handleSubmit }) => {
 FormListarParceiros.propTypes = {
   loading: PropTypes.bool,
   handleSubmit: PropTypes.func,
+  confirmacaoModal: PropTypes.bool,
+  setConfirmacaoModal: PropTypes.bool,
 };
 
 export default FormListarParceiros;
