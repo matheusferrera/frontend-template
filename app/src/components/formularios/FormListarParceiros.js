@@ -9,13 +9,16 @@ import { Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 
+import { useAuth } from "../../contexts/AuthContext";
 import ConfirmacaoModal from "../modals/ConfirmacaoModal";
 import FinanceiroModal from "../modals/FinanceiroModal";
 import { formatCEP, formatCNPJ, formatCPF, formatTelefone, validarCPF } from "./utils.js";
 
 const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfirmacaoModal }) => {
+  const { user } = useAuth();
+
   const initialValues = {
-    email: "",
+    email: user.email,
     cnpj: "",
     razaoSocial: "",
     nomeFantasia: "",
@@ -38,7 +41,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     emailPontoFocal: "",
     telefonePontoFocal: "",
     areaAtuacao: "",
-    naturezaJuridica: "",
+    naturezaJuridica: user.naturezaJuridica,
     vagaEmprego: false,
     vagaEstagio: false,
     vagaJovem: false,
@@ -153,6 +156,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       </Tooltip>
                     </Typography>
                     <TextField
+                      disabled
                       id="email"
                       name="email"
                       value={values.email}
@@ -704,6 +708,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormGroup>
                     <Typography sx={{ mb: "8px" }}>* Natureza Jurídica</Typography>
                     <TextField
+                      disabled
                       id="naturezaJuridica"
                       name="naturezaJuridica"
                       value={values.naturezaJuridica}
@@ -1109,7 +1114,7 @@ FormListarParceiros.propTypes = {
   loading: PropTypes.bool,
   handleSubmit: PropTypes.func,
   confirmacaoModal: PropTypes.bool,
-  setConfirmacaoModal: PropTypes.bool,
+  setConfirmacaoModal: PropTypes.func,
 };
 
 export default FormListarParceiros;
