@@ -52,6 +52,9 @@ export const AuthProvider = ({ children }) => {
           if (!userDetails.photo_path) {
             userDetails.photo_path = "/assets/images/avatars/avatar_25.jpg";
           }
+          if (!userDetails.naturezaJuridica) {
+            userDetails.naturezaJuridica = "Microempreendedor Individual (MEI)";
+          }
           setUser(userDetails);
           localStorage.setItem("user", JSON.stringify(userDetails));
         } else {
