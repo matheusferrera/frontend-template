@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 import InfoIcon from "@mui/icons-material/Info";
@@ -10,8 +10,11 @@ import PropTypes from "prop-types";
 import * as Yup from "yup";
 
 import { useAuth } from "../../contexts/AuthContext";
+import optionsService from "../../services/options.service.js";
 import ConfirmacaoModal from "../modals/ConfirmacaoModal";
 import FinanceiroModal from "../modals/FinanceiroModal";
+import { SelectCidade } from "./fields/SelectCidade.js";
+import { SelectUF } from "./fields/SelectUF.js";
 import { formatCEP, formatCNPJ, formatCPF, formatTelefone, validarCPF } from "./utils.js";
 
 const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfirmacaoModal }) => {
@@ -83,6 +86,38 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
   const [financeiroModal, setFinanceiroModal] = useState(false);
   const [financeiro, setFinanceiro] = useState(false);
 
+  const [ufs, setUfs] = useState([]);
+  const [cidades, setCidades] = useState([]);
+  const [cidadesRepresentante, setCidadesRepresentante] = useState([]);
+
+  const [selectedUf, setSelectedUf] = useState("");
+  const [selectedCidade, setSelectedCidade] = useState("");
+  const [selectedUfRepresentante, setSelectedUfRepresentante] = useState("");
+  const [selectedCidadeRepresentante, setSelectedCidadeRepresentante] = useState("");
+
+  useEffect(() => {
+    const fetchUfs = async () => {
+      await optionsService
+        .getAllUFs()
+        .then(ufsData => {
+          setUfs(ufsData);
+        })
+        .catch(error => {
+          console.error("Erro ao obter UFs:", error);
+        });
+    };
+    fetchUfs();
+  }, []);
+
+  const fetchCidadesByUf = async (ufSigla, setCidadesFunction) => {
+    try {
+      const cidadesData = await optionsService.getCidadesFromUF(ufSigla);
+      setCidadesFunction(cidadesData);
+    } catch (error) {
+      console.error("Erro ao obter cidades:", error);
+    }
+  };
+
   const handleFinanceiro = () => {
     setFinanceiroModal(true);
   };
@@ -97,6 +132,34 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     initialValues.financeiro = true;
     setFinanceiro(true);
     setFinanceiroModal(false);
+  };
+
+  const handleSelectUf = event => {
+    setSelectedUf(event.target.value);
+    initialValues.uf = event.target.value;
+
+    setSelectedCidade("");
+    initialValues.cidade = "";
+    fetchCidadesByUf(event.target.value, setCidades);
+  };
+
+  const handleSelectCidade = event => {
+    setSelectedCidade(event.target.value);
+    initialValues.cidade = event.target.value;
+  };
+
+  const handleSelectUfRepresentante = event => {
+    setSelectedUfRepresentante(event.target.value);
+    initialValues.ufRepresentante = event.target.value;
+
+    setSelectedCidadeRepresentante("");
+    initialValues.cidadeRepresentante = "";
+    fetchCidadesByUf(event.target.value, setCidadesRepresentante);
+  };
+
+  const handleSelectCidadeRepresentante = event => {
+    setSelectedCidadeRepresentante(event.target.value);
+    initialValues.cidadeRepresentante = event.target.value;
   };
 
   const handleConfirmacaoClose = () => {
@@ -341,17 +404,13 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   sm={2}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* UF</Typography>
-                    <TextField
+                    <SelectUF
                       id="uf"
                       name="uf"
-                      value={values.uf}
-                      placeholder="Insira a UF"
-                      type="text"
-                      onChange={handleChange}
+                      ufs={ufs}
+                      uf={selectedUf}
+                      handleSelectUf={handleSelectUf}
                       onBlur={handleBlur}
-                      error={errors.uf && touched.uf}
-                      helperText={errors.uf && touched.uf && errors.uf}
                     />
                   </FormGroup>
                 </Grid>
@@ -361,17 +420,13 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   sm={2}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Cidade</Typography>
-                    <TextField
+                    <SelectCidade
                       id="cidade"
                       name="cidade"
-                      value={values.cidade}
-                      placeholder="Insira a Cidade"
-                      type="text"
-                      onChange={handleChange}
+                      cidades={cidades}
+                      cidade={selectedCidade}
+                      handleSelectCidade={handleSelectCidade}
                       onBlur={handleBlur}
-                      error={errors.cidade && touched.cidade}
-                      helperText={errors.cidade && touched.cidade && errors.cidade}
                     />
                   </FormGroup>
                 </Grid>
@@ -536,17 +591,13 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   sm={3}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* UF</Typography>
-                    <TextField
+                    <SelectUF
                       id="ufRepresentante"
                       name="ufRepresentante"
-                      value={values.ufRepresentante}
-                      placeholder="Insira a UF"
-                      type="text"
-                      onChange={handleChange}
+                      ufs={ufs}
+                      uf={selectedUfRepresentante}
+                      handleSelectUf={handleSelectUfRepresentante}
                       onBlur={handleBlur}
-                      error={errors.ufRepresentante && touched.ufRepresentante}
-                      helperText={errors.ufRepresentante && touched.ufRepresentante && errors.ufRepresentante}
                     />
                   </FormGroup>
                 </Grid>
@@ -556,17 +607,13 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   sm={4}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Cidade</Typography>
-                    <TextField
+                    <SelectCidade
                       id="cidadeRepresentante"
                       name="cidadeRepresentante"
-                      value={values.cidadeRepresentante}
-                      placeholder="Insira a Cidade"
-                      type="text"
-                      onChange={handleChange}
+                      cidades={cidadesRepresentante}
+                      cidade={selectedCidadeRepresentante}
+                      handleSelectCidade={handleSelectCidadeRepresentante}
                       onBlur={handleBlur}
-                      error={errors.cidadeRepresentante && touched.cidadeRepresentante}
-                      helperText={errors.cidadeRepresentante && touched.cidadeRepresentante && errors.cidadeRepresentante}
                     />
                   </FormGroup>
                 </Grid>
