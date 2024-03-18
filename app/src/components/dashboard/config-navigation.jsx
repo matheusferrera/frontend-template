@@ -1,45 +1,39 @@
 const navConfig = [
   {
-    title: "dashboard",
-    path: "/",
+    title: "Página Inicial",
+    path: "/parceiro",
     color: "default",
-    icon: "eva:home-fill",
+    subTitles: {
+      perfil: "/profile",
+    },
   },
-  {
-    title: "user",
-    path: "/profile",
-    icon: "solar:user-circle-bold",
-  },
-  {
-    title: "admin",
-    path: "/admin",
-    icon: "solar:user-circle-bold",
-  },
-
   {
     title: "parceiro",
     path: "/parceiro",
-    icon: "solar:user-circle-bold",
+    subTitles: {
+      "listar parceiros": "/parceiro/listar_parceiros",
+    },
   },
   {
-    title: "cidadão",
-    path: "/cidadao",
-    icon: "solar:user-circle-bold",
+    title: "Vagas de Trabalho",
+    path: "/",
+    subTitles: {
+      "vagas parceiros": "/parceiro/listar_parceiros",
+    },
   },
   {
-    title: "login",
-    path: "/login",
-    icon: "material-symbols:login",
+    title: "Cursos",
+    path: "/",
+    subTitles: {
+      "cursos diversos": "/parceiro/listar_parceiros",
+    },
   },
   {
-    title: "register",
-    path: "/register",
-    icon: "ion:create",
-  },
-  {
-    title: "Not found",
-    path: "/404",
-    icon: "material-symbols:do-not-disturb-off",
+    title: "Empreendedorismo",
+    path: "/",
+    subTitles: {
+      "tecnicas de empreendedorismo": "/parceiro/listar_parceiros",
+    },
   },
 ];
 

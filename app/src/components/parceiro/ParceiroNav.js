@@ -3,52 +3,37 @@ const paceiroNav = [
     title: "Página Inicial",
     path: "/parceiro",
     color: "default",
-    icon: "eva:home-fill",
+    subTitles: {
+      perfil: "/profile",
+    },
   },
   {
-    title: "Parceiro",
-    path: "/",
-    icon: "fa6-solid:handshake",
-  },
-  {
-    title: "Listar Parceiros",
-    path: "/parceiro/listar_parceiros",
-    icon: "mdi:account-group",
+    title: "parceiro",
+    path: "/parceiro",
+    subTitles: {
+      "listar parceiros": "/parceiro/listar_parceiros",
+    },
   },
   {
     title: "Vagas de Trabalho",
     path: "/",
-    icon: "material-symbols:work",
+    subTitles: {
+      cidadao: "/cidadao",
+    },
   },
   {
     title: "Cursos",
     path: "/",
-    icon: "mdi:academic-cap",
+    subTitles: {
+      "cursos diversos": "/parceiro/listar_parceiros",
+    },
   },
   {
     title: "Empreendedorismo",
     path: "/",
-    icon: "solar:rocket-bold",
-  },
-  {
-    title: "Editar Perfil",
-    path: "/profile",
-    icon: "bxs:edit",
-  },
-  {
-    title: "Telecentros",
-    path: "/",
-    icon: "fa-solid:phone",
-  },
-  {
-    title: "Meu Currículo",
-    path: "/",
-    icon: "basil:document-solid",
-  },
-  {
-    title: "Sobre",
-    path: "/",
-    icon: "material-symbols:info",
+    subTitles: {
+      "tecnicas de empreendedorismo": "/parceiro/listar_parceiros",
+    },
   },
 ];
 

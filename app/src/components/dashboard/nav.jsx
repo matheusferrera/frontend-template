@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import Avatar from "@mui/material/Avatar";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import ListItemButton from "@mui/material/ListItemButton";
 import Stack from "@mui/material/Stack";
 import { alpha } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
-import { useAuth } from "../../contexts/AuthContext";
 import { useNavContent } from "../../contexts/NavContentContext";
 import { usePathname } from "../../hooks/use-pathname";
 import { useResponsive } from "../../hooks/use-responsive";
-import Iconify from "../iconify";
 import Scrollbar from "../scrollbar";
 import { HEADER, NAV } from "./config-layout";
 import navConfig from "./config-navigation";
@@ -24,17 +25,9 @@ import RouterLink from "./router-link";
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
   const upLg = useResponsive("up", "lg");
-  const { user } = useAuth();
   const { navContent } = useNavContent();
 
   const renderNavContent = navContent ? navContent : navConfig;
-
-  const account = {
-    displayName: user?.name,
-    email: user?.email,
-    photoURL: user?.photo_path,
-    role: user?.role,
-  };
 
   useEffect(() => {
     if (openNav) {
@@ -44,43 +37,8 @@ export default function Nav({ openNav, onCloseNav }) {
     // react-hooks/exhaustive-deps
   }, [pathname]);
 
-  const renderAccount = (
-    <Box
-      sx={{
-        my: 3,
-        mx: 2.5,
-        py: 2,
-        px: 2.5,
-        display: "flex",
-        borderRadius: 1.5,
-        alignItems: "center",
-        bgcolor: theme => alpha(theme.palette.grey[500], 0.12),
-      }}
-    >
-      <Avatar
-        src={account.photoURL}
-        alt="photoURL"
-      />
-
-      <Box sx={{ ml: 2 }}>
-        <Typography variant="subtitle2">{account.displayName}</Typography>
-
-        <Typography
-          variant="body2"
-          sx={{ color: "text.secondary" }}
-        >
-          {account.role}
-        </Typography>
-      </Box>
-    </Box>
-  );
-
   const renderMenu = (
-    <Stack
-      component="nav"
-      spacing={0.5}
-      sx={{ px: 2 }}
-    >
+    <Stack component="nav">
       {renderNavContent.map(item => (
         <NavItem
           key={item.title}
@@ -102,8 +60,6 @@ export default function Nav({ openNav, onCloseNav }) {
         },
       }}
     >
-      {renderAccount}
-
       {renderMenu}
 
       <Box sx={{ flexGrow: 1 }} />
@@ -115,6 +71,7 @@ export default function Nav({ openNav, onCloseNav }) {
       sx={{
         flexShrink: { lg: 0 },
         width: { lg: NAV.WIDTH },
+        bgcolor: "white",
       }}
     >
       {upLg ? (
@@ -155,40 +112,125 @@ Nav.propTypes = {
 function NavItem({ item }) {
   const pathname = usePathname();
 
-  const active = item.path === pathname;
+  let active = "";
+  if (item.subTitles) {
+    for (let subTitle in item.subTitles) {
+      if (item.subTitles[subTitle] === pathname) {
+        active = subTitle;
+        break;
+      }
+    }
+  } else {
+    active = item.path === pathname;
+  }
 
   return (
     <ListItemButton
       component={RouterLink}
-      href={item.path}
+      href={item?.subTitles ? null : item.path}
       sx={{
-        minHeight: 44,
-        borderRadius: 0.75,
+        minHeight: 56,
         typography: "body2",
-        color: "text.secondary",
+        color: "#1351B4",
         textTransform: "capitalize",
-        fontWeight: "fontWeightMedium",
-        ...(active && {
-          color: "primary.main",
-          fontWeight: "fontWeightSemiBold",
-          bgcolor: theme => alpha(theme.palette.primary.main, 0.08),
+        fontWeight: "fontWeightSmall",
+        transition: "1s",
+        p: 0,
+        ...(!item.subTitles && {
           "&:hover": {
-            bgcolor: theme => alpha(theme.palette.primary.main, 0.16),
+            bgcolor: theme => alpha(theme.palette.primary.dark, 0.6),
+            color: "white",
           },
+          ...(active && {
+            color: "white",
+            fontWeight: "fontWeightSemiBold",
+            bgcolor: theme => alpha(theme.palette.primary.dark, 1),
+            "&:hover": {
+              bgcolor: theme => alpha(theme.palette.primary.dark, 0.6),
+            },
+          }),
         }),
       }}
     >
-      <Box
-        component="span"
-        sx={{ width: 24, height: 24, mr: 2 }}
-      >
-        <Iconify
-          width={24}
-          icon={item.icon}
-        />
-      </Box>
-
-      <Box component="span">{item.title} </Box>
+      {item.subTitles ? (
+        <>
+          <Accordion
+            sx={{
+              typography: "body2",
+              color: "#1351B4",
+              textTransform: "capitalize",
+              fontWeight: "fontWeightSmall",
+              transition: "1s",
+              bgcolor: "transparent",
+              width: "100%",
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<KeyboardArrowDownIcon style={{ color: "#1351B4" }} />}
+              sx={{ bgcolor: "transparent", p: 1, width: "100%", margin: 0 }}
+            >
+              {item.title}
+            </AccordionSummary>
+            <AccordionDetails
+              sx={{
+                bgcolor: "transparent",
+                p: "0",
+                width: "100%",
+              }}
+            >
+              {Object.entries(item.subTitles).map(([title]) => (
+                <Link
+                  to={item.subTitles[title]}
+                  style={{
+                    textDecoration: "none", // Remove underline
+                    color: "inherit", // Inherit text color from parent
+                    width: "100%",
+                  }}
+                  key={title}
+                >
+                  <Box
+                    component="span"
+                    key={title}
+                    href={"TESET"}
+                    sx={{
+                      p: 1,
+                      display: "flex",
+                      minHeight: 56,
+                      alignItems: "center",
+                      width: "100%",
+                      transition: "1s",
+                      paddingTop: "0px",
+                      paddingBottom: "0px",
+                      marginBottom: "0px",
+                      "&:hover": {
+                        bgcolor: theme => alpha(theme.palette.primary.dark, 0.6),
+                        color: "white",
+                      },
+                      ...(active == title && {
+                        color: "white",
+                        fontWeight: "fontWeightSemiBold",
+                        bgcolor: theme => alpha(theme.palette.primary.dark, 1),
+                        "&:hover": {
+                          bgcolor: theme => alpha(theme.palette.primary.dark, 0.6),
+                        },
+                      }),
+                    }}
+                  >
+                    {title}
+                  </Box>
+                </Link>
+              ))}
+            </AccordionDetails>
+          </Accordion>
+        </>
+      ) : (
+        <Box
+          component="span"
+          sx={{ justifyContent: "space-between", display: "flex", width: "100%", p: 1 }}
+        >
+          {item.title}
+        </Box>
+      )}
     </ListItemButton>
   );
 }
