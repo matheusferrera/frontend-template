@@ -1,20 +1,40 @@
 import axios from "axios";
 
+import JSON_CIDADES from "../assets/json/estados-cidades.json";
+
 const API_URL = "https://brasilapi.com.br/api/";
+
+const estados = JSON_CIDADES.estados;
+
+// Cira um array json com objetos cidade que contém o nome, id e estado da cidade
+const cidades = estados.reduce((acc, estado) => {
+  const cidades = estado.cidades.map(cidade => {
+    return {
+      id: cidade,
+      nome: cidade,
+      estado: estado.sigla,
+    };
+  });
+  return acc.concat(cidades);
+}, []);
 
 const getAllUFs = () => {
   return axios
     .get(API_URL + "ibge/uf/v1")
     .then(response => {
-      return response.data.sort((a, b) => {
-        if (a.nome < b.nome) {
-          return -1;
-        }
-        if (a.nome > b.nome) {
-          return 1;
-        }
-        return 0;
-      });
+      if (response) {
+        return response.data.sort((a, b) => {
+          if (a.nome < b.nome) {
+            return -1;
+          }
+          if (a.nome > b.nome) {
+            return 1;
+          }
+          return 0;
+        });
+      } else {
+        return estados;
+      }
     })
     .catch(error => {
       throw error;
@@ -25,15 +45,19 @@ const getCidadesFromUF = ufSigla => {
   return axios
     .get(API_URL + "ibge/municipios/v1/" + ufSigla + "?providers=dados-abertos-br,gov,wikipedia")
     .then(response => {
-      return response.data.sort((a, b) => {
-        if (a.nome < b.nome) {
-          return -1;
-        }
-        if (a.nome > b.nome) {
-          return 1;
-        }
-        return 0;
-      });
+      if (response.data.length > 0) {
+        return response.data.sort((a, b) => {
+          if (a.nome < b.nome) {
+            return -1;
+          }
+          if (a.nome > b.nome) {
+            return 1;
+          }
+          return 0;
+        });
+      } else {
+        return cidades.filter(cidade => cidade.estado === ufSigla);
+      }
     })
     .catch(error => {
       throw error;
