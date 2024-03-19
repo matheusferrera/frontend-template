@@ -122,44 +122,46 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     setFinanceiroModal(true);
   };
 
-  const handleFinanceiroClose = () => {
-    initialValues.financeiro = false;
+  const handleFinanceiroClose = (event, setFieldValue) => {
+    const { name } = event.target;
+    setFieldValue(name, false);
     setFinanceiro(false);
     setFinanceiroModal(false);
   };
 
-  const handleFinanceiroContinuar = () => {
-    initialValues.financeiro = true;
+  const handleFinanceiroContinuar = (event, setFieldValue) => {
+    const { name } = event.target;
+    setFieldValue(name, true);
     setFinanceiro(true);
     setFinanceiroModal(false);
   };
 
-  const handleSelectUf = event => {
-    setSelectedUf(event.target.value);
-    initialValues.uf = event.target.value;
+  const handleSelectUf = (event, setFieldValue) => {
+    const { name, value } = event.target;
+    setFieldValue(name, value);
 
-    setSelectedCidade("");
-    initialValues.cidade = "";
-    fetchCidadesByUf(event.target.value, setCidades);
+    if (name === "uf") {
+      setSelectedUf(value);
+      setSelectedCidade("");
+      setFieldValue("cidade", "");
+      fetchCidadesByUf(event.target.value, setCidades);
+    } else if (name === "ufRepresentante") {
+      setSelectedUfRepresentante(event.target.value);
+      setSelectedCidadeRepresentante("");
+      setFieldValue("cidadeRepresentante", "");
+      fetchCidadesByUf(event.target.value, setCidadesRepresentante);
+    }
   };
 
-  const handleSelectCidade = event => {
-    setSelectedCidade(event.target.value);
-    initialValues.cidade = event.target.value;
-  };
+  const handleSelectCidade = (event, setFieldValue) => {
+    const { name, value } = event.target;
+    setFieldValue(name, value);
 
-  const handleSelectUfRepresentante = event => {
-    setSelectedUfRepresentante(event.target.value);
-    initialValues.ufRepresentante = event.target.value;
-
-    setSelectedCidadeRepresentante("");
-    initialValues.cidadeRepresentante = "";
-    fetchCidadesByUf(event.target.value, setCidadesRepresentante);
-  };
-
-  const handleSelectCidadeRepresentante = event => {
-    setSelectedCidadeRepresentante(event.target.value);
-    initialValues.cidadeRepresentante = event.target.value;
+    if (name === "cidade") {
+      setSelectedCidade(event.target.value);
+    } else if (name === "cidadeRepresentante") {
+      setSelectedCidadeRepresentante(event.target.value);
+    }
   };
 
   const handleConfirmacaoClose = () => {
@@ -172,7 +174,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, errors, touched }) => (
+      {({ values, setFieldValue, handleChange, handleBlur, handleSubmit, isSubmitting, errors, touched }) => (
         <Form>
           <Stack>
             <Card
@@ -405,13 +407,27 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                 >
                   <FormGroup>
                     <SelectUF
-                      id="uf"
-                      name="uf"
+                      idSelect={"uf"}
+                      nameSelect={"uf"}
+                      value={values.uf}
                       ufs={ufs}
                       uf={selectedUf}
-                      handleSelectUf={handleSelectUf}
+                      handleSelectUf={event => handleSelectUf(event, setFieldValue)}
                       onBlur={handleBlur}
+                      errors={errors.uf}
+                      touched={touched.uf}
                     />
+                    {errors.uf && touched.uf && errors.uf && (
+                      <Typography
+                        sx={{
+                          color: "#FF5630",
+                          fontSize: "12px",
+                          ml: "12px",
+                        }}
+                      >
+                        {errors.uf}
+                      </Typography>
+                    )}
                   </FormGroup>
                 </Grid>
                 <Grid
@@ -421,13 +437,27 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                 >
                   <FormGroup>
                     <SelectCidade
-                      id="cidade"
-                      name="cidade"
+                      idSelect={"cidade"}
+                      nameSelect={"cidade"}
+                      value={values.cidade}
                       cidades={cidades}
                       cidade={selectedCidade}
-                      handleSelectCidade={handleSelectCidade}
+                      handleSelectCidade={event => handleSelectCidade(event, setFieldValue)}
                       onBlur={handleBlur}
+                      errors={errors.cidade}
+                      touched={touched.cidade}
                     />
+                    {errors.cidade && touched.cidade && errors.cidade && (
+                      <Typography
+                        sx={{
+                          color: "#FF5630",
+                          fontSize: "12px",
+                          ml: "12px",
+                        }}
+                      >
+                        {errors.cidade}
+                      </Typography>
+                    )}
                   </FormGroup>
                 </Grid>
                 <Grid
@@ -592,13 +622,27 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                 >
                   <FormGroup>
                     <SelectUF
-                      id="ufRepresentante"
-                      name="ufRepresentante"
+                      idSelect={"ufRepresentante"}
+                      nameSelect={"ufRepresentante"}
+                      value={values.ufRepresentante}
                       ufs={ufs}
                       uf={selectedUfRepresentante}
-                      handleSelectUf={handleSelectUfRepresentante}
+                      handleSelectUf={event => handleSelectUf(event, setFieldValue)}
                       onBlur={handleBlur}
+                      errors={errors.ufRepresentante}
+                      touched={touched.ufRepresentante}
                     />
+                    {errors.ufRepresentante && touched.ufRepresentante && errors.ufRepresentante && (
+                      <Typography
+                        sx={{
+                          color: "#FF5630",
+                          fontSize: "12px",
+                          ml: "12px",
+                        }}
+                      >
+                        {errors.ufRepresentante}
+                      </Typography>
+                    )}
                   </FormGroup>
                 </Grid>
                 <Grid
@@ -608,13 +652,27 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                 >
                   <FormGroup>
                     <SelectCidade
-                      id="cidadeRepresentante"
-                      name="cidadeRepresentante"
+                      idSelect={"cidadeRepresentante"}
+                      nameSelect={"cidadeRepresentante"}
+                      value={values.cidadeRepresentante}
                       cidades={cidadesRepresentante}
                       cidade={selectedCidadeRepresentante}
-                      handleSelectCidade={handleSelectCidadeRepresentante}
+                      handleSelectCidade={event => handleSelectCidade(event, setFieldValue)}
                       onBlur={handleBlur}
+                      errors={errors.cidadeRepresentante}
+                      touched={touched.cidadeRepresentante}
                     />
+                    {errors.cidadeRepresentante && touched.cidadeRepresentante && errors.cidadeRepresentante && (
+                      <Typography
+                        sx={{
+                          color: "#FF5630",
+                          fontSize: "12px",
+                          ml: "12px",
+                        }}
+                      >
+                        {errors.cidadeRepresentante}
+                      </Typography>
+                    )}
                   </FormGroup>
                 </Grid>
               </Grid>
@@ -954,8 +1012,8 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   />
                   <FinanceiroModal
                     showModal={financeiroModal}
-                    handleContinuar={handleFinanceiroContinuar}
-                    handleClose={handleFinanceiroClose}
+                    handleContinuar={event => handleFinanceiroContinuar(event, setFieldValue)}
+                    handleClose={event => handleFinanceiroClose(event, setFieldValue)}
                   />
                   <FormControlLabel
                     control={

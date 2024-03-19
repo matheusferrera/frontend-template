@@ -6,7 +6,7 @@ import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
-export const SelectCidade = ({ cidades, cidade, handleSelectCidade }) => {
+export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSelectCidade, errors, touched }) => {
   if (!cidade) {
     cidade = "none";
   }
@@ -14,12 +14,13 @@ export const SelectCidade = ({ cidades, cidade, handleSelectCidade }) => {
     <FormControl fullWidth>
       <Typography sx={{ mb: "8px" }}>* Cidade</Typography>
       <Select
-        id="cidade"
-        name="cidade"
+        id={idSelect}
+        name={nameSelect}
         defaultValue=""
         value={cidade}
         placeholder="Selecione uma cidade"
         onChange={handleSelectCidade}
+        error={errors && touched}
       >
         <MenuItem
           key="none"
@@ -48,7 +49,11 @@ export const SelectCidade = ({ cidades, cidade, handleSelectCidade }) => {
 };
 
 SelectCidade.propTypes = {
+  idSelect: PropTypes.string.isRequired,
+  nameSelect: PropTypes.string.isRequired,
   cidades: PropTypes.array.isRequired,
   cidade: PropTypes.string.isRequired,
   handleSelectCidade: PropTypes.func.isRequired,
+  errors: PropTypes.string,
+  touched: PropTypes.bool,
 };
