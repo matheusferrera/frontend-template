@@ -13,6 +13,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import optionsService from "../../services/options.service.js";
 import ConfirmacaoModal from "../modals/ConfirmacaoModal";
 import FinanceiroModal from "../modals/FinanceiroModal";
+import { SelectAtuacaoParceiro } from "./fields/SelectAutacaoParceiro.js";
 import { SelectCidade } from "./fields/SelectCidade.js";
 import { SelectUF } from "./fields/SelectUF.js";
 import { formatCEP, formatCNPJ, formatCPF, formatTelefone, validarCPF } from "./utils.js";
@@ -45,13 +46,13 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     telefonePontoFocal: "",
     areaAtuacao: "",
     naturezaJuridica: user.naturezaJuridica,
-    vagaEmprego: false,
-    vagaEstagio: false,
-    vagaJovem: false,
-    cursos: false,
-    financeiro: false,
-    mobilidadePublico: false,
-    mobilidadeParceiro: false,
+    checkVagaEmprego: false,
+    checkVagaEstagio: false,
+    checkVagaJovem: false,
+    checkCursos: false,
+    checkFinanceiro: false,
+    checkMobilidadePublico: false,
+    checkMobilidadeParceiro: false,
     toggleCienteNormas: false,
     toggleCienteGratuito: false,
   };
@@ -117,6 +118,22 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
       console.error("Erro ao obter cidades:", error);
     }
   };
+
+  const [atuacoes, setAtuacoes] = useState([]);
+
+  useEffect(() => {
+    const fetchAtuacoes = async () => {
+      await optionsService
+        .getAtuacoes()
+        .then(atuacoesData => {
+          setAtuacoes(atuacoesData);
+        })
+        .catch(error => {
+          console.error("Erro ao obter Atuações:", error);
+        });
+    };
+    fetchAtuacoes();
+  }, []);
 
   const handleFinanceiro = () => {
     setFinanceiroModal(true);
@@ -791,18 +808,28 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   sm={6}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Área de Atuação do Parceiro</Typography>
-                    <TextField
-                      id="areaAtuacao"
-                      name="areaAtuacao"
-                      value={values.areaAtuacao}
-                      placeholder="Insira a Área de Atuação do Parceiro"
-                      type="text"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      error={errors.areaAtuacao && touched.areaAtuacao}
-                      helperText={errors.areaAtuacao && touched.areaAtuacao && errors.areaAtuacao}
+                    <SelectAtuacaoParceiro
+                      idSelect={"areaAtuacao"}
+                      nameSelect={"areaAtuacao"}
+                      handleSelect={handleChange}
+                      list={atuacoes}
+                      item={values.areaAtuacao}
+                      label={"* Área de Atuação"}
+                      placeholder={"Selecione a Área de Atuação"}
+                      errors={errors.areaAtuacao}
+                      touched={touched.areaAtuacao}
                     />
+                    {errors.areaAtuacao && touched.areaAtuacao && errors.areaAtuacao && (
+                      <Typography
+                        sx={{
+                          color: "#FF5630",
+                          fontSize: "12px",
+                          ml: "12px",
+                        }}
+                      >
+                        {errors.areaAtuacao}
+                      </Typography>
+                    )}
                   </FormGroup>
                 </Grid>
                 <Grid
@@ -851,9 +878,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormControlLabel
                     control={
                       <Checkbox
-                        id="vagaEmprego"
-                        name="vagaEmprego"
-                        checked={values.vagaEmprego}
+                        id="checkVagaEmprego"
+                        name="checkVagaEmprego"
+                        checked={values.checkVagaEmprego}
                         onChange={handleChange}
                         color="primary"
                       />
@@ -883,9 +910,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormControlLabel
                     control={
                       <Checkbox
-                        id="vagaEstagio"
-                        name="vagaEstagio"
-                        checked={values.vagaEstagio}
+                        id="checkVagaEstagio"
+                        name="checkVagaEstagio"
+                        checked={values.checkVagaEstagio}
                         onChange={handleChange}
                         color="primary"
                       />
@@ -915,9 +942,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormControlLabel
                     control={
                       <Checkbox
-                        id="vagaJovem"
-                        name="vagaJovem"
-                        checked={values.vagaJovem}
+                        id="checkVagaJovem"
+                        name="checkVagaJovem"
+                        checked={values.checkVagaJovem}
                         onChange={handleChange}
                         color="primary"
                       />
@@ -947,9 +974,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormControlLabel
                     control={
                       <Checkbox
-                        id="cursos"
-                        name="cursos"
-                        checked={values.cursos}
+                        id="checkCursos"
+                        name="checkCursos"
+                        checked={values.checkCursos}
                         onChange={handleChange}
                         color="primary"
                       />
@@ -979,8 +1006,8 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormControlLabel
                     control={
                       <Checkbox
-                        id="financeiro"
-                        name="financeiro"
+                        id="checkFinanceiro"
+                        name="checkFinanceiro"
                         value={financeiro}
                         checked={financeiro}
                         onBlur={handleBlur}
@@ -1018,9 +1045,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormControlLabel
                     control={
                       <Checkbox
-                        id="mobilidadePublico"
-                        name="mobilidadePublico"
-                        checked={values.mobilidadePublico}
+                        id="checkMobilidadePublico"
+                        name="checkMobilidadePublico"
+                        checked={values.checkMobilidadePublico}
                         onChange={handleChange}
                         color="primary"
                       />
@@ -1050,9 +1077,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormControlLabel
                     control={
                       <Checkbox
-                        id="mobilidadeParceiro"
-                        name="mobilidadeParceiro"
-                        checked={values.mobilidadeParceiro}
+                        id="checkMobilidadeParceiro"
+                        name="checkMobilidadeParceiro"
+                        checked={values.checkMobilidadeParceiro}
                         onChange={handleChange}
                         color="primary"
                       />
