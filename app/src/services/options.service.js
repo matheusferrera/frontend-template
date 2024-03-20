@@ -1,8 +1,11 @@
 import axios from "axios";
 
+import JSON_ATUACOES from "../assets/json/atuacao_parceiro.json";
 import JSON_CIDADES from "../assets/json/estados-cidades.json";
 
 const API_URL = "https://brasilapi.com.br/api/";
+
+const API_URL2 = "https://servicodados.ibge.gov.br/api/";
 
 const estados = JSON_CIDADES.estados;
 
@@ -17,6 +20,8 @@ const cidades = estados.reduce((acc, estado) => {
   });
   return acc.concat(cidades);
 }, []);
+
+const atuacoes = JSON_ATUACOES.atuacoes;
 
 const getAllUFs = () => {
   return axios
@@ -64,9 +69,25 @@ const getCidadesFromUF = ufSigla => {
     });
 };
 
+const getAtuacoes = () => {
+  return axios
+    .get(API_URL2 + "v2/cnae/divisoes")
+    .then(response => {
+      if (response) {
+        return response.data;
+      } else {
+        return atuacoes;
+      }
+    })
+    .catch(error => {
+      throw error;
+    });
+};
+
 const OptionsService = {
   getAllUFs,
   getCidadesFromUF,
+  getAtuacoes,
 };
 
 export default OptionsService;
