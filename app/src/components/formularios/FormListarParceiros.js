@@ -4,7 +4,20 @@ import { useState } from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import SaveIcon from "@mui/icons-material/Save";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { Button, Card, Checkbox, FormControlLabel, FormGroup, Grid, Link, Stack, TextField, Tooltip, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  FormHelperText,
+  Grid,
+  Link,
+  Stack,
+  TextField,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
@@ -16,7 +29,7 @@ import FinanceiroModal from "../modals/FinanceiroModal";
 import { SelectAtuacaoParceiro } from "./fields/SelectAutacaoParceiro.js";
 import { SelectCidade } from "./fields/SelectCidade.js";
 import { SelectUF } from "./fields/SelectUF.js";
-import { formatCEP, formatCNPJ, formatCPF, formatTelefone, validarCPF } from "./utils.js";
+import { formatCEP, formatCNPJ, formatCPF, formatSite, formatTelefone, validarCPF } from "./utils.js";
 
 const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfirmacaoModal }) => {
   const { user } = useAuth();
@@ -67,11 +80,22 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     uf: Yup.string().required("UF é obrigatório"),
     cidade: Yup.string().required("Cidade é obrigatório"),
     telefone: Yup.string().min(14, "Insira um telefone válido").required("Telefone é obrigatório"),
+    site: Yup.string()
+      .test("url", "O site deve ter um formato válido", function (site) {
+        if (!site) return true; // Se o campo estiver vazio, a validação passa
+        return Yup.string().url().isValidSync(site);
+      })
+      .test("Site-Ativo", "O site informado não está ativo", async function (site) {
+        if (!site || !Yup.string().url().isValidSync(site)) {
+          return true; // Se o campo estiver vazio ou a URL for inválida, a validação passa
+        }
+        return await optionsService.siteAtivo(site);
+      }),
     nomeRepresentante: Yup.string().required("Nome do representante é obrigatório"),
     cpf: Yup.string()
       .min(14, "O CPF deve ter 11 dígitos")
       .required("CPF do representante é obrigatório")
-      .test("Validar-CPF", "O CPF informado não é válido", value => validarCPF(value) == true),
+      .test("Validar-CPF", "O CPF informado não é válido", value => validarCPF(value)),
     telefoneRepresentante: Yup.string().min(14, "Insira um telefone válido").required("Telefone do representante é obrigatório"),
     ufRepresentante: Yup.string().required("UF do representante é obrigatório"),
     cidadeRepresentante: Yup.string().required("Cidade do representante é obrigatório"),
@@ -181,6 +205,29 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     }
   };
 
+  const handleSite = (event, setFieldValue) => {
+    const { name, value } = event.target;
+    setFieldValue(name, formatSite(value));
+  };
+
+  const isURLValid = value => {
+    // Função para verificar se o valor é uma URL válida
+    try {
+      Yup.string().url().validateSync(value);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  };
+
+  const avisoSiteValido = (errors, valor) => {
+    // Função para verificar se o site é válido e se não há erros e mostrar uma mensagem válida
+    if (isURLValid(formatSite(valor)) && !errors.site && valor.trim() !== "") {
+      return "Site válido";
+    }
+    return "";
+  };
+
   const handleConfirmacaoClose = () => {
     setConfirmacaoModal(false);
   };
@@ -190,6 +237,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
+      validateOnChange={false}
     >
       {({ values, setFieldValue, handleChange, handleBlur, handleSubmit, isSubmitting, errors, touched }) => (
         <Form>
@@ -511,10 +559,14 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       id="site"
                       name="site"
                       value={values.site}
+                      onChange={event => handleSite(event, setFieldValue)}
                       placeholder="Insira o Site"
                       type="text"
-                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={errors.site && touched.site}
+                      helperText={errors.site && touched.site && errors.site}
                     />
+                    <FormHelperText id="site-valido">{avisoSiteValido(errors, values.site)}</FormHelperText>
                   </FormGroup>
                 </Grid>
                 <Grid

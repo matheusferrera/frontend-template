@@ -84,10 +84,42 @@ const getAtuacoes = () => {
     });
 };
 
-const OptionsService = {
+function siteAtivo(site) {
+  // Remover os espaços em branco deixados no campo ao escrever a URL
+  if (typeof site != typeof undefined) {
+    const url = site.replace(/\s/g, "");
+    console.log("Checando site:", url);
+    return fetch(url, { method: "HEAD", mode: "no-cors" })
+      .then(response => {
+        if (response.ok || response.type === "opaque") {
+          // Site is active
+          console.log("Site ativo");
+          return true;
+        } else {
+          // Site is not active
+          console.log("Site inativo");
+          return false;
+        }
+      })
+      .catch(error => {
+        if (error instanceof TypeError || error instanceof SyntaxError) {
+          // Handle network errors
+          console.error("Network error:", error);
+        } else {
+          // Handle other errors
+          console.error("Error checking site status:", error);
+        }
+        return false; // Return false for any error
+      });
+  }
+  return true;
+}
+
+const optionsService = {
   getAllUFs,
   getCidadesFromUF,
   getAtuacoes,
+  siteAtivo,
 };
 
-export default OptionsService;
+export default optionsService;
