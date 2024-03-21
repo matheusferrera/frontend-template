@@ -4,17 +4,14 @@ import PropTypes from "prop-types";
 
 import CustomModal from "./CustomModal";
 
-const ConfirmacaoModal = ({ showModal, handleClose }) => {
-  const modalTitle = "Confirmação de envio";
+const ErroModal = ({ showModal, handleClose }) => {
+  const modalTitle = "Erro inesperado";
   const modalContent = (
     <>
       <center>
         {
-          "Cadastro realizado com sucesso e enviado para aprovação da Secretaria de Inclusão Socioeconômica do Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome."
+          "Erro inesperado, favor tentar novamente mais tarde, caso o erro persista contatar a central de relacionamento pelo número de telefone 121 ou por e-mail para cgad@mds.gov.br."
         }
-      </center>
-      <center>
-        {"Assim que seu cadastro for validado, você será informado da aprovação por e-mail e poderá iniciar a oferta de serviços."}
       </center>
     </>
   );
@@ -32,9 +29,9 @@ const ConfirmacaoModal = ({ showModal, handleClose }) => {
   );
 };
 
-ConfirmacaoModal.propTypes = {
+ErroModal.propTypes = {
   showModal: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
 };
 
-export default ConfirmacaoModal;
+export default ErroModal;

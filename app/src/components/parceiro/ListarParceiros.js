@@ -15,6 +15,7 @@ const ListarParceiros = () => {
   const [fetched, setFetched] = useState(false); // Track if data has been fetched
   const [loading, setLoading] = useState(false);
   const [confirmacaoModal, setConfirmacaoModal] = useState(false);
+  const [erroModal, setErroModal] = useState(false);
   const [, setDadosConsolidados] = useState({
     listaPermissao: {
       permissao1: false,
@@ -50,12 +51,31 @@ const ListarParceiros = () => {
 
   const handleSubmit = (values, { setSubmitting }) => {
     setLoading(true);
-    setConfirmacaoModal(true);
+    return new Promise(resolve => {
+      // TODO: mudar para a chamada no backend
+      console.log(values);
+      // Simula uma operação assíncrona
+      setTimeout(() => {
+        // Retorna a Promisse como sucesso no Timeout
+        resolve("Submissão bem-sucedida!");
+      }, 2000);
 
-    console.log(values);
-
-    setSubmitting(false);
-    setLoading(false);
+      // Código que pode ser usado pra simular erro;
+      // Como o código não tem nenhuma condição, ao ser utilizado o erro irá ser lançado antes do Timeout (Sucesso);
+      // throw new Error("Erro simulado durante a submissão!");
+    })
+      .then(mensagem => {
+        console.log("Sucesso:", mensagem);
+        setConfirmacaoModal(true);
+      })
+      .catch(erro => {
+        console.error("", erro);
+        setErroModal(true);
+      })
+      .finally(() => {
+        setSubmitting(false);
+        setLoading(false);
+      });
   };
 
   return (
@@ -78,6 +98,8 @@ const ListarParceiros = () => {
         handleSubmit={handleSubmit}
         confirmacaoModal={confirmacaoModal}
         setConfirmacaoModal={setConfirmacaoModal}
+        erroModal={erroModal}
+        setErroModal={setErroModal}
       />
     </Box>
   );
