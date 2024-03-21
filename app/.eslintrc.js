@@ -14,6 +14,10 @@ module.exports = {
         sourceType: "script",
       },
     },
+    {
+      files: "*.json",
+      parser: "jsonc-eslint-parser",
+    },
   ],
   parserOptions: {
     ecmaVersion: "latest",
