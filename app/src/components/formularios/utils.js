@@ -41,6 +41,15 @@ export function formatTelefone(value) {
   }
 }
 
+export function formatSite(url) {
+  if (typeof url != typeof undefined) {
+    // Remover os espaços em branco deixados no campo ao escrever a URL
+    return url.replace(/\s/g, "");
+  } else {
+    return url;
+  }
+}
+
 export function validarCPF(cpf) {
   cpf = cpf.replace(/\D/g, "");
   let resto, digitoVerificador1, digitoVerificador2;
