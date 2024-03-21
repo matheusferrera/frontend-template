@@ -25,13 +25,14 @@ import * as Yup from "yup";
 import { useAuth } from "../../contexts/AuthContext";
 import optionsService from "../../services/options.service.js";
 import ConfirmacaoModal from "../modals/ConfirmacaoModal";
+import ErroModal from "../modals/ErroModal.js";
 import FinanceiroModal from "../modals/FinanceiroModal";
 import { SelectAtuacaoParceiro } from "./fields/SelectAutacaoParceiro.js";
 import { SelectCidade } from "./fields/SelectCidade.js";
 import { SelectUF } from "./fields/SelectUF.js";
 import { formatCEP, formatCNPJ, formatCPF, formatSite, formatTelefone, validarCPF } from "./utils.js";
 
-const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfirmacaoModal }) => {
+const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfirmacaoModal, erroModal, setErroModal }) => {
   const { user } = useAuth();
 
   const initialValues = {
@@ -230,6 +231,10 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
 
   const handleConfirmacaoClose = () => {
     setConfirmacaoModal(false);
+  };
+
+  const handleErroClose = () => {
+    setErroModal(false);
   };
 
   return (
@@ -1281,6 +1286,10 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                           showModal={confirmacaoModal}
                           handleClose={handleConfirmacaoClose}
                         />
+                        <ErroModal
+                          showModal={erroModal}
+                          handleClose={handleErroClose}
+                        />
                       </Grid>
                     </Grid>
                   </Grid>
@@ -1299,6 +1308,8 @@ FormListarParceiros.propTypes = {
   handleSubmit: PropTypes.func,
   confirmacaoModal: PropTypes.bool,
   setConfirmacaoModal: PropTypes.func,
+  setErroModal: PropTypes.func,
+  erroModal: PropTypes.bool,
 };
 
 export default FormListarParceiros;
