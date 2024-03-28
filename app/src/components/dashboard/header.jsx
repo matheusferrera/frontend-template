@@ -1,62 +1,123 @@
 import React from "react";
 
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import { useTheme } from "@mui/material/styles";
+import { alpha } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import { useResponsive } from "../../hooks/use-responsive";
 import { bgBlur } from "../../theme/css";
-import AccountPopover from "../dashboard-common/account-popover";
-import ThemeSwitcher from "../dashboard-common/theme-switcher";
 import Iconify from "../iconify";
-import Logo from "../logo";
-import { HEADER, NAV } from "./config-layout";
+import { HEADER } from "./config-layout";
 
 // ----------------------------------------------------------------------
+
+const TitleSistemas = styled.a`
+  color: black;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+`;
+
+const SubTitleSistema = styled.a`
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+`;
+
+const TitleUser = styled.a`
+  color: #1351b4;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+`;
+
+const SubTitleUser = styled.a`
+  color: #1351b4;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+`;
+
+const StyledStack = styled(Stack)`
+  width: 100%;
+`;
+
+const IconHeader = styled(Iconify)`
+  color: #1351b4;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  vertical-align: middle;
+`;
 
 export default function Header({ onOpenNav }) {
   const theme = useTheme();
 
   const lgUp = useResponsive("up", "lg");
 
-  const logoWidth = 50;
-  const logoStyle = {
-    ml: lgUp ? `calc((${NAV.WIDTH}px / 2) - ${logoWidth}px)` : undefined,
-  };
-
   const renderContent = (
-    <>
-      <Logo sx={logoStyle} />
-
-      {/* <Searchbar /> */}
-
-      <Box sx={{ flexGrow: 1 }} />
+    <StyledStack
+      direction="row"
+      justifyContent="space-between"
+    >
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={3}
+      >
+        <IconButton
+          onClick={onOpenNav}
+          sx={{ ml: 1, color: theme => alpha(theme.palette.primary.dark, 1) }}
+        >
+          <IconHeader icon="eva:menu-fill" />
+        </IconButton>
+        <Stack>
+          <TitleSistemas>Abreviação do sistema</TitleSistemas>
+          <SubTitleSistema>Versão do sistema</SubTitleSistema>
+        </Stack>
+      </Stack>
 
       <Stack
         direction="row"
         alignItems="center"
-        spacing={1}
+        spacing={2}
       >
-        {/* <LanguagePopover /> */}
-        <ThemeSwitcher />
-        {/* <NotificationsPopover /> */}
-        <AccountPopover />
-      </Stack>
-
-      {/* menu hamburguer fica à esquerda */}
-      {!lgUp && (
         <IconButton
           onClick={onOpenNav}
-          sx={{ ml: 1, color: "primary.main" }}
+          sx={{ ml: 1, color: theme => alpha(theme.palette.primary.dark, 1) }}
         >
-          <Iconify icon="eva:menu-fill" />
+          <IconHeader icon="gg:drop-invert" />
         </IconButton>
-      )}
-    </>
+
+        <div style={{ height: "40%", width: "1px", border: "1px solid #9E9E9E" }}></div>
+
+        <IconButton
+          onClick={onOpenNav}
+          sx={{ ml: 1, color: theme => alpha(theme.palette.primary.dark, 1) }}
+        >
+          <IconHeader icon="mingcute:user-4-fill" />
+        </IconButton>
+
+        <Stack>
+          <TitleUser>Bem vindo</TitleUser>
+          <SubTitleUser>Yvone lara da costa</SubTitleUser>
+        </Stack>
+
+        <IconButton
+          onClick={onOpenNav}
+          sx={{ ml: 1, color: theme => alpha(theme.palette.primary.dark, 1) }}
+        >
+          <IconHeader icon="ic:outline-logout" />
+        </IconButton>
+      </Stack>
+    </StyledStack>
   );
 
   return (
@@ -79,7 +140,7 @@ export default function Header({ onOpenNav }) {
       <Toolbar
         sx={{
           height: 1,
-          px: { lg: 5 },
+          px: { lg: 2 },
         }}
       >
         {renderContent}
