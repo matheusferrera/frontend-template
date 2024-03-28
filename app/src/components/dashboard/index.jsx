@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
 
+import Footer from "./footer";
 import Header from "./header";
 import Main from "./main";
 import Nav from "./nav";
@@ -30,6 +31,7 @@ export default function DashboardLayout({ children }) {
 
         <Main>{children}</Main>
       </Box>
+      <Footer></Footer>
     </>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Accordion from "@mui/material/Accordion";
@@ -126,8 +125,6 @@ function NavItem({ item }) {
 
   return (
     <ListItemButton
-      component={RouterLink}
-      href={item?.subTitles ? null : item.path}
       sx={{
         minHeight: 56,
         typography: "body2",
@@ -153,7 +150,7 @@ function NavItem({ item }) {
       }}
     >
       {item.subTitles ? (
-        <>
+        <React.Fragment key={item.title}>
           <Accordion
             sx={{
               typography: "body2",
@@ -179,20 +176,13 @@ function NavItem({ item }) {
               }}
             >
               {Object.entries(item.subTitles).map(([title]) => (
-                <Link
-                  to={item.subTitles[title]}
-                  style={{
-                    textDecoration: "none", // Remove underline
-                    color: "inherit", // Inherit text color from parent
-                    width: "100%",
-                  }}
-                  key={title}
-                >
+                <div key={"div_" + title}>
                   <Box
-                    component="span"
-                    key={title}
-                    href={"TESET"}
+                    component={RouterLink}
+                    href={item.subTitles[title]}
                     sx={{
+                      textDecoration: "none",
+                      color: "inherit",
                       p: 1,
                       display: "flex",
                       minHeight: 56,
@@ -218,11 +208,11 @@ function NavItem({ item }) {
                   >
                     {title}
                   </Box>
-                </Link>
+                </div>
               ))}
             </AccordionDetails>
           </Accordion>
-        </>
+        </React.Fragment>
       ) : (
         <Box
           component="span"
