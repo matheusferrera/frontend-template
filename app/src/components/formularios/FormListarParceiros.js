@@ -30,7 +30,7 @@ import FinanceiroModal from "../modals/FinanceiroModal";
 import { SelectAtuacaoParceiro } from "./fields/SelectAutacaoParceiro.js";
 import { SelectCidade } from "./fields/SelectCidade.js";
 import { SelectUF } from "./fields/SelectUF.js";
-import { formatCEP, formatCNPJ, formatCPF, formatSite, formatTelefone, validarCPF } from "./utils.js";
+import { formatCEP, formatCNPJ, formatCPF, formatSite, formatTelefone, validarCNPJ, validarCPF } from "./utils.js";
 
 const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfirmacaoModal, erroModal, setErroModal }) => {
   const { user } = useAuth();
@@ -73,7 +73,18 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Forneça um email válido").required("Email é obrigatório"),
-    cnpj: Yup.string().min(18, "O CNPJ deve ter 14 dígitos").required("CNPJ é obrigatório"),
+    cnpj: Yup.string()
+      .required("CNPJ é obrigatório")
+      .test("Tamanho-Valido-CNPJ", "O CNPJ deve ter 14 dígitos", cnpj => cnpj.replace(/\D/g, "").length == 14)
+      .test("Validar-CNPJ", "O CNPJ informado não é válido", async function (cnpj) {
+        if (validarCNPJ(cnpj)) {
+          return await optionsService.verificarCNPJ(cnpj).catch(() => {
+            console.error("Erro ao obter CNPJ");
+            return false;
+          });
+        }
+        return false;
+      }),
     razaoSocial: Yup.string().required("Razão social é obrigatório"),
     cep: Yup.string().min(10, "O CEP deve ter 8 dígitos").required("CEP é obrigatório"),
     endereco: Yup.string().required("Endereço é obrigatório"),
@@ -90,7 +101,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
         if (!site || !Yup.string().url().isValidSync(site)) {
           return true; // Se o campo estiver vazio ou a URL for inválida, a validação passa
         }
-        return await optionsService.siteAtivo(site);
+        return await optionsService.verificarSiteAtivo(site).catch(erro => console.error(erro));
       }),
     nomeRepresentante: Yup.string().required("Nome do representante é obrigatório"),
     cpf: Yup.string()
@@ -204,6 +215,20 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     } else if (name === "cidadeRepresentante") {
       setSelectedCidadeRepresentante(event.target.value);
     }
+  };
+
+  const handleChangeCNPJ = async (event, setFieldValue) => {
+    const { name, value } = event.target;
+    if (validarCNPJ(value)) {
+      await optionsService
+        .verificarCNPJ(value)
+        .then(dados => {
+          setFieldValue("razaoSocial", dados.razao_social);
+          setFieldValue("nomeFantasia", dados.nome_fantasia);
+        })
+        .catch(() => console.error("Erro ao obter CNPJ"));
+    }
+    setFieldValue(name, value);
   };
 
   const handleSite = (event, setFieldValue) => {
@@ -323,7 +348,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       value={formatCNPJ(values.cnpj)}
                       placeholder="Insira o CNPJ"
                       type="text"
-                      onChange={handleChange}
+                      onChange={event => handleChangeCNPJ(event, setFieldValue)}
                       onBlur={handleBlur}
                       inputProps={{
                         maxLength: 18,
@@ -341,6 +366,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                   <FormGroup>
                     <Typography sx={{ mb: "8px" }}>* Razão Social</Typography>
                     <TextField
+                      disabled
                       id="razaoSocial"
                       name="razaoSocial"
                       value={values.razaoSocial}

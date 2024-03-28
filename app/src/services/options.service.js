@@ -42,6 +42,7 @@ const getAllUFs = () => {
       }
     })
     .catch(error => {
+      console.error(error);
       throw error;
     });
 };
@@ -65,6 +66,7 @@ const getCidadesFromUF = ufSigla => {
       }
     })
     .catch(error => {
+      console.error(error);
       throw error;
     });
 };
@@ -80,11 +82,29 @@ const getAtuacoes = () => {
       }
     })
     .catch(error => {
+      console.error(error);
       throw error;
     });
 };
 
-function siteAtivo(site) {
+function verificarCNPJ(cnpj) {
+  return axios
+    .get(API_URL + "cnpj/v1/" + cnpj.replace(/\D/g, ""))
+    .then(response => {
+      if (response) {
+        return response.data;
+      } else {
+        return false;
+      }
+    })
+    .catch(error => {
+      // CNPJ inexistente para testes: 67.131.499/0001-47
+      console.error(error);
+      throw error;
+    });
+}
+
+function verificarSiteAtivo(site) {
   // Remover os espaços em branco deixados no campo ao escrever a URL
   if (typeof site != typeof undefined) {
     const url = site.replace(/\s/g, "");
@@ -109,7 +129,7 @@ function siteAtivo(site) {
           // Handle other errors
           console.error("Error checking site status:", error);
         }
-        return false; // Return false for any error
+        throw error; // Return false for any error
       });
   }
   return true;
@@ -119,7 +139,8 @@ const optionsService = {
   getAllUFs,
   getCidadesFromUF,
   getAtuacoes,
-  siteAtivo,
+  verificarSiteAtivo,
+  verificarCNPJ,
 };
 
 export default optionsService;
