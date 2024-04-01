@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import InfoIcon from "@mui/icons-material/Info";
+import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import SaveIcon from "@mui/icons-material/Save";
 import LoadingButton from "@mui/lab/LoadingButton";
 import {
@@ -24,6 +26,7 @@ import * as Yup from "yup";
 
 import { useAuth } from "../../contexts/AuthContext";
 import optionsService from "../../services/options.service.js";
+import ButtonSecondary from "../buttons/ButtonSecondary.js";
 import ConfirmacaoModal from "../modals/ConfirmacaoModal";
 import ErroModal from "../modals/ErroModal.js";
 import FinanceiroModal from "../modals/FinanceiroModal";
@@ -49,7 +52,6 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     cidade: "",
     telefone: "",
     site: "",
-    redeSocial: "",
     nomeRepresentante: "",
     cpf: "",
     telefoneRepresentante: "",
@@ -150,6 +152,12 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
     naturezaJuridica: Yup.string().required("Natureza jurídica é obrigatório"),
     toggleCienteNormas: Yup.boolean().oneOf([true], "Você precisa concordar com as normas"),
     toggleCienteGratuito: Yup.boolean().oneOf([true], "Você precisa informar que está ciente da condição"),
+    redesSociais: Yup.array().of(
+      Yup.string().test("url", "A rede social necessita ter um formato de site válido (ex: https://www.minharede.com)", function (site) {
+        if (!site) return true; // Se o campo estiver vazio, a validação passa
+        return Yup.string().url().isValidSync(site);
+      }),
+    ),
   });
 
   const [financeiroModal, setFinanceiroModal] = useState(false);
@@ -295,6 +303,16 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
         })
         .catch(() => console.error("Erro obtendo CEP"));
     }
+  };
+
+  const handleRedesSociais = (event, setFieldValue) => {
+    const { name, value } = event.target;
+    setFieldValue(name, value);
+  };
+
+  const handleRemoveRedeSocial = (index, setFieldValue, redesSociais) => {
+    const updatedRedesSociais = redesSociais.filter((redeSocial, i) => i !== index);
+    setFieldValue("redesSociais", updatedRedesSociais);
   };
 
   const isURLValid = value => {
@@ -620,7 +638,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                 <Grid
                   item
                   xs={12}
-                  sm={4}
+                  sm={6}
                 >
                   <FormGroup>
                     <Typography sx={{ mb: "8px" }}>* Telefone</Typography>
@@ -643,7 +661,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                 <Grid
                   item
                   xs={12}
-                  sm={3}
+                  sm={6}
                 >
                   <FormGroup>
                     <Typography sx={{ mb: "8px" }}>Site</Typography>
@@ -661,23 +679,93 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                     <FormHelperText id="site-valido">{avisoSiteValido(errors, values.site)}</FormHelperText>
                   </FormGroup>
                 </Grid>
+
                 <Grid
                   item
-                  xs={12}
-                  sm={3}
+                  xs={10}
+                  sm={10}
                 >
                   <FormGroup>
                     <Typography sx={{ mb: "8px" }}>Rede Social</Typography>
                     <TextField
                       id="redeSocial"
-                      name="redeSocial"
-                      value={values.redeSocial}
+                      name="redesSociais[0]"
+                      value={values.redesSociais && values.redesSociais[0] ? values.redesSociais[0] : ""}
                       placeholder="Insira a Rede Social"
                       type="text"
-                      onChange={handleChange}
+                      onChange={e => {
+                        handleRedesSociais(e, setFieldValue);
+                      }}
+                      error={errors.redesSociais && errors.redesSociais[0] && touched.redesSociais[0]}
+                      helperText={errors.redesSociais && errors.redesSociais[0] && touched.redesSociais[0] && errors.redesSociais[0]}
                     />
                   </FormGroup>
                 </Grid>
+                <Grid
+                  item
+                  sm={2}
+                  xs={2}
+                  style={{ display: "flex", alignItems: "flex-end" }}
+                >
+                  <ButtonSecondary
+                    title="adicionar"
+                    icon={<AddCircleIcon />}
+                    disabled={!values.redesSociais || !values.redesSociais[0]}
+                    onClick={() => {
+                      if (values.redesSociais && values.redesSociais[0]) {
+                        setFieldValue("redesSociais[" + (values.redesSociais.length || 0) + "]", "");
+                      }
+                    }}
+                  />
+                </Grid>
+                {values.redesSociais &&
+                  values.redesSociais.map(
+                    (redeSocial, index) =>
+                      index !== 0 && (
+                        <React.Fragment key={`redeSocial_${index}`}>
+                          <Grid
+                            item
+                            xs={10}
+                            sm={10}
+                          >
+                            <FormGroup>
+                              <Typography sx={{ mb: "8px" }}>Rede Social</Typography>
+                              <TextField
+                                id="redeSocial"
+                                name={"redesSociais[" + index + "]"}
+                                value={values.redesSociais && values.redesSociais[index] ? values.redesSociais[index] : ""}
+                                placeholder="Insira a Rede Social"
+                                type="text"
+                                onChange={e => {
+                                  handleRedesSociais(e, setFieldValue);
+                                }}
+                                error={errors.redesSociais && errors.redesSociais[index] && touched.redesSociais[index]}
+                                helperText={
+                                  errors.redesSociais &&
+                                  errors.redesSociais[index] &&
+                                  touched.redesSociais[index] &&
+                                  errors.redesSociais[index]
+                                }
+                              />
+                            </FormGroup>
+                          </Grid>
+                          <Grid
+                            item
+                            sm={2}
+                            xs={2}
+                            style={{ display: "flex", alignItems: "flex-end" }}
+                          >
+                            <ButtonSecondary
+                              title="remover"
+                              icon={<RemoveCircleIcon />}
+                              onClick={() => {
+                                handleRemoveRedeSocial(index, setFieldValue, values.redesSociais);
+                              }}
+                            />
+                          </Grid>
+                        </React.Fragment>
+                      ),
+                  )}
               </Grid>
             </Card>
             <Card
@@ -1360,7 +1448,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                           type="submit"
                           variant="contained"
                           color="success"
-                          onClick={handleSubmit}
+                          onClick={() => {
+                            handleSubmit;
+                          }}
                           loading={loading || isSubmitting}
                           fullWidth
                           sx={{ borderRadius: "24px" }}
