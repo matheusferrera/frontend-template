@@ -6,7 +6,18 @@ import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
-export const SelectAtuacaoParceiro = ({ idSelect, nameSelect, handleSelect, list, item, label, placeholder, errors, touched }) => {
+export const SelectAtuacaoParceiro = ({
+  idSelect,
+  nameSelect,
+  handleSelect,
+  list,
+  item,
+  label,
+  placeholder,
+  readOnly,
+  errors,
+  touched,
+}) => {
   if (!item) {
     item = "none";
   }
@@ -19,6 +30,9 @@ export const SelectAtuacaoParceiro = ({ idSelect, nameSelect, handleSelect, list
         defaultValue=""
         value={item}
         onChange={handleSelect}
+        inputProps={{
+          readOnly: readOnly,
+        }}
         error={errors && touched}
       >
         <MenuItem
@@ -55,6 +69,7 @@ SelectAtuacaoParceiro.propTypes = {
   item: PropTypes.string.isRequired,
   label: PropTypes.string,
   placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
   errors: PropTypes.string,
   touched: PropTypes.bool,
 };

@@ -6,7 +6,7 @@ import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
-export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSelectCidade, errors, touched }) => {
+export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSelectCidade, readOnly, errors, touched }) => {
   if (!cidade) {
     cidade = "none";
   }
@@ -17,9 +17,16 @@ export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSele
         id={idSelect}
         name={nameSelect}
         defaultValue=""
-        value={cidade}
+        value={cidade
+          .toLowerCase()
+          .split(" ")
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ")}
         placeholder="Selecione uma cidade"
         onChange={handleSelectCidade}
+        inputProps={{
+          readOnly: readOnly,
+        }}
         error={errors && touched}
       >
         <MenuItem
@@ -34,7 +41,11 @@ export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSele
             key={cidade.nome}
             id={cidade.nome}
             name={cidade.nome}
-            value={cidade.nome}
+            value={cidade.nome
+              .toLowerCase()
+              .split(" ")
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ")}
           >
             {cidade.nome
               .toLowerCase()
@@ -54,6 +65,7 @@ SelectCidade.propTypes = {
   cidades: PropTypes.array.isRequired,
   cidade: PropTypes.string.isRequired,
   handleSelectCidade: PropTypes.func.isRequired,
+  readOnly: PropTypes.bool,
   errors: PropTypes.string,
   touched: PropTypes.bool,
 };

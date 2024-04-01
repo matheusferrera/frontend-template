@@ -35,43 +35,54 @@ import { SelectCidade } from "./fields/SelectCidade.js";
 import { SelectUF } from "./fields/SelectUF.js";
 import { formatCEP, formatCNPJ, formatCPF, formatSite, formatTelefone, validarCNPJ, validarCPF } from "./utils.js";
 
-const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfirmacaoModal, erroModal, setErroModal }) => {
+const FormListarParceiros = ({
+  loading,
+  handleSubmit,
+  confirmacaoModal,
+  setConfirmacaoModal,
+  erroModal,
+  setErroModal,
+  values,
+  readOnly = false,
+}) => {
   const { user } = useAuth();
 
-  const initialValues = {
-    email: user.email,
-    cnpj: "",
-    razaoSocial: "",
-    nomeFantasia: "",
-    cep: "",
-    endereco: "",
-    numero: "",
-    complemento: "",
-    bairro: "",
-    uf: "",
-    cidade: "",
-    telefone: "",
-    site: "",
-    nomeRepresentante: "",
-    cpf: "",
-    telefoneRepresentante: "",
-    ufRepresentante: "",
-    cidadeRepresentante: "",
-    nomePontoFocal: "",
-    emailPontoFocal: "",
-    telefonePontoFocal: "",
-    areaAtuacao: "",
-    naturezaJuridica: user.naturezaJuridica,
-    checkVagaEmprego: false,
-    checkVagaEstagio: false,
-    checkVagaJovem: false,
-    checkCursos: false,
-    checkFinanceiro: false,
-    checkMobilidadePublico: false,
-    checkMobilidadeParceiro: false,
-    toggleCienteNormas: false,
-    toggleCienteGratuito: false,
-  };
+  const initialValues = values
+    ? values
+    : {
+      email: user.email,
+      cnpj: "",
+      razaoSocial: "",
+      nomeFantasia: "",
+      cep: "",
+      endereco: "",
+      numero: "",
+      complemento: "",
+      bairro: "",
+      uf: "",
+      cidade: "",
+      telefone: "",
+      site: "",
+      nomeRepresentante: "",
+      cpf: "",
+      telefoneRepresentante: "",
+      ufRepresentante: "",
+      cidadeRepresentante: "",
+      nomePontoFocal: "",
+      emailPontoFocal: "",
+      telefonePontoFocal: "",
+      areaAtuacao: "",
+      naturezaJuridica: user.naturezaJuridica,
+      checkVagaEmprego: false,
+      checkVagaEstagio: false,
+      checkVagaJovem: false,
+      checkCursos: false,
+      checkFinanceiro: false,
+      checkMobilidadePublico: false,
+      checkMobilidadeParceiro: false,
+      toggleCienteNormas: false,
+      toggleCienteGratuito: false,
+    };
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Forneça um email válido").required("Email é obrigatório"),
@@ -164,13 +175,15 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
   const [financeiro, setFinanceiro] = useState(false);
 
   const [ufs, setUfs] = useState([]);
-  const [cidades, setCidades] = useState([]);
-  const [cidadesRepresentante, setCidadesRepresentante] = useState([]);
+  const [cidades, setCidades] = values ? useState(optionsService.cidadesJSON.filter(cidade => cidade.estado === values.uf)) : useState([]);
+  const [cidadesRepresentante, setCidadesRepresentante] = values
+    ? useState(optionsService.cidadesJSON.filter(cidade => cidade.estado === values.ufRepresentante))
+    : useState([]);
 
-  const [selectedUf, setSelectedUf] = useState("");
-  const [selectedCidade, setSelectedCidade] = useState("");
-  const [selectedUfRepresentante, setSelectedUfRepresentante] = useState("");
-  const [selectedCidadeRepresentante, setSelectedCidadeRepresentante] = useState("");
+  const [selectedUf, setSelectedUf] = values ? useState(values.uf) : useState("");
+  const [selectedCidade, setSelectedCidade] = values ? useState(values.cidade) : useState("");
+  const [selectedUfRepresentante, setSelectedUfRepresentante] = values ? useState(values.ufRepresentante) : useState("");
+  const [selectedCidadeRepresentante, setSelectedCidadeRepresentante] = values ? useState(values.cidadeRepresentante) : useState("");
 
   useEffect(() => {
     const fetchUfs = async () => {
@@ -431,6 +444,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       onBlur={handleBlur}
                       inputProps={{
                         maxLength: 18,
+                        readOnly: readOnly,
                       }}
                       error={errors.cnpj && touched.cnpj}
                       helperText={errors.cnpj && touched.cnpj && errors.cnpj}
@@ -453,6 +467,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                       error={errors.razaoSocial && touched.razaoSocial}
                       helperText={errors.razaoSocial && touched.razaoSocial && errors.razaoSocial}
                     />
@@ -473,6 +490,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                     />
                   </FormGroup>
                 </Grid>
@@ -493,6 +513,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       onBlur={handleBlur}
                       inputProps={{
                         maxLength: 10,
+                        readOnly: readOnly,
                       }}
                       error={errors.cep && touched.cep}
                       helperText={errors.cep && touched.cep && errors.cep}
@@ -514,6 +535,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                       error={errors.endereco && touched.endereco}
                       helperText={errors.endereco && touched.endereco && errors.endereco}
                     />
@@ -534,6 +558,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                     />
                   </FormGroup>
                 </Grid>
@@ -552,6 +579,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                     />
                   </FormGroup>
                 </Grid>
@@ -570,6 +600,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                       error={errors.bairro && touched.bairro}
                       helperText={errors.bairro && touched.bairro && errors.bairro}
                     />
@@ -589,6 +622,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       uf={selectedUf}
                       handleSelectUf={event => handleSelectUf(event, setFieldValue)}
                       onBlur={handleBlur}
+                      readOnly={readOnly}
                       errors={errors.uf}
                       touched={touched.uf}
                     />
@@ -619,6 +653,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       cidade={selectedCidade}
                       handleSelectCidade={event => handleSelectCidade(event, setFieldValue)}
                       onBlur={handleBlur}
+                      readOnly={readOnly}
                       errors={errors.cidade}
                       touched={touched.cidade}
                     />
@@ -652,6 +687,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       onBlur={handleBlur}
                       inputProps={{
                         maxLength: 15,
+                        readOnly: readOnly,
                       }}
                       error={errors.telefone && touched.telefone}
                       helperText={errors.telefone && touched.telefone && errors.telefone}
@@ -673,6 +709,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       placeholder="Insira o Site"
                       type="text"
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                       error={errors.site && touched.site}
                       helperText={errors.site && touched.site && errors.site}
                     />
@@ -693,6 +732,10 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       value={values.redesSociais && values.redesSociais[0] ? values.redesSociais[0] : ""}
                       placeholder="Insira a Rede Social"
                       type="text"
+                      onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                       onChange={e => {
                         handleRedesSociais(e, setFieldValue);
                       }}
@@ -813,6 +856,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                       error={errors.nomeRepresentante && touched.nomeRepresentante}
                       helperText={errors.nomeRepresentante && touched.nomeRepresentante && errors.nomeRepresentante}
                     />
@@ -835,6 +881,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       onBlur={handleBlur}
                       inputProps={{
                         maxLength: 14,
+                        readOnly: readOnly,
                       }}
                       error={errors.cpf && touched.cpf}
                       helperText={errors.cpf && touched.cpf && errors.cpf}
@@ -858,6 +905,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       onBlur={handleBlur}
                       inputProps={{
                         maxLength: 15,
+                        readOnly: readOnly,
                       }}
                       error={errors.telefoneRepresentante && touched.telefoneRepresentante}
                       helperText={errors.telefoneRepresentante && touched.telefoneRepresentante && errors.telefoneRepresentante}
@@ -878,6 +926,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       uf={selectedUfRepresentante}
                       handleSelectUf={event => handleSelectUf(event, setFieldValue)}
                       onBlur={handleBlur}
+                      readOnly={readOnly}
                       errors={errors.ufRepresentante}
                       touched={touched.ufRepresentante}
                     />
@@ -908,6 +957,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       cidade={selectedCidadeRepresentante}
                       handleSelectCidade={event => handleSelectCidade(event, setFieldValue)}
                       onBlur={handleBlur}
+                      readOnly={readOnly}
                       errors={errors.cidadeRepresentante}
                       touched={touched.cidadeRepresentante}
                     />
@@ -972,6 +1022,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                       error={errors.nomePontoFocal && touched.nomePontoFocal}
                       helperText={errors.nomePontoFocal && touched.nomePontoFocal && errors.nomePontoFocal}
                     />
@@ -992,6 +1045,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       type="text"
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      inputProps={{
+                        readOnly: readOnly,
+                      }}
                       error={errors.emailPontoFocal && touched.emailPontoFocal}
                       helperText={errors.emailPontoFocal && touched.emailPontoFocal && errors.emailPontoFocal}
                     />
@@ -1014,6 +1070,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       onBlur={handleBlur}
                       inputProps={{
                         maxLength: 15,
+                        readOnly: readOnly,
                       }}
                       error={errors.telefonePontoFocal && touched.telefonePontoFocal}
                       helperText={errors.telefonePontoFocal && touched.telefonePontoFocal && errors.telefonePontoFocal}
@@ -1048,6 +1105,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       item={values.areaAtuacao}
                       label={"* Área de Atuação"}
                       placeholder={"Selecione a Área de Atuação"}
+                      readOnly={readOnly}
                       errors={errors.areaAtuacao}
                       touched={touched.areaAtuacao}
                     />
@@ -1115,6 +1173,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                         checked={values.checkVagaEmprego}
                         onChange={handleChange}
                         color="primary"
+                        inputProps={{
+                          disabled: readOnly,
+                        }}
                       />
                     }
                     label={
@@ -1147,6 +1208,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                         checked={values.checkVagaEstagio}
                         onChange={handleChange}
                         color="primary"
+                        inputProps={{
+                          disabled: readOnly,
+                        }}
                       />
                     }
                     label={
@@ -1179,6 +1243,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                         checked={values.checkVagaJovem}
                         onChange={handleChange}
                         color="primary"
+                        inputProps={{
+                          disabled: readOnly,
+                        }}
                       />
                     }
                     label={
@@ -1211,6 +1278,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                         checked={values.checkCursos}
                         onChange={handleChange}
                         color="primary"
+                        inputProps={{
+                          disabled: readOnly,
+                        }}
                       />
                     }
                     label={
@@ -1242,8 +1312,12 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                         name="checkFinanceiro"
                         value={financeiro}
                         checked={financeiro}
+                        onChange={handleChange}
                         onBlur={handleBlur}
                         color="primary"
+                        inputProps={{
+                          disabled: readOnly,
+                        }}
                       />
                     }
                     onClick={handleFinanceiro}
@@ -1282,6 +1356,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                         checked={values.checkMobilidadePublico}
                         onChange={handleChange}
                         color="primary"
+                        inputProps={{
+                          disabled: readOnly,
+                        }}
                       />
                     }
                     label={
@@ -1314,6 +1391,9 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                         checked={values.checkMobilidadeParceiro}
                         onChange={handleChange}
                         color="primary"
+                        inputProps={{
+                          disabled: readOnly,
+                        }}
                       />
                     }
                     label={
@@ -1341,137 +1421,137 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                 </Grid>
               </FormGroup>
               <hr />
-              <Grid
-                spacing={1}
-                container
-              >
+              {!readOnly && (
                 <Grid
-                  item
-                  xs={12}
-                  sm={12}
-                >
-                  <Card
-                    color="#ffffff"
-                    sx={{
-                      width: "100%",
-                      borderRadius: "0px",
-                      padding: "16px 0px",
-                    }}
-                  >
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          id="toggleCienteNormas"
-                          name="toggleCienteNormas"
-                          checked={values.toggleCienteNormas}
-                          onChange={handleChange}
-                          color="primary"
-                        />
-                      }
-                      label={
-                        <Typography variant="body1">
-                          Declaro, para os devidos fins, estar ciente e conforme com todos os termos, cláusulas, condições e normas das{" "}
-                          <Link href="#">Portarias MDS nº 386/2017</Link>,<Link href="#"> nº 490/2017</Link>,
-                          <Link href="#"> nº 1.321/2018</Link> e do <Link href="#">Edital de Chamada Pública do MDS nº 01/2017</Link>, e
-                          manifesto o interesse em me credenciar como INTEGRANTE DA REDE DE PARCEIROS DO DESENVOLVIMENTO SOCIAL.
-                        </Typography>
-                      }
-                    />
-                    {touched.toggleCienteNormas && errors.toggleCienteNormas && (
-                      <div style={{ color: "#FF5630" }}>{errors.toggleCienteNormas}</div>
-                    )}
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          id="toggleCienteGratuito"
-                          name="toggleCienteGratuito"
-                          checked={values.toggleCienteGratuito}
-                          onChange={handleChange}
-                          color="primary"
-                        />
-                      }
-                      label={
-                        <Typography variant="body1">
-                          Declaro, para os devidos fins, que estou ciente que todos os serviços ofertados por esta Instituição ao público
-                          inscrito no Programa Redução da Pobreza serão gratuitos.
-                        </Typography>
-                      }
-                      sx={{ mt: "24px" }}
-                    />
-                    {touched.toggleCienteGratuito && errors.toggleCienteGratuito && (
-                      <div style={{ color: "#FF5630" }}>{errors.toggleCienteGratuito}</div>
-                    )}
-                  </Card>
-                </Grid>
-                <Grid
-                  container
                   spacing={1}
-                  sx={{ mt: "5px" }}
+                  container
                 >
-                  <Grid
-                    item
-                    xs={0}
-                    sm={7}
-                  ></Grid>
                   <Grid
                     item
                     xs={12}
-                    sm={5}
+                    sm={12}
+                  >
+                    <Card
+                      color="#ffffff"
+                      sx={{
+                        width: "100%",
+                        borderRadius: "0px",
+                        padding: "16px 0px",
+                      }}
+                    >
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            id="toggleCienteNormas"
+                            name="toggleCienteNormas"
+                            checked={values.toggleCienteNormas}
+                            onChange={handleChange}
+                            color="primary"
+                          />
+                        }
+                        label={
+                          <Typography variant="body1">
+                            Declaro, para os devidos fins, estar ciente e conforme com todos os termos, cláusulas, condições e normas das{" "}
+                            <Link href="#">Portarias MDS nº 386/2017</Link>,<Link href="#"> nº 490/2017</Link>,
+                            <Link href="#"> nº 1.321/2018</Link> e do <Link href="#">Edital de Chamada Pública do MDS nº 01/2017</Link>, e
+                            manifesto o interesse em me credenciar como INTEGRANTE DA REDE DE PARCEIROS DO DESENVOLVIMENTO SOCIAL.
+                          </Typography>
+                        }
+                      />
+                      {touched.toggleCienteNormas && errors.toggleCienteNormas && (
+                        <div style={{ color: "#FF5630" }}>{errors.toggleCienteNormas}</div>
+                      )}
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            id="toggleCienteGratuito"
+                            name="toggleCienteGratuito"
+                            checked={values.toggleCienteGratuito}
+                            onChange={handleChange}
+                            color="primary"
+                          />
+                        }
+                        label={
+                          <Typography variant="body1">
+                            Declaro, para os devidos fins, que estou ciente que todos os serviços ofertados por esta Instituição ao público
+                            inscrito no Programa Redução da Pobreza serão gratuitos.
+                          </Typography>
+                        }
+                        sx={{ mt: "24px" }}
+                      />
+                      {touched.toggleCienteGratuito && errors.toggleCienteGratuito && (
+                        <div style={{ color: "#FF5630" }}>{errors.toggleCienteGratuito}</div>
+                      )}
+                    </Card>
+                  </Grid>
+                  <Grid
+                    container
+                    spacing={1}
+                    sx={{ mt: "5px" }}
                   >
                     <Grid
-                      container
-                      spacing={2}
+                      item
+                      xs={0}
+                      sm={7}
+                    ></Grid>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={5}
                     >
                       <Grid
-                        item
-                        sm={4}
-                        xs={12}
+                        container
+                        spacing={2}
                       >
-                        <Button
-                          size="large"
-                          type="submit"
-                          variant="outlined"
-                          color="primary"
-                          fullWidth
-                          sx={{ border: "solid 1px", borderRadius: "24px" }}
+                        <Grid
+                          item
+                          sm={4}
+                          xs={12}
                         >
-                          Cancelar
-                        </Button>
-                      </Grid>
-                      <Grid
-                        item
-                        sm={8}
-                        xs={12}
-                      >
-                        <LoadingButton
-                          size="large"
-                          type="submit"
-                          variant="contained"
-                          color="success"
-                          onClick={() => {
-                            handleSubmit;
-                          }}
-                          loading={loading || isSubmitting}
-                          fullWidth
-                          sx={{ borderRadius: "24px" }}
+                          <Button
+                            size="large"
+                            type="submit"
+                            variant="outlined"
+                            color="primary"
+                            fullWidth
+                            sx={{ border: "solid 1px", borderRadius: "24px" }}
+                          >
+                            Cancelar
+                          </Button>
+                        </Grid>
+                        <Grid
+                          item
+                          sm={8}
+                          xs={12}
                         >
-                          {loading && <span className="spinner-border spinner-border-sm"></span>}
-                          <SaveIcon sx={{ mb: "4px", mr: "4px", width: "20px", height: "20px" }} />
-                          Salvar Informações
-                        </LoadingButton>
-                        <ConfirmacaoModal
-                          showModal={confirmacaoModal}
-                          handleClose={handleConfirmacaoClose}
-                        />
-                        <ErroModal
-                          showModal={erroModal}
-                          handleClose={handleErroClose}
-                        />
+                          <LoadingButton
+                            size="large"
+                            type="submit"
+                            variant="contained"
+                            color="success"
+                            onClick={handleSubmit}
+                            loading={loading || isSubmitting}
+                            fullWidth
+                            sx={{ borderRadius: "24px" }}
+                          >
+                            {loading && <span className="spinner-border spinner-border-sm"></span>}
+                            <SaveIcon sx={{ mb: "4px", mr: "4px", width: "20px", height: "20px" }} />
+                            Salvar Informações
+                          </LoadingButton>
+                          <ConfirmacaoModal
+                            showModal={confirmacaoModal}
+                            handleClose={handleConfirmacaoClose}
+                          />
+                          <ErroModal
+                            showModal={erroModal}
+                            handleClose={handleErroClose}
+                          />
+                        </Grid>
                       </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
+              )}
             </Card>
           </Stack>
         </Form>
@@ -1487,6 +1567,8 @@ FormListarParceiros.propTypes = {
   setConfirmacaoModal: PropTypes.func,
   setErroModal: PropTypes.func,
   erroModal: PropTypes.bool,
+  values: PropTypes.object,
+  readOnly: PropTypes.bool,
 };
 
 export default FormListarParceiros;
