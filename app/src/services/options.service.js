@@ -3,9 +3,11 @@ import axios from "axios";
 import JSON_ATUACOES from "../assets/json/atuacao_parceiro.json";
 import JSON_CIDADES from "../assets/json/estados-cidades.json";
 
-const API_URL = "https://brasilapi.com.br/api/";
+const API_URL_BRASILAPI = "https://brasilapi.com.br/api/";
 
-const API_URL2 = "https://servicodados.ibge.gov.br/api/";
+const API_URL_SERVICOSIBGE = "https://servicodados.ibge.gov.br/api/";
+
+const API_URL_VIACEP = "https://viacep.com.br/ws/";
 
 const estados = JSON_CIDADES.estados;
 
@@ -25,7 +27,7 @@ const atuacoes = JSON_ATUACOES.atuacoes;
 
 const getAllUFs = () => {
   return axios
-    .get(API_URL + "ibge/uf/v1")
+    .get(API_URL_BRASILAPI + "ibge/uf/v1")
     .then(response => {
       if (response) {
         return response.data.sort((a, b) => {
@@ -49,7 +51,7 @@ const getAllUFs = () => {
 
 const getCidadesFromUF = ufSigla => {
   return axios
-    .get(API_URL + "ibge/municipios/v1/" + ufSigla + "?providers=dados-abertos-br,gov,wikipedia")
+    .get(API_URL_BRASILAPI + "ibge/municipios/v1/" + ufSigla + "?providers=dados-abertos-br,gov,wikipedia")
     .then(response => {
       if (response.data.length > 0) {
         return response.data.sort((a, b) => {
@@ -73,7 +75,7 @@ const getCidadesFromUF = ufSigla => {
 
 const getAtuacoes = () => {
   return axios
-    .get(API_URL2 + "v2/cnae/divisoes")
+    .get(API_URL_SERVICOSIBGE + "v2/cnae/divisoes")
     .then(response => {
       if (response) {
         return response.data;
@@ -87,9 +89,25 @@ const getAtuacoes = () => {
     });
 };
 
+function verificarCEP(cep) {
+  return axios
+    .get(API_URL_VIACEP + cep.replace(/\D/g, "") + "/json/")
+    .then(response => {
+      if (response && !response.data.erro) {
+        return response.data;
+      } else {
+        return false;
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      throw error;
+    });
+}
+
 function verificarCNPJ(cnpj) {
   return axios
-    .get(API_URL + "cnpj/v1/" + cnpj.replace(/\D/g, ""))
+    .get(API_URL_BRASILAPI + "cnpj/v1/" + cnpj.replace(/\D/g, ""))
     .then(response => {
       if (response) {
         return response.data;
@@ -140,6 +158,7 @@ const optionsService = {
   getCidadesFromUF,
   getAtuacoes,
   verificarSiteAtivo,
+  verificarCEP,
   verificarCNPJ,
 };
 

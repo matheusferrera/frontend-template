@@ -86,12 +86,28 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
         return false;
       }),
     razaoSocial: Yup.string().required("Razão social é obrigatório"),
-    cep: Yup.string().min(10, "O CEP deve ter 8 dígitos").required("CEP é obrigatório"),
+    cep: Yup.string()
+      .required("CEP é obrigatório")
+      .test("minCEP", "O CEP deve ter 8 dígitos", cep => cep.replace(/\D/g, "").length == 8)
+      .test("CEP-Encontrado", "O CEP não foi encontrado", async function (cep) {
+        if (cep.replace(/\D/g, "").length == 8) {
+          return await optionsService.verificarCEP(cep);
+        }
+        return true;
+      }),
     endereco: Yup.string().required("Endereço é obrigatório"),
     bairro: Yup.string().required("Bairro é obrigatório"),
     uf: Yup.string().required("UF é obrigatório"),
     cidade: Yup.string().required("Cidade é obrigatório"),
-    telefone: Yup.string().min(14, "Insira um telefone válido").required("Telefone é obrigatório"),
+    telefone: Yup.string()
+      .test("Tamanho-Valido-Telefone", "Insira um telefone válido", telefone => {
+        const tamanho = telefone.replace(/\D/g, "").length;
+        if (tamanho == 10 || tamanho == 11) {
+          return true;
+        }
+        return false;
+      })
+      .required("Telefone é obrigatório"),
     site: Yup.string()
       .test("url", "O site deve ter um formato válido", function (site) {
         if (!site) return true; // Se o campo estiver vazio, a validação passa
@@ -108,12 +124,28 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
       .min(14, "O CPF deve ter 11 dígitos")
       .required("CPF do representante é obrigatório")
       .test("Validar-CPF", "O CPF informado não é válido", value => validarCPF(value)),
-    telefoneRepresentante: Yup.string().min(14, "Insira um telefone válido").required("Telefone do representante é obrigatório"),
+    telefoneRepresentante: Yup.string()
+      .test("Tamanho-Valido-TelefoneRepresentante", "Insira um telefone válido", telefone => {
+        const tamanho = telefone.replace(/\D/g, "").length;
+        if (tamanho == 10 || tamanho == 11) {
+          return true;
+        }
+        return false;
+      })
+      .required("Telefone do representante é obrigatório"),
     ufRepresentante: Yup.string().required("UF do representante é obrigatório"),
     cidadeRepresentante: Yup.string().required("Cidade do representante é obrigatório"),
     nomePontoFocal: Yup.string().required("Nome do Ponto Focal é obrigatório"),
     emailPontoFocal: Yup.string().email("Forneça um email válido").required("Email do Ponto Focal é obrigatório"),
-    telefonePontoFocal: Yup.string().min(14, "Insira um telefone válido").required("Telefone do Ponto Focal é obrigatório"),
+    telefonePontoFocal: Yup.string()
+      .test("Tamanho-Valido-TelefonePontoFocal", "Insira um telefone válido", telefone => {
+        const tamanho = telefone.replace(/\D/g, "").length;
+        if (tamanho == 10 || tamanho == 11) {
+          return true;
+        }
+        return false;
+      })
+      .required("Telefone do Ponto Focal é obrigatório"),
     areaAtuacao: Yup.string().required("Área de atuação do parceiro é obrigatório"),
     naturezaJuridica: Yup.string().required("Natureza jurídica é obrigatório"),
     toggleCienteNormas: Yup.boolean().oneOf([true], "Você precisa concordar com as normas"),
@@ -226,7 +258,14 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
           setFieldValue("razaoSocial", dados.razao_social);
           setFieldValue("nomeFantasia", dados.nome_fantasia);
         })
-        .catch(() => console.error("Erro ao obter CNPJ"));
+        .catch(() => {
+          console.error("Erro ao obter CNPJ");
+          setFieldValue("razaoSocial", "");
+          setFieldValue("nomeFantasia", "");
+        });
+    } else {
+      setFieldValue("razaoSocial", "");
+      setFieldValue("nomeFantasia", "");
     }
     setFieldValue(name, value);
   };
@@ -234,6 +273,28 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
   const handleSite = (event, setFieldValue) => {
     const { name, value } = event.target;
     setFieldValue(name, formatSite(value));
+  };
+
+  const handleChangeCEP = async (event, setFieldValue) => {
+    const { name, value } = event.target;
+    setFieldValue(name, value);
+    if (value.replace(/\D/g, "").length == 8) {
+      await optionsService
+        .verificarCEP(value)
+        .then(async dados => {
+          if (dados) {
+            setSelectedUf(dados.uf);
+            setFieldValue("uf", dados.uf);
+            await fetchCidadesByUf(dados.uf, setCidades);
+            setSelectedCidade(dados.localidade.toUpperCase());
+            setFieldValue("cidade", dados.localidade);
+            setFieldValue("endereco", dados.logradouro);
+            setFieldValue("bairro", dados.bairro);
+            setFieldValue("complemento", dados.complemento);
+          }
+        })
+        .catch(() => console.error("Erro obtendo CEP"));
+    }
   };
 
   const isURLValid = value => {
@@ -410,7 +471,7 @@ const FormListarParceiros = ({ loading, handleSubmit, confirmacaoModal, setConfi
                       value={formatCEP(values.cep)}
                       placeholder="Insira o CEP"
                       type="text"
-                      onChange={handleChange}
+                      onChange={event => handleChangeCEP(event, setFieldValue)}
                       onBlur={handleBlur}
                       inputProps={{
                         maxLength: 10,
