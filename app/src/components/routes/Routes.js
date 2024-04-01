@@ -12,6 +12,7 @@ import Logout from "../Logout";
 import NotFound from "../NotFound";
 import ListarParceiros from "../parceiro/ListarParceiros";
 import Parceiro from "../parceiro/Parceiro";
+import VisualizacaoFormulario from "../parceiro/VisualizacaoFormulario";
 import Profile from "../Profile";
 import Register from "../register/Register";
 import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";
@@ -85,6 +86,10 @@ const ProtectedRoutes = () => {
       <Route
         path="/parceiro/listar_parceiros"
         element={<ListarParceiros />}
+      />
+      <Route
+        path="/parceiro/visualizar_formulario"
+        element={<VisualizacaoFormulario />}
       />
       <Route
         path="/parceiro"

@@ -12,7 +12,7 @@ const API_URL_VIACEP = "https://viacep.com.br/ws/";
 const estados = JSON_CIDADES.estados;
 
 // Cira um array json com objetos cidade que contém o nome, id e estado da cidade
-const cidades = estados.reduce((acc, estado) => {
+const cidadesJSON = estados.reduce((acc, estado) => {
   const cidades = estado.cidades.map(cidade => {
     return {
       id: cidade,
@@ -64,7 +64,7 @@ const getCidadesFromUF = ufSigla => {
           return 0;
         });
       } else {
-        return cidades.filter(cidade => cidade.estado === ufSigla);
+        return cidadesJSON.filter(cidade => cidade.estado === ufSigla);
       }
     })
     .catch(error => {
@@ -156,6 +156,7 @@ function verificarSiteAtivo(site) {
 const optionsService = {
   getAllUFs,
   getCidadesFromUF,
+  cidadesJSON,
   getAtuacoes,
   verificarSiteAtivo,
   verificarCEP,

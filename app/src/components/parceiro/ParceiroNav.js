@@ -12,6 +12,7 @@ const paceiroNav = [
     path: "/parceiro",
     subTitles: {
       "listar parceiros": "/parceiro/listar_parceiros",
+      "visualizar formulário": "/parceiro/visualizar_formulario",
     },
   },
   {

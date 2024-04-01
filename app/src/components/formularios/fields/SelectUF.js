@@ -6,7 +6,7 @@ import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
-export const SelectUF = ({ idSelect, nameSelect, ufs, uf, handleSelectUf, errors, touched }) => {
+export const SelectUF = ({ idSelect, nameSelect, ufs, uf, handleSelectUf, readOnly, errors, touched }) => {
   if (!uf) {
     uf = "none";
   }
@@ -20,6 +20,9 @@ export const SelectUF = ({ idSelect, nameSelect, ufs, uf, handleSelectUf, errors
         value={uf}
         placeholder="Selecione uma UF"
         onChange={handleSelectUf}
+        inputProps={{
+          readOnly: readOnly,
+        }}
         error={errors && touched}
       >
         <MenuItem
@@ -50,6 +53,7 @@ SelectUF.propTypes = {
   ufs: PropTypes.array.isRequired,
   uf: PropTypes.string.isRequired,
   handleSelectUf: PropTypes.func.isRequired,
+  readOnly: PropTypes.bool,
   errors: PropTypes.string,
   touched: PropTypes.bool,
 };
