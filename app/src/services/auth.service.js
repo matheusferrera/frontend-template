@@ -7,19 +7,15 @@ const API_URL = "http://localhost:8000/api/";
  *
  * @param {string} email - The user's email address.
  * @param {string} name - The user's name.
- * @param {string} username - The user's username.
  * @param {string} password - The user's password.
- * @param {string} password_confirmation - The confirmation of the user's password.
  * @return {Promise} A promise that resolves to the result of the registration request.
  */
-const register = (email, name, username, password, password_confirmation) => {
+const register = (email, name, password) => {
   return axios
     .post(API_URL + "register", {
       email,
       name,
-      username,
       password,
-      password_confirmation,
     })
     .then(response => {
       return response.data.message;
@@ -36,11 +32,12 @@ const register = (email, name, username, password, password_confirmation) => {
  * @param {string} password - The password of the user.
  * @return {Promise<string>} The access token returned from the API.
  */
-const login = (email, password) => {
+const login = (login, password, user_type) => {
   return axios
     .post(API_URL + "login", {
-      email,
+      login,
       password,
+      user_type,
     })
     .then(response => response.data.access_token)
     .catch(error => {
@@ -64,6 +61,27 @@ const logout = access_token => {
         },
       },
     )
+    .then(response => {
+      return response.data.message;
+    })
+    .catch(error => {
+      throw error;
+    });
+};
+
+/**
+ * Activates a user account with the provided activation token.
+ *
+ * @param {string} token - The activation token.
+ * @return {Promise} A promise that resolves to the result of the activation request.
+ */
+const activate = access_token => {
+  return axios
+    .post(API_URL + "activate", null, {
+      headers: {
+        Authorization: "Bearer " + access_token,
+      },
+    })
     .then(response => {
       return response.data.message;
     })
@@ -183,6 +201,7 @@ const getCurrentUser = () => {
 };
 
 const AuthService = {
+  activate,
   register,
   login,
   logout,

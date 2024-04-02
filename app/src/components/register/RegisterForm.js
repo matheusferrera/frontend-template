@@ -34,7 +34,6 @@ const RegisterForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoSho
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Forneça um email válido").required("Email é obrigatório"),
     name: Yup.string().required("Nome é obrigatório"),
-    username: Yup.string().required("Username é obrigatório"),
     password: Yup.string().min(6, "Senha deve ter no mínimo 6 caracteres").required("Senha é obrigatória"),
     passwordConfirmation: Yup.string()
       .oneOf([Yup.ref("password"), null], "Senhas devem ser iguais")
@@ -73,19 +72,6 @@ const RegisterForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoSho
               type="text"
               error={errors.name && touched.name}
               helperText={errors.name && touched.name && errors.name}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-
-            <TextField
-              id="username"
-              name="username"
-              label="Username"
-              placeholder="Username"
-              value={values.username}
-              type="text"
-              error={errors.username && touched.username}
-              helperText={errors.username && touched.username && errors.username}
               onChange={handleChange}
               onBlur={handleBlur}
             />

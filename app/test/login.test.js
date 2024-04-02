@@ -21,7 +21,7 @@ describe("Teste de login", () => {
       </TestWrapper>,
     );
 
-    const emailInput = screen.getByLabelText("Email");
+    const emailInput = screen.getByLabelText("Username");
     const passwordInput = screen.getByLabelText("Senha");
     const submitButton = screen.getByText("Login");
 

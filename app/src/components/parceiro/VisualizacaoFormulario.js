@@ -13,7 +13,7 @@ const VisualizacaoFormulario = () => {
   const { setNavContent } = useNavContent();
 
   const values = {
-    email: user.email,
+    email: user.ds_email,
     cnpj: "04.082.993/0001-49",
     razaoSocial: "teste",
     nomeFantasia: "teste",
