@@ -23,7 +23,6 @@ describe("Teste de registro", () => {
 
     const emailInput = screen.getByLabelText("Email");
     const nameInput = screen.getByLabelText("Nome");
-    const usernameInput = screen.getByLabelText("Username");
     const passwordInput = screen.getByLabelText("Senha");
     const confirmPasswordInput = screen.getByLabelText("Confirmação de Senha");
     const submitButton = screen.getByText("Registrar");
@@ -31,7 +30,6 @@ describe("Teste de registro", () => {
     // Preencha os campos do formulário
     fireEvent.change(emailInput, { target: { value: "testuser" } });
     fireEvent.change(nameInput, { target: { value: "testname" } });
-    fireEvent.change(usernameInput, { target: { value: "testusername" } });
     fireEvent.change(passwordInput, { target: { value: "testpassword" } });
     fireEvent.change(confirmPasswordInput, { target: { value: "testpassword" } });
 

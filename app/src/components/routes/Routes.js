@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 
 import { useAuth } from "../../contexts/AuthContext";
+import Activate from "../activate/Activate";
 import Administrador from "../administrador/Administrador";
 import Cidadao from "../cidadao/Cidadao";
 import FAQ from "../FAQ";
@@ -22,15 +23,15 @@ const AuthRoutes = () => {
     <Routes>
       <Route
         path="/parceiro_login"
-        element={<Login redirectPath="/parceiro" />}
+        element={<Login userRota="/parceiro" />}
       />
       <Route
         path="/admin_login"
-        element={<Login redirectPath="/admin" />}
+        element={<Login userRota="/admin" />}
       />
       <Route
         path="/cidadao_login"
-        element={<Login redirectPath="/cidadao" />}
+        element={<Login userRota="/cidadao" />}
       />
       <Route
         path="/login"
@@ -39,6 +40,10 @@ const AuthRoutes = () => {
       <Route
         path="/register"
         element={<Register />}
+      />
+      <Route
+        path="/activate"
+        element={<Activate />}
       />
       <Route
         path="/faq"

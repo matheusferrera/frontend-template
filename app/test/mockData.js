@@ -29,5 +29,6 @@ export const userMockData = {
     updated_at: "2024-01-24T18:03:31.000000Z",
     username: "felipems999",
     photo_path: null,
+    dh_criacao: "2024-01-24T18:03:31.000000Z",
   },
 };

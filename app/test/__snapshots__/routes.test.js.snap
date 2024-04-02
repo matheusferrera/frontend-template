@@ -48,10 +48,10 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tfb5gn-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink={false}
-              htmlFor="email"
-              id="email-label"
+              htmlFor="username"
+              id="username-label"
             >
-              Email
+              Username
             </label>
             <div
               className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-xdaq6w-MuiInputBase-root-MuiOutlinedInput-root"
@@ -62,13 +62,13 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
                 autoFocus={false}
                 className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
                 disabled={false}
-                id="email"
-                name="email"
+                id="username"
+                name="username"
                 onAnimationStart={[Function]}
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
-                placeholder="Email"
+                placeholder="Nome de usuário"
                 required={false}
                 type="text"
                 value=""
@@ -81,7 +81,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
                   className="css-yjsfm1"
                 >
                   <span>
-                    Email
+                    Username
                   </span>
                 </legend>
               </fieldset>
@@ -246,7 +246,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
         <button
           className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth css-1yc1c03-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
-          id=":r8:"
+          id=":r7:"
           onBlur={[Function]}
           onClick={[Function]}
           onContextMenu={[Function]}
@@ -269,28 +269,6 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
           />
         </button>
       </form>
-      <a
-        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-mbrfdh-MuiButtonBase-root-MuiButton-root"
-        href="/register"
-        onBlur={[Function]}
-        onContextMenu={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
-      >
-        Criar conta
-        <span
-          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </a>
       <div />
       <div />
     </div>
@@ -422,51 +400,6 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
                 >
                   <span>
                     Nome
-                  </span>
-                </legend>
-              </fieldset>
-            </div>
-          </div>
-          <div
-            className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
-          >
-            <label
-              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tfb5gn-MuiFormLabel-root-MuiInputLabel-root"
-              data-shrink={false}
-              htmlFor="username"
-              id="username-label"
-            >
-              Username
-            </label>
-            <div
-              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-xdaq6w-MuiInputBase-root-MuiOutlinedInput-root"
-              onClick={[Function]}
-            >
-              <input
-                aria-invalid={false}
-                autoFocus={false}
-                className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
-                disabled={false}
-                id="username"
-                name="username"
-                onAnimationStart={[Function]}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Username"
-                required={false}
-                type="text"
-                value=""
-              />
-              <fieldset
-                aria-hidden={true}
-                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-              >
-                <legend
-                  className="css-yjsfm1"
-                >
-                  <span>
-                    Username
                   </span>
                 </legend>
               </fieldset>
@@ -685,7 +618,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
         <button
           className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth css-1yc1c03-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
-          id=":r5:"
+          id=":r4:"
           onBlur={[Function]}
           onClick={[Function]}
           onContextMenu={[Function]}
@@ -707,7 +640,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
       </form>
       <a
         className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-mbrfdh-MuiButtonBase-root-MuiButton-root"
-        href="/login"
+        href="/parceiro_login"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onDragLeave={[Function]}
@@ -723,6 +656,25 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
         tabIndex={0}
       >
         Já possuo conta
+      </a>
+      <a
+        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-ekth1v-MuiButtonBase-root-MuiButton-root"
+        href="/activate"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+      >
+        Ativar conta
       </a>
       <div />
       <div />

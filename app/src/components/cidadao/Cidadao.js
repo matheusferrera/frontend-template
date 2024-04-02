@@ -31,7 +31,7 @@ const Cidadao = () => {
   });
   const { setNavContent } = useNavContent();
 
-  const formattedDate = formatDate(user.created_at);
+  const formattedDate = formatDate(user.dh_criacao);
 
   useEffect(() => {
     if (token && !fetched) {

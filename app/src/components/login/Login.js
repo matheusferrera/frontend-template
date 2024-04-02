@@ -14,7 +14,13 @@ import AvisoDePrivacidadeModal from "../modals/AvisoDePrivacidadeModal";
 import TermoDeUsoModal from "../modals/TermoDeUsoModal";
 import LoginForm from "./LoginForm";
 
-const Login = ({ redirectPath = "/profile" }) => {
+function backendUserType(userRota) {
+  if (userRota === "/admin") return "admin";
+  if (userRota === "/cidadao") return "trabalhador";
+  return "parceiro";
+}
+
+const Login = ({ userRota = "" }) => {
   const { login } = useAuth();
 
   const navigate = useNavigate();
@@ -32,26 +38,22 @@ const Login = ({ redirectPath = "/profile" }) => {
   const handleAvisoDePrivacidadeShow = () => setAvisoDePrivacidadeModal(true);
   const handleAvisoDePrivacidadeClose = () => setAvisoDePrivacidadeModal(false);
 
-  const handleSubmit = (values, { setSubmitting }) => {
+  const handleSubmit = ({ username, password }, { setSubmitting }) => {
     const token = recaptchaRef.current.getValue();
-
-    setLoading(true);
 
     if (!token) {
       alert("Por favor, confirme que você não é um robô");
-      setLoading(false);
       setSubmitting(false);
       return;
     }
 
-    login(values.email, values.password)
-      .then(() => {
-        navigate(redirectPath);
-      })
-      .catch(error => {
-        const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
-        alert(resMessage);
-      })
+    const promise = login(username, password, backendUserType(userRota));
+
+    setLoading(true);
+
+    promise
+      .then(() => navigate(userRota))
+      .catch(error => alert(error.response?.data?.message || error.message || error.toString()))
       .finally(() => {
         setLoading(false);
         setSubmitting(false);
@@ -98,13 +100,25 @@ const Login = ({ redirectPath = "/profile" }) => {
             handleTermoDeUsoShow={handleTermoDeUsoShow}
           />
 
-          <Button
-            variant="outlined"
-            sx={{ mt: 2 }}
-            href="/register"
-          >
-            Criar conta
-          </Button>
+          {userRota == "/parceiro" && (
+            <>
+              <Button
+                variant="outlined"
+                sx={{ mt: 2 }}
+                href="/register"
+              >
+                Criar conta
+              </Button>
+
+              <Button
+                variant="outlined"
+                sx={{ mt: 2, ml: 2 }}
+                href="/activate"
+              >
+                Ativar conta
+              </Button>
+            </>
+          )}
 
           <TermoDeUsoModal
             showModal={termoDeUsoModal}
@@ -121,7 +135,7 @@ const Login = ({ redirectPath = "/profile" }) => {
 };
 
 Login.propTypes = {
-  redirectPath: PropTypes.string,
+  userRota: PropTypes.string,
 };
 
 export default Login;

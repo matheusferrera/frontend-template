@@ -42,7 +42,7 @@ const Register = () => {
       return;
     }
 
-    register(values.email, values.name, values.username, values.password, values.passwordConfirmation)
+    register(values.email, values.name, values.password, values.passwordConfirmation)
       .then(response => {
         navigate("/login");
         alert(response);
@@ -100,9 +100,17 @@ const Register = () => {
           <Button
             variant="outlined"
             sx={{ mt: 2 }}
-            href="/login"
+            href="/parceiro_login"
           >
             Já possuo conta
+          </Button>
+
+          <Button
+            variant="outlined"
+            sx={{ mt: 2, ml: 2 }}
+            href="/activate"
+          >
+            Ativar conta
           </Button>
 
           <TermoDeUsoModal

@@ -24,14 +24,14 @@ const LoginForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoShow, 
   const [showPassword, setShowPassword] = useState(false);
 
   const initialValues = {
-    email: "",
+    username: "",
     password: "",
     toggle: false,
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email("Email é inválido").required("Campo de email é obrigatório"),
-    password: Yup.string().min(6, "Senha deve ter no mínimo 6 caracteres").required("Senha é obrigatória"),
+    username: Yup.string().required("Campo de nome de usuário é obrigatório"),
+    password: Yup.string().min(5, "Senha deve ter no mínimo 6 caracteres").required("Senha é obrigatória"),
     toggle: Yup.bool().oneOf([true], "Você precisa aceitar os termos e condições"),
   });
 
@@ -45,14 +45,14 @@ const LoginForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoShow, 
         <Form>
           <Stack spacing={3}>
             <TextField
-              id="email"
-              name="email"
-              label="Email"
-              placeholder="Email"
-              value={values.email}
+              id="username"
+              name="username"
+              label="Username"
+              placeholder="Nome de usuário"
+              value={values.username}
               type="text"
-              error={errors.email && touched.email}
-              helperText={errors.email && touched.email && errors.email}
+              error={errors.username && touched.username}
+              helperText={errors.username && touched.username && errors.username}
               onChange={handleChange}
               onBlur={handleBlur}
             />

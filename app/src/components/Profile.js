@@ -24,20 +24,20 @@ const Profile = () => {
         <div className="container">
           <header className="jumbotron">
             <h3>
-              Usuário: <strong>{user.username}</strong>
+              Usuário: <strong>{user.no_usuario}</strong>
             </h3>
           </header>
           <p>
             <strong>Token:</strong> {token.substring(0, 20)} ... {token.substr(token.length - 20)}
           </p>
-          <p>
-            <strong>Id:</strong> {user.id}
-          </p>
-          <p>
-            <strong>Email:</strong> {user.email}
-          </p>
-          <strong>Authorities:</strong>
-          <ul>{user.roles && user.roles.map((role, index) => <li key={index}>{role}</li>)}</ul>
+
+          <div key={user.pk_usuario}>
+            {Object.entries(user).map(([key, value]) => (
+              <p key={key}>
+                <strong>{key}:</strong> {value}
+              </p>
+            ))}
+          </div>
         </div>
       ) : (
         <p>Please log in to view your profile.</p>

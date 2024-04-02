@@ -29,13 +29,13 @@ export const AuthProvider = ({ children }) => {
 
   /**
    * Function to handle user login.
-   * @param {string} email - The user's email.
+   * @param {string} username - The user's username.
    * @param {string} password - The user's password.
    * @returns {Promise} - A promise that resolves to the user details.
    */
-  const login = (email, password) => {
+  const login = (username, password, user_type) => {
     return authService
-      .login(email, password)
+      .login(username, password, user_type)
       .then(token => {
         // Ensure that token is truthy before setting it
         if (token) {
@@ -99,18 +99,33 @@ export const AuthProvider = ({ children }) => {
    * Function to handle user registration.
    * @param {string} email - The user's email.
    * @param {string} name - The user's name.
-   * @param {string} username - The user's username.
    * @param {string} password - The user's password.
    * @param {string} password_confirmation - The user's password confirmation.
    */
-  const register = (email, name, username, password, password_confirmation) => {
+  const register = (email, name, password, password_confirmation) => {
     return authService
-      .register(email, name, username, password, password_confirmation)
+      .register(email, name, password, password_confirmation)
       .then(response => {
         return response;
       })
       .catch(error => {
         console.error("Registration error:", error);
+        throw error;
+      });
+  };
+
+  /**
+   * Function to activate user account with a token.
+   * @param {string} token - The activation token.
+   */
+  const activate = token => {
+    return authService
+      .activate(token)
+      .then(response => {
+        return response;
+      })
+      .catch(error => {
+        console.error("Activation error:", error);
         throw error;
       });
   };
@@ -125,6 +140,26 @@ export const AuthProvider = ({ children }) => {
     return authService
       .getAuthUser(token)
       .then(userDetails => {
+        /* Exemplo de userDetails
+        {"message":
+          "Usu\u00e1rio encontrado",
+          "expires_in":3508,
+          "user":{
+            "pk_usuario":1,
+            "no_usuario":"teste teste",
+            "nu_id_sso":null,
+            "nu_cpf":null,
+            "ds_email":"teste@teste.com",
+            "st_ativo":"sim",
+            "tp_usuario":"EMP",
+            "ds_perfil_sso":"[\"Parceiro\"]",
+            "ds_acoes_sso":"[\"ACESSO_LOGIN\"]",
+            "fk_central_auditoria":1,
+            "fk_administracao_registros":1,
+            "fk_administracao_anexos_foto":null,
+            "dh_criacao":"2024-03-25T19:09:34.000000Z",
+            "dh_atualizacao":"2024-03-25T19:11:02.000000Z"}}
+          */
         if (!userDetails.photo_path) {
           userDetails.photo_path = "/assets/images/avatars/avatar_25.jpg";
         }
@@ -145,6 +180,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     user,
     token,
+    activate,
     login,
     logout,
     register,
