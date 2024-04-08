@@ -28,6 +28,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import optionsService from "../../services/options.service.js";
 import ButtonSecondary from "../buttons/ButtonSecondary.js";
 import ConfirmacaoModal from "../modals/ConfirmacaoModal";
+import ErroDoUsuarioModal from "../modals/ErroDoUsuarioModal.js";
 import ErroModal from "../modals/ErroModal.js";
 import FinanceiroModal from "../modals/FinanceiroModal";
 import { SelectAtuacaoParceiro } from "./fields/SelectAutacaoParceiro.js";
@@ -42,6 +43,8 @@ const FormListarParceiros = ({
   setConfirmacaoModal,
   erroModal,
   setErroModal,
+  erroDoUsuarioModal,
+  setErroDoUsuarioModal,
   values,
   readOnly = false,
 }) => {
@@ -63,6 +66,7 @@ const FormListarParceiros = ({
         cidade: "",
         telefone: "",
         site: "",
+        redesSociais: "",
         nomeRepresentante: "",
         cpf: "",
         telefoneRepresentante: "",
@@ -346,12 +350,36 @@ const FormListarParceiros = ({
     return "";
   };
 
+  const verificarCamposAntesDoSubmit = (error, values) => {
+    console.log("Garantindo que não há erros");
+    if (Object.keys(error).length != 0) {
+      console.log("Erro de preenchimento encontrado");
+      setErroDoUsuarioModal(true);
+    } else if (
+      !(
+        values.checkVagaEmprego ||
+        values.checkVagaEstagio ||
+        values.checkVagaJovem ||
+        values.checkCursos ||
+        values.checkFinanceiro ||
+        values.checkMobilidadePublico ||
+        values.checkMobilidadeParceiro
+      )
+    ) {
+      console.log("Erro de preenchimento encontrado");
+      setErroDoUsuarioModal(true);
+    }
+  };
   const handleConfirmacaoClose = () => {
     setConfirmacaoModal(false);
   };
 
   const handleErroClose = () => {
     setErroModal(false);
+  };
+
+  const handleErroDoUsuarioClose = () => {
+    setErroDoUsuarioModal(false);
   };
 
   return (
@@ -361,7 +389,7 @@ const FormListarParceiros = ({
       onSubmit={handleSubmit}
       validateOnChange={false}
     >
-      {({ values, setFieldValue, handleChange, handleBlur, handleSubmit, isSubmitting, errors, touched }) => (
+      {({ values, setFieldValue, handleChange, handleBlur, isSubmitting, errors, touched, validateForm }) => (
         <Form>
           <Stack>
             <Card
@@ -727,7 +755,7 @@ const FormListarParceiros = ({
                   <FormGroup>
                     <Typography sx={{ mb: "8px" }}>Rede Social</Typography>
                     <TextField
-                      id="redeSocial"
+                      id="redesSociais"
                       name="redesSociais[0]"
                       value={values.redesSociais && values.redesSociais[0] ? values.redesSociais[0] : ""}
                       placeholder="Insira a Rede Social"
@@ -774,7 +802,7 @@ const FormListarParceiros = ({
                             <FormGroup>
                               <Typography sx={{ mb: "8px" }}>Rede Social</Typography>
                               <TextField
-                                id="redeSocial"
+                                id={"redesSociais[" + index + "]"}
                                 name={"redesSociais[" + index + "]"}
                                 value={values.redesSociais && values.redesSociais[index] ? values.redesSociais[index] : ""}
                                 placeholder="Insira a Rede Social"
@@ -1529,7 +1557,10 @@ const FormListarParceiros = ({
                             type="submit"
                             variant="contained"
                             color="success"
-                            onClick={handleSubmit}
+                            onClick={async () => {
+                              const erro = await validateForm();
+                              verificarCamposAntesDoSubmit(erro, values);
+                            }}
                             loading={loading || isSubmitting}
                             fullWidth
                             sx={{ borderRadius: "24px" }}
@@ -1545,6 +1576,11 @@ const FormListarParceiros = ({
                           <ErroModal
                             showModal={erroModal}
                             handleClose={handleErroClose}
+                          />
+                          <ErroDoUsuarioModal
+                            showModal={erroDoUsuarioModal}
+                            handleClose={handleErroDoUsuarioClose}
+                            erros={errors}
                           />
                         </Grid>
                       </Grid>
@@ -1567,6 +1603,8 @@ FormListarParceiros.propTypes = {
   setConfirmacaoModal: PropTypes.func,
   setErroModal: PropTypes.func,
   erroModal: PropTypes.bool,
+  setErroDoUsuarioModal: PropTypes.func,
+  erroDoUsuarioModal: PropTypes.bool,
   values: PropTypes.object,
   readOnly: PropTypes.bool,
 };
