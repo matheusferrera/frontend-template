@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import JSON_ATUACOES from "../assets/json/atuacao_parceiro.json";
+import JSON_ATUACOES from "../assets/json/areas-atuacao-parceiro.json";
 import JSON_CIDADES from "../assets/json/estados-cidades.json";
 
 const API_URL_BRASILAPI = "https://brasilapi.com.br/api/";
@@ -9,10 +9,10 @@ const API_URL_SERVICOSIBGE = "https://servicodados.ibge.gov.br/api/";
 
 const API_URL_VIACEP = "https://viacep.com.br/ws/";
 
-const estados = JSON_CIDADES.estados;
+const estadosJSON = JSON_CIDADES.estados;
 
 // Cira um array json com objetos cidade que contém o nome, id e estado da cidade
-const cidadesJSON = estados.reduce((acc, estado) => {
+const cidadesJSON = estadosJSON.reduce((acc, estado) => {
   const cidades = estado.cidades.map(cidade => {
     return {
       id: cidade,
@@ -23,7 +23,7 @@ const cidadesJSON = estados.reduce((acc, estado) => {
   return acc.concat(cidades);
 }, []);
 
-const atuacoes = JSON_ATUACOES.atuacoes;
+const atuacoesJSON = JSON_ATUACOES.atuacoes;
 
 const getAllUFs = () => {
   return axios
@@ -40,7 +40,7 @@ const getAllUFs = () => {
           return 0;
         });
       } else {
-        return estados;
+        return estadosJSON;
       }
     })
     .catch(error => {
@@ -73,14 +73,14 @@ const getCidadesFromUF = ufSigla => {
     });
 };
 
-const getAtuacoes = () => {
+const getAreasAtuacao = () => {
   return axios
     .get(API_URL_SERVICOSIBGE + "v2/cnae/divisoes")
     .then(response => {
       if (response) {
         return response.data;
       } else {
-        return atuacoes;
+        return atuacoesJSON;
       }
     })
     .catch(error => {
@@ -157,7 +157,7 @@ const optionsService = {
   getAllUFs,
   getCidadesFromUF,
   cidadesJSON,
-  getAtuacoes,
+  getAreasAtuacao,
   verificarSiteAtivo,
   verificarCEP,
   verificarCNPJ,
