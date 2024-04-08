@@ -1,21 +1,9 @@
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 
 import { useAuth } from "../contexts/AuthContext";
 
 const Profile = () => {
-  const { user, token, getAuthUser } = useAuth();
-
-  // Memoize the getAuthUser function
-  const memoizedGetAuthUser = useMemo(() => getAuthUser, [getAuthUser, user]);
-
-  // Fetch authenticated user information when the component mounts
-  useEffect(() => {
-    if (token) {
-      memoizedGetAuthUser(token).catch(error => {
-        console.error("Error fetching authenticated user in Profile:", error);
-      });
-    }
-  }, [token, memoizedGetAuthUser]);
+  const { user, token } = useAuth();
 
   return (
     <div>

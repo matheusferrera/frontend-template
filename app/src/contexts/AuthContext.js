@@ -14,18 +14,47 @@ const AuthContext = createContext();
  */
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
+  const storedUser = localStorage.getItem("user");
+  const storedToken = localStorage.getItem("token");
+
+  const [user, setUser] = useState(storedUser !== null ? JSON.parse(storedUser) : null);
+  const [token, setToken] = useState(storedToken !== null ? storedToken : null);
+  const [refreshingToken, setRefreshingToken] = useState(false);
+
+  console.log("token -> ", token?.slice(-4));
+
+  //O STATE UTILIZADO DENTRO DO USEFFECT É O STATE QUE FOI STEADAO NA PRIMEIRA CHAMDA ENTAO NECESSITA UTILIZAR O LOCALSTORAGE
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const _storedToken = localStorage.getItem("token");
+      const _storedTimeRefreshToken = localStorage.getItem("timeRefreshToken");
+
+      console.log("TIMER-> ", Date.now() - parseInt(_storedTimeRefreshToken));
+
+      if (!refreshingToken && Date.now() - parseInt(localStorage.getItem("timeRefreshToken")) > 30000000) {
+        setRefreshingToken(true);
+        localStorage.setItem("timeRefreshToken", Date.now());
+        authService
+          .refreshToken(_storedToken)
+          .then(resp => {
+            localStorage.setItem("token", resp.access_token);
+            setToken(resp.access_token);
+            setRefreshingToken(false);
+          })
+          .catch(e => {
+            console.log("Token expirado => ", e);
+            setRefreshingToken(false);
+            logout();
+          });
+      }
+    }, 60000);
+
+    return () => clearInterval(interval); // Limpa o intervalo quando o componente é desmontado
+  }, []);
 
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    const storedUser = localStorage.getItem("user");
-
-    if (storedToken && storedUser) {
-      setUser(JSON.parse(storedUser));
-      setToken(storedToken);
-    }
-  }, []);
+    console.log("TOKEN FOI ALTERADO -> ", token);
+  }, [token]);
 
   /**
    * Function to handle user login.
@@ -47,6 +76,7 @@ export const AuthProvider = ({ children }) => {
         }
       })
       .then(userDetails => {
+        console.log("USER DETAILS -> ", userDetails);
         // Ensure that userDetails is truthy before setting user
         if (userDetails) {
           if (!userDetails.photo_path) {
@@ -57,6 +87,7 @@ export const AuthProvider = ({ children }) => {
           }
           setUser(userDetails);
           localStorage.setItem("user", JSON.stringify(userDetails));
+          localStorage.setItem("timeRefreshToken", Date.now());
         } else {
           throw new Error("Invalid user details received");
         }
@@ -66,6 +97,7 @@ export const AuthProvider = ({ children }) => {
         setToken(null);
         localStorage.removeItem("token");
         localStorage.removeItem("user");
+        localStorage.removeItem("timeRefreshToken");
         console.error("Login error:", error);
         // Rethrow the error to propagate it to the calling code
         throw error;
@@ -78,18 +110,17 @@ export const AuthProvider = ({ children }) => {
    * @return {undefined} No return value.
    */
   const logout = token => {
+    setUser(null);
+    setToken(null);
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("timeRefreshToken");
     return authService
       .logout(token)
       .then(response => {
-        setUser(null);
-        setToken(null);
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
         return response;
       })
       .catch(error => {
-        setUser(null);
-        setToken(null);
         console.error("Logout error:", error);
         throw error;
       });

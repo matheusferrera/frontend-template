@@ -91,6 +91,26 @@ const activate = access_token => {
 };
 
 /**
+ * Generate a new token.
+ *
+ * @return {Promise} A promise that resolves to the result of the activation request.
+ */
+const refreshToken = access_token => {
+  return axios
+    .post(API_URL + "v1/refreshToken", null, {
+      headers: {
+        Authorization: "Bearer " + access_token,
+      },
+    })
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      throw error;
+    });
+};
+
+/**
  * Retrieves the authenticated user from the server.
  *
  * @param {string} access_token - The access token used for authentication.
@@ -205,6 +225,7 @@ const AuthService = {
   register,
   login,
   logout,
+  refreshToken,
   getCurrentUser,
   getAuthUser,
   getParceiro,

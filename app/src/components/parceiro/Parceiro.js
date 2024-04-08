@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import InfoIcon from "@mui/icons-material/Info";
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
@@ -6,10 +6,7 @@ import { Box, Container, Grid, Link, Typography } from "@mui/material";
 import imagemMoco from "../../assets/images/Ilustra-Cursos.png";
 import imagemMoca from "../../assets/images/Ilustra-Emprego.png";
 import imagemPrimaria from "../../assets/images/Ilustra-Parceiro.png";
-import { useAuth } from "../../contexts/AuthContext";
-import { useData } from "../../contexts/DataContext";
 import { useNavContent } from "../../contexts/NavContentContext";
-import { formatDate } from "../../utils/format-time";
 import CardBreadcrumb from "../cards/CardBreadcrumb";
 import CardPrimario from "../cards/CardPrimario";
 import CardSecundario from "../cards/CardSecundario";
@@ -17,43 +14,7 @@ import CardServicos from "../cards/CardServicos";
 import parceiroNav from "./ParceiroNav";
 
 const Parceiro = () => {
-  const { user, token } = useAuth();
-  const { parceiroData, getParceiroData } = useData();
-  const [fetched, setFetched] = useState(false); // Track if data has been fetched
-  const [dadosConsolidados, setDadosConsolidados] = useState({
-    situacao: "...",
-    numeroEmpregos: "...",
-    numeroCursos: "...",
-    listaPermissao: {
-      permissao1: false,
-      permissao2: false,
-    },
-  });
   const { setNavContent } = useNavContent();
-
-  const formattedDate = formatDate(user.dh_criacao);
-
-  useEffect(() => {
-    if (token && !fetched) {
-      getParceiroData(token)
-        .then(() => setFetched(true))
-        .catch(error => {
-          console.error("Error fetching parceiro data:", error);
-        });
-    }
-  }, [token, fetched]); // Only run if token or fetched status changes
-
-  useEffect(() => {
-    if (parceiroData) {
-      const { situacao, n_emprego, n_cursos, permissao_list } = parceiroData;
-      setDadosConsolidados({
-        situacao,
-        numeroEmpregos: n_emprego,
-        numeroCursos: n_cursos,
-        listaPermissao: permissao_list,
-      });
-    }
-  }, [parceiroData]);
 
   useEffect(() => {
     setNavContent(parceiroNav);
@@ -80,7 +41,7 @@ const Parceiro = () => {
 
       <CardPrimario
         title="Rede de Parceiros da Inclusão Socioeconomica"
-        content={`A situação do seu cadastro é: ${dadosConsolidados.situacao} desde ${formattedDate}`}
+        content={`A situação do seu cadastro é: REALIZAR FETCH`}
         imageUrl={imagemPrimaria}
       />
 
@@ -116,7 +77,7 @@ const Parceiro = () => {
           sx={{ paddingTop: "16px !important" }}
         >
           <CardSecundario
-            title={`${dadosConsolidados.numeroEmpregos}`}
+            title={`REALIZAR FETCH`}
             subtitle="Vagas de Emprego"
             description="Disponíveis em diversas áreas"
             backgroundColor="primary.main"
@@ -130,7 +91,7 @@ const Parceiro = () => {
           sx={{ paddingTop: "16px !important" }}
         >
           <CardSecundario
-            title={`${dadosConsolidados.numeroCursos}`}
+            title={`REALIZAR FETCH`}
             subtitle="Vagas de Cursos"
             description="Disponíveis em diversas áreas"
             backgroundColor="#1351B4"
