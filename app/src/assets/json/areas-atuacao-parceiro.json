@@ -359,7 +359,9 @@
         "id": "D",
         "descricao": "ELETRICIDADE E GÁS"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "36",
@@ -401,7 +403,9 @@
         "id": "E",
         "descricao": "ÁGUA, ESGOTO, ATIVIDADES DE GESTÃO DE RESÍDUOS E DESCONTAMINAÇÃO"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "41",
@@ -443,7 +447,9 @@
         "id": "H",
         "descricao": "TRANSPORTE, ARMAZENAGEM E CORREIO"
       },
-      "observacoes": ["Esta divisão compreende as atividades do Correio Nacional, dos courriers e as atividades de malote e entrega."]
+      "observacoes": [
+        "Esta divisão compreende as atividades do Correio Nacional, dos courriers e as atividades de malote e entrega."
+      ]
     },
     {
       "id": "55",
@@ -452,7 +458,9 @@
         "id": "I",
         "descricao": "ALOJAMENTO E ALIMENTAÇÃO"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "56",
@@ -461,7 +469,9 @@
         "id": "I",
         "descricao": "ALOJAMENTO E ALIMENTAÇÃO"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "43",
@@ -602,7 +612,9 @@
         "id": "J",
         "descricao": "INFORMAÇÃO E COMUNICAÇÃO"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "63",
@@ -655,7 +667,9 @@
         "id": "L",
         "descricao": "ATIVIDADES IMOBILIÁRIAS"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "69",
@@ -675,7 +689,9 @@
         "id": "M",
         "descricao": "ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "72",
@@ -717,7 +733,9 @@
         "id": "M",
         "descricao": "ATIVIDADES PROFISSIONAIS, CIENTÍFICAS E TÉCNICAS"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "91",
@@ -814,7 +832,9 @@
         "id": "O",
         "descricao": "ADMINISTRAÇÃO PÚBLICA, DEFESA E SEGURIDADE SOCIAL"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "85",
@@ -823,7 +843,9 @@
         "id": "P",
         "descricao": "EDUCAÇÃO"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "86",
@@ -920,7 +942,9 @@
         "id": "T",
         "descricao": "SERVIÇOS DOMÉSTICOS"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     },
     {
       "id": "99",
@@ -929,7 +953,9 @@
         "id": "U",
         "descricao": "ORGANISMOS INTERNACIONAIS E OUTRAS INSTITUIÇÕES EXTRATERRITORIAIS"
       },
-      "observacoes": [""]
+      "observacoes": [
+        ""
+      ]
     }
   ]
 }

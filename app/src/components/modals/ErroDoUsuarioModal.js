@@ -35,18 +35,20 @@ const termos = {
   checkFinanceiro: "Tipo de Serviço",
   checkMobilidadePublico: "Tipo de Serviço",
   checkMobilidadeParceiro: "Tipo de Serviço",
-  toggleCienteNormas: "Normas",
-  toggleCienteGratuito: "Condições",
+  toggleCienteNormas: "Você precisa concordar com as normas",
+  toggleCienteGratuito: "Você precisa informar que está ciente da condição",
   // Esse campo não aparece normalmente na lista de erros
   erroDiferente: "Tipo de Serviço",
 };
 
-const ErroModal = ({ showModal, handleClose, erros }) => {
+const ErroDoUsuarioModal = ({ showModal, handleClose, erros }) => {
   if (Object.keys(erros).length == 0) {
     // Detecta os erros dos checks
     erros = { erroDiferente: "erro" };
   }
+
   const modalTitle = "Erro de Preenchimento";
+
   const modalContent = (
     <>
       <center>{"Ocorreu um erro no preenchimento do formulário nos campos: "}</center>
@@ -74,10 +76,10 @@ const ErroModal = ({ showModal, handleClose, erros }) => {
   );
 };
 
-ErroModal.propTypes = {
+ErroDoUsuarioModal.propTypes = {
   showModal: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
-  erros: PropTypes.string.isRequired,
+  erros: PropTypes.object.isRequired,
 };
 
-export default ErroModal;
+export default ErroDoUsuarioModal;

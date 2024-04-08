@@ -7,6 +7,19 @@ import CardBreadcrumb from "../cards/CardBreadcrumb";
 import FormListarParceiros from "../formularios/FormListarParceiros";
 import parceiroNav from "./ParceiroNav";
 
+const mapearNaturezaJuridica = valor => {
+  switch (valor) {
+    case "Público":
+      return "Pub";
+    case "Privado":
+      return "Pri";
+    case "Terceiro Setor":
+      return "Trc";
+    default:
+      return valor; // Retorna o valor original se não corresponder a nenhum dos casos acima
+  }
+};
+
 const ListarParceiros = () => {
   const [loading, setLoading] = useState(false);
   const [confirmacaoModal, setConfirmacaoModal] = useState(false);
@@ -31,6 +44,9 @@ const ListarParceiros = () => {
         values.checkMobilidadePublico ||
         values.checkMobilidadeParceiro
       ) {
+        // Ajuste de naturezaJuridica para o backend
+        values.naturezaJuridica = mapearNaturezaJuridica(values.naturezaJuridica);
+
         // TODO: mudar para a chamada no backend
         console.log(values);
         // Simula uma operação assíncrona

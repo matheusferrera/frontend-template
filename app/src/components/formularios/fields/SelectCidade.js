@@ -6,10 +6,29 @@ import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
+import { capitalizarPrimeiraLetra } from "../utils";
+
+const transformarNomeCidade = nome => {
+  return nome
+    .replace(/\s*\([^)]*\)/g, "")
+    .toLowerCase()
+    .split(" ")
+    .map(capitalizarPrimeiraLetra)
+    .join(" ");
+};
+
 export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSelectCidade, readOnly, errors, touched }) => {
-  if (!cidade) {
-    cidade = "none";
-  }
+  const cidadeTransformada = cidade ? transformarNomeCidade(cidade) : "none";
+
+  const options = cidades
+    ? cidades.map(cidadeItem => ({
+        key: cidadeItem.nome,
+        id: cidadeItem.nome,
+        name: transformarNomeCidade(cidadeItem.nome),
+        value: transformarNomeCidade(cidadeItem.nome),
+      }))
+    : [];
+
   return (
     <FormControl fullWidth>
       <Typography sx={{ mb: "8px" }}>* Cidade</Typography>
@@ -17,11 +36,7 @@ export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSele
         id={idSelect}
         name={nameSelect}
         defaultValue=""
-        value={cidade
-          .toLowerCase()
-          .split(" ")
-          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")}
+        value={cidadeTransformada}
         placeholder="Selecione uma cidade"
         onChange={handleSelectCidade}
         inputProps={{
@@ -36,22 +51,14 @@ export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSele
         >
           Selecione uma cidade
         </MenuItem>
-        {cidades.map(cidade => (
+        {options.map(option => (
           <MenuItem
-            key={cidade.nome}
-            id={cidade.nome}
-            name={cidade.nome}
-            value={cidade.nome
-              .toLowerCase()
-              .split(" ")
-              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" ")}
+            key={option.key}
+            id={option.id}
+            name={option.name}
+            value={option.value}
           >
-            {cidade.nome
-              .toLowerCase()
-              .split(" ")
-              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" ")}
+            {option.value}
           </MenuItem>
         ))}
       </Select>

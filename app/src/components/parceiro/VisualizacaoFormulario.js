@@ -35,7 +35,7 @@ const VisualizacaoFormulario = () => {
     nomePontoFocal: "teste",
     emailPontoFocal: "teste@email.com",
     telefonePontoFocal: "(00) 0000-0000",
-    areaAtuacao: "PRODUÇÃO FLORESTAL",
+    areaAtuacao: "02", //"PRODUÇÃO FLORESTAL",
     naturezaJuridica: user.naturezaJuridica,
     checkVagaEmprego: false,
     checkVagaEstagio: true,

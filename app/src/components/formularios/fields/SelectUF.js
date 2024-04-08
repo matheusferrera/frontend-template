@@ -7,17 +7,24 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
 export const SelectUF = ({ idSelect, nameSelect, ufs, uf, handleSelectUf, readOnly, errors, touched }) => {
-  if (!uf) {
-    uf = "none";
-  }
+  const ufSelecionada = uf || "none";
+
+  const options = ufs.map(ufItem => (
+    <MenuItem
+      key={ufItem.sigla}
+      value={ufItem.sigla}
+    >
+      {ufItem.nome} ({ufItem.sigla})
+    </MenuItem>
+  ));
+
   return (
     <FormControl fullWidth>
       <Typography sx={{ mb: "8px" }}>* UF</Typography>
       <Select
         id={idSelect}
         name={nameSelect}
-        defaultValue=""
-        value={uf}
+        value={ufSelecionada}
         placeholder="Selecione uma UF"
         onChange={handleSelectUf}
         inputProps={{
@@ -32,16 +39,7 @@ export const SelectUF = ({ idSelect, nameSelect, ufs, uf, handleSelectUf, readOn
         >
           Selecione uma UF
         </MenuItem>
-        {ufs.map(uf => (
-          <MenuItem
-            key={uf.sigla}
-            id={uf.sigla}
-            name={uf.sigla}
-            value={uf.sigla}
-          >
-            {uf.nome} ({uf.sigla})
-          </MenuItem>
-        ))}
+        {options}
       </Select>
     </FormControl>
   );

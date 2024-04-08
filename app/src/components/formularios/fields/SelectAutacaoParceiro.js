@@ -6,6 +6,8 @@ import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
+import { capitalizarPrimeiraLetra } from "../utils";
+
 export const SelectAtuacaoParceiro = ({
   idSelect,
   nameSelect,
@@ -18,9 +20,19 @@ export const SelectAtuacaoParceiro = ({
   errors,
   touched,
 }) => {
-  if (!item) {
-    item = "none";
-  }
+  const itemSelecionado = item || "none";
+
+  const options = list.map(listItem => (
+    <MenuItem
+      key={listItem.id}
+      id={listItem.id}
+      name={listItem.descricao}
+      value={listItem.id}
+    >
+      {listItem.descricao.toLowerCase().split(" ").map(capitalizarPrimeiraLetra).join(" ")}
+    </MenuItem>
+  ));
+
   return (
     <FormControl fullWidth>
       <Typography sx={{ mb: "8px" }}>{label}</Typography>
@@ -28,7 +40,7 @@ export const SelectAtuacaoParceiro = ({
         id={idSelect}
         name={nameSelect}
         defaultValue=""
-        value={item}
+        value={itemSelecionado}
         onChange={handleSelect}
         inputProps={{
           readOnly: readOnly,
@@ -42,20 +54,7 @@ export const SelectAtuacaoParceiro = ({
         >
           {placeholder}
         </MenuItem>
-        {list.map(item => (
-          <MenuItem
-            key={item.id}
-            id={item.id}
-            name={item.descricao}
-            value={item.descricao}
-          >
-            {item.descricao
-              .toLowerCase()
-              .split(" ")
-              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" ")}
-          </MenuItem>
-        ))}
+        {options}
       </Select>
     </FormControl>
   );

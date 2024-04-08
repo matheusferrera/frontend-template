@@ -21,9 +21,11 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(storedToken !== null ? storedToken : null);
   const [refreshingToken, setRefreshingToken] = useState(false);
 
+  const naturezasJuridicas = ["Público", "Privado", "Terceiro Setor"];
+
   console.log("token -> ", token?.slice(-4));
 
-  //O STATE UTILIZADO DENTRO DO USEFFECT É O STATE QUE FOI STEADAO NA PRIMEIRA CHAMDA ENTAO NECESSITA UTILIZAR O LOCALSTORAGE
+  //O STATE UTILIZADO DENTRO DO USEFFECT É O STATE QUE FOI SETADO NA PRIMEIRA CHAMADA ENTAO NECESSITA UTILIZAR O LOCALSTORAGE
   useEffect(() => {
     const interval = setInterval(() => {
       const _storedToken = localStorage.getItem("token");
@@ -83,7 +85,8 @@ export const AuthProvider = ({ children }) => {
             userDetails.photo_path = "/assets/images/avatars/avatar_25.jpg";
           }
           if (!userDetails.naturezaJuridica) {
-            userDetails.naturezaJuridica = "Microempreendedor Individual (MEI)";
+            const randomIndex = Math.floor(Math.random() * naturezasJuridicas.length);
+            userDetails.naturezaJuridica = naturezasJuridicas[randomIndex];
           }
           setUser(userDetails);
           localStorage.setItem("user", JSON.stringify(userDetails));
@@ -193,6 +196,10 @@ export const AuthProvider = ({ children }) => {
           */
         if (!userDetails.photo_path) {
           userDetails.photo_path = "/assets/images/avatars/avatar_25.jpg";
+        }
+        if (!userDetails.naturezaJuridica) {
+          const randomIndex = Math.floor(Math.random() * naturezasJuridicas.length);
+          userDetails.naturezaJuridica = naturezasJuridicas[randomIndex];
         }
         // Check if the user data has changed before updating the context
         if (!isEqual(userDetails, user)) {

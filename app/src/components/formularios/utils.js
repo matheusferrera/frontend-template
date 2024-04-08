@@ -105,3 +105,7 @@ export function validarCNPJ(cnpj) {
 
   return cnpj[12] == digitoVerificador1 && cnpj[13] == digitoVerificador2;
 }
+
+export const capitalizarPrimeiraLetra = str => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};

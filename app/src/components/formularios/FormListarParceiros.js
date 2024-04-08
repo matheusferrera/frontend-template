@@ -217,7 +217,7 @@ const FormListarParceiros = ({
   useEffect(() => {
     const fetchAtuacoes = async () => {
       await optionsService
-        .getAtuacoes()
+        .getAreasAtuacao()
         .then(atuacoesData => {
           setAtuacoes(atuacoesData);
         })
@@ -351,11 +351,8 @@ const FormListarParceiros = ({
   };
 
   const verificarCamposAntesDoSubmit = (error, values) => {
-    console.log("Garantindo que não há erros");
-    if (Object.keys(error).length != 0) {
-      console.log("Erro de preenchimento encontrado");
-      setErroDoUsuarioModal(true);
-    } else if (
+    if (
+      Object.keys(error).length !== 0 ||
       !(
         values.checkVagaEmprego ||
         values.checkVagaEstagio ||
@@ -366,10 +363,10 @@ const FormListarParceiros = ({
         values.checkMobilidadeParceiro
       )
     ) {
-      console.log("Erro de preenchimento encontrado");
       setErroDoUsuarioModal(true);
     }
   };
+
   const handleConfirmacaoClose = () => {
     setConfirmacaoModal(false);
   };
