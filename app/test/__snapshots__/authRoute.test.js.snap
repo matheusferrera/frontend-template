@@ -35,7 +35,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       <p
         className="MuiTypography-root MuiTypography-body1 css-15qqw0x-MuiTypography-root"
       >
-        A situação do seu cadastro é: Carregando... desde NaN/NaN/NaN
+        A situação do seu cadastro é: REALIZAR FETCH
       </p>
     </div>
   </div>
@@ -231,7 +231,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             <h1
               className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
             >
-              ...
+              REALIZAR FETCH
             </h1>
             <div
               className="MuiBox-root css-0"
@@ -272,7 +272,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             <h1
               className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
             >
-              ...
+              REALIZAR FETCH
             </h1>
             <div
               className="MuiBox-root css-0"
@@ -906,7 +906,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       <p
         className="MuiTypography-root MuiTypography-body1 css-15qqw0x-MuiTypography-root"
       >
-        A situação do seu cadastro é: ... desde NaN/NaN/NaN
+        A situação do seu cadastro é: REALIZAR FETCH
       </p>
     </div>
   </div>
@@ -1102,7 +1102,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             <h1
               className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
             >
-              ...
+              REALIZAR FETCH
             </h1>
             <div
               className="MuiBox-root css-0"
@@ -1143,7 +1143,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             <h1
               className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
             >
-              ...
+              REALIZAR FETCH
             </h1>
             <div
               className="MuiBox-root css-0"
@@ -1237,9 +1237,6 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
   >
     Visão Geral
   </h4>
-  <div
-    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1.5 css-b5n4ta-MuiGrid-root"
-  />
   <h4
     className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
   >
