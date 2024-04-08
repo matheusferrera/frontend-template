@@ -11,6 +11,7 @@ const ListarParceiros = () => {
   const [loading, setLoading] = useState(false);
   const [confirmacaoModal, setConfirmacaoModal] = useState(false);
   const [erroModal, setErroModal] = useState(false);
+  const [erroDoUsuarioModal, setErroDoUsuarioModal] = useState(false);
 
   const { setNavContent } = useNavContent();
 
@@ -18,20 +19,36 @@ const ListarParceiros = () => {
     setNavContent(parceiroNav);
   }, []);
 
-  const handleSubmit = (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { setSubmitting }) => {
     setLoading(true);
     return new Promise(resolve => {
-      // TODO: mudar para a chamada no backend
-      console.log(values);
-      // Simula uma operação assíncrona
-      setTimeout(() => {
-        // Retorna a Promisse como sucesso no Timeout
-        resolve("Submissão bem-sucedida!");
-      }, 2000);
+      if (
+        values.checkVagaEmprego ||
+        values.checkVagaEstagio ||
+        values.checkVagaJovem ||
+        values.checkCursos ||
+        values.checkFinanceiro ||
+        values.checkMobilidadePublico ||
+        values.checkMobilidadeParceiro
+      ) {
+        // TODO: mudar para a chamada no backend
+        console.log(values);
+        // Simula uma operação assíncrona
+        setTimeout(() => {
+          // Retorna a Promisse como sucesso no Timeout
+          resolve("Submissão bem-sucedida!");
+        }, 2000);
 
-      // Código que pode ser usado pra simular erro;
-      // Como o código não tem nenhuma condição, ao ser utilizado o erro irá ser lançado antes do Timeout (Sucesso);
-      // throw new Error("Erro simulado durante a submissão!");
+        // Código que pode ser usado pra simular erro;
+        // Como o código não tem nenhuma condição, ao ser utilizado o erro irá ser lançado antes do Timeout (Sucesso);
+        // throw new Error("Erro simulado durante a submissão!");
+      } else {
+        // Detecta a presença de erro de preenchimento e finaliza o promise
+        setErroDoUsuarioModal(true);
+        setSubmitting(false);
+        setLoading(false);
+        console.error("Campos em branco");
+      }
     })
       .then(mensagem => {
         console.log("Sucesso:", mensagem);
@@ -69,6 +86,8 @@ const ListarParceiros = () => {
         setConfirmacaoModal={setConfirmacaoModal}
         erroModal={erroModal}
         setErroModal={setErroModal}
+        erroDoUsuarioModal={erroDoUsuarioModal}
+        setErroDoUsuarioModal={setErroDoUsuarioModal}
       />
     </Box>
   );
