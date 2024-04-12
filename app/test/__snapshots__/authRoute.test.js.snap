@@ -10,54 +10,66 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
     Seja bem-vindo ao
   </h4>
   <div
-    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1sc1gp4-MuiPaper-root-MuiCard-root"
+    style={
+      {
+        "borderBottom": "1px solid #9E9E9E",
+        "height": "200px",
+        "marginTop": "-50px",
+        "overflowY": "hidden",
+        "paddingTop": "60px",
+      }
+    }
   >
     <div
-      className="MuiBox-root css-k008qs"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
     >
       <div
-        className="MuiCardHeader-root css-1ean1qp-MuiCardHeader-root"
+        className="MuiBox-root css-0"
       >
         <div
-          className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+          className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
         >
-          <h2
-            className="MuiTypography-root MuiTypography-h2 css-1r70bye-MuiTypography-root"
+          <div
+            className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
-            Programa Redução da Pobreza
-          </h2>
+            <h2
+              className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+            >
+              Programa Redução da Pobreza
+            </h2>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      className="MuiCardContent-root css-k6kic3-MuiCardContent-root"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body1 css-15qqw0x-MuiTypography-root"
+      <div
+        className="MuiGrid-root css-vj1n65-MuiGrid-root"
       >
-        A situação do seu cadastro é: REALIZAR FETCH
-      </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+        >
+          A situação do seu cadastro é: REALIZAR FETCH
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+        />
+      </div>
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-dl8pkf-MuiTypography-root"
   >
     Serviços ofertados
   </h4>
   <div
-    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-4muqlg-MuiGrid-root"
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -71,7 +83,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Cursos
           </h6>
@@ -79,16 +91,13 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -102,7 +111,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Empreendedorismo
           </h6>
@@ -110,16 +119,13 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -133,7 +139,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Trabalho
           </h6>
@@ -141,16 +147,13 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -169,7 +172,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Estágios
           </h6>
@@ -177,16 +180,13 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -200,7 +200,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Jovem Aprendiz
           </h6>
@@ -209,7 +209,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-dl8pkf-MuiTypography-root"
   >
     Serviços disponíveis
   </h4>
@@ -223,7 +223,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-5x7opq-MuiCardContent-root"
+          className="MuiCardContent-root css-1anrgfo-MuiCardContent-root"
         >
           <div
             className="MuiStack-root css-1wh9imp-MuiStack-root"
@@ -318,7 +318,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
     >
       No caso de dúvidas e/ou problemas, acesse
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1fxugtv-MuiTypography-root-MuiLink-root"
         href="/faq"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -358,7 +358,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       Se você já estiver no Cadastro Único e quiser participar do Programa Redução da Pobreza, acesse o site clicando
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-19adjwk-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1qx9wka-MuiTypography-root-MuiLink-root"
         href="https://www.gov.br/mds/pt-br/acoes-e-programas/programa-reducao-da-pobreza  "
         onBlur={[Function]}
         onFocus={[Function]}
@@ -381,7 +381,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       Para fazer o cadastro no Programa Redução da Pobreza, é necessário estar inscrito no Cadastro Único. Se você está inscrito no Cadastro Único, o seu CPF será identificado pelo sistema no momento que você estiver fazendo o seu cadastro no site Programa Redução da Pobreza. Para isso, acesse o site
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-19adjwk-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1qx9wka-MuiTypography-root-MuiLink-root"
         href="https://www.gov.br/mds/pt-br/acoes-e-programas/programa-reducao-da-pobreza"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -390,7 +390,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
       </a>
       e clique nos botões Quero aprender, Quero empreender ou Quero emprego”. Ao acessar essa aba você é direcionado para a Conta de acesso única do Governo &lt;
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1e47seg-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-k985qi-MuiTypography-root-MuiLink-root"
         href="http://www.acesso.gov.br/"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -408,7 +408,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
       <li>
         Acessar o site clicando
         <a
-          className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-19adjwk-MuiTypography-root-MuiLink-root"
+          className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1qx9wka-MuiTypography-root-MuiLink-root"
           href="https://www.gov.br/mds/pt-br/acoes-e-programas/programa-reducao-da-pobreza"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -495,7 +495,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       OBS: Em caso de o usuário ter esquecido o e-mail cadastrado ele deve seguir as seguintes instruções, retirado do site dúvidas frequentes do GOV.BR clicando no
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1fxugtv-MuiTypography-root-MuiLink-root"
         href="https://faq-login-unico.servicos.gov.br/en/latest/_perguntasdafaq/naotenhoacessoaoemailcadastradonologin.html"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -566,7 +566,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       Primeiramente, você deve se cadastrar no Portal Programa Redução da Pobreza. Para isso, acesse o site clicando
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-19adjwk-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1qx9wka-MuiTypography-root-MuiLink-root"
         href="https://www.gov.br/mds/pt-br/acoes-e-programas/programa-reducao-da-pobreza  "
         onBlur={[Function]}
         onFocus={[Function]}
@@ -579,7 +579,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
       </b>
       . Ao acessar essa aba você será direcionado para a Conta de acesso única do Governo &lt;
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1e47seg-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-k985qi-MuiTypography-root-MuiLink-root"
         href="https://www.gov.br/mds/pt-br/acoes-e-programas/programa-reducao-da-pobreza"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -657,7 +657,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       Para atualizar seu currículo, entre no site clicando
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1fxugtv-MuiTypography-root-MuiLink-root"
         href="https://www.gov.br/mds/pt-br/acoes-e-programas/programa-reducao-da-pobreza  "
         onBlur={[Function]}
         onFocus={[Function]}
@@ -696,7 +696,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       As empresas e instituições parceiras do Programa Redução da Pobreza podem ofertar vagas de trabalho (na forma de contrato de emprego, estágio ou jovem aprendiz) e vagas de cursos gratuitos de qualificação. O candidato a uma vaga de emprego, estágio ou Jovem Aprendiz, ao acessar o Portal Programa Redução da Pobreza clicando
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1fxugtv-MuiTypography-root-MuiLink-root"
         href="https://www.gov.br/mds/pt-br/acoes-e-programas/programa-reducao-da-pobreza  "
         onBlur={[Function]}
         onFocus={[Function]}
@@ -739,7 +739,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       a). Educação Financeira; esta ação está disponível no Portal Capacitação MDS:
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1fxugtv-MuiTypography-root-MuiLink-root"
         href="https://novoead.cidadania.gov.br/index  "
         onBlur={[Function]}
         onFocus={[Function]}
@@ -790,7 +790,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       Entre no site
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-a6w39j-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-cuw6m2-MuiTypography-root-MuiLink-root"
         href="https://www.gov.br/mds/pt-br/acoes-e-programas/programa-reducao-da-pobreza  "
         onBlur={[Function]}
         onFocus={[Function]}
@@ -821,7 +821,7 @@ exports[`Teste de componentes Página de FAQ 1`] = `
     >
       Ofertado pelo portal capacitação MDS:
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-19adjwk-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1qx9wka-MuiTypography-root-MuiLink-root"
         href="https://novoead.cidadania.gov.br/admin/selection/inforequest/312668"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -881,54 +881,66 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
     Seja bem-vindo a
   </h4>
   <div
-    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1sc1gp4-MuiPaper-root-MuiCard-root"
+    style={
+      {
+        "borderBottom": "1px solid #9E9E9E",
+        "height": "200px",
+        "marginTop": "-50px",
+        "overflowY": "hidden",
+        "paddingTop": "60px",
+      }
+    }
   >
     <div
-      className="MuiBox-root css-k008qs"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
     >
       <div
-        className="MuiCardHeader-root css-1ean1qp-MuiCardHeader-root"
+        className="MuiBox-root css-0"
       >
         <div
-          className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+          className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
         >
-          <h2
-            className="MuiTypography-root MuiTypography-h2 css-1r70bye-MuiTypography-root"
+          <div
+            className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
-            Rede de Parceiros da Inclusão Socioeconomica
-          </h2>
+            <h2
+              className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+            >
+              Rede de Parceiros da Inclusão Socioeconomica
+            </h2>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      className="MuiCardContent-root css-k6kic3-MuiCardContent-root"
-    >
-      <p
-        className="MuiTypography-root MuiTypography-body1 css-15qqw0x-MuiTypography-root"
+      <div
+        className="MuiGrid-root css-vj1n65-MuiGrid-root"
       >
-        A situação do seu cadastro é: REALIZAR FETCH
-      </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+        >
+          A situação do seu cadastro é: REALIZAR FETCH
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+        />
+      </div>
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-dl8pkf-MuiTypography-root"
   >
     Serviços ofertados
   </h4>
   <div
-    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-4muqlg-MuiGrid-root"
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -942,7 +954,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Cursos
           </h6>
@@ -950,16 +962,13 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -973,7 +982,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Empreendedorismo
           </h6>
@@ -981,16 +990,13 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -1004,7 +1010,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Trabalho
           </h6>
@@ -1012,16 +1018,13 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -1040,7 +1043,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Estágios
           </h6>
@@ -1048,16 +1051,13 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -1071,7 +1071,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Jovem Aprendiz
           </h6>
@@ -1080,7 +1080,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-dl8pkf-MuiTypography-root"
   >
     Serviços disponíveis
   </h4>
@@ -1094,7 +1094,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-5x7opq-MuiCardContent-root"
+          className="MuiCardContent-root css-1anrgfo-MuiCardContent-root"
         >
           <div
             className="MuiStack-root css-1wh9imp-MuiStack-root"
@@ -1189,7 +1189,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
     >
       No caso de dúvidas e/ou problemas, acesse
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1fxugtv-MuiTypography-root-MuiLink-root"
         href="/faq"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -1206,56 +1206,181 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
 <div
   className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
 >
-  <h4
-    className="MuiTypography-root MuiTypography-h4 css-ywhdiz-MuiTypography-root"
+  <h5
+    className="MuiTypography-root MuiTypography-h5 css-grbqxd-MuiTypography-root"
   >
-    Seja bem-vindo ao
-  </h4>
+    Seja bem-vindo(a)
+  </h5>
   <div
-    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1sc1gp4-MuiPaper-root-MuiCard-root"
+    style={
+      {
+        "borderBottom": "1px solid #9E9E9E",
+        "height": "200px",
+        "marginTop": "-50px",
+        "overflowY": "hidden",
+        "paddingTop": "60px",
+      }
+    }
   >
     <div
-      className="MuiBox-root css-k008qs"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
     >
       <div
-        className="MuiCardHeader-root css-1ean1qp-MuiCardHeader-root"
+        className="MuiBox-root css-0"
       >
         <div
-          className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+          className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
         >
-          <h2
-            className="MuiTypography-root MuiTypography-h2 css-1r70bye-MuiTypography-root"
+          <div
+            className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
           >
-            Administrativo
-          </h2>
+            <h2
+              className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+            >
+              Administrativo
+            </h2>
+          </div>
         </div>
+      </div>
+      <div
+        className="MuiGrid-root css-vj1n65-MuiGrid-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+        />
       </div>
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
   >
     Visão Geral
   </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container css-s5hy0i-MuiGrid-root"
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-6z6kzq-MuiPaper-root-MuiCard-root"
+    >
+      <div
+        className="MuiCardContent-root css-5abr63-MuiCardContent-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-1xbzobo-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-jzr2k2-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 120,
+              }
+            }
+          />
+        </p>
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-6z6kzq-MuiPaper-root-MuiCard-root"
+    >
+      <div
+        className="MuiCardContent-root css-5abr63-MuiCardContent-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-1xbzobo-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-jzr2k2-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 120,
+              }
+            }
+          />
+        </p>
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-6z6kzq-MuiPaper-root-MuiCard-root"
+    >
+      <div
+        className="MuiCardContent-root css-5abr63-MuiCardContent-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-1xbzobo-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-jzr2k2-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 120,
+              }
+            }
+          />
+        </p>
+      </div>
+    </div>
+  </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-w7e4u5-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
   >
     Serviços ofertados
   </h4>
   <div
-    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-4muqlg-MuiGrid-root"
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -1269,7 +1394,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Cursos
           </h6>
@@ -1277,16 +1402,13 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -1300,7 +1422,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Empreendedorismo
           </h6>
@@ -1308,16 +1430,13 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -1331,7 +1450,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Trabalho
           </h6>
@@ -1339,16 +1458,13 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -1367,7 +1483,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Estágios
           </h6>
@@ -1375,16 +1491,13 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3 css-1q0oi43-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
-      <div
-        className="MuiBox-root css-15iu2kj"
-      />
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-93qwhb-MuiCardContent-root"
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -1398,7 +1511,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
             />
           </svg>
           <h6
-            className="MuiTypography-root MuiTypography-h6 css-11l4iym-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Jovem Aprendiz
           </h6>
@@ -1406,8 +1519,119 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       </div>
     </div>
   </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
+  >
+    Serviços disponiveis
+  </h4>
   <div
-    className="MuiBox-root css-1rgaj84"
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
+    >
+      <div
+        style={
+          {
+            "borderBottom": "1px solid #9E9E9E",
+            "height": "200px",
+            "marginTop": "-50px",
+            "overflowY": "hidden",
+            "paddingTop": "60px",
+          }
+        }
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            className="MuiBox-root css-0"
+          >
+            <div
+              className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+            >
+              <div
+                className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+              >
+                <h2
+                  className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+                >
+                  1606
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+            >
+              Vagas de emprego
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+            >
+              Disponiveis em diversas áreas
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
+    >
+      <div
+        style={
+          {
+            "borderBottom": "1px solid #9E9E9E",
+            "height": "200px",
+            "marginTop": "-50px",
+            "overflowY": "hidden",
+            "paddingTop": "60px",
+          }
+        }
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+        >
+          <div
+            className="MuiBox-root css-0"
+          >
+            <div
+              className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+            >
+              <div
+                className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+              >
+                <h2
+                  className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+                >
+                  33
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+            >
+              Vagas de curso
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+            >
+              Disponiveis em diversas áreas
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root css-fkk637"
   >
     <svg
       aria-hidden={true}
@@ -1421,11 +1645,11 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       />
     </svg>
     <p
-      className="MuiTypography-root MuiTypography-body1 css-1no9ono-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-body1 css-1lh13dg-MuiTypography-root"
     >
       No caso de dúvidas e/ou problemas, acesse
       <a
-        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-wtdx39-MuiTypography-root-MuiLink-root"
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1fxugtv-MuiTypography-root-MuiLink-root"
         href="/faq"
         onBlur={[Function]}
         onFocus={[Function]}
