@@ -6,13 +6,13 @@ import { Box, Container, Grid, Link, Typography } from "@mui/material";
 import imagemPrimaria from "../../assets/images/Ilustra-Admin.png";
 import imagemServicos1 from "../../assets/images/servico1.png";
 import imagemServicos2 from "../../assets/images/servico2.png";
+import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
+import CardPrimario from "../../components/cards/CardPrimario";
+import CardServicos from "../../components/cards/CardServicos";
+import CardVisaoGeral from "../../components/cards/CardVisaoGeral";
 import adminService from "../../services/admin.service";
-import CardBreadcrumb from "../cards/CardBreadcrumb";
-import CardPrimario from "../cards/CardPrimario";
-import CardServicos from "../cards/CardServicos";
-import CardVisaoGeral from "../cards/CardVisaoGeral";
 
-const Administrador = () => {
+const PageHomeAdm = () => {
   const [cardVisaoGeralData, setCardVisaoGeralData] = useState(null);
 
   const fetchCardVisaoGeralData = async () => {
@@ -173,4 +173,4 @@ const Administrador = () => {
   );
 };
 
-export default Administrador;
+export default PageHomeAdm;

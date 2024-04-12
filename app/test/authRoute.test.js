@@ -9,11 +9,17 @@ import FAQ from "../src/components/FAQ";
 import Parceiro from "../src/components/parceiro/Parceiro";
 import { TestWrapper } from "./testWrapper";
 
+jest.mock('axios', () => ({
+  get: jest.fn(() => Promise.resolve({ data: {} })),
+}))
+
 jest.mock("../src/assets/images/Ilustra-Admin.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/Ilustra-Cidadao.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/Ilustra-Cursos.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/Ilustra-Emprego.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/Ilustra-Parceiro.png", () => "<div>Imagem</div>");
+jest.mock("../src/assets/images/servico1.png", () => "<div>Imagem</div>");
+jest.mock("../src/assets/images/servico2.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/image001.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/image003.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/image005.png", () => "<div>Imagem</div>");

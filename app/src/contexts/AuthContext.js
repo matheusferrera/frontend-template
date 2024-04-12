@@ -23,15 +23,10 @@ export const AuthProvider = ({ children }) => {
 
   const naturezasJuridicas = ["Público", "Privado", "Terceiro Setor"];
 
-  console.log("token -> ", token?.slice(-4));
-
   //O STATE UTILIZADO DENTRO DO USEFFECT É O STATE QUE FOI SETADO NA PRIMEIRA CHAMADA ENTAO NECESSITA UTILIZAR O LOCALSTORAGE
   useEffect(() => {
     const interval = setInterval(() => {
       const _storedToken = localStorage.getItem("token");
-      const _storedTimeRefreshToken = localStorage.getItem("timeRefreshToken");
-
-      console.log("TIMER-> ", Date.now() - parseInt(_storedTimeRefreshToken));
 
       if (!refreshingToken && Date.now() - parseInt(localStorage.getItem("timeRefreshToken")) > 30000000) {
         setRefreshingToken(true);
@@ -54,9 +49,7 @@ export const AuthProvider = ({ children }) => {
     return () => clearInterval(interval); // Limpa o intervalo quando o componente é desmontado
   }, []);
 
-  useEffect(() => {
-    console.log("TOKEN FOI ALTERADO -> ", token);
-  }, [token]);
+  useEffect(() => {}, [token]);
 
   /**
    * Function to handle user login.

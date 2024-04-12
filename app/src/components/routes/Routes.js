@@ -2,8 +2,8 @@ import React from "react";
 import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 
 import { useAuth } from "../../contexts/AuthContext";
+import PageHomeAdm from "../../pages/admin/home.admin";
 import Activate from "../activate/Activate";
-import Administrador from "../administrador/Administrador";
 import Cidadao from "../cidadao/Cidadao";
 import FAQ from "../FAQ";
 import Home from "../Home";
@@ -86,7 +86,7 @@ const ProtectedRoutes = () => {
       />
       <Route
         path="/admin"
-        element={<Administrador />}
+        element={<PageHomeAdm />}
       />
       <Route
         path="/parceiro/listar_parceiros"

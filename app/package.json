@@ -34,7 +34,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "test:update": "jest -u",
+    "test:update": "jest -u --runInBand",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix src/**/**/*.{js,jsx,ts,tsx,json}",

@@ -8,6 +8,7 @@ import ThemeProvider from "./theme";
 
 import "simplebar-react/dist/simplebar.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/fonts/style.css";
 
 const App = () => {
   useScrollToTop();
