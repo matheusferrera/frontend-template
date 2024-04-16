@@ -3,21 +3,21 @@ import React, { useEffect, useState } from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
 
-import imagemPrimaria from "../../assets/images/Ilustra-Admin.png";
+import imageCidadaoHome from "../../assets/images/cidadaoHome.png";
 import imagemServicos1 from "../../assets/images/servico1.png";
 import imagemServicos2 from "../../assets/images/servico2.png";
-import adminService from "../../services/admin.service";
-import CardBreadcrumb from "../cards/CardBreadcrumb";
-import CardPrimario from "../cards/CardPrimario";
-import CardServicos from "../cards/CardServicos";
-import CardVisaoGeral from "../cards/CardVisaoGeral";
+import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
+import CardHome from "../../components/cards/CardHome";
+import CardPrimario from "../../components/cards/CardPrimario";
+import CardServicosParceiros from "../../components/cards/CardServicosParceiros";
+import cidadaoService from "../../services/cidadao.service";
 
-const Administrador = () => {
+const PageHomeCidadao = () => {
   const [cardVisaoGeralData, setCardVisaoGeralData] = useState(null);
 
   const fetchCardVisaoGeralData = async () => {
-    adminService
-      .getAdminData(12)
+    cidadaoService
+      .getCidadaoData(1)
       .then(data => {
         setCardVisaoGeralData(data);
       })
@@ -49,42 +49,11 @@ const Administrador = () => {
         Seja bem-vindo(a)
       </Typography>
 
-      <CardPrimario
-        title="Administrativo"
-        imageUrl={imagemPrimaria}
+      <CardHome
+        title="Programação redução da Pobreza"
+        content={cardVisaoGeralData?.situacao || ""}
+        imageUrl={imageCidadaoHome || ""}
       />
-
-      <Typography
-        variant="h4"
-        mt={3}
-        mb={1}
-        sx={{ fontFamily: "Rawline Bold", marginTop: "40px" }}
-      >
-        Visão Geral
-      </Typography>
-
-      <Grid
-        container
-        gap={2}
-      >
-        {cardVisaoGeralData?.visao_geral_list &&
-          Object.entries(cardVisaoGeralData.visao_geral_list).map(([title, value]) => (
-            <Grid key={title}>
-              <CardVisaoGeral
-                key={title}
-                title={title}
-                number={value}
-              ></CardVisaoGeral>
-            </Grid>
-          ))}
-        {!cardVisaoGeralData && (
-          <>
-            <CardVisaoGeral></CardVisaoGeral>
-            <CardVisaoGeral></CardVisaoGeral>
-            <CardVisaoGeral></CardVisaoGeral>
-          </>
-        )}
-      </Grid>
 
       <Typography
         variant="h4"
@@ -95,7 +64,7 @@ const Administrador = () => {
         Serviços ofertados
       </Typography>
 
-      <CardServicos />
+      <CardServicosParceiros />
 
       <Typography
         variant="h4"
@@ -116,7 +85,7 @@ const Administrador = () => {
           xs={12}
         >
           <CardPrimario
-            title="1606"
+            title={cardVisaoGeralData?.n_emprego.toString() || ""}
             content="Vagas de emprego"
             subContent="Disponiveis em diversas áreas"
             imageUrl={imagemServicos1}
@@ -130,7 +99,7 @@ const Administrador = () => {
           xs={12}
         >
           <CardPrimario
-            title="33"
+            title={cardVisaoGeralData?.n_cursos.toString() || ""}
             content="Vagas de curso"
             subContent="Disponiveis em diversas áreas"
             imageUrl={imagemServicos2}
@@ -173,4 +142,4 @@ const Administrador = () => {
   );
 };
 
-export default Administrador;
+export default PageHomeCidadao;
