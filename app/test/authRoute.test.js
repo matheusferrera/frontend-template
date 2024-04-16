@@ -3,10 +3,10 @@ import renderer from "react-test-renderer";
 
 import { describe, expect, it, jest } from "@jest/globals";
 
-import Administrador from "../src/components/administrador/Administrador";
-import Cidadao from "../src/components/cidadao/Cidadao";
 import FAQ from "../src/components/FAQ";
-import Parceiro from "../src/components/parceiro/Parceiro";
+import PageHomeAdm from "../src/pages/admin/home.admin";
+import PageHomeCidadao from "../src/pages/cidadao/home.cidadao";
+import PageHomeParceiro from "../src/pages/parceiro/home.parceiros";
 import { TestWrapper } from "./testWrapper";
 
 jest.mock('axios', () => ({
@@ -25,13 +25,15 @@ jest.mock("../src/assets/images/image003.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/image005.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/image010.png", () => "<div>Imagem</div>");
 jest.mock("../src/assets/images/image013.png", () => "<div>Imagem</div>");
+jest.mock("../src/assets/images/cidadaoHome.png", () => "<div>Imagem</div>");
+jest.mock("../src/assets/images/parceiroHome2.png", () => "<div>Imagem</div>");
 jest.mock("../src/contexts/AuthContext.js");
 
 describe("Teste de componentes", () => {
   it("Página de administrador renderizada corretamente", () => {
     const component = renderer.create(
       <TestWrapper>
-        <Administrador />
+        <PageHomeAdm />
       </TestWrapper>,
     );
 
@@ -42,7 +44,7 @@ describe("Teste de componentes", () => {
   it("Página de Cidadão renderizada corretamente", async () => {
     const component = renderer.create(
       <TestWrapper>
-        <Cidadao />
+        <PageHomeCidadao />
       </TestWrapper>,
     );
 
@@ -53,7 +55,7 @@ describe("Teste de componentes", () => {
   it("Página de Parceiro renderizada corretamente", async () => {
     const component = renderer.create(
       <TestWrapper>
-        <Parceiro />
+        <PageHomeParceiro />
       </TestWrapper>,
     );
 

@@ -3,8 +3,9 @@ import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 
 import { useAuth } from "../../contexts/AuthContext";
 import PageHomeAdm from "../../pages/admin/home.admin";
+import PageHomeCidadao from "../../pages/cidadao/home.cidadao";
+import PageHomeParceiro from "../../pages/parceiro/home.parceiros";
 import Activate from "../activate/Activate";
-import Cidadao from "../cidadao/Cidadao";
 import FAQ from "../FAQ";
 import Home from "../Home";
 import HubLogin from "../login/HubLogin";
@@ -12,7 +13,6 @@ import Login from "../login/Login";
 import Logout from "../Logout";
 import NotFound from "../NotFound";
 import ListarParceiros from "../parceiro/ListarParceiros";
-import Parceiro from "../parceiro/Parceiro";
 import VisualizacaoFormulario from "../parceiro/VisualizacaoFormulario";
 import Profile from "../Profile";
 import Register from "../register/Register";
@@ -98,11 +98,11 @@ const ProtectedRoutes = () => {
       />
       <Route
         path="/parceiro"
-        element={<Parceiro />}
+        element={<PageHomeParceiro />}
       />
       <Route
         path="/cidadao"
-        element={<Cidadao />}
+        element={<PageHomeCidadao />}
       />
       <Route
         path="/faq"

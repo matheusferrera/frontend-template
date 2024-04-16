@@ -4,11 +4,11 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
 <div
   className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
 >
-  <h4
-    className="MuiTypography-root MuiTypography-h4 css-ywhdiz-MuiTypography-root"
+  <h5
+    className="MuiTypography-root MuiTypography-h5 css-grbqxd-MuiTypography-root"
   >
-    Seja bem-vindo ao
-  </h4>
+    Seja bem-vindo(a)
+  </h5>
   <div
     style={
       {
@@ -21,13 +21,13 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
     }
   >
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-polf8z-MuiPaper-root-MuiCard-root"
     >
       <div
         className="MuiBox-root css-0"
       >
         <div
-          className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+          className="MuiCardHeader-root css-1d6w13i-MuiCardHeader-root"
         >
           <div
             className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -35,27 +35,27 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             <h2
               className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
             >
-              Programa Redução da Pobreza
+              Programação redução da Pobreza
             </h2>
           </div>
         </div>
       </div>
       <div
-        className="MuiGrid-root css-vj1n65-MuiGrid-root"
+        className="MuiGrid-root css-107y2qe-MuiGrid-root"
       >
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-25dv9f-MuiTypography-root"
         >
-          A situação do seu cadastro é: REALIZAR FETCH
-        </p>
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+          A situção do seu cadastro é
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-1v12ax1-MuiTypography-root"
         />
       </div>
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-dl8pkf-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
   >
     Serviços ofertados
   </h4>
@@ -114,6 +114,34 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Empreendedorismo
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="AttachMoneyIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
+          >
+            Microcrédito
           </h6>
         </div>
       </div>
@@ -209,98 +237,114 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-dl8pkf-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
   >
-    Serviços disponíveis
+    Serviços disponiveis
   </h4>
   <div
-    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-12c6nxs-MuiGrid-root"
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13g8ul4-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        style={
+          {
+            "borderBottom": "1px solid #9E9E9E",
+            "height": "200px",
+            "marginTop": "-50px",
+            "overflowY": "hidden",
+            "paddingTop": "60px",
+          }
+        }
       >
         <div
-          className="MuiCardContent-root css-1anrgfo-MuiCardContent-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
         >
           <div
-            className="MuiStack-root css-1wh9imp-MuiStack-root"
+            className="MuiBox-root css-0"
           >
-            <h1
-              className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
-            >
-              REALIZAR FETCH
-            </h1>
             <div
-              className="MuiBox-root css-0"
+              className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
             >
-              <h3
-                className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
+              <div
+                className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
               >
-                Vagas de Emprego
-              </h3>
-              <h6
-                className="MuiTypography-root MuiTypography-h6 css-1en8a1y-MuiTypography-root"
-              >
-                Disponíveis em diversas áreas
-              </h6>
+                <h2
+                  className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+                />
+              </div>
             </div>
           </div>
-          <img
-            alt="Imagem do CardMedia"
-            className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-egfnts-MuiCardMedia-root"
-            height="120px"
-            src="<div>Imagem</div>"
-          />
+          <div
+            className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+            >
+              Vagas de emprego
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+            >
+              Disponiveis em diversas áreas
+            </p>
+          </div>
         </div>
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13g8ul4-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        style={
+          {
+            "borderBottom": "1px solid #9E9E9E",
+            "height": "200px",
+            "marginTop": "-50px",
+            "overflowY": "hidden",
+            "paddingTop": "60px",
+          }
+        }
       >
         <div
-          className="MuiCardContent-root css-1anrgfo-MuiCardContent-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
         >
           <div
-            className="MuiStack-root css-1wh9imp-MuiStack-root"
+            className="MuiBox-root css-0"
           >
-            <h1
-              className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
-            >
-              REALIZAR FETCH
-            </h1>
             <div
-              className="MuiBox-root css-0"
+              className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
             >
-              <h3
-                className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
+              <div
+                className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
               >
-                Vagas de Cursos
-              </h3>
-              <h6
-                className="MuiTypography-root MuiTypography-h6 css-1en8a1y-MuiTypography-root"
-              >
-                Disponíveis em diversas áreas
-              </h6>
+                <h2
+                  className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+                />
+              </div>
             </div>
           </div>
-          <img
-            alt="Imagem do CardMedia"
-            className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-1cn2blb-MuiCardMedia-root"
-            height="120px"
-            src="<div>Imagem</div>"
-          />
+          <div
+            className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+            >
+              Vagas de curso
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+            >
+              Disponiveis em diversas áreas
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="MuiBox-root css-1rgaj84"
+    className="MuiBox-root css-fkk637"
   >
     <svg
       aria-hidden={true}
@@ -314,7 +358,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       />
     </svg>
     <p
-      className="MuiTypography-root MuiTypography-body1 css-1no9ono-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-body1 css-1lh13dg-MuiTypography-root"
     >
       No caso de dúvidas e/ou problemas, acesse
       <a
@@ -875,11 +919,11 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
 <div
   className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
 >
-  <h4
-    className="MuiTypography-root MuiTypography-h4 css-ywhdiz-MuiTypography-root"
+  <h5
+    className="MuiTypography-root MuiTypography-h5 css-grbqxd-MuiTypography-root"
   >
-    Seja bem-vindo a
-  </h4>
+    Seja bem-vindo(a)
+  </h5>
   <div
     style={
       {
@@ -892,13 +936,13 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
     }
   >
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-polf8z-MuiPaper-root-MuiCard-root"
     >
       <div
         className="MuiBox-root css-0"
       >
         <div
-          className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+          className="MuiCardHeader-root css-1d6w13i-MuiCardHeader-root"
         >
           <div
             className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -912,21 +956,21 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
         </div>
       </div>
       <div
-        className="MuiGrid-root css-vj1n65-MuiGrid-root"
+        className="MuiGrid-root css-107y2qe-MuiGrid-root"
       >
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-25dv9f-MuiTypography-root"
         >
-          A situação do seu cadastro é: REALIZAR FETCH
-        </p>
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+          A situção do seu cadastro é
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-1v12ax1-MuiTypography-root"
         />
       </div>
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-dl8pkf-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
   >
     Serviços ofertados
   </h4>
@@ -985,6 +1029,34 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
           >
             Empreendedorismo
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="AttachMoneyIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
+          >
+            Microcrédito
           </h6>
         </div>
       </div>
@@ -1080,98 +1152,114 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 css-dl8pkf-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
   >
-    Serviços disponíveis
+    Serviços disponiveis
   </h4>
   <div
-    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-12c6nxs-MuiGrid-root"
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
   >
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13g8ul4-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        style={
+          {
+            "borderBottom": "1px solid #9E9E9E",
+            "height": "200px",
+            "marginTop": "-50px",
+            "overflowY": "hidden",
+            "paddingTop": "60px",
+          }
+        }
       >
         <div
-          className="MuiCardContent-root css-1anrgfo-MuiCardContent-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
         >
           <div
-            className="MuiStack-root css-1wh9imp-MuiStack-root"
+            className="MuiBox-root css-0"
           >
-            <h1
-              className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
-            >
-              REALIZAR FETCH
-            </h1>
             <div
-              className="MuiBox-root css-0"
+              className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
             >
-              <h3
-                className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
+              <div
+                className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
               >
-                Vagas de Emprego
-              </h3>
-              <h6
-                className="MuiTypography-root MuiTypography-h6 css-1en8a1y-MuiTypography-root"
-              >
-                Disponíveis em diversas áreas
-              </h6>
+                <h2
+                  className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+                />
+              </div>
             </div>
           </div>
-          <img
-            alt="Imagem do CardMedia"
-            className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-egfnts-MuiCardMedia-root"
-            height="120px"
-            src="<div>Imagem</div>"
-          />
+          <div
+            className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+            >
+              Vagas de emprego
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+            >
+              Disponiveis em diversas áreas
+            </p>
+          </div>
         </div>
       </div>
     </div>
     <div
-      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13g8ul4-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        style={
+          {
+            "borderBottom": "1px solid #9E9E9E",
+            "height": "200px",
+            "marginTop": "-50px",
+            "overflowY": "hidden",
+            "paddingTop": "60px",
+          }
+        }
       >
         <div
-          className="MuiCardContent-root css-1anrgfo-MuiCardContent-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
         >
           <div
-            className="MuiStack-root css-1wh9imp-MuiStack-root"
+            className="MuiBox-root css-0"
           >
-            <h1
-              className="MuiTypography-root MuiTypography-h1 css-1h3uzre-MuiTypography-root"
-            >
-              REALIZAR FETCH
-            </h1>
             <div
-              className="MuiBox-root css-0"
+              className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
             >
-              <h3
-                className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
+              <div
+                className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
               >
-                Vagas de Cursos
-              </h3>
-              <h6
-                className="MuiTypography-root MuiTypography-h6 css-1en8a1y-MuiTypography-root"
-              >
-                Disponíveis em diversas áreas
-              </h6>
+                <h2
+                  className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+                />
+              </div>
             </div>
           </div>
-          <img
-            alt="Imagem do CardMedia"
-            className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-1cn2blb-MuiCardMedia-root"
-            height="120px"
-            src="<div>Imagem</div>"
-          />
+          <div
+            className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+            >
+              Vagas de curso
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+            >
+              Disponiveis em diversas áreas
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="MuiBox-root css-1rgaj84"
+    className="MuiBox-root css-fkk637"
   >
     <svg
       aria-hidden={true}
@@ -1185,7 +1273,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       />
     </svg>
     <p
-      className="MuiTypography-root MuiTypography-body1 css-1no9ono-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-body1 css-1lh13dg-MuiTypography-root"
     >
       No caso de dúvidas e/ou problemas, acesse
       <a
