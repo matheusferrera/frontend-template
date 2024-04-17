@@ -32,3 +32,22 @@ export const userMockData = {
     dh_criacao: "2024-01-24T18:03:31.000000Z",
   },
 };
+
+export const singleMockData = {
+  data: [
+    {
+      key: "AC",
+      sigla: "AC",
+      nome: "Acre",
+      id: 1,
+      descricao: "Atuação 1",
+    },
+    {
+      key: "AL",
+      sigla: "AL",
+      nome: "Alagoas",
+      id: 2,
+      descricao: "Atuação 2",
+    },
+  ],
+};
