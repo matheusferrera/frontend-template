@@ -10,11 +10,11 @@ import ThemeProvider from "../src/theme";
 export const TestWrapper = ({ children }) => {
   return (
     <AuthProvider>
-        <NavContentProvider>
-          <ThemeProvider>
-            <Router>{children}</Router>
-          </ThemeProvider>
-        </NavContentProvider>
+      <NavContentProvider>
+        <ThemeProvider>
+          <Router>{children}</Router>
+        </ThemeProvider>
+      </NavContentProvider>
     </AuthProvider>
   );
 };
