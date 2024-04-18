@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Box } from "@mui/material";
 
-import { useNavContent } from "../../contexts/NavContentContext";
 import CardBreadcrumb from "../cards/CardBreadcrumb";
 import FormListarParceiros from "../formularios/FormListarParceiros";
-import parceiroNav from "./ParceiroNav";
 
 const mapearNaturezaJuridica = valor => {
   switch (valor) {
@@ -25,12 +23,6 @@ const ListarParceiros = () => {
   const [confirmacaoModal, setConfirmacaoModal] = useState(false);
   const [erroModal, setErroModal] = useState(false);
   const [erroDoUsuarioModal, setErroDoUsuarioModal] = useState(false);
-
-  const { setNavContent } = useNavContent();
-
-  useEffect(() => {
-    setNavContent(parceiroNav);
-  }, []);
 
   const handleSubmit = async (values, { setSubmitting }) => {
     setLoading(true);

@@ -38,7 +38,6 @@ const PageHomeCidadao = () => {
       <CardBreadcrumb
         homeLink="/"
         homeText="Página Inicial"
-        currentPage="Administrador"
       />
 
       <Typography

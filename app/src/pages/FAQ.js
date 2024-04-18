@@ -7,7 +7,7 @@ import imagem003 from "../assets/images/image003.png";
 import imagem005 from "../assets/images/image005.png";
 import imagem010 from "../assets/images/image010.png";
 import imagem013 from "../assets/images/image013.png";
-import CardBreadcrumb from "./cards/CardBreadcrumb";
+import CardBreadcrumb from "../components/cards/CardBreadcrumb";
 
 const FAQ = () => {
   return (

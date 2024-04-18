@@ -16,7 +16,7 @@ import { usePathname } from "../../hooks/use-pathname";
 import { useResponsive } from "../../hooks/use-responsive";
 import Scrollbar from "../scrollbar";
 import { HEADER, NAV } from "./config-layout";
-import navConfig from "./config-navigation";
+import navConfig from "./config-navigation-menu-lateral";
 import RouterLink from "./router-link";
 
 // ----------------------------------------------------------------------

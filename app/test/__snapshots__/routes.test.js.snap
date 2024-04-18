@@ -1,19 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Teste de componentes Home renderizada corretamente 1`] = `
-<div
-  className="container"
->
-  <header
-    className="jumbotron"
-  >
-    <h3>
-      Página em construção
-    </h3>
-  </header>
-</div>
-`;
-
 exports[`Teste de componentes Login renderizada corretamente 1`] = `
 <div
   className="MuiBox-root css-1o0ed15"
@@ -273,17 +259,6 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
       <div />
     </div>
   </div>
-</div>
-`;
-
-exports[`Teste de componentes Not found renderizada corretamente 1`] = `
-<div>
-  <h1>
-    404 - Página não encontrada
-  </h1>
-  <p>
-    Ops! A página que você está procurando não existe.
-  </p>
 </div>
 `;
 
