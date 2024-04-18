@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Accordion from "@mui/material/Accordion";
@@ -11,12 +11,11 @@ import Stack from "@mui/material/Stack";
 import { alpha } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
-import { useNavContent } from "../../contexts/NavContentContext";
 import { usePathname } from "../../hooks/use-pathname";
 import { useResponsive } from "../../hooks/use-responsive";
 import Scrollbar from "../scrollbar";
 import { HEADER, NAV } from "./config-layout";
-import navConfig from "./config-navigation-menu-lateral";
+import { adminNavConfig, cidadaoNavConfig, defaultNavConfig, parceiroNavConfig } from "./config-navigation-menu-lateral";
 import RouterLink from "./router-link";
 
 // ----------------------------------------------------------------------
@@ -24,9 +23,27 @@ import RouterLink from "./router-link";
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
   const upLg = useResponsive("up", "lg");
-  const { navContent } = useNavContent();
 
-  const renderNavContent = navContent ? navContent : navConfig;
+  const user = JSON.parse(localStorage.getItem("user"));
+  const perfilUser = user?.ds_perfil_sso?.substring(2, user.ds_perfil_sso.length - 2);
+  const [renderNavContent, setRenderNavContent] = useState([]);
+
+  useEffect(() => {
+    switch (perfilUser) {
+      case "Servidor":
+        setRenderNavContent(adminNavConfig);
+        break;
+      case "Parceiro":
+        setRenderNavContent(parceiroNavConfig);
+        break;
+      case "Trabalhador":
+        setRenderNavContent(cidadaoNavConfig);
+        break;
+      default:
+        setRenderNavContent(defaultNavConfig);
+        break;
+    }
+  }, [perfilUser]);
 
   useEffect(() => {
     if (openNav) {

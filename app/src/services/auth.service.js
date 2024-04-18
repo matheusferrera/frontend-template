@@ -192,15 +192,11 @@ const getTrabalhador = (access_token, id) => {
  */
 const logout = access_token => {
   return axios
-    .post(
-      API_URL + "v1/logout",
-      {},
-      {
-        headers: {
-          Authorization: "Bearer " + access_token,
-        },
+    .post(API_URL + "v1/logout", null, {
+      headers: {
+        Authorization: "Bearer " + access_token,
       },
-    )
+    })
     .then(response => {
       return response.data.message;
     })
