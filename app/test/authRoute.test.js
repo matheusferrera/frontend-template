@@ -5,10 +5,11 @@ import renderer from "react-test-renderer";
 import { describe, expect, it, jest } from "@jest/globals";
 import axios from "axios";
 
-import FAQ from "../src/components/FAQ";
 import ListarParceiros from "../src/components/parceiro/ListarParceiros";
 import PageHomeAdm from "../src/pages/admin/home.admin";
 import PageHomeCidadao from "../src/pages/cidadao/home.cidadao";
+import FAQ from "../src/pages/FAQ";
+import NotFound from "../src/pages/NotFound";
 import PageHomeParceiro from "../src/pages/parceiro/home.parceiros";
 import { singleMockData } from "./mockData";
 import { TestWrapper } from "./testWrapper";
@@ -31,6 +32,14 @@ jest.mock("../src/assets/images/parceiroHome2.png", () => "<div>Imagem</div>");
 jest.mock("../src/contexts/AuthContext.js");
 
 describe("Teste de componentes", () => {
+
+  it("Not found renderizada corretamente", () => {
+    const component = renderer.create(<NotFound />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+
   it("Página de administrador renderizada corretamente", async () => {
     axios.get = jest.fn().mockResolvedValue({});
 

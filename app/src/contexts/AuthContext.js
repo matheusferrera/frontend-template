@@ -71,7 +71,6 @@ export const AuthProvider = ({ children }) => {
         }
       })
       .then(userDetails => {
-        console.log("USER DETAILS -> ", userDetails);
         // Ensure that userDetails is truthy before setting user
         if (userDetails) {
           if (!userDetails.photo_path) {

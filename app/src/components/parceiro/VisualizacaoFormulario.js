@@ -1,16 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Box } from "@mui/material";
 
 import { useAuth } from "../../contexts/AuthContext";
-import { useNavContent } from "../../contexts/NavContentContext";
 import CardBreadcrumb from "../cards/CardBreadcrumb";
 import FormListarParceiros from "../formularios/FormListarParceiros";
-import parceiroNav from "./ParceiroNav";
 
 const VisualizacaoFormulario = () => {
   const { user } = useAuth();
-  const { setNavContent } = useNavContent();
 
   const values = {
     email: user.ds_email,
@@ -47,10 +44,6 @@ const VisualizacaoFormulario = () => {
     toggleCienteNormas: false,
     toggleCienteGratuito: false,
   };
-
-  useEffect(() => {
-    setNavContent(parceiroNav);
-  }, []);
 
   return (
     <Box

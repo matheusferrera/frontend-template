@@ -13,6 +13,8 @@ const CardBreadcrumb = ({ homeLink, homeText, currentPage }) => {
     return null;
   }
 
+  const isCurrentPagePresent = Boolean(currentPage);
+
   return (
     <Breadcrumbs
       aria-label="breadcrumb"
@@ -21,7 +23,7 @@ const CardBreadcrumb = ({ homeLink, homeText, currentPage }) => {
       <Link
         underline="hover"
         sx={{ display: "flex", alignItems: "center" }}
-        color="inherit"
+        color={isCurrentPagePresent ? "inherit" : "primary.main"}
         href={homeLink}
       >
         <HomeIcon
@@ -30,12 +32,14 @@ const CardBreadcrumb = ({ homeLink, homeText, currentPage }) => {
         />
         {homeText}
       </Link>
-      <Typography
-        sx={{ display: "flex", alignItems: "center", fontSize: "inherit" }}
-        color="primary.main"
-      >
-        {currentPage}
-      </Typography>
+      {isCurrentPagePresent && (
+        <Typography
+          sx={{ display: "flex", alignItems: "center", fontSize: "inherit" }}
+          color="primary.main"
+        >
+          {currentPage}
+        </Typography>
+      )}
     </Breadcrumbs>
   );
 };
@@ -43,7 +47,7 @@ const CardBreadcrumb = ({ homeLink, homeText, currentPage }) => {
 CardBreadcrumb.propTypes = {
   homeLink: PropTypes.string.isRequired,
   homeText: PropTypes.string.isRequired,
-  currentPage: PropTypes.string.isRequired,
+  currentPage: PropTypes.string,
 };
 
 export default CardBreadcrumb;

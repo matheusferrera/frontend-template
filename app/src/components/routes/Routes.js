@@ -2,20 +2,15 @@ import React from "react";
 import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 
 import { useAuth } from "../../contexts/AuthContext";
-import PageHomeAdm from "../../pages/admin/home.admin";
-import PageHomeCidadao from "../../pages/cidadao/home.cidadao";
-import PageHomeParceiro from "../../pages/parceiro/home.parceiros";
+import FAQ from "../../pages/FAQ";
+import NotFound from "../../pages/NotFound";
 import Activate from "../activate/Activate";
-import FAQ from "../FAQ";
-import Home from "../Home";
 import HubLogin from "../login/HubLogin";
 import Login from "../login/Login";
-import Logout from "../Logout";
-import NotFound from "../NotFound";
-import ListarParceiros from "../parceiro/ListarParceiros";
-import VisualizacaoFormulario from "../parceiro/VisualizacaoFormulario";
-import Profile from "../Profile";
 import Register from "../register/Register";
+import AdminRoutes from "./adminRoutes";
+import CidadaoRoutes from "./cidadaoRoutes";
+import ParceiroRoutes from "./parceiroRoutes";
 import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";
 
 const AuthRoutes = () => {
@@ -58,62 +53,41 @@ const AuthRoutes = () => {
 };
 
 const ProtectedRoutes = () => {
-  return (
-    <Routes>
-      <Route
-        path="/"
-        element={<Home />}
-      />
-      <Route
-        path="/home"
-        element={<Home />}
-      />
-      <Route
-        path="/login"
-        element={<Profile />}
-      />
-      <Route
-        path="/register"
-        element={<Profile />}
-      />
-      <Route
-        path="/logout"
-        element={<Logout />}
-      />
-      <Route
-        path="/profile"
-        element={<Profile />}
-      />
-      <Route
-        path="/admin"
-        element={<PageHomeAdm />}
-      />
-      <Route
-        path="/parceiro/listar_parceiros"
-        element={<ListarParceiros />}
-      />
-      <Route
-        path="/parceiro/visualizar_formulario"
-        element={<VisualizacaoFormulario />}
-      />
-      <Route
-        path="/parceiro"
-        element={<PageHomeParceiro />}
-      />
-      <Route
-        path="/cidadao"
-        element={<PageHomeCidadao />}
-      />
-      <Route
-        path="/faq"
-        element={<FAQ />}
-      />
-      <Route
-        path="*"
-        element={<NotFound />}
-      />
-    </Routes>
-  );
+  const { user } = useAuth();
+  const perfilUser = user?.ds_perfil_sso?.substring(2, user.ds_perfil_sso.length - 2);
+
+  let profileRoutes;
+
+  switch (perfilUser) {
+    case "Servidor":
+      profileRoutes = AdminRoutes();
+      break;
+
+    case "Parceiro":
+      profileRoutes = ParceiroRoutes();
+      break;
+
+    case "Trabalhador":
+      profileRoutes = CidadaoRoutes();
+      break;
+
+    default:
+      profileRoutes = (
+        <Routes>
+          <Route
+            path="/faq"
+            element={<FAQ />}
+          />
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
+        </Routes>
+      );
+      break;
+  }
+
+  return profileRoutes;
 };
 
 const AppRoutes = () => {

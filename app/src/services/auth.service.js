@@ -46,30 +46,6 @@ const login = (login, password, user_type) => {
 };
 
 /**
- * Logs the user out by sending a POST request to the logout API endpoint.
- *
- * @return {Promise} A promise that resolves with the response from the API.
- */
-const logout = access_token => {
-  return axios
-    .post(
-      API_URL + "v1/logout",
-      {},
-      {
-        headers: {
-          Authorization: "Bearer " + access_token,
-        },
-      },
-    )
-    .then(response => {
-      return response.data.message;
-    })
-    .catch(error => {
-      throw error;
-    });
-};
-
-/**
  * Activates a user account with the provided activation token.
  *
  * @param {string} token - The activation token.
@@ -210,6 +186,30 @@ const getTrabalhador = (access_token, id) => {
 };
 
 /**
+ * Logs the user out by sending a POST request to the logout API endpoint.
+ *
+ * @return {Promise} A promise that resolves with the response from the API.
+ */
+const logout = access_token => {
+  return axios
+    .post(
+      API_URL + "v1/logout",
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + access_token,
+        },
+      },
+    )
+    .then(response => {
+      return response.data.message;
+    })
+    .catch(error => {
+      throw error;
+    });
+};
+
+/**
  * Retrieves the current user from the local storage.
  *
  * @return {Object} The current user object or undefined if the user is null or undefined.
@@ -224,12 +224,12 @@ const AuthService = {
   activate,
   register,
   login,
-  logout,
   refreshToken,
   getCurrentUser,
   getAuthUser,
   getParceiro,
   getAdmin,
+  logout,
   getTrabalhador,
 };
 

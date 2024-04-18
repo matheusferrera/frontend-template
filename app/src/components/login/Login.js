@@ -52,9 +52,12 @@ const Login = ({ userRota = "" }) => {
     setLoading(true);
 
     promise
-      .then(() => navigate(userRota))
+      .then(() => {
+        navigate("/");
+      })
       .catch(error => alert(error.response?.data?.message || error.message || error.toString()))
       .finally(() => {
+        window.location.reload();
         setLoading(false);
         setSubmitting(false);
       });

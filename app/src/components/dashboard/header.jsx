@@ -9,6 +9,7 @@ import Toolbar from "@mui/material/Toolbar";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import { useAuth } from "../../contexts/AuthContext";
 import { useResponsive } from "../../hooks/use-responsive";
 import { bgBlur } from "../../theme/css";
 import Iconify from "../iconify";
@@ -62,6 +63,12 @@ export default function Header({ onOpenNav }) {
 
   const lgUp = useResponsive("up", "lg");
 
+  const { logout, user } = useAuth();
+
+  function logoutFunction() {
+    logout();
+  }
+
   const renderContent = (
     <StyledStack
       direction="row"
@@ -107,11 +114,11 @@ export default function Header({ onOpenNav }) {
 
         <Stack>
           <TitleUser>Bem vindo</TitleUser>
-          <SubTitleUser>Yvone lara da costa</SubTitleUser>
+          <SubTitleUser>{user?.no_usuario || "..."}</SubTitleUser>
         </Stack>
 
         <IconButton
-          onClick={onOpenNav}
+          onClick={logoutFunction}
           sx={{ ml: 1, color: theme => alpha(theme.palette.primary.dark, 1) }}
         >
           <IconHeader icon="ic:outline-logout" />
