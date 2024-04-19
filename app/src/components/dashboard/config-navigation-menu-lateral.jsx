@@ -1,70 +1,55 @@
-const user = JSON.parse(localStorage.getItem("user"));
-const perfilUser = user?.ds_perfil_sso?.substring(2, user.ds_perfil_sso.length - 2);
+export const defaultNavConfig = [
+  {
+    title: "Página Inicial",
+    path: "/",
+    color: "default",
+    subTitles: {
+      home: "/",
+      perfil: "/profile",
+    },
+  },
+];
 
-let navConfig;
+export const adminNavConfig = [
+  {
+    title: "Página Inicial",
+    path: "/admin",
+    color: "default",
+    subTitles: {
+      home: "/",
+      perfil: "/profile",
+    },
+  },
+];
 
-switch (perfilUser) {
-  case "Servidor":
-    navConfig = [
-      {
-        title: "Página Inicial",
-        path: "/parceiro",
-        color: "default",
-        subTitles: {
-          home: "/",
-          perfil: "/profile",
-        },
-      },
-    ];
-    break;
+export const parceiroNavConfig = [
+  {
+    title: "Página Inicial",
+    path: "/parceiro",
+    color: "default",
+    subTitles: {
+      home: "/",
+      perfil: "/profile",
+    },
+  },
+  {
+    title: "parceiro",
+    path: "/parceiro",
+    subTitles: {
+      "listar parceiros": "/parceiro/listar_parceiros",
+      "visualizar formulário": "/parceiro/visualizar_formulario",
+    },
+  },
+];
 
-  case "Parceiro":
-    navConfig = [
-      {
-        title: "Página Inicial",
-        path: "/parceiro",
-        color: "default",
-        subTitles: {
-          perfil: "/profile",
-        },
-      },
-      {
-        title: "parceiro",
-        path: "/parceiro",
-        subTitles: {
-          "listar parceiros": "/parceiro/listar_parceiros",
-          "visualizar formulário": "/parceiro/visualizar_formulario",
-        },
-      },
-    ];
-    break;
-
-  case "Trabalhador":
-    navConfig = [
-      {
-        title: "Página Inicial",
-        path: "/parceiro",
-        color: "default",
-        subTitles: {
-          home: "/",
-          perfil: "/profile",
-        },
-      },
-    ];
-    break;
-
-  default:
-    navConfig = [
-      {
-        title: "Perfil nao encontrado",
-        path: "/parceiro",
-        color: "default",
-        subTitles: {
-          perfil: "/profile",
-        },
-      },
-    ];
-    break;
-}
-
-export default navConfig;
+export const cidadaoNavConfig = [
+  {
+    title: "Página Inicial",
+    path: "/cidadao",
+    color: "default",
+    subTitles: {
+      home: "/",
+      perfil: "/profile",
+    },
+  },
+];

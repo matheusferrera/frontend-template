@@ -57,7 +57,6 @@ const Login = ({ userRota = "" }) => {
       })
       .catch(error => alert(error.response?.data?.message || error.message || error.toString()))
       .finally(() => {
-        window.location.reload();
         setLoading(false);
         setSubmitting(false);
       });

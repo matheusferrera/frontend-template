@@ -63,10 +63,10 @@ export default function Header({ onOpenNav }) {
 
   const lgUp = useResponsive("up", "lg");
 
-  const { logout, user } = useAuth();
+  const { logout, user, token } = useAuth();
 
   function logoutFunction() {
-    logout();
+    logout(token);
   }
 
   const renderContent = (

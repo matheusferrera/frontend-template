@@ -2,7 +2,6 @@ import React from "react";
 
 import AppRoutes from "./components/routes/Routes";
 import { AuthProvider } from "./contexts/AuthContext";
-import { NavContentProvider } from "./contexts/NavContentContext";
 import { useScrollToTop } from "./hooks/use-scroll-to-top";
 import ThemeProvider from "./theme";
 
@@ -14,11 +13,9 @@ const App = () => {
   useScrollToTop();
   return (
     <AuthProvider>
-      <NavContentProvider>
-        <ThemeProvider>
-          <AppRoutes />
-        </ThemeProvider>
-      </NavContentProvider>
+      <ThemeProvider>
+        <AppRoutes />
+      </ThemeProvider>
     </AuthProvider>
   );
 };

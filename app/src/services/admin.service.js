@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_URL = "http://localhost:3000/api/";
-const acessToken = localStorage.getItem("token");
+// const acessToken = localStorage.getItem("token");
 
 /**
  * Retrieves a admin using the provided access token and ID.
@@ -11,9 +11,9 @@ const acessToken = localStorage.getItem("token");
  */
 const getAdminData = id => {
   return axios
-    .get(API_URL + `/v1/admins/index/${id}`, {
+    .get(API_URL + `v1/admins/index/${id}`, {
       headers: {
-        Authorization: "Bearer " + acessToken,
+        Authorization: "Bearer " + localStorage.getItem("token"),
       },
     })
     .then(response => {

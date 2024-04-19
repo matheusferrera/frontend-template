@@ -4,10 +4,10 @@ const API_URL = "http://localhost:3000/api/";
 // const acessToken = localStorage.getItem("token");
 
 /**
- * Retrieves a admin using the provided access token and ID.
+ * Retrieves a parceiro using the provided access token and ID.
  *
- * @param {number} id - The ID of the admin to retrieve
- * @return {Promise} A Promise that resolves to the data of the retrieved admin
+ * @param {number} id - The ID of the parceiro to retrieve
+ * @return {Promise} A Promise that resolves to the data of the retrieved parceiro
  */
 const getParceiroData = id => {
   return axios
@@ -17,11 +17,11 @@ const getParceiroData = id => {
       },
     })
     .then(response => {
-      // console.log("Service admin", response.data);
+      // console.log("Service parceiro", response.data);
       return response.data;
     })
     .catch(error => {
-      // console.error("Error fetching admin data:", error);
+      // console.error("Error fetching parceiro data:", error);
       throw error;
     });
 };
