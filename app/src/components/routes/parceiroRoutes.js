@@ -3,10 +3,10 @@ import { Route, Routes } from "react-router-dom";
 
 import FAQ from "../../pages/FAQ";
 import NotFound from "../../pages/NotFound";
-import PageHomeParceiro from "../../pages/parceiro/home.parceiros";
+import PageHomeParceiro from "../../pages/parceiro/home.parceiro";
 import Profile from "../../pages/Profile";
-import ListarParceiros from "../parceiro/ListarParceiros";
-import VisualizacaoFormulario from "../parceiro/VisualizacaoFormulario";
+import PageNovaInscricaoParceiro from "../parceiro/PageNovaInscricaoParceiro";
+import PageVisualizacaoParceiro from "../parceiro/PageVisualizacaoParceiro";
 
 const ParceiroRoutes = () => (
   <Routes>
@@ -23,12 +23,12 @@ const ParceiroRoutes = () => (
       element={<Profile />}
     />
     <Route
-      path="/parceiro/listar_parceiros"
-      element={<ListarParceiros />}
+      path="/parceiro/nova_inscricao"
+      element={<PageNovaInscricaoParceiro />}
     />
     <Route
-      path="/parceiro/visualizar_formulario"
-      element={<VisualizacaoFormulario />}
+      path="/parceiro/visualizar"
+      element={<PageVisualizacaoParceiro />}
     />
     <Route
       path="/faq"
