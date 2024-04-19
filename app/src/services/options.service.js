@@ -27,7 +27,7 @@ const atuacoesJSON = JSON_ATUACOES.atuacoes;
 
 const getAllUFs = () => {
   return axios
-    .get(API_URL_BRASILAPI + "ibge/uf/v1")
+    .get(API_URL_SERVICOSIBGE + "v1/localidades/estados")
     .then(response => {
       if (response) {
         return response.data.sort((a, b) => {
@@ -51,7 +51,7 @@ const getAllUFs = () => {
 
 const getCidadesFromUF = ufSigla => {
   return axios
-    .get(API_URL_BRASILAPI + "ibge/municipios/v1/" + ufSigla + "?providers=dados-abertos-br,gov,wikipedia")
+    .get(API_URL_SERVICOSIBGE + "v1/localidades/estados/" + ufSigla + "/municipios")
     .then(response => {
       if (response.data.length > 0) {
         return response.data.sort((a, b) => {
@@ -64,7 +64,7 @@ const getCidadesFromUF = ufSigla => {
           return 0;
         });
       } else {
-        return cidadesJSON.filter(cidade => cidade.estado === ufSigla);
+        return cidadesJSON.filter(cidade => cidade.UF.id === ufSigla);
       }
     })
     .catch(error => {
