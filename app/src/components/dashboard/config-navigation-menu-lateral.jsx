@@ -36,8 +36,8 @@ export const parceiroNavConfig = [
     title: "parceiro",
     path: "/parceiro",
     subTitles: {
-      "listar parceiros": "/parceiro/listar_parceiros",
-      "visualizar formulário": "/parceiro/visualizar_formulario",
+      "Nova Inscrição de Parceiro": "/parceiro/nova_inscricao",
+      "Visualizar Parceiro": "/parceiro/visualizar",
     },
   },
 ];

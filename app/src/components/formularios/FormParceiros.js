@@ -36,7 +36,7 @@ import { SelectCidade } from "./fields/SelectCidade.js";
 import { SelectUF } from "./fields/SelectUF.js";
 import { formatCEP, formatCNPJ, formatCPF, formatSite, formatTelefone, validarCNPJ, validarCPF } from "./utils.js";
 
-const FormListarParceiros = ({
+const FormParceiros = ({
   loading,
   handleSubmit,
   confirmacaoModal,
@@ -1593,7 +1593,7 @@ const FormListarParceiros = ({
   );
 };
 
-FormListarParceiros.propTypes = {
+FormParceiros.propTypes = {
   loading: PropTypes.bool,
   handleSubmit: PropTypes.func,
   confirmacaoModal: PropTypes.bool,
@@ -1606,4 +1606,4 @@ FormListarParceiros.propTypes = {
   readOnly: PropTypes.bool,
 };
 
-export default FormListarParceiros;
+export default FormParceiros;

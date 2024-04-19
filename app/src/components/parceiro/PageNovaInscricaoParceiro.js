@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 
 import CardBreadcrumb from "../cards/CardBreadcrumb";
-import FormListarParceiros from "../formularios/FormListarParceiros";
+import FormParceiros from "../formularios/FormParceiros";
 
 const mapearNaturezaJuridica = valor => {
   switch (valor) {
@@ -18,7 +18,7 @@ const mapearNaturezaJuridica = valor => {
   }
 };
 
-const ListarParceiros = () => {
+const PageNovaInscricaoParceiro = () => {
   const [loading, setLoading] = useState(false);
   const [confirmacaoModal, setConfirmacaoModal] = useState(false);
   const [erroModal, setErroModal] = useState(false);
@@ -83,11 +83,11 @@ const ListarParceiros = () => {
       }}
     >
       <CardBreadcrumb
-        homeLink="/parceiro/listar_parceiros"
+        homeLink="/parceiro/nova_inscricao"
         homeText="Parceiro"
         currentPage="Listar Parceiros"
       />
-      <FormListarParceiros
+      <FormParceiros
         loading={loading}
         handleSubmit={handleSubmit}
         confirmacaoModal={confirmacaoModal}
@@ -101,4 +101,4 @@ const ListarParceiros = () => {
   );
 };
 
-export default ListarParceiros;
+export default PageNovaInscricaoParceiro;

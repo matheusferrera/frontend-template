@@ -4,9 +4,9 @@ import { Box } from "@mui/material";
 
 import { useAuth } from "../../contexts/AuthContext";
 import CardBreadcrumb from "../cards/CardBreadcrumb";
-import FormListarParceiros from "../formularios/FormListarParceiros";
+import FormParceiros from "../formularios/FormParceiros";
 
-const VisualizacaoFormulario = () => {
+const PageVisualizacaoParceiro = () => {
   const { user } = useAuth();
 
   const values = {
@@ -56,11 +56,11 @@ const VisualizacaoFormulario = () => {
       }}
     >
       <CardBreadcrumb
-        homeLink="/parceiro/visualizar_formulario"
+        homeLink="/parceiro/visualizar"
         homeText="Parceiro"
         currentPage="Visualizar Formulário"
       />
-      <FormListarParceiros
+      <FormParceiros
         values={values}
         readOnly={true}
       />
@@ -68,4 +68,4 @@ const VisualizacaoFormulario = () => {
   );
 };
 
-export default VisualizacaoFormulario;
+export default PageVisualizacaoParceiro;
