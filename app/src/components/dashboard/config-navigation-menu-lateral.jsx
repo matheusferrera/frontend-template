@@ -18,6 +18,7 @@ export const adminNavConfig = [
     subTitles: {
       home: "/",
       perfil: "/profile",
+      "Listar Parceiros Pendentes": "/listar_parceiros_pendentes",
     },
   },
 ];

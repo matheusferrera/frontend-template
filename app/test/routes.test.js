@@ -11,7 +11,6 @@ jest.mock("../src/components/modals/AvisoDePrivacidadeModal");
 jest.mock("../src/components/modals/TermoDeUsoModal");
 
 describe("Teste de componentes", () => {
-
   it("Register renderizada corretamente", () => {
     const component = renderer.create(
       <TestWrapper>
