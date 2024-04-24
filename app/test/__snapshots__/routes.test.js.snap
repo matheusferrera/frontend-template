@@ -230,7 +230,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
           </p>
         </label>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth css-1b719fg-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-1b719fg-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id=":r7:"
           onBlur={[Function]}
@@ -591,7 +591,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
           </p>
         </label>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-fullWidth css-1b719fg-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-1b719fg-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id=":r4:"
           onBlur={[Function]}
@@ -614,7 +614,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
         </button>
       </form>
       <a
-        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1wpq9cx-MuiButtonBase-root-MuiButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1wpq9cx-MuiButtonBase-root-MuiButton-root"
         href="/parceiro_login"
         onBlur={[Function]}
         onContextMenu={[Function]}
@@ -633,7 +633,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
         Já possuo conta
       </a>
       <a
-        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-cpcwrt-MuiButtonBase-root-MuiButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-cpcwrt-MuiButtonBase-root-MuiButton-root"
         href="/activate"
         onBlur={[Function]}
         onContextMenu={[Function]}
