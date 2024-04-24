@@ -26,6 +26,7 @@ const PageNovaInscricaoParceiro = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     setLoading(true);
+
     return new Promise(resolve => {
       if (
         values.checkVagaEmprego ||
@@ -39,8 +40,51 @@ const PageNovaInscricaoParceiro = () => {
         // Ajuste de naturezaJuridica para o backend
         values.naturezaJuridica = mapearNaturezaJuridica(values.naturezaJuridica);
 
+        const novoParceiro = {
+          dados: {
+            email: values.email,
+            cnpj: values.cnpj,
+            razao_social: values.razaoSocial,
+            nome_fantasia: values.nomeFantasia,
+            cep: values.cep,
+            endereco: values.endereco,
+            numero: values.numero,
+            complemento: values.complemento,
+            bairro: values.bairro,
+            uf: values.uf,
+            cidade: values.cidade,
+            telefone: values.telefone,
+            site: values.site,
+            area_atuacao: values.areaAtuacao,
+            natureza_juridica: values.naturezaJuridica,
+            redes_sociais: values.redesSociais,
+          },
+          representante: {
+            nome: values.nomeRepresentante,
+            cpf: values.cpf,
+            telefone: values.telefoneRepresentante,
+            uf: values.ufRepresentante,
+            cidade: values.cidadeRepresentante,
+          },
+          ponto_focal: {
+            nome: values.nomePontoFocal,
+            email: values.emailPontoFocal,
+            telefone: values.telefonePontoFocal,
+          },
+          servico_ofertado: {
+            VEP: values.checkVagaEmprego,
+            VET: values.checkVagaEstagio,
+            VJA: values.checkVagaJovem,
+            CUR: values.checkCursos,
+            FPG: values.checkFinanceiro,
+            MPu: values.checkMobilidadePublico,
+            MPa: values.checkMobilidadeParceiro,
+          },
+        };
+
         // TODO: mudar para a chamada no backend
-        console.log(values);
+        console.log(novoParceiro);
+
         // Simula uma operação assíncrona
         setTimeout(() => {
           // Retorna a Promisse como sucesso no Timeout
