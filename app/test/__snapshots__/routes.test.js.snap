@@ -8,7 +8,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
     className="MuiStack-root css-ph9haw-MuiStack-root"
   >
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ydwos6-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-pyionf-MuiPaper-root-MuiCard-root"
     >
       <h3
         className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
@@ -32,7 +32,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
             className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14zq7tq-MuiFormLabel-root-MuiInputLabel-root"
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink={false}
               htmlFor="username"
               id="username-label"
@@ -40,7 +40,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
               Username
             </label>
             <div
-              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
@@ -77,7 +77,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
             className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14zq7tq-MuiFormLabel-root-MuiInputLabel-root"
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink={false}
               htmlFor="password"
               id="password-label"
@@ -85,7 +85,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
               Senha
             </label>
             <div
-              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-waowrw-MuiInputBase-root-MuiOutlinedInput-root"
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-1wy8ovw-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
@@ -164,7 +164,7 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
           className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-txgl9-MuiFormControlLabel-root"
         >
           <span
-            className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+            className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
             onBlur={[Function]}
             onContextMenu={[Function]}
             onDragLeave={[Function]}
@@ -177,6 +177,11 @@ exports[`Teste de componentes Login renderizada corretamente 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
+            style={
+              {
+                "color": "#919EAB",
+              }
+            }
             tabIndex={null}
           >
             <input
@@ -270,7 +275,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
     className="MuiStack-root css-ph9haw-MuiStack-root"
   >
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-wf527k-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-wjismy-MuiPaper-root-MuiCard-root"
     >
       <h3
         className="MuiTypography-root MuiTypography-h3 css-8jown4-MuiTypography-root"
@@ -294,7 +299,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
             className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14zq7tq-MuiFormLabel-root-MuiInputLabel-root"
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink={false}
               htmlFor="email"
               id="email-label"
@@ -302,7 +307,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
               Email
             </label>
             <div
-              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
@@ -339,7 +344,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
             className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14zq7tq-MuiFormLabel-root-MuiInputLabel-root"
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink={false}
               htmlFor="name"
               id="name-label"
@@ -347,7 +352,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
               Nome
             </label>
             <div
-              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
@@ -384,7 +389,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
             className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14zq7tq-MuiFormLabel-root-MuiInputLabel-root"
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink={false}
               htmlFor="password"
               id="password-label"
@@ -392,7 +397,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
               Senha
             </label>
             <div
-              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-waowrw-MuiInputBase-root-MuiOutlinedInput-root"
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-1wy8ovw-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
@@ -454,7 +459,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
             className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
           >
             <label
-              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-14zq7tq-MuiFormLabel-root-MuiInputLabel-root"
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink={false}
               htmlFor="passwordConfirmation"
               id="passwordConfirmation-label"
@@ -462,7 +467,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
               Confirmação de Senha
             </label>
             <div
-              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-waowrw-MuiInputBase-root-MuiOutlinedInput-root"
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-1wy8ovw-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
@@ -528,7 +533,7 @@ exports[`Teste de componentes Register renderizada corretamente 1`] = `
           className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-txgl9-MuiFormControlLabel-root"
         >
           <span
-            className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+            className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
             onBlur={[Function]}
             onContextMenu={[Function]}
             onDragLeave={[Function]}

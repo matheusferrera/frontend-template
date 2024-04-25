@@ -1,10 +1,11 @@
 import { alpha } from "@mui/material/styles";
 
-import { common, error, grey, info, primary, secondary, success, warning } from "./palette";
+import { palette } from "./palette";
 
 // ----------------------------------------------------------------------
 
 export function customShadows() {
+  const { grey, primary, info, secondary, success, warning, error, common } = palette("light");
   const transparent = alpha(grey[500], 0.16);
 
   return {

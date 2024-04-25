@@ -13,7 +13,7 @@ import { typography } from "./typography";
 // ----------------------------------------------------------------------
 const ThemeContext = createContext();
 
-export function useTheme() {
+export function themeProvider() {
   return useContext(ThemeContext);
 }
 // ----------------------------------------------------------------------

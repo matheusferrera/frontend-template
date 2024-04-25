@@ -5,7 +5,10 @@ import PropTypes from "prop-types";
 
 const CardVisaoGeral = ({ number, title }) => {
   return (
-    <Card sx={{ borderRadius: "0px", border: "1px solid #9E9E9E", width: "max-content", height: "46px" }}>
+    <Card
+      sx={{ borderRadius: "0px", border: "1px solid #9E9E9E", width: "max-content", height: "46px" }}
+      style={{ transition: "1s" }}
+    >
       <CardContent
         sx={{
           display: "flex",
@@ -29,7 +32,10 @@ const CardVisaoGeral = ({ number, title }) => {
             ></Skeleton>
           )}
         </Typography>
-        <Typography sx={{ fontSize: "16px", fontWeight: "semi-bold" }}>
+        <Typography
+          sx={{ fontSize: "16px", fontWeight: "semi-bold" }}
+          style={{ transition: "1s" }}
+        >
           {title ? (
             title
           ) : (

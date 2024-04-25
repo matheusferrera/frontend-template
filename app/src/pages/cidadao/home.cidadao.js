@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import InfoIcon from "@mui/icons-material/Info";
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 import imageCidadaoHome from "../../assets/images/cidadaoHome.png";
 import imagemServicos1 from "../../assets/images/servico1.png";
@@ -14,6 +15,8 @@ import cidadaoService from "../../services/cidadao.service";
 
 const PageHomeCidadao = () => {
   const [cardVisaoGeralData, setCardVisaoGeralData] = useState(null);
+
+  const theme = useTheme();
 
   const fetchCardVisaoGeralData = async () => {
     cidadaoService
@@ -113,8 +116,9 @@ const PageHomeCidadao = () => {
         sx={{
           display: "flex",
           alignItems: "center",
-          background: "white",
-          border: "1px solid #9e9e9e",
+          background: theme.palette.background.paper,
+          color: theme.palette.text.primary,
+          border: theme.palette.border.layout,
           padding: "16px",
           paddingRight: "8px",
         }}

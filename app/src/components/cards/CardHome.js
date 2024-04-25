@@ -23,9 +23,9 @@ const CardHome = ({ title, content, imageUrl }) => {
     <div style={{ height: "200px", marginTop: "-50px", paddingTop: "60px", overflowY: "hidden", borderBottom: "1px solid #9E9E9E" }}>
       <Card
         sx={{
-          background: "white",
-          color: "white",
-          border: "1px solid #9E9E9E",
+          background: theme.palette.background.paper,
+          color: theme.palette.text.primary,
+          border: theme.palette.border.card,
           borderRadius: "0px",
           height: "140px",
           display: "flex",
@@ -35,10 +35,12 @@ const CardHome = ({ title, content, imageUrl }) => {
           gap: "10px 10px",
           paddingLeft: "20px",
         }}
+        style={{ transition: "1s" }}
       >
         <Box>
           <CardHeader
             sx={{ padding: "0", paddingRight: imageWidth || "300px" }}
+            style={{ transition: "1s" }}
             title={
               <Typography
                 variant="h2"
@@ -58,22 +60,24 @@ const CardHome = ({ title, content, imageUrl }) => {
         <Grid sx={{ paddingRight: imageWidth, display: "flex", flexAlign: "row", gap: "7px" }}>
           <Typography
             variant="h6"
+            style={{ transition: "1s" }}
             sx={{
               fontWeight: 600,
               lineHeight: "normal",
               fontFamily: "Rawline Thin",
-              color: "black",
+              color: theme.palette.text.primary,
             }}
           >
             A situção do seu cadastro é
           </Typography>
           <Typography
             variant="h6"
+            style={{ transition: "1s" }}
             sx={{
               fontWeight: 600,
               lineHeight: "normal",
               fontFamily: "Rawline Bold",
-              color: "black",
+              color: theme.palette.text.primary,
             }}
           >
             {content}

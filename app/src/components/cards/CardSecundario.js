@@ -1,15 +1,19 @@
 import React from "react";
 
 import { Box, Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
 const CardSecundario = ({ title, subtitle, description, backgroundColor, imageUrl }) => {
+  const theme = useTheme();
+
   return (
     <Card>
       <CardContent
         sx={{
-          backgroundColor: backgroundColor || "primary.main",
-          color: "white",
+          background: theme.palette.background.paper,
+          color: theme.palette.text.primary,
+          border: theme.palette.border.card,
           boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)",
           display: "flex",
           flexDirection: "row",
