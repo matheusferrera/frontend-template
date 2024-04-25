@@ -7,6 +7,7 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import SchoolIcon from "@mui/icons-material/School";
 import { Card, CardContent, Grid, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 const services = [
   { name: "Cursos", icon: <SchoolIcon /> },
@@ -18,6 +19,8 @@ const services = [
 ];
 
 const CardServicosParceiros = () => {
+  const theme = useTheme();
+
   return (
     <Grid
       container
@@ -38,8 +41,8 @@ const CardServicosParceiros = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 position: "relative",
-                color: "white",
-                backgroundColor: "primary.main",
+                color: theme.palette.text.secondary,
+                backgroundColor: theme.palette.primary.main,
                 boxShadow: "0px 1px 6px 0px rgba(51, 51, 51, 0.16)",
                 paddingTop: "16px",
                 paddingBottom: "16px !important",

@@ -20,6 +20,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
@@ -49,6 +50,8 @@ const FormParceiros = ({
   readOnly = false,
 }) => {
   const { user } = useAuth();
+
+  const theme = useTheme();
 
   const initialValues = values
     ? values
@@ -1197,7 +1200,7 @@ const FormParceiros = ({
                         name="checkVagaEmprego"
                         checked={values.checkVagaEmprego}
                         onChange={handleChange}
-                        color="primary"
+                        style={{ color: theme.palette.text.disabled }}
                         inputProps={{
                           disabled: readOnly,
                         }}
@@ -1232,7 +1235,7 @@ const FormParceiros = ({
                         name="checkVagaEstagio"
                         checked={values.checkVagaEstagio}
                         onChange={handleChange}
-                        color="primary"
+                        style={{ color: theme.palette.text.disabled }}
                         inputProps={{
                           disabled: readOnly,
                         }}
@@ -1267,7 +1270,7 @@ const FormParceiros = ({
                         name="checkVagaJovem"
                         checked={values.checkVagaJovem}
                         onChange={handleChange}
-                        color="primary"
+                        style={{ color: theme.palette.text.disabled }}
                         inputProps={{
                           disabled: readOnly,
                         }}
@@ -1302,7 +1305,7 @@ const FormParceiros = ({
                         name="checkCursos"
                         checked={values.checkCursos}
                         onChange={handleChange}
-                        color="primary"
+                        style={{ color: theme.palette.text.disabled }}
                         inputProps={{
                           disabled: readOnly,
                         }}
@@ -1339,7 +1342,7 @@ const FormParceiros = ({
                         checked={financeiro}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        color="primary"
+                        style={{ color: theme.palette.text.disabled }}
                         inputProps={{
                           disabled: readOnly,
                         }}
@@ -1380,7 +1383,7 @@ const FormParceiros = ({
                         name="checkMobilidadePublico"
                         checked={values.checkMobilidadePublico}
                         onChange={handleChange}
-                        color="primary"
+                        style={{ color: theme.palette.text.disabled }}
                         inputProps={{
                           disabled: readOnly,
                         }}
@@ -1415,7 +1418,7 @@ const FormParceiros = ({
                         name="checkMobilidadeParceiro"
                         checked={values.checkMobilidadeParceiro}
                         onChange={handleChange}
-                        color="primary"
+                        style={{ color: theme.palette.text.disabled }}
                         inputProps={{
                           disabled: readOnly,
                         }}
@@ -1471,7 +1474,7 @@ const FormParceiros = ({
                             name="toggleCienteNormas"
                             checked={values.toggleCienteNormas}
                             onChange={handleChange}
-                            color="primary"
+                            style={{ color: theme.palette.text.disabled }}
                           />
                         }
                         label={
@@ -1493,7 +1496,7 @@ const FormParceiros = ({
                             name="toggleCienteGratuito"
                             checked={values.toggleCienteGratuito}
                             onChange={handleChange}
-                            color="primary"
+                            style={{ color: theme.palette.text.disabled }}
                           />
                         }
                         label={

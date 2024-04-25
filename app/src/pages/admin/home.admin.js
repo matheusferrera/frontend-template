@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import InfoIcon from "@mui/icons-material/Info";
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
+import { useTheme } from "@mui/material";
 
 import imagemPrimaria from "../../assets/images/Ilustra-Admin.png";
 import imagemServicos1 from "../../assets/images/servico1.png";
@@ -14,6 +15,8 @@ import adminService from "../../services/admin.service";
 
 const PageHomeAdm = () => {
   const [cardVisaoGeralData, setCardVisaoGeralData] = useState(null);
+
+  const theme = useTheme();
 
   const fetchCardVisaoGeralData = async () => {
     adminService
@@ -44,6 +47,7 @@ const PageHomeAdm = () => {
         variant="h5"
         mt={2}
         sx={{ fontFamily: "Rawline Bold", marginBottom: "40px" }}
+        style={{ transition: "1s" }}
       >
         Seja bem-vindo(a)
       </Typography>
@@ -58,6 +62,7 @@ const PageHomeAdm = () => {
         mt={3}
         mb={1}
         sx={{ fontFamily: "Rawline Bold", marginTop: "40px" }}
+        style={{ transition: "1s" }}
       >
         Visão Geral
       </Typography>
@@ -90,6 +95,7 @@ const PageHomeAdm = () => {
         mt={3}
         mb={1}
         sx={{ fontFamily: "Rawline Bold", marginTop: "40px" }}
+        style={{ transition: "1s" }}
       >
         Serviços ofertados
       </Typography>
@@ -101,6 +107,7 @@ const PageHomeAdm = () => {
         mt={3}
         mb={1}
         sx={{ fontFamily: "Rawline Bold", marginTop: "40px" }}
+        style={{ transition: "1s" }}
       >
         Serviços disponiveis
       </Typography>
@@ -141,11 +148,13 @@ const PageHomeAdm = () => {
 
       <Box
         mt={5}
+        style={{ transition: "1s" }}
         sx={{
           display: "flex",
           alignItems: "center",
-          background: "white",
-          border: "1px solid #9e9e9e",
+          background: theme.palette.background.paper,
+          color: theme.palette.text.primary,
+          border: theme.palette.border.layout,
           padding: "16px",
           paddingRight: "8px",
         }}
@@ -154,6 +163,7 @@ const PageHomeAdm = () => {
         <Typography
           variant="body1"
           sx={{ ml: 1, fontFamily: "Rawline Regular" }}
+          style={{ transition: "1s" }}
         >
           No caso de dúvidas e/ou problemas, acesse
           <Link

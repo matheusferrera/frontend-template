@@ -24,7 +24,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
       className="MuiStack-root css-nen11g-MuiStack-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1qen9h-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-17zbd5d-MuiPaper-root-MuiCard-root"
         color="#ffffff"
       >
         <h4
@@ -71,7 +71,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -122,7 +122,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -176,7 +176,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -229,7 +229,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -282,7 +282,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -336,7 +336,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -389,7 +389,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -442,7 +442,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -495,7 +495,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -548,7 +548,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   * UF
                 </p>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-13drv59-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
                   onClick={[Function]}
                 >
                   <div
@@ -624,7 +624,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   * Cidade
                 </p>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-13drv59-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
                   onClick={[Function]}
                 >
                   <div
@@ -700,7 +700,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -754,7 +754,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -791,7 +791,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 </div>
               </div>
               <p
-                className="MuiFormHelperText-root css-1ygu1mq-MuiFormHelperText-root"
+                className="MuiFormHelperText-root css-ulvgi-MuiFormHelperText-root"
                 id="site-valido"
               />
             </div>
@@ -811,7 +811,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -884,7 +884,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
         </div>
       </div>
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1qen9h-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-17zbd5d-MuiPaper-root-MuiCard-root"
         color="#ffffff"
       >
         <h4
@@ -931,7 +931,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -984,7 +984,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -1038,7 +1038,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -1092,7 +1092,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   * UF
                 </p>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-13drv59-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
                   onClick={[Function]}
                 >
                   <div
@@ -1168,7 +1168,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   * Cidade
                 </p>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-13drv59-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
                   onClick={[Function]}
                 >
                   <div
@@ -1232,7 +1232,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
         </div>
       </div>
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-16mjxk-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ir3ov8-MuiPaper-root-MuiCard-root"
         color="#ffffff"
       >
         <h4
@@ -1279,7 +1279,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -1332,7 +1332,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -1385,7 +1385,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -1427,7 +1427,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
         </div>
       </div>
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-g1bbbd-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-cg5c2l-MuiPaper-root-MuiCard-root"
         color="#ffffff"
       >
         <div
@@ -1448,7 +1448,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   * Área de Atuação
                 </p>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-13drv59-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
                   onClick={[Function]}
                 >
                   <div
@@ -1523,7 +1523,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               >
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-163wg7f-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
                   onClick={[Function]}
                 >
                   <input
@@ -1562,7 +1562,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
         </div>
       </div>
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-g1bbbd-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-cg5c2l-MuiPaper-root-MuiCard-root"
       >
         <p
           className="MuiTypography-root MuiTypography-body1 css-18t5v21-MuiTypography-root"
@@ -1579,7 +1579,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-10i1lmv-MuiFormControlLabel-root"
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
                 onDragLeave={[Function]}
@@ -1592,6 +1592,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 onTouchEnd={[Function]}
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
+                style={
+                  {
+                    "color": "#919EAB",
+                  }
+                }
                 tabIndex={null}
               >
                 <input
@@ -1650,7 +1655,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-10i1lmv-MuiFormControlLabel-root"
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
                 onDragLeave={[Function]}
@@ -1663,6 +1668,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 onTouchEnd={[Function]}
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
+                style={
+                  {
+                    "color": "#919EAB",
+                  }
+                }
                 tabIndex={null}
               >
                 <input
@@ -1721,7 +1731,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-10i1lmv-MuiFormControlLabel-root"
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
                 onDragLeave={[Function]}
@@ -1734,6 +1744,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 onTouchEnd={[Function]}
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
+                style={
+                  {
+                    "color": "#919EAB",
+                  }
+                }
                 tabIndex={null}
               >
                 <input
@@ -1792,7 +1807,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-10i1lmv-MuiFormControlLabel-root"
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
                 onDragLeave={[Function]}
@@ -1805,6 +1820,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 onTouchEnd={[Function]}
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
+                style={
+                  {
+                    "color": "#919EAB",
+                  }
+                }
                 tabIndex={null}
               >
                 <input
@@ -1864,7 +1884,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               onClick={[Function]}
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
                 onDragLeave={[Function]}
@@ -1877,6 +1897,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 onTouchEnd={[Function]}
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
+                style={
+                  {
+                    "color": "#919EAB",
+                  }
+                }
                 tabIndex={null}
               >
                 <input
@@ -1936,7 +1961,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-10i1lmv-MuiFormControlLabel-root"
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
                 onDragLeave={[Function]}
@@ -1949,6 +1974,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 onTouchEnd={[Function]}
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
+                style={
+                  {
+                    "color": "#919EAB",
+                  }
+                }
                 tabIndex={null}
               >
                 <input
@@ -2007,7 +2037,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-10i1lmv-MuiFormControlLabel-root"
             >
               <span
-                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                 onBlur={[Function]}
                 onContextMenu={[Function]}
                 onDragLeave={[Function]}
@@ -2020,6 +2050,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 onTouchEnd={[Function]}
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
+                style={
+                  {
+                    "color": "#919EAB",
+                  }
+                }
                 tabIndex={null}
               >
                 <input
@@ -2084,14 +2119,14 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
             className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 css-1idn90j-MuiGrid-root"
           >
             <div
-              className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-k2zct3-MuiPaper-root-MuiCard-root"
+              className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-548gl8-MuiPaper-root-MuiCard-root"
               color="#ffffff"
             >
               <label
                 className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1vbggne-MuiFormControlLabel-root"
               >
                 <span
-                  className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                  className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                   onBlur={[Function]}
                   onContextMenu={[Function]}
                   onDragLeave={[Function]}
@@ -2104,6 +2139,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   onTouchEnd={[Function]}
                   onTouchMove={[Function]}
                   onTouchStart={[Function]}
+                  style={
+                    {
+                      "color": "#919EAB",
+                    }
+                  }
                   tabIndex={null}
                 >
                   <input
@@ -2178,7 +2218,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                 className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-ppj1sw-MuiFormControlLabel-root"
               >
                 <span
-                  className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-kshgmm-MuiButtonBase-root-MuiCheckbox-root"
+                  className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-1cu7bhi-MuiButtonBase-root-MuiCheckbox-root"
                   onBlur={[Function]}
                   onContextMenu={[Function]}
                   onDragLeave={[Function]}
@@ -2191,6 +2231,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   onTouchEnd={[Function]}
                   onTouchMove={[Function]}
                   onTouchStart={[Function]}
+                  style={
+                    {
+                      "color": "#919EAB",
+                    }
+                  }
                   tabIndex={null}
                 >
                   <input
@@ -2336,13 +2381,23 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
     }
   >
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-polf8z-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-zf2o4m-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
     >
       <div
         className="MuiBox-root css-0"
       >
         <div
           className="MuiCardHeader-root css-1d6w13i-MuiCardHeader-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -2359,12 +2414,22 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
         className="MuiGrid-root css-107y2qe-MuiGrid-root"
       >
         <h6
-          className="MuiTypography-root MuiTypography-h6 css-25dv9f-MuiTypography-root"
+          className="MuiTypography-root MuiTypography-h6 css-1mlx7tg-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           A situção do seu cadastro é
         </h6>
         <h6
-          className="MuiTypography-root MuiTypography-h6 css-1v12ax1-MuiTypography-root"
+          className="MuiTypography-root MuiTypography-h6 css-12emvm8-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         />
       </div>
     </div>
@@ -2381,10 +2446,10 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -2409,10 +2474,10 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -2437,10 +2502,10 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -2465,10 +2530,10 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -2493,10 +2558,10 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -2526,10 +2591,10 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -2574,13 +2639,23 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
         }
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiBox-root css-0"
           >
             <div
               className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               <div
                 className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -2595,12 +2670,22 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Vagas de emprego
             </p>
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Disponiveis em diversas áreas
             </p>
@@ -2623,13 +2708,23 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
         }
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiBox-root css-0"
           >
             <div
               className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               <div
                 className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -2644,12 +2739,22 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Vagas de curso
             </p>
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Disponiveis em diversas áreas
             </p>
@@ -2659,7 +2764,7 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
     </div>
   </div>
   <div
-    className="MuiBox-root css-fkk637"
+    className="MuiBox-root css-xj9bu"
   >
     <svg
       aria-hidden={true}
@@ -3236,6 +3341,11 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
 >
   <h5
     className="MuiTypography-root MuiTypography-h5 css-grbqxd-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
   >
     Seja bem-vindo(a)
   </h5>
@@ -3251,13 +3361,23 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
     }
   >
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-polf8z-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-zf2o4m-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
     >
       <div
         className="MuiBox-root css-0"
       >
         <div
           className="MuiCardHeader-root css-1d6w13i-MuiCardHeader-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -3274,12 +3394,22 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
         className="MuiGrid-root css-107y2qe-MuiGrid-root"
       >
         <h6
-          className="MuiTypography-root MuiTypography-h6 css-25dv9f-MuiTypography-root"
+          className="MuiTypography-root MuiTypography-h6 css-1mlx7tg-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           A situção do seu cadastro é
         </h6>
         <h6
-          className="MuiTypography-root MuiTypography-h6 css-1v12ax1-MuiTypography-root"
+          className="MuiTypography-root MuiTypography-h6 css-12emvm8-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         />
       </div>
     </div>
@@ -3296,10 +3426,10 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -3324,10 +3454,10 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -3352,10 +3482,10 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -3380,10 +3510,10 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -3408,10 +3538,10 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -3441,10 +3571,10 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
-          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+          className="MuiCardContent-root css-80nref-MuiCardContent-root"
         >
           <svg
             aria-hidden={true}
@@ -3489,13 +3619,23 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
         }
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiBox-root css-0"
           >
             <div
               className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               <div
                 className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -3510,12 +3650,22 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Vagas de emprego
             </p>
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Disponiveis em diversas áreas
             </p>
@@ -3538,13 +3688,23 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
         }
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiBox-root css-0"
           >
             <div
               className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               <div
                 className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -3559,12 +3719,22 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Vagas de curso
             </p>
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Disponiveis em diversas áreas
             </p>
@@ -3574,7 +3744,7 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
     </div>
   </div>
   <div
-    className="MuiBox-root css-fkk637"
+    className="MuiBox-root css-xj9bu"
   >
     <svg
       aria-hidden={true}
@@ -3611,6 +3781,11 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
 >
   <h5
     className="MuiTypography-root MuiTypography-h5 css-grbqxd-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
   >
     Seja bem-vindo(a)
   </h5>
@@ -3626,13 +3801,23 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
     }
   >
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
     >
       <div
         className="MuiBox-root css-0"
       >
         <div
           className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -3649,16 +3834,31 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
         className="MuiGrid-root css-vj1n65-MuiGrid-root"
       >
         <p
-          className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+          className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         />
         <p
-          className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+          className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         />
       </div>
     </div>
   </div>
   <h4
     className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
   >
     Visão Geral
   </h4>
@@ -3666,7 +3866,12 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
     className="MuiGrid-root MuiGrid-container css-s5hy0i-MuiGrid-root"
   >
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-6z6kzq-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ppcprt-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
     >
       <div
         className="MuiCardContent-root css-5abr63-MuiCardContent-root"
@@ -3675,7 +3880,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
           className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
         >
           <span
-            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-1xbzobo-MuiSkeleton-root"
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-msyzu8-MuiSkeleton-root"
             style={
               {
                 "height": 30,
@@ -3686,9 +3891,14 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
         </p>
         <p
           className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-jzr2k2-MuiSkeleton-root"
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-b4cxbb-MuiSkeleton-root"
             style={
               {
                 "height": 30,
@@ -3700,7 +3910,12 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       </div>
     </div>
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-6z6kzq-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ppcprt-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
     >
       <div
         className="MuiCardContent-root css-5abr63-MuiCardContent-root"
@@ -3709,7 +3924,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
           className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
         >
           <span
-            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-1xbzobo-MuiSkeleton-root"
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-msyzu8-MuiSkeleton-root"
             style={
               {
                 "height": 30,
@@ -3720,9 +3935,14 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
         </p>
         <p
           className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-jzr2k2-MuiSkeleton-root"
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-b4cxbb-MuiSkeleton-root"
             style={
               {
                 "height": 30,
@@ -3734,7 +3954,12 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       </div>
     </div>
     <div
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-6z6kzq-MuiPaper-root-MuiCard-root"
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ppcprt-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
     >
       <div
         className="MuiCardContent-root css-5abr63-MuiCardContent-root"
@@ -3743,7 +3968,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
           className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
         >
           <span
-            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-1xbzobo-MuiSkeleton-root"
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-msyzu8-MuiSkeleton-root"
             style={
               {
                 "height": 30,
@@ -3754,9 +3979,14 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
         </p>
         <p
           className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <span
-            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-jzr2k2-MuiSkeleton-root"
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-b4cxbb-MuiSkeleton-root"
             style={
               {
                 "height": 30,
@@ -3770,6 +4000,11 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
   </div>
   <h4
     className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
   >
     Serviços ofertados
   </h4>
@@ -3780,7 +4015,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
           className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
@@ -3808,7 +4043,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
           className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
@@ -3836,7 +4071,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
           className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
@@ -3864,7 +4099,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
           className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
@@ -3897,7 +4132,7 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ckkhpr-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
       >
         <div
           className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
@@ -3924,6 +4159,11 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
   </div>
   <h4
     className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
   >
     Serviços disponiveis
   </h4>
@@ -3945,13 +4185,23 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
         }
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiBox-root css-0"
           >
             <div
               className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               <div
                 className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -3968,12 +4218,22 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
             className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Vagas de emprego
             </p>
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Disponiveis em diversas áreas
             </p>
@@ -3996,13 +4256,23 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
         }
       >
         <div
-          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-s8yuy2-MuiPaper-root-MuiCard-root"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
         >
           <div
             className="MuiBox-root css-0"
           >
             <div
               className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               <div
                 className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
@@ -4019,12 +4289,22 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
             className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-dbpnkx-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Vagas de curso
             </p>
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1hljre3-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
             >
               Disponiveis em diversas áreas
             </p>
@@ -4034,7 +4314,12 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
     </div>
   </div>
   <div
-    className="MuiBox-root css-fkk637"
+    className="MuiBox-root css-xj9bu"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
   >
     <svg
       aria-hidden={true}
@@ -4049,6 +4334,11 @@ exports[`Teste de componentes Página de administrador renderizada corretamente 
     </svg>
     <p
       className="MuiTypography-root MuiTypography-body1 css-1lh13dg-MuiTypography-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
     >
       No caso de dúvidas e/ou problemas, acesse
       <a

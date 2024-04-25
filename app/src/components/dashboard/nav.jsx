@@ -9,6 +9,7 @@ import Drawer from "@mui/material/Drawer";
 import ListItemButton from "@mui/material/ListItemButton";
 import Stack from "@mui/material/Stack";
 import { alpha } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
 import { usePathname } from "../../hooks/use-pathname";
@@ -23,6 +24,8 @@ import RouterLink from "./router-link";
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
   const upLg = useResponsive("up", "lg");
+
+  const theme = useTheme();
 
   const user = JSON.parse(localStorage.getItem("user"));
   const perfilUser = user?.ds_perfil_sso?.substring(2, user.ds_perfil_sso.length - 2);
@@ -87,7 +90,8 @@ export default function Nav({ openNav, onCloseNav }) {
       sx={{
         flexShrink: { lg: 0 },
         width: { lg: NAV.WIDTH },
-        bgcolor: "white",
+        bgcolor: theme.palette.text.secondary,
+        transition: "1s",
       }}
     >
       {upLg ? (
@@ -96,7 +100,10 @@ export default function Nav({ openNav, onCloseNav }) {
             height: 1,
             position: "fixed",
             width: NAV.WIDTH,
-            borderRight: theme => `dashed 1px ${theme.palette.divider}`,
+            borderRight: theme.palette.border.layout,
+            boxShadow: "1px 0px 10px 1px #0000001A",
+            paddingBottom: "40px",
+            transition: "1s",
           }}
         >
           {renderContent}
@@ -127,12 +134,14 @@ Nav.propTypes = {
 
 function NavItem({ item }) {
   const pathname = usePathname();
-
+  const theme = useTheme();
   let active = "";
+  let objRoute = {};
   if (item.subTitles) {
     for (let subTitle in item.subTitles) {
       if (item.subTitles[subTitle] === pathname) {
         active = subTitle;
+        objRoute = item;
         break;
       }
     }
@@ -143,20 +152,20 @@ function NavItem({ item }) {
   return (
     <ListItemButton
       sx={{
-        minHeight: 56,
         typography: "body2",
-        color: "#1351B4",
+        color: theme.palette.primary.main,
         textTransform: "capitalize",
         fontWeight: "fontWeightSmall",
         transition: "1s",
         p: 0,
+        borderRadius: "0px",
         ...(!item.subTitles && {
           "&:hover": {
             bgcolor: theme => alpha(theme.palette.primary.dark, 0.6),
-            color: "white",
+            color: theme.palette.text.secondary,
           },
           ...(active && {
-            color: "white",
+            color: theme.palette.text.secondary,
             fontWeight: "fontWeightSemiBold",
             bgcolor: theme => alpha(theme.palette.primary.dark, 1),
             "&:hover": {
@@ -169,19 +178,41 @@ function NavItem({ item }) {
       {item.subTitles ? (
         <React.Fragment key={item.title}>
           <Accordion
+            style={{ borderRadius: "0px" }}
             sx={{
               typography: "body2",
-              color: "#1351B4",
+              color: theme.palette.mode == "dark" ? theme.palette.text.primary : theme.palette.primary.main,
+              borderBottom: "1px solid #d3d3d3",
+              fontFamily: "Rawline Regular",
               textTransform: "capitalize",
               fontWeight: "fontWeightSmall",
               transition: "1s",
               bgcolor: "transparent",
               width: "100%",
+              ...(objRoute.title == item.title && {
+                color: theme.palette.text.secondary,
+                fontFamily: "Rawline Bold",
+                bgcolor: theme => alpha(theme.palette.primary.dark, 1),
+                border: "1px solid " + theme.palette.primary.dark,
+              }),
             }}
           >
             <AccordionSummary
-              expandIcon={<KeyboardArrowDownIcon style={{ color: "#1351B4" }} />}
-              sx={{ bgcolor: "transparent", p: 1, width: "100%", margin: 0 }}
+              expandIcon={
+                <KeyboardArrowDownIcon
+                  style={{
+                    color:
+                      theme.palette.mode == "dark"
+                        ? objRoute.title == item.title
+                          ? theme.palette.text.secondary
+                          : theme.palette.text.primary
+                        : objRoute.title == item.title
+                          ? theme.palette.text.secondary
+                          : theme.palette.primary.main,
+                  }}
+                />
+              }
+              sx={{ bgcolor: "transparent", p: 3, width: "100%", margin: 0, height: 32 }}
             >
               {item.title}
             </AccordionSummary>
@@ -190,6 +221,8 @@ function NavItem({ item }) {
                 bgcolor: "transparent",
                 p: "0",
                 width: "100%",
+                marginTop: "-15px",
+                marginBottom: "10px",
               }}
             >
               {Object.entries(item.subTitles).map(([title]) => (
@@ -199,27 +232,25 @@ function NavItem({ item }) {
                     href={item.subTitles[title]}
                     sx={{
                       textDecoration: "none",
-                      color: "inherit",
-                      p: 1,
+                      p: 4,
                       display: "flex",
-                      minHeight: 56,
+                      paddingTop: "5px",
+                      paddingBottom: "5px",
                       alignItems: "center",
                       width: "100%",
                       transition: "1s",
-                      paddingTop: "0px",
-                      paddingBottom: "0px",
-                      marginBottom: "0px",
+                      fontFamily: "Rawline Regular",
                       "&:hover": {
                         bgcolor: theme => alpha(theme.palette.primary.dark, 0.6),
-                        color: "white",
+                        color: theme.palette.text.secondary,
                       },
+                      color: theme.palette.text.primary,
+                      ...(objRoute.title == item.title && {
+                        color: theme.palette.text.secondary,
+                      }),
                       ...(active == title && {
-                        color: "white",
-                        fontWeight: "fontWeightSemiBold",
-                        bgcolor: theme => alpha(theme.palette.primary.dark, 1),
-                        "&:hover": {
-                          bgcolor: theme => alpha(theme.palette.primary.dark, 0.6),
-                        },
+                        color: theme.palette.primary.dark,
+                        bgcolor: theme.palette.text.secondary,
                       }),
                     }}
                   >

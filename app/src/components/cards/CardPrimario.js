@@ -14,10 +14,11 @@ const CardPrimario = ({ title, content, subContent, imageUrl, imageWidth, imageH
   return (
     <div style={{ height: "200px", marginTop: "-50px", paddingTop: "60px", overflowY: "hidden", borderBottom: "1px solid #9E9E9E" }}>
       <Card
+        style={{ transition: "1s" }}
         sx={{
-          background: "white",
-          color: "white",
-          border: "1px solid #9E9E9E",
+          background: theme.palette.background.paper,
+          color: theme.palette.text.primary,
+          border: theme.palette.border.card,
           borderRadius: "0px",
           height: "140px",
           display: "flex",
@@ -26,6 +27,7 @@ const CardPrimario = ({ title, content, subContent, imageUrl, imageWidth, imageH
       >
         <Box>
           <CardHeader
+            style={{ transition: "1s" }}
             sx={{ padding: "0", paddingLeft: "20px", paddingRight: "20px" }}
             title={
               <Typography
@@ -46,11 +48,12 @@ const CardPrimario = ({ title, content, subContent, imageUrl, imageWidth, imageH
         <Grid sx={{ paddingRight: imageWidth }}>
           <Typography
             variant="body1"
+            style={{ transition: "1s" }}
             sx={{
               fontWeight: 600,
               lineHeight: "normal",
               fontFamily: "Rawline Medium",
-              color: "black",
+              color: theme.palette.text.primary,
             }}
           >
             {content}
@@ -58,11 +61,12 @@ const CardPrimario = ({ title, content, subContent, imageUrl, imageWidth, imageH
 
           <Typography
             variant="body1"
+            style={{ transition: "1s" }}
             sx={{
               fontWeight: 600,
               lineHeight: "normal",
               fontFamily: "Rawline Thin",
-              color: "black",
+              color: theme.palette.text.primary,
             }}
           >
             {subContent}

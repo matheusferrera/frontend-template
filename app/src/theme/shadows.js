@@ -1,10 +1,11 @@
 import { alpha } from "@mui/material/styles";
 
-import { grey } from "./palette";
+import { palette } from "./palette";
 
 // ----------------------------------------------------------------------
 
 export function shadows() {
+  const { grey } = palette("light");
   const transparent1 = alpha(grey[500], 0.2);
   const transparent2 = alpha(grey[500], 0.14);
   const transparent3 = alpha(grey[500], 0.12);

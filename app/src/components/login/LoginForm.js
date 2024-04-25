@@ -113,7 +113,7 @@ const LoginForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoShow, 
                 checked={values.toggle}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                color="primary"
+                style={{ color: theme.palette.text.disabled }}
               />
             }
             label={
