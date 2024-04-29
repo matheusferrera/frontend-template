@@ -37,7 +37,7 @@ const AuthRoutes = () => {
         element={<Register />}
       />
       <Route
-        path="/activate"
+        path="/activate/:token"
         element={<Activate />}
       />
       <Route
