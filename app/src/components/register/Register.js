@@ -105,14 +105,6 @@ const Register = () => {
             Já possuo conta
           </Button>
 
-          <Button
-            variant="outlined"
-            sx={{ mt: 2, ml: 2 }}
-            href="/activate"
-          >
-            Ativar conta
-          </Button>
-
           <TermoDeUsoModal
             showModal={termoDeUsoModal}
             handleClose={handleTermoDeUsoClose}

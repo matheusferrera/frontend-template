@@ -111,14 +111,6 @@ const Login = ({ userRota = "" }) => {
               >
                 Criar conta
               </Button>
-
-              <Button
-                variant="outlined"
-                sx={{ mt: 2, ml: 2 }}
-                href="/activate"
-              >
-                Ativar conta
-              </Button>
             </>
           )}
 
