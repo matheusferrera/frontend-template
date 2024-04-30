@@ -4,9 +4,9 @@ import { Route, Routes } from "react-router-dom";
 import FAQ from "../../pages/FAQ";
 import NotFound from "../../pages/NotFound";
 import PageHomeParceiro from "../../pages/parceiro/home.parceiro";
+import PageNovaInscricaoParceiro from "../../pages/parceiro/PageNovaInscricaoParceiro";
+import PageVisualizacaoParceiro from "../../pages/parceiro/PageVisualizacaoParceiro";
 import Profile from "../../pages/Profile";
-import PageNovaInscricaoParceiro from "../parceiro/PageNovaInscricaoParceiro";
-import PageVisualizacaoParceiro from "../parceiro/PageVisualizacaoParceiro";
 
 const ParceiroRoutes = () => (
   <Routes>
@@ -23,7 +23,7 @@ const ParceiroRoutes = () => (
       element={<Profile />}
     />
     <Route
-      path="/parceiro/nova_inscricao"
+      path="/parceiro/cadastro"
       element={<PageNovaInscricaoParceiro />}
     />
     <Route

@@ -399,6 +399,7 @@ const FormParceiros = ({
                 padding: "16px",
                 mt: "24px",
               }}
+              style={{ transition: "1s" }}
             >
               <Typography
                 variant="h4"
@@ -846,6 +847,7 @@ const FormParceiros = ({
                 padding: "16px",
                 mt: "24px",
               }}
+              style={{ transition: "1s" }}
             >
               <Typography
                 variant="h4"
@@ -1012,6 +1014,7 @@ const FormParceiros = ({
                 padding: "16px",
                 mt: "25px",
               }}
+              style={{ transition: "1s" }}
             >
               <Typography
                 variant="h4"
@@ -1114,6 +1117,7 @@ const FormParceiros = ({
                 padding: "16px",
                 mt: "25px",
               }}
+              style={{ transition: "1s" }}
             >
               <Grid
                 spacing={1}
@@ -1179,6 +1183,7 @@ const FormParceiros = ({
                 padding: "16px",
                 mt: "25px",
               }}
+              style={{ transition: "1s" }}
             >
               <Typography
                 sx={{

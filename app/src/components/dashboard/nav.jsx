@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Accordion from "@mui/material/Accordion";
@@ -6,14 +7,19 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
 import ListItemButton from "@mui/material/ListItemButton";
 import Stack from "@mui/material/Stack";
 import { alpha } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
+import { useAuth } from "../../contexts/AuthContext";
 import { usePathname } from "../../hooks/use-pathname";
 import { useResponsive } from "../../hooks/use-responsive";
+import { themeProvider } from "../../theme/index";
+import Iconify from "../iconify";
 import Scrollbar from "../scrollbar";
 import { HEADER, NAV } from "./config-layout";
 import { adminNavConfig, cidadaoNavConfig, defaultNavConfig, parceiroNavConfig } from "./config-navigation-menu-lateral";
@@ -21,14 +27,44 @@ import RouterLink from "./router-link";
 
 // ----------------------------------------------------------------------
 
+const TitleUser = styled.h1`
+  font-family: "Rawline Regular";
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0;
+`;
+
+const SubTitleUser = styled.h1`
+  font-family: "Rawline Bold";
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0;
+`;
+
+const IconHeader = styled(Iconify)`
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  vertical-align: middle;
+`;
+
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
-  const upLg = useResponsive("up", "lg");
+  const lgUp = useResponsive("up", "lg");
 
   const theme = useTheme();
 
+  const { toggleMode } = themeProvider();
+
   const user = JSON.parse(localStorage.getItem("user"));
   const perfilUser = user?.ds_perfil_sso?.substring(2, user.ds_perfil_sso.length - 2);
+
+  const { logout, token } = useAuth();
+
+  function logoutFunction() {
+    logout(token);
+  }
   const [renderNavContent, setRenderNavContent] = useState([]);
 
   useEffect(() => {
@@ -71,7 +107,7 @@ export default function Nav({ openNav, onCloseNav }) {
     <Scrollbar
       sx={{
         height: 1,
-        marginTop: `${HEADER.H_DESKTOP}px`,
+        marginTop: lgUp ? `${HEADER.H_DESKTOP}px` : "10px",
         "& .simplebar-content": {
           height: 1,
           display: "flex",
@@ -94,7 +130,7 @@ export default function Nav({ openNav, onCloseNav }) {
         transition: "1s",
       }}
     >
-      {upLg ? (
+      {lgUp ? (
         <Box
           sx={{
             height: 1,
@@ -118,7 +154,69 @@ export default function Nav({ openNav, onCloseNav }) {
             },
           }}
         >
+          {!lgUp && (
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={1}
+              sx={{ p: 2 }}
+            >
+              <IconButton
+                component={Link}
+                to="/profile"
+                sx={{ ml: 1, color: theme => alpha(theme.palette.primary.main, 1) }}
+              >
+                <IconHeader
+                  icon="mingcute:user-4-fill"
+                  sx={{ color: theme => alpha(theme.palette.primary.main, 1) }}
+                  style={{ transition: "1s" }}
+                />
+              </IconButton>
+
+              <Stack>
+                <TitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>Bem vindo</TitleUser>
+                <SubTitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>{user?.no_usuario || "..."}</SubTitleUser>
+              </Stack>
+            </Stack>
+          )}
+
           {renderContent}
+
+          {!lgUp && (
+            <Stack
+              direction="column"
+              alignItems="flex-start"
+              spacing={0}
+              sx={{ p: 2 }}
+            >
+              <IconButton
+                onClick={toggleMode}
+                sx={{ ml: 1, color: theme => alpha(theme.palette.text.disabled, 1) }}
+              >
+                <IconHeader
+                  icon="gg:drop-invert"
+                  sx={{ color: theme => alpha(theme.palette.text.disabled, 1), mr: 1 }}
+                  style={{ transition: "1s" }}
+                />
+
+                <TitleUser style={{ color: theme.palette.text.disabled, transition: "1s", fontWeight: "1000" }}>Alto contraste</TitleUser>
+              </IconButton>
+
+              <IconButton
+                onClick={logoutFunction}
+                sx={{ ml: 1, color: theme => alpha(theme.palette.text.disabled, 1) }}
+              >
+                <IconHeader
+                  icon="ic:outline-logout"
+                  sx={{ color: theme => alpha(theme.palette.text.disabled, 1), mr: 1 }}
+                  style={{ transition: "1s" }}
+                />
+                <TitleUser style={{ color: theme.palette.text.disabled, transition: "1s", fontWeight: "1000" }}>
+                  Sair da plataforma
+                </TitleUser>
+              </IconButton>
+            </Stack>
+          )}
         </Drawer>
       )}
     </Box>

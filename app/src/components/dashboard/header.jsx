@@ -78,72 +78,78 @@ export default function Header({ onOpenNav }) {
     >
       <Stack
         direction="row"
-        alignItems="center"
-        spacing={3}
+        alignItems="flex-start"
       >
-        <IconButton
-          onClick={onOpenNav}
-          sx={{ ml: 1, color: theme.palette.primary.main }}
-          style={{ transition: "1s" }}
-        >
-          <IconHeader
-            icon="eva:menu-fill"
+        {!lgUp ? (
+          <IconButton
+            onClick={onOpenNav}
             sx={{ color: theme.palette.primary.main }}
             style={{ transition: "1s" }}
-          />
-        </IconButton>
+          >
+            <IconHeader
+              icon="eva:menu-fill"
+              sx={{ color: theme.palette.primary.main }}
+              style={{ transition: "1s" }}
+            />
+          </IconButton>
+        ) : (
+          <Stack sx={{ ml: 1 }}></Stack>
+        )}
+
         <Stack sx={{ g: 1 }}>
           <TitleSistemas style={{ color: theme.palette.text.primary, transition: "1s" }}>SISPRP</TitleSistemas>
           <SubTitleSistema style={{ color: theme.palette.text.primary, transition: "1s" }}>Programa de redução da pobreza</SubTitleSistema>
         </Stack>
       </Stack>
 
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={2}
-      >
-        <IconButton
-          onClick={toggleMode}
-          sx={{ ml: 1, color: theme => alpha(theme.palette.primary.main, 1) }}
+      {lgUp && (
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={2}
         >
-          <IconHeader
-            icon="gg:drop-invert"
-            sx={{ color: theme => alpha(theme.palette.primary.main, 1) }}
-            style={{ transition: "1s" }}
-          />
-        </IconButton>
+          <IconButton
+            onClick={toggleMode}
+            sx={{ ml: 1, color: theme => alpha(theme.palette.primary.main, 1) }}
+          >
+            <IconHeader
+              icon="gg:drop-invert"
+              sx={{ color: theme => alpha(theme.palette.primary.main, 1) }}
+              style={{ transition: "1s" }}
+            />
+          </IconButton>
 
-        <div style={{ height: "50%", width: "1px", border: "1px solid #b5b5b5" }}></div>
+          <div style={{ height: "50%", width: "1px", border: "1px solid #b5b5b5" }}></div>
 
-        <IconButton
-          component={Link}
-          to="/profile"
-          sx={{ ml: 1, color: theme => alpha(theme.palette.primary.main, 1) }}
-        >
-          <IconHeader
-            icon="mingcute:user-4-fill"
-            sx={{ color: theme => alpha(theme.palette.primary.main, 1) }}
-            style={{ transition: "1s" }}
-          />
-        </IconButton>
+          <IconButton
+            component={Link}
+            to="/profile"
+            sx={{ ml: 1, color: theme => alpha(theme.palette.primary.main, 1) }}
+          >
+            <IconHeader
+              icon="mingcute:user-4-fill"
+              sx={{ color: theme => alpha(theme.palette.primary.main, 1) }}
+              style={{ transition: "1s" }}
+            />
+          </IconButton>
 
-        <Stack>
-          <TitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>Bem vindo</TitleUser>
-          <SubTitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>{user?.no_usuario || "..."}</SubTitleUser>
+          <Stack>
+            <TitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>Bem vindo</TitleUser>
+            <SubTitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>{user?.no_usuario || "..."}</SubTitleUser>
+          </Stack>
+
+          <IconButton
+            onClick={logoutFunction}
+            sx={{ ml: 1, color: theme => alpha(theme.palette.primary.main, 1) }}
+          >
+            <IconHeader
+              icon="ic:outline-logout"
+              sx={{ color: theme => alpha(theme.palette.primary.main, 1) }}
+              style={{ transition: "1s" }}
+            />
+          </IconButton>
         </Stack>
-
-        <IconButton
-          onClick={logoutFunction}
-          sx={{ ml: 1, color: theme => alpha(theme.palette.primary.main, 1) }}
-        >
-          <IconHeader
-            icon="ic:outline-logout"
-            sx={{ color: theme => alpha(theme.palette.primary.main, 1) }}
-            style={{ transition: "1s" }}
-          />
-        </IconButton>
-      </Stack>
+      )}
     </StyledStack>
   );
 
