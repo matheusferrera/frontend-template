@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import DescriptionIcon from "@mui/icons-material/Description";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ListIcon from "@mui/icons-material/List";
+import PostAddIcon from "@mui/icons-material/PostAdd";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import {
   Button,
   Card,
   FormGroup,
   Grid,
+  IconButton,
   Paper,
   Select,
   Stack,
@@ -24,28 +31,95 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 //import dayjs from "dayjs";
 import PropTypes from "prop-types";
 
-function StudentTable({ data }) {
+// Responsável == Representante
+// Parceiro == PontoFocal
+
+// Cada botão poderá ter uma função diferente, está é apenas um modelo
+function handleButtonClick(id) {
+  return id;
+}
+
+function TabelaParceiros({ data }) {
   return (
     <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Nome Responsável</TableCell>
-            <TableCell>Age</TableCell>
-            <TableCell>Class</TableCell>
-            <TableCell>Math Grade</TableCell>
+            {/*<TableCell>Habilitação</TableCell>*/}
+            {/* <TableCell>Status</TableCell> */}
+            {/* <TableCell>CNPJ</TableCell> */}
+            <TableCell>Parceiro</TableCell>
+            <TableCell>Razão Social</TableCell>
+            <TableCell>Nome Fantasia</TableCell>
+            {/* <TableCell>Natureza Jurídica</TableCell> */}
+            <TableCell>Responsável</TableCell>
+            {/* <TableCell>Cidade</TableCell> */}
+            {/* <TableCell>UF</TableCell> */}
+            <TableCell>Cadastro</TableCell>
+            <TableCell>Última Modificação</TableCell>
+            <TableCell sx={{ width: 300 }}>Ações</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          {data.map((student, index) => (
-            <TableRow key={index}>
-              <TableCell>{student.nomeResponsavel}</TableCell>
-              <TableCell>{student.age}</TableCell>
-              <TableCell>{student.class}</TableCell>
-              <TableCell>{student.mathGrade}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
+        {data.length != 0 ? (
+          <TableBody>
+            {data.map((parceiro, index) => (
+              <TableRow key={index}>
+                {/* <TableCell>{parceiro.habilitacao}</TableCell> */}
+                {/* <TableCell>{parceiro.status}</TableCell> */}
+                {/* <TableCell>{parceiro.cnpj}</TableCell> */}
+                <TableCell>{parceiro.nomeParceiro}</TableCell>
+                <TableCell>{parceiro.razaoSocial}</TableCell>
+                <TableCell>{parceiro.nomeFantasia}</TableCell>
+                {/* <TableCell>{parceiro.naturezaJuridica}</TableCell> */}
+                <TableCell>{parceiro.nomeResponsavel}</TableCell>
+                {/* <TableCell>{parceiro.cidade}</TableCell> */}
+                {/* <TableCell>{parceiro.uf}</TableCell> */}
+                <TableCell>{parceiro.cadastro}</TableCell>
+                <TableCell>{parceiro.ultimaModificacao}</TableCell>
+                <TableCell>
+                  <IconButton
+                    color="primary"
+                    onClick={() => handleButtonClick(parceiro.id)}
+                  >
+                    <DescriptionIcon />
+                  </IconButton>
+                  <IconButton
+                    color="primary"
+                    onClick={() => handleButtonClick(parceiro.id)}
+                  >
+                    <PostAddIcon />
+                  </IconButton>
+                  <IconButton
+                    color="primary"
+                    onClick={() => handleButtonClick(parceiro.id)}
+                  >
+                    <ListIcon />
+                  </IconButton>
+                  <IconButton
+                    color="primary"
+                    onClick={() => handleButtonClick(parceiro.id)}
+                  >
+                    <CheckCircleIcon />
+                  </IconButton>
+                  <IconButton
+                    color="primary"
+                    onClick={() => handleButtonClick(parceiro.id)}
+                  >
+                    <VisibilityIcon />
+                  </IconButton>
+                  <IconButton
+                    color="primary"
+                    onClick={() => handleButtonClick(parceiro.id)}
+                  >
+                    <KeyboardArrowDownIcon />
+                  </IconButton>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        ) : (
+          "Não foi localizado Parceiro na situação pendente de aprovação!"
+        )}
       </Table>
     </TableContainer>
   );
@@ -54,10 +128,86 @@ function StudentTable({ data }) {
 const FormListarParceirosPendentes = () => {
   // Dados da tabela
   const initialData = [
-    { nomeResponsavel: "John", age: 18, class: "A", mathGrade: 85 },
-    { nomeResponsavel: "Alice", age: 17, class: "B", mathGrade: 90 },
-    { nomeResponsavel: "Bob", age: 19, class: "A", mathGrade: 78 },
-    // Additional student data...
+    {
+      id: 1,
+      habilitacao: "Parceiro",
+      status: "Pendente",
+      cnpj: "11.111.111/1000-00",
+      nomeFantasia: "Nome 1",
+      nomeParceiro: "Fulano",
+      razaoSocial: "Razão 1",
+      naturezaJuridica: "Público",
+      nomeResponsavel: "Beltrano Gonçalves",
+      cidade: "Brasília",
+      uf: "DF",
+      cadastro: "20-03-2024",
+      ultimaModificacao: "21-03-2024",
+      tipoDeServico: "Vaga de Emprego",
+    },
+    {
+      id: 2,
+      habilitacao: "Parceiro",
+      status: "Pendente",
+      cnpj: "22.222.222/1000-00",
+      nomeFantasia: "Nome 2",
+      nomeParceiro: "Beltrano",
+      razaoSocial: "Razão 2",
+      naturezaJuridica: "Privado",
+      nomeResponsavel: "Fulano",
+      cidade: "Goiânia",
+      uf: "GO",
+      cadastro: "03-03-2024",
+      ultimaModificacao: "10-04-2024",
+      tipoDeServico: "Vaga de Estágio",
+    },
+    {
+      id: 3,
+      habilitacao: "Parceiro",
+      status: "Pendente",
+      cnpj: "33.333.333/1000-00",
+      nomeFantasia: "Nome 1",
+      nomeParceiro: "Fulano da Silva",
+      razaoSocial: "Razão 1",
+      naturezaJuridica: "Público",
+      nomeResponsavel: "Beltrano",
+      cidade: "Catalão",
+      uf: "GO",
+      cadastro: "27-02-2024",
+      ultimaModificacao: "15-03-2024",
+      tipoDeServico: "Mobilização de Público",
+    },
+    {
+      id: 4,
+      habilitacao: "Parceiro",
+      status: "Pendente",
+      cnpj: "44.444.444/1000-00",
+      nomeFantasia: "Nome 3",
+      nomeParceiro: "Beltrano Gonçalves",
+      razaoSocial: "Razão 1",
+      naturezaJuridica: "Privado",
+      nomeResponsavel: "Fulano da Silva",
+      cidade: "Belo Horizonte",
+      uf: "MG",
+      cadastro: "11-02-2024",
+      ultimaModificacao: "13-02-2024",
+      tipoDeServico: "Vaga de Emprego",
+    },
+    {
+      id: 5,
+      habilitacao: "Parceiro",
+      status: "Pendente",
+      cnpj: "55.555.555/1000-00",
+      nomeFantasia: "Nome 2",
+      nomeParceiro: "Fulano Beltrano",
+      razaoSocial: "Razão 1",
+      naturezaJuridica: "Privado",
+      nomeResponsavel: "Beltrano Fulano",
+      cidade: "Brasília",
+      uf: "DF",
+      cadastro: "20-03-2024",
+      ultimaModificacao: "21-03-2024",
+      tipoDeServico: "Vaga de Estágio",
+    },
   ];
 
   const [filter, setFilter] = useState({
@@ -80,8 +230,8 @@ const FormListarParceirosPendentes = () => {
   };
 
   const applyFilter = () => {
-    let filtered = initialData.filter(student => {
-      return student.nomeResponsavel.toLowerCase().includes(filter.nomeResponsavel.toLowerCase());
+    let filtered = initialData.filter(parceiro => {
+      return parceiro.nomeResponsavel.toLowerCase().includes(filter.nomeResponsavel.toLowerCase());
     });
     setFilteredData(filtered);
   };
@@ -363,12 +513,12 @@ const FormListarParceirosPendentes = () => {
           </Grid>
         </Card>
       </Stack>
-      <StudentTable data={filteredData} />
+      <TabelaParceiros data={filteredData} />
     </div>
   );
 };
 
-StudentTable.propTypes = {
+TabelaParceiros.propTypes = {
   data: PropTypes.array,
 };
 
