@@ -7,6 +7,7 @@ import axios from "axios";
 
 import PageNovaInscricaoParceiro from "../src/components/parceiro/PageNovaInscricaoParceiro";
 import PageHomeAdm from "../src/pages/admin/home.admin";
+import PageParceirosPendentes from "../src/pages/admin/listarParceirosPendentes";
 import PageHomeCidadao from "../src/pages/cidadao/home.cidadao";
 import FAQ from "../src/pages/FAQ";
 import NotFound from "../src/pages/NotFound";
@@ -47,6 +48,24 @@ describe("Teste de componentes", () => {
       component = renderer.create(
         <TestWrapper>
           <PageHomeAdm />
+        </TestWrapper>,
+      );
+    });
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    jest.resetAllMocks();
+  });
+
+  it("Página de administrador - listar parceiro renderizada corretamente", async () => {
+    axios.get = jest.fn().mockResolvedValue({});
+
+    let component;
+
+    await act(async () => {
+      component = renderer.create(
+        <TestWrapper>
+          <PageParceirosPendentes />
         </TestWrapper>,
       );
     });

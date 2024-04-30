@@ -5,6 +5,7 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ListIcon from "@mui/icons-material/List";
 import PostAddIcon from "@mui/icons-material/PostAdd";
+import SearchIcon from "@mui/icons-material/Search";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import {
   Button,
@@ -24,15 +25,12 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-//import dayjs from "dayjs";
 import PropTypes from "prop-types";
-
-// Responsável == Representante
-// Parceiro == PontoFocal
 
 // Cada botão poderá ter uma função diferente, está é apenas um modelo
 function handleButtonClick(id) {
@@ -40,6 +38,8 @@ function handleButtonClick(id) {
 }
 
 function TabelaParceiros({ data }) {
+  // Responsável == Representante
+  // Parceiro == PontoFocal
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -126,7 +126,7 @@ function TabelaParceiros({ data }) {
 }
 
 const FormListarParceirosPendentes = () => {
-  // Dados da tabela
+  // Dados fictícios para teste da tabela
   const initialData = [
     {
       id: 1,
@@ -251,8 +251,8 @@ const FormListarParceirosPendentes = () => {
   };
 
   return (
-    <div>
-      <Stack>
+    <>
+      <Stack spacing={1}>
         <Card
           color="#ffffff"
           sx={{
@@ -261,15 +261,6 @@ const FormListarParceirosPendentes = () => {
             mt: "24px",
           }}
         >
-          <Typography
-            variant="h4"
-            sx={{
-              fontSize: "20",
-              mb: "16px",
-            }}
-          >
-            Listar Parceiros Pendentes
-          </Typography>
           <Grid
             spacing={1}
             container
@@ -285,6 +276,7 @@ const FormListarParceirosPendentes = () => {
                   id="razaoSocial"
                   name="razaoSocial"
                   label="Razão Social"
+                  placeholder="Razão Social"
                   value={filter.razaoSocial}
                   type="text"
                   onChange={handleFilterChange}
@@ -302,6 +294,7 @@ const FormListarParceirosPendentes = () => {
                   id="nomeFantasia"
                   name="nomeFantasia"
                   label="Nome Fantasia"
+                  placeholder="Nome Fantasia"
                   value={filter.nomeFantasia}
                   type="text"
                   onChange={handleFilterChange}
@@ -319,6 +312,7 @@ const FormListarParceirosPendentes = () => {
                   id="nomeResponsavel"
                   name="nomeResponsavel"
                   label="Nome Responsável"
+                  placeholder="Nome Responsável"
                   value={filter.nomeResponsavel}
                   type="text"
                   onChange={handleFilterChange}
@@ -336,12 +330,18 @@ const FormListarParceirosPendentes = () => {
                   id="nomePontoFocal"
                   name="nomePontoFocal"
                   label="Nome Ponto Focal"
+                  placeholder="Nome Ponto Focal"
                   value={filter.nomePontoFocal}
                   type="text"
                   onChange={handleFilterChange}
                 />
               </FormGroup>
             </Grid>
+          </Grid>
+          <Grid
+            spacing={1}
+            container
+          >
             <Grid
               item
               xs={12}
@@ -373,6 +373,7 @@ const FormListarParceirosPendentes = () => {
                 </Select>
               </FormGroup>
             </Grid>
+
             <Grid
               item
               xs={1}
@@ -459,62 +460,59 @@ const FormListarParceirosPendentes = () => {
                 </LocalizationProvider>
               </FormGroup>
             </Grid>
+          </Grid>
 
+          <Box sx={{ flexGrow: 1, mt: "16px" }}>
             <Grid
               container
-              spacing={1}
-              sx={{ mt: "5px" }}
+              spacing={3}
             >
               <Grid
                 item
-                sm={7}
+                xs={10}
               ></Grid>
               <Grid
                 item
-                xs={5}
-                sm={5}
+                xs
               >
-                <Grid
-                  container
-                  spacing={4}
+                <Button
+                  variant="contained"
+                  onClick={applyFilter}
+                  sx={{ gap: "8px" }}
                 >
-                  <Grid
-                    item
-                    sm={3}
-                    xs={3}
-                  ></Grid>
-                  <Grid
-                    item
-                    sm={3}
-                    xs={6}
-                  >
-                    <Button
-                      variant="contained"
-                      onClick={applyFilter}
-                    >
-                      Pesquisar
-                    </Button>
-                  </Grid>
-                  <Grid
-                    item
-                    sm={6}
-                    xs={2}
-                  >
-                    <Button
-                      variant="contained"
-                      onClick={handleDownloadCSV}
-                    >
-                      Download CSV
-                    </Button>
-                  </Grid>
-                </Grid>
+                  <SearchIcon />
+                  Pesquisar
+                </Button>
               </Grid>
             </Grid>
-          </Grid>
+          </Box>
         </Card>
       </Stack>
+
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid
+          container
+          spacing={3}
+        >
+          <Grid
+            item
+            xs={10}
+          ></Grid>
+          <Grid
+            item
+            xs
+          >
+            <Button
+              variant="contained"
+              onClick={handleDownloadCSV}
+            >
+              Download CSV
+            </Button>
+          </Grid>
+        </Grid>
+      </Box>
       <TabelaParceiros data={filteredData} />
-    </div>
+    </>
   );
 };
 
