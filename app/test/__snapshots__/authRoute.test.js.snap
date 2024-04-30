@@ -26,6 +26,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-17zbd5d-MuiPaper-root-MuiCard-root"
         color="#ffffff"
+        style={
+          {
+            "transition": "1s",
+          }
+        }
       >
         <h4
           className="MuiTypography-root MuiTypography-h4 css-1gyvjcn-MuiTypography-root"
@@ -886,6 +891,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-17zbd5d-MuiPaper-root-MuiCard-root"
         color="#ffffff"
+        style={
+          {
+            "transition": "1s",
+          }
+        }
       >
         <h4
           className="MuiTypography-root MuiTypography-h4 css-1gyvjcn-MuiTypography-root"
@@ -1234,6 +1244,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ir3ov8-MuiPaper-root-MuiCard-root"
         color="#ffffff"
+        style={
+          {
+            "transition": "1s",
+          }
+        }
       >
         <h4
           className="MuiTypography-root MuiTypography-h4 css-1gyvjcn-MuiTypography-root"
@@ -1429,6 +1444,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-cg5c2l-MuiPaper-root-MuiCard-root"
         color="#ffffff"
+        style={
+          {
+            "transition": "1s",
+          }
+        }
       >
         <div
           className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-a5rdam-MuiGrid-root"
@@ -1563,6 +1583,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
       </div>
       <div
         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-cg5c2l-MuiPaper-root-MuiCard-root"
+        style={
+          {
+            "transition": "1s",
+          }
+        }
       >
         <p
           className="MuiTypography-root MuiTypography-body1 css-18t5v21-MuiTypography-root"
