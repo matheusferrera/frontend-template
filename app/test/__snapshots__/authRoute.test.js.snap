@@ -3758,10 +3758,10 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
               <label
                 className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
-                htmlFor="nomeParceiro"
-                id="nomeParceiro-label"
+                htmlFor="nomePontoFocal"
+                id="nomePontoFocal-label"
               >
-                Nome Parceiro
+                Nome Ponto Focal
               </label>
               <div
                 className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
@@ -3773,13 +3773,13 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   autoFocus={false}
                   className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
-                  id="nomeParceiro"
-                  name="nomeParceiro"
+                  id="nomePontoFocal"
+                  name="nomePontoFocal"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
-                  placeholder="Nome Parceiro"
+                  placeholder="Nome Ponto Focal"
                   required={false}
                   type="text"
                   value=""

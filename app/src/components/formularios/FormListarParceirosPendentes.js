@@ -68,7 +68,7 @@ function TabelaParceiros({ data }) {
                 {/* <TableCell>{parceiro.habilitacao}</TableCell> */}
                 {/* <TableCell>{parceiro.status}</TableCell> */}
                 {/* <TableCell>{parceiro.cnpj}</TableCell> */}
-                <TableCell>{parceiro.nomeParceiro}</TableCell>
+                <TableCell>{parceiro.nomePontoFocal}</TableCell>
                 <TableCell>{parceiro.razaoSocial}</TableCell>
                 <TableCell>{parceiro.nomeFantasia}</TableCell>
                 {/* <TableCell>{parceiro.naturezaJuridica}</TableCell> */}
@@ -138,7 +138,7 @@ const initialData = [
     status: "Pendente",
     cnpj: "11.111.111/1000-00",
     nomeFantasia: "Nome 1",
-    nomeParceiro: "Fulano",
+    nomePontoFocal: "Fulano",
     razaoSocial: "Razão 1",
     naturezaJuridica: "Público",
     nomeResponsavel: "Beltrano Gonçalves",
@@ -154,7 +154,7 @@ const initialData = [
     status: "Pendente",
     cnpj: "22.222.222/1000-00",
     nomeFantasia: "Nome 2",
-    nomeParceiro: "Beltrano",
+    nomePontoFocal: "Beltrano",
     razaoSocial: "Razão 2",
     naturezaJuridica: "Privado",
     nomeResponsavel: "Fulano",
@@ -170,7 +170,7 @@ const initialData = [
     status: "Pendente",
     cnpj: "33.333.333/1000-00",
     nomeFantasia: "Nome 1",
-    nomeParceiro: "Fulano da Silva",
+    nomePontoFocal: "Fulano da Silva",
     razaoSocial: "Razão 1",
     naturezaJuridica: "Público",
     nomeResponsavel: "Beltrano",
@@ -186,7 +186,7 @@ const initialData = [
     status: "Pendente",
     cnpj: "44.444.444/1000-00",
     nomeFantasia: "Nome 3",
-    nomeParceiro: "Beltrano Gonçalves",
+    nomePontoFocal: "Beltrano Gonçalves",
     razaoSocial: "Razão 1",
     naturezaJuridica: "Privado",
     nomeResponsavel: "Fulano da Silva",
@@ -202,7 +202,7 @@ const initialData = [
     status: "Pendente",
     cnpj: "55.555.555/1000-00",
     nomeFantasia: "Nome 2",
-    nomeParceiro: "Fulano Beltrano",
+    nomePontoFocal: "Fulano Beltrano",
     razaoSocial: "Razão 1",
     naturezaJuridica: "Privado",
     nomeResponsavel: "Beltrano Fulano",
@@ -219,7 +219,7 @@ const FormListarParceirosPendentes = () => {
     razaoSocial: "",
     nomeFantasia: "",
     nomeResponsavel: "",
-    nomeParceiro: "",
+    nomePontoFocal: "",
     tipoDeServico: [],
     dataDoCadastroInicio: null,
     dataDoCadastroFim: null,
@@ -243,7 +243,7 @@ const FormListarParceirosPendentes = () => {
     const filtered = initialData.filter(parceiro => {
       const matchesTextFilter =
         parceiro.nomeResponsavel.toLowerCase().includes(filter.nomeResponsavel.toLowerCase()) &&
-        parceiro.nomeParceiro.toLowerCase().includes(filter.nomeParceiro.toLowerCase()) &&
+        parceiro.nomePontoFocal.toLowerCase().includes(filter.nomePontoFocal.toLowerCase()) &&
         parceiro.nomeFantasia.toLowerCase().includes(filter.nomeFantasia.toLowerCase()) &&
         parceiro.razaoSocial.toLowerCase().includes(filter.razaoSocial.toLowerCase()) &&
         (filter.tipoDeServico.length === 0 || parceiro.tipoDeServico.includes(filter.tipoDeServico));
@@ -353,11 +353,11 @@ const FormListarParceirosPendentes = () => {
             >
               <FormGroup>
                 <TextField
-                  id="nomeParceiro"
-                  name="nomeParceiro"
-                  label="Nome Parceiro"
-                  placeholder="Nome Parceiro"
-                  value={filter.nomeParceiro}
+                  id="nomePontoFocal"
+                  name="nomePontoFocal"
+                  label="Nome Ponto Focal"
+                  placeholder="Nome Ponto Focal"
+                  value={filter.nomePontoFocal}
                   type="text"
                   onChange={handleFilterChange}
                 />
@@ -390,10 +390,10 @@ const FormListarParceirosPendentes = () => {
                     {" "}
                     Selecione uma opção{" "}
                   </MenuItem>
-                  <MenuItem value="VEP"> Vaga de Emprego </MenuItem>
-                  <MenuItem value="VET"> Vaga de Estágio </MenuItem>
-                  <MenuItem value="VJA"> Vaga de Jovem Aprendiz </MenuItem>
-                  <MenuItem value="CUR"> Cursos </MenuItem>
+                  <MenuItem value="VEP">Vaga de Emprego</MenuItem>
+                  <MenuItem value="VET">Vaga de Estágio</MenuItem>
+                  <MenuItem value="VJA">Vaga de Jovem Aprendiz</MenuItem>
+                  <MenuItem value="CUR">Cursos</MenuItem>
                   <MenuItem value="FPG">Financeiros e de Pagamentos</MenuItem>
                   <MenuItem value="MPu">Mobilização de Público</MenuItem>
                   <MenuItem value="MPa">Mobilização de Parceiro</MenuItem>
