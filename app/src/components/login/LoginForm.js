@@ -55,12 +55,14 @@ const LoginForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoShow, 
               helperText={errors.username && touched.username && errors.username}
               onChange={handleChange}
               onBlur={handleBlur}
+              InputLabelProps={values.username ? { shrink: true } : null}
             />
 
             <TextField
               id="password"
               name="password"
               label="Senha"
+              InputLabelProps={values.password ? { shrink: true } : null}
               type={showPassword ? "text" : "password"}
               placeholder="Senha"
               value={values.password}

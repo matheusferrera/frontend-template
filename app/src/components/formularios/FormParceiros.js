@@ -416,27 +416,15 @@ const FormParceiros = ({
               >
                 <Grid
                   item
-                  xs={12}
-                  sm={12}
+                  xs={11.8}
+                  sm={11.8}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography
-                      sx={{
-                        mb: "8px",
-                      }}
-                    >
-                      * Email{" "}
-                      <Tooltip
-                        title="E-mail do representante da empresa"
-                        placement="right"
-                      >
-                        <InfoIcon
-                          color="primary"
-                          sx={{ width: "15px", height: "15px" }}
-                        />
-                      </Tooltip>
-                    </Typography>
                     <TextField
+                      label="email"
                       disabled
                       id="email"
                       name="email"
@@ -447,23 +435,48 @@ const FormParceiros = ({
                       onBlur={handleBlur}
                       error={errors.email && touched.email}
                       helperText={errors.email && touched.email && errors.email}
-                    />
+                    >
+                      <Tooltip
+                        title="E-mail do representante da empresa"
+                        placement="right"
+                      >
+                        <InfoIcon
+                          color="primary"
+                          sx={{ width: "15px", height: "15px" }}
+                        />
+                      </Tooltip>
+                    </TextField>
                   </FormGroup>
+                </Grid>
+                <Grid
+                  item
+                  xs={0.1}
+                  sm={0.1}
+                  sx={{
+                    mb: "16px",
+                  }}
+                >
+                  <Tooltip
+                    title="E-mail do representante da empresa"
+                    placement="right"
+                  >
+                    <InfoIcon
+                      color="primary"
+                      sx={{ width: "15px", height: "15px" }}
+                    />
+                  </Tooltip>
                 </Grid>
                 <Grid
                   item
                   xs={12}
                   sm={4}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography
-                      sx={{
-                        mb: "8px",
-                      }}
-                    >
-                      * CNPJ
-                    </Typography>
                     <TextField
+                      label="* CNPJ"
                       id="cnpj"
                       name="cnpj"
                       value={formatCNPJ(values.cnpj)}
@@ -484,11 +497,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={4}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Razão Social</Typography>
                     <TextField
-                      disabled
+                      label="* Razão social"
                       id="razaoSocial"
                       name="razaoSocial"
                       value={values.razaoSocial}
@@ -508,10 +523,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={4}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>Nome Fantasia</Typography>
                     <TextField
+                      label="Nome Fantasia"
                       id="nomeFantasia"
                       name="nomeFantasia"
                       value={values.nomeFantasia}
@@ -529,10 +547,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={3}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* CEP</Typography>
                     <TextField
+                      label="* CEP"
                       id="cep"
                       name="cep"
                       value={formatCEP(values.cep)}
@@ -553,10 +574,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={6}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Endereço</Typography>
                     <TextField
+                      label="* Endereço"
                       id="endereco"
                       name="endereco"
                       value={values.endereco}
@@ -576,10 +600,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={3}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>Número</Typography>
                     <TextField
+                      label="Número"
                       id="numero"
                       name="numero"
                       value={values.numero}
@@ -597,10 +624,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={4}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>Complemento</Typography>
                     <TextField
+                      label="Complemento"
                       id="complemento"
                       name="complemento"
                       value={values.complemento}
@@ -618,10 +648,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={4}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Bairro</Typography>
                     <TextField
+                      label="* Bairro"
                       id="bairro"
                       name="bairro"
                       value={values.bairro}
@@ -641,6 +674,9 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={2}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
                     <SelectUF
@@ -672,6 +708,9 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={2}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
                     <SelectCidade
@@ -703,10 +742,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={6}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Telefone</Typography>
                     <TextField
+                      label="* Telefone"
                       id="telefone"
                       name="telefone"
                       value={formatTelefone(values.telefone)}
@@ -727,10 +769,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={6}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>Site</Typography>
                     <TextField
+                      label="Site"
                       id="site"
                       name="site"
                       value={values.site}
@@ -752,10 +797,13 @@ const FormParceiros = ({
                   item
                   xs={10}
                   sm={10}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>Rede Social</Typography>
                     <TextField
+                      label="Rede Social"
                       id="redesSociais"
                       name="redesSociais[0]"
                       value={values.redesSociais && values.redesSociais[0] ? values.redesSociais[0] : ""}
@@ -777,6 +825,9 @@ const FormParceiros = ({
                   item
                   sm={2}
                   xs={2}
+                  sx={{
+                    mb: "16px",
+                  }}
                   style={{ display: "flex", alignItems: "flex-end" }}
                 >
                   <ButtonSecondary
@@ -801,8 +852,8 @@ const FormParceiros = ({
                             sm={10}
                           >
                             <FormGroup>
-                              <Typography sx={{ mb: "8px" }}>Rede Social</Typography>
                               <TextField
+                                label="Rede Social"
                                 id={"redesSociais[" + index + "]"}
                                 name={"redesSociais[" + index + "]"}
                                 value={values.redesSociais && values.redesSociais[index] ? values.redesSociais[index] : ""}
@@ -875,10 +926,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={9}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>*Nome</Typography>
                     <TextField
+                      label="* Nome"
                       id="nomeRepresentante"
                       name="nomeRepresentante"
                       value={values.nomeRepresentante}
@@ -898,10 +952,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={3}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* CPF</Typography>
                     <TextField
+                      label="* CPF"
                       id="cpf"
                       name="cpf"
                       value={formatCPF(values.cpf)}
@@ -922,10 +979,13 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={5}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Telefone</Typography>
                     <TextField
+                      label="* Telefone"
                       id="telefoneRepresentante"
                       name="telefoneRepresentante"
                       value={formatTelefone(values.telefoneRepresentante)}
@@ -946,6 +1006,9 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={3}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
                     <SelectUF
@@ -977,6 +1040,9 @@ const FormParceiros = ({
                   item
                   xs={12}
                   sm={4}
+                  sx={{
+                    mb: "16px",
+                  }}
                 >
                   <FormGroup>
                     <SelectCidade
@@ -1044,8 +1110,8 @@ const FormParceiros = ({
                   sm={4}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Nome</Typography>
                     <TextField
+                      label="* Nome"
                       id="nomePontoFocal"
                       name="nomePontoFocal"
                       value={values.nomePontoFocal}
@@ -1067,8 +1133,8 @@ const FormParceiros = ({
                   sm={4}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>*Email</Typography>
                     <TextField
+                      label="* Email"
                       id="emailPontoFocal"
                       name="emailPontoFocal"
                       value={values.emailPontoFocal}
@@ -1090,8 +1156,8 @@ const FormParceiros = ({
                   sm={4}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Telefone</Typography>
                     <TextField
+                      label="* Telefone"
                       id="telefonePontoFocal"
                       name="telefonePontoFocal"
                       value={formatTelefone(values.telefonePontoFocal)}
@@ -1160,8 +1226,8 @@ const FormParceiros = ({
                   sm={6}
                 >
                   <FormGroup>
-                    <Typography sx={{ mb: "8px" }}>* Natureza Jurídica</Typography>
                     <TextField
+                      label="* Natureza Jurídica"
                       disabled
                       id="naturezaJuridica"
                       name="naturezaJuridica"

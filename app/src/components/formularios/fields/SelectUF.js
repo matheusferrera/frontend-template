@@ -1,9 +1,9 @@
 import React from "react";
 
 import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
 export const SelectUF = ({ idSelect, nameSelect, ufs, uf, handleSelectUf, readOnly, errors, touched }) => {
@@ -19,8 +19,11 @@ export const SelectUF = ({ idSelect, nameSelect, ufs, uf, handleSelectUf, readOn
   ));
 
   return (
-    <FormControl fullWidth>
-      <Typography sx={{ mb: "8px" }}>* UF</Typography>
+    <FormControl
+      fullWidth
+      label="Número"
+    >
+      <InputLabel>* UF</InputLabel>
       <Select
         id={idSelect}
         name={nameSelect}
@@ -37,7 +40,7 @@ export const SelectUF = ({ idSelect, nameSelect, ufs, uf, handleSelectUf, readOn
           value="none"
           disabled
         >
-          Selecione uma UF
+          <a style={{ color: "grey" }}>Selecione uma UF</a>
         </MenuItem>
         {options}
       </Select>

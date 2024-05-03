@@ -302,7 +302,6 @@ const FormListarParceirosPendentes = () => {
             >
               <FormGroup>
                 <TextField
-                  variant="outlined"
                   id="razaoSocial"
                   name="razaoSocial"
                   label="Razão Social"
@@ -320,7 +319,6 @@ const FormListarParceirosPendentes = () => {
             >
               <FormGroup>
                 <TextField
-                  variant="outlined"
                   id="nomeFantasia"
                   name="nomeFantasia"
                   label="Nome Fantasia"
@@ -338,7 +336,6 @@ const FormListarParceirosPendentes = () => {
             >
               <FormGroup>
                 <TextField
-                  variant="outlined"
                   id="nomeResponsavel"
                   name="nomeResponsavel"
                   label="Nome Responsável"
@@ -356,7 +353,6 @@ const FormListarParceirosPendentes = () => {
             >
               <FormGroup>
                 <TextField
-                  variant="outlined"
                   id="nomeParceiro"
                   name="nomeParceiro"
                   label="Nome Parceiro"

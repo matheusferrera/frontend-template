@@ -41,48 +41,31 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
           className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-a5rdam-MuiGrid-root"
         >
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 css-1idn90j-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-11.8 MuiGrid-grid-sm-11.8 css-1wx1p6q-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Email
-                 
-                <svg
-                  aria-hidden={true}
-                  aria-label="E-mail do representante da empresa"
-                  aria-labelledby={null}
-                  className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1cv1ogx-MuiSvgIcon-root"
-                  data-mui-internal-clone-element={true}
-                  data-testid="InfoIcon"
-                  focusable="false"
-                  onBlur={[Function]}
-                  onFocus={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseOver={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-                  />
-                </svg>
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary Mui-disabled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="email"
+                  id="email-label"
+                >
+                  email
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input Mui-disabled css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={true}
                     id="email"
                     name="email"
@@ -94,46 +77,60 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     required={false}
                     type="text"
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-0.1 MuiGrid-grid-sm-0.1 css-wvv9ea-MuiGrid-root"
+          >
+            <svg
+              aria-hidden={true}
+              aria-label="E-mail do representante da empresa"
+              aria-labelledby={null}
+              className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1cv1ogx-MuiSvgIcon-root"
+              data-mui-internal-clone-element={true}
+              data-testid="InfoIcon"
+              focusable="false"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseLeave={[Function]}
+              onMouseOver={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+              />
+            </svg>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-qxflj8-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * CNPJ
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="cnpj"
+                  id="cnpj-label"
+                >
+                  * CNPJ
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="cnpj"
                     maxLength={18}
@@ -148,47 +145,37 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-qxflj8-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Razão Social
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="razaoSocial"
+                  id="razaoSocial-label"
+                >
+                  * Razão social
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
-                    disabled={true}
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
+                    disabled={false}
                     id="razaoSocial"
                     name="razaoSocial"
                     onAnimationStart={[Function]}
@@ -201,46 +188,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-qxflj8-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                Nome Fantasia
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="nomeFantasia"
+                  id="nomeFantasia-label"
+                >
+                  Nome Fantasia
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="nomeFantasia"
                     name="nomeFantasia"
@@ -254,46 +231,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 css-zbaamk-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 css-1123h7k-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * CEP
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="cep"
+                  id="cep-label"
+                >
+                  * CEP
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="cep"
                     maxLength={10}
@@ -308,46 +275,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-prb1ne-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Endereço
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="endereco"
+                  id="endereco-label"
+                >
+                  * Endereço
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="endereco"
                     name="endereco"
@@ -361,46 +318,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 css-zbaamk-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 css-1123h7k-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                Número
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="numero"
+                  id="numero-label"
+                >
+                  Número
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="numero"
                     name="numero"
@@ -414,46 +361,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-qxflj8-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                Complemento
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="complemento"
+                  id="complemento-label"
+                >
+                  Complemento
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="complemento"
                     name="complemento"
@@ -467,46 +404,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-qxflj8-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Bairro
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="bairro"
+                  id="bairro-label"
+                >
+                  * Bairro
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="bairro"
                     name="bairro"
@@ -520,48 +447,37 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-2 css-63b4os-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-2 css-1ilcwrp-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
               <div
-                className="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                className="MuiFormControl-root MuiFormControl-fullWidth css-wbchyn-MuiFormControl-root"
+                label="Número"
               >
-                <p
-                  className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled css-hvfc9k-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={true}
                 >
                   * UF
-                </p>
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl  css-7ihnfe-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <div
                     aria-controls=":rn:"
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     aria-labelledby="uf"
-                    className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-ab7h6o-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiSelect-select MuiSelect-filled MuiInputBase-input MuiFilledInput-input css-lr4ofc-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input"
                     id="uf"
                     onBlur={[Function]}
                     onFocus={[Function]}
@@ -570,7 +486,15 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     role="combobox"
                     tabIndex={0}
                   >
-                    Selecione uma UF
+                    <a
+                      style={
+                        {
+                          "color": "grey",
+                        }
+                      }
+                    >
+                      Selecione uma UF
+                    </a>
                   </div>
                   <input
                     aria-hidden={true}
@@ -587,7 +511,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   />
                   <svg
                     aria-hidden={true}
-                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconFilled css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
                     data-testid="ArrowDropDownIcon"
                     focusable="false"
                     viewBox="0 0 24 24"
@@ -596,48 +520,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                       d="M7 10l5 5 5-5z"
                     />
                   </svg>
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-2 css-63b4os-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-2 css-1ilcwrp-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
               <div
-                className="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                className="MuiFormControl-root MuiFormControl-fullWidth css-wbchyn-MuiFormControl-root"
               >
-                <p
-                  className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled css-hvfc9k-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={true}
                 >
                   * Cidade
-                </p>
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl  css-7ihnfe-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <div
                     aria-controls=":ro:"
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     aria-labelledby="cidade"
-                    className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-ab7h6o-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiSelect-select MuiSelect-filled MuiInputBase-input MuiFilledInput-input css-lr4ofc-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input"
                     id="cidade"
                     onBlur={[Function]}
                     onFocus={[Function]}
@@ -646,7 +558,15 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     role="combobox"
                     tabIndex={0}
                   >
-                    Selecione uma cidade
+                    <a
+                      style={
+                        {
+                          "color": "grey",
+                        }
+                      }
+                    >
+                      Selecione uma cidade
+                    </a>
                   </div>
                   <input
                     aria-hidden={true}
@@ -663,7 +583,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   />
                   <svg
                     aria-hidden={true}
-                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconFilled css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
                     data-testid="ArrowDropDownIcon"
                     focusable="false"
                     viewBox="0 0 24 24"
@@ -672,46 +592,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                       d="M7 10l5 5 5-5z"
                     />
                   </svg>
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-prb1ne-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Telefone
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="telefone"
+                  id="telefone-label"
+                >
+                  * Telefone
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="telefone"
                     maxLength={15}
@@ -726,46 +636,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-prb1ne-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                Site
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="site"
+                  id="site-label"
+                >
+                  Site
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="site"
                     name="site"
@@ -779,20 +679,6 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
               <p
@@ -802,27 +688,31 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10 MuiGrid-grid-sm-10 css-17p3wh3-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10 MuiGrid-grid-sm-10 css-1ha3cvf-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                Rede Social
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="redesSociais"
+                  id="redesSociais-label"
+                >
+                  Rede Social
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="redesSociais"
                     name="redesSociais[0]"
@@ -836,26 +726,12 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2 MuiGrid-grid-sm-2 css-1o7apob-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-2 MuiGrid-grid-sm-2 css-wapt5e-MuiGrid-root"
             style={
               {
                 "alignItems": "flex-end",
@@ -927,27 +803,31 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
           className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-a5rdam-MuiGrid-root"
         >
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-9 css-173qa7i-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-9 css-1u67onf-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                *Nome
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="nomeRepresentante"
+                  id="nomeRepresentante-label"
+                >
+                  * Nome
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="nomeRepresentante"
                     name="nomeRepresentante"
@@ -961,46 +841,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 css-zbaamk-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 css-1123h7k-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * CPF
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="cpf"
+                  id="cpf-label"
+                >
+                  * CPF
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="cpf"
                     maxLength={14}
@@ -1015,46 +885,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-5 css-11lxi55-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-5 css-1xmj7aa-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Telefone
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="telefoneRepresentante"
+                  id="telefoneRepresentante-label"
+                >
+                  * Telefone
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="telefoneRepresentante"
                     maxLength={15}
@@ -1069,48 +929,37 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 css-zbaamk-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 css-1123h7k-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
               <div
-                className="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                className="MuiFormControl-root MuiFormControl-fullWidth css-wbchyn-MuiFormControl-root"
+                label="Número"
               >
-                <p
-                  className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled css-hvfc9k-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={true}
                 >
                   * UF
-                </p>
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl  css-7ihnfe-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <div
                     aria-controls=":r10:"
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     aria-labelledby="ufRepresentante"
-                    className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-ab7h6o-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiSelect-select MuiSelect-filled MuiInputBase-input MuiFilledInput-input css-lr4ofc-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input"
                     id="ufRepresentante"
                     onBlur={[Function]}
                     onFocus={[Function]}
@@ -1119,7 +968,15 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     role="combobox"
                     tabIndex={0}
                   >
-                    Selecione uma UF
+                    <a
+                      style={
+                        {
+                          "color": "grey",
+                        }
+                      }
+                    >
+                      Selecione uma UF
+                    </a>
                   </div>
                   <input
                     aria-hidden={true}
@@ -1136,7 +993,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   />
                   <svg
                     aria-hidden={true}
-                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconFilled css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
                     data-testid="ArrowDropDownIcon"
                     focusable="false"
                     viewBox="0 0 24 24"
@@ -1145,48 +1002,36 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                       d="M7 10l5 5 5-5z"
                     />
                   </svg>
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
+            className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-qxflj8-MuiGrid-root"
           >
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
               <div
-                className="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                className="MuiFormControl-root MuiFormControl-fullWidth css-wbchyn-MuiFormControl-root"
               >
-                <p
-                  className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled css-hvfc9k-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={true}
                 >
                   * Cidade
-                </p>
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl  css-7ihnfe-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <div
                     aria-controls=":r11:"
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     aria-labelledby="cidadeRepresentante"
-                    className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-ab7h6o-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiSelect-select MuiSelect-filled MuiInputBase-input MuiFilledInput-input css-lr4ofc-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input"
                     id="cidadeRepresentante"
                     onBlur={[Function]}
                     onFocus={[Function]}
@@ -1195,7 +1040,15 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     role="combobox"
                     tabIndex={0}
                   >
-                    Selecione uma cidade
+                    <a
+                      style={
+                        {
+                          "color": "grey",
+                        }
+                      }
+                    >
+                      Selecione uma cidade
+                    </a>
                   </div>
                   <input
                     aria-hidden={true}
@@ -1212,7 +1065,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   />
                   <svg
                     aria-hidden={true}
-                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconFilled css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
                     data-testid="ArrowDropDownIcon"
                     focusable="false"
                     viewBox="0 0 24 24"
@@ -1221,20 +1074,6 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                       d="M7 10l5 5 5-5z"
                     />
                   </svg>
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
@@ -1285,22 +1124,26 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Nome
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="nomePontoFocal"
+                  id="nomePontoFocal-label"
+                >
+                  * Nome
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="nomePontoFocal"
                     name="nomePontoFocal"
@@ -1314,20 +1157,6 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
@@ -1338,22 +1167,26 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                *Email
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="emailPontoFocal"
+                  id="emailPontoFocal-label"
+                >
+                  * Email
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="emailPontoFocal"
                     name="emailPontoFocal"
@@ -1367,20 +1200,6 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
@@ -1391,22 +1210,26 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Telefone
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="telefonePontoFocal"
+                  id="telefonePontoFocal-label"
+                >
+                  * Telefone
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={false}
                     id="telefonePontoFocal"
                     maxLength={15}
@@ -1421,20 +1244,6 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     type="text"
                     value=""
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
@@ -1460,23 +1269,26 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
               <div
-                className="MuiFormControl-root MuiFormControl-fullWidth css-q8hpuo-MuiFormControl-root"
+                className="MuiFormControl-root MuiFormControl-fullWidth css-wbchyn-MuiFormControl-root"
+                label="* Área de Atuação"
               >
-                <p
-                  className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-filled css-hvfc9k-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={true}
                 >
                   * Área de Atuação
-                </p>
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-g5m1u9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl  css-7ihnfe-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <div
                     aria-controls=":r16:"
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     aria-labelledby="areaAtuacao"
-                    className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-ab7h6o-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiSelect-select MuiSelect-filled MuiInputBase-input MuiFilledInput-input css-lr4ofc-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input"
                     id="areaAtuacao"
                     onBlur={[Function]}
                     onFocus={[Function]}
@@ -1485,7 +1297,15 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     role="combobox"
                     tabIndex={0}
                   >
-                    Selecione a Área de Atuação
+                    <a
+                      style={
+                        {
+                          "color": "grey",
+                        }
+                      }
+                    >
+                      Selecione a Área de Atuação
+                    </a>
                   </div>
                   <input
                     aria-hidden={true}
@@ -1501,7 +1321,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   />
                   <svg
                     aria-hidden={true}
-                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconFilled css-qryk17-MuiSvgIcon-root-MuiSelect-icon"
                     data-testid="ArrowDropDownIcon"
                     focusable="false"
                     viewBox="0 0 24 24"
@@ -1510,20 +1330,6 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                       d="M7 10l5 5 5-5z"
                     />
                   </svg>
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
@@ -1534,22 +1340,26 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
             <div
               className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-1l1wepn-MuiTypography-root"
-              >
-                * Natureza Jurídica
-              </p>
               <div
-                className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
               >
+                <label
+                  className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary Mui-disabled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                  data-shrink={false}
+                  htmlFor="naturezaJuridica"
+                  id="naturezaJuridica-label"
+                >
+                  * Natureza Jurídica
+                </label>
                 <div
-                  className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                  className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary Mui-disabled MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                   onClick={[Function]}
+                  variant="filled"
                 >
                   <input
                     aria-invalid={false}
                     autoFocus={false}
-                    className="MuiInputBase-input MuiOutlinedInput-input Mui-disabled css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                    className="MuiInputBase-input MuiFilledInput-input Mui-disabled css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                     disabled={true}
                     id="naturezaJuridica"
                     name="naturezaJuridica"
@@ -1561,20 +1371,6 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                     required={false}
                     type="text"
                   />
-                  <fieldset
-                    aria-hidden={true}
-                    className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                  >
-                    <legend
-                      className="css-ihdtdm"
-                    >
-                      <span
-                        className="notranslate"
-                      >
-                        ​
-                      </span>
-                    </legend>
-                  </fieldset>
                 </div>
               </div>
             </div>
@@ -3831,10 +3627,10 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
                 htmlFor="razaoSocial"
                 id="razaoSocial-label"
@@ -3842,13 +3638,14 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 Razão Social
               </label>
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                 onClick={[Function]}
+                variant="filled"
               >
                 <input
                   aria-invalid={false}
                   autoFocus={false}
-                  className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                  className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
                   id="razaoSocial"
                   name="razaoSocial"
@@ -3861,18 +3658,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   type="text"
                   value=""
                 />
-                <fieldset
-                  aria-hidden={true}
-                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                >
-                  <legend
-                    className="css-yjsfm1"
-                  >
-                    <span>
-                      Razão Social
-                    </span>
-                  </legend>
-                </fieldset>
               </div>
             </div>
           </div>
@@ -3884,10 +3669,10 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
                 htmlFor="nomeFantasia"
                 id="nomeFantasia-label"
@@ -3895,13 +3680,14 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 Nome Fantasia
               </label>
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                 onClick={[Function]}
+                variant="filled"
               >
                 <input
                   aria-invalid={false}
                   autoFocus={false}
-                  className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                  className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
                   id="nomeFantasia"
                   name="nomeFantasia"
@@ -3914,18 +3700,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   type="text"
                   value=""
                 />
-                <fieldset
-                  aria-hidden={true}
-                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                >
-                  <legend
-                    className="css-yjsfm1"
-                  >
-                    <span>
-                      Nome Fantasia
-                    </span>
-                  </legend>
-                </fieldset>
               </div>
             </div>
           </div>
@@ -3937,10 +3711,10 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
                 htmlFor="nomeResponsavel"
                 id="nomeResponsavel-label"
@@ -3948,13 +3722,14 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 Nome Responsável
               </label>
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                 onClick={[Function]}
+                variant="filled"
               >
                 <input
                   aria-invalid={false}
                   autoFocus={false}
-                  className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                  className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
                   id="nomeResponsavel"
                   name="nomeResponsavel"
@@ -3967,18 +3742,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   type="text"
                   value=""
                 />
-                <fieldset
-                  aria-hidden={true}
-                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                >
-                  <legend
-                    className="css-yjsfm1"
-                  >
-                    <span>
-                      Nome Responsável
-                    </span>
-                  </legend>
-                </fieldset>
               </div>
             </div>
           </div>
@@ -3990,10 +3753,10 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
                 htmlFor="nomeParceiro"
                 id="nomeParceiro-label"
@@ -4001,13 +3764,14 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 Nome Parceiro
               </label>
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
                 onClick={[Function]}
+                variant="filled"
               >
                 <input
                   aria-invalid={false}
                   autoFocus={false}
-                  className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
+                  className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
                   id="nomeParceiro"
                   name="nomeParceiro"
@@ -4020,18 +3784,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   type="text"
                   value=""
                 />
-                <fieldset
-                  aria-hidden={true}
-                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                >
-                  <legend
-                    className="css-yjsfm1"
-                  >
-                    <span>
-                      Nome Parceiro
-                    </span>
-                  </legend>
-                </fieldset>
               </div>
             </div>
           </div>
@@ -4129,11 +3881,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root css-1t6k643-MuiFormControl-root-MuiTextField-root"
               onClick={[Function]}
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
                 htmlFor=":r5:"
                 id=":r5:-label"
@@ -4141,14 +3893,15 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 Inicio
               </label>
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-1wy8ovw-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-jundqn-MuiInputBase-root-MuiFilledInput-root"
                 onClick={[Function]}
+                variant="filled"
               >
                 <input
                   aria-invalid={false}
                   autoComplete="off"
                   autoFocus={false}
-                  className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-10cqtbj-MuiInputBase-input-MuiOutlinedInput-input"
+                  className="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd css-9f3xj7-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
                   id=":r5:"
                   inputMode="text"
@@ -4166,7 +3919,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   value=""
                 />
                 <div
-                  className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1kjlj86-MuiInputAdornment-root"
+                  className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-10649of-MuiInputAdornment-root"
                 >
                   <button
                     aria-label="Choose date"
@@ -4204,18 +3957,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     />
                   </button>
                 </div>
-                <fieldset
-                  aria-hidden={true}
-                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                >
-                  <legend
-                    className="css-yjsfm1"
-                  >
-                    <span>
-                      Inicio
-                    </span>
-                  </legend>
-                </fieldset>
               </div>
             </div>
           </div>
@@ -4227,11 +3968,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root css-1t6k643-MuiFormControl-root-MuiTextField-root"
               onClick={[Function]}
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
                 htmlFor=":r7:"
                 id=":r7:-label"
@@ -4239,14 +3980,15 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 Fim
               </label>
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-1wy8ovw-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-jundqn-MuiInputBase-root-MuiFilledInput-root"
                 onClick={[Function]}
+                variant="filled"
               >
                 <input
                   aria-invalid={false}
                   autoComplete="off"
                   autoFocus={false}
-                  className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-10cqtbj-MuiInputBase-input-MuiOutlinedInput-input"
+                  className="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd css-9f3xj7-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
                   id=":r7:"
                   inputMode="text"
@@ -4264,7 +4006,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   value=""
                 />
                 <div
-                  className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1kjlj86-MuiInputAdornment-root"
+                  className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-10649of-MuiInputAdornment-root"
                 >
                   <button
                     aria-label="Choose date"
@@ -4302,18 +4044,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     />
                   </button>
                 </div>
-                <fieldset
-                  aria-hidden={true}
-                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                >
-                  <legend
-                    className="css-yjsfm1"
-                  >
-                    <span>
-                      Fim
-                    </span>
-                  </legend>
-                </fieldset>
               </div>
             </div>
           </div>
@@ -4337,11 +4067,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root css-1t6k643-MuiFormControl-root-MuiTextField-root"
               onClick={[Function]}
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
                 htmlFor=":r9:"
                 id=":r9:-label"
@@ -4349,14 +4079,15 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 Inicio
               </label>
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-1wy8ovw-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-jundqn-MuiInputBase-root-MuiFilledInput-root"
                 onClick={[Function]}
+                variant="filled"
               >
                 <input
                   aria-invalid={false}
                   autoComplete="off"
                   autoFocus={false}
-                  className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-10cqtbj-MuiInputBase-input-MuiOutlinedInput-input"
+                  className="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd css-9f3xj7-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
                   id=":r9:"
                   inputMode="text"
@@ -4374,7 +4105,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   value=""
                 />
                 <div
-                  className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1kjlj86-MuiInputAdornment-root"
+                  className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-10649of-MuiInputAdornment-root"
                 >
                   <button
                     aria-label="Choose date"
@@ -4412,18 +4143,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     />
                   </button>
                 </div>
-                <fieldset
-                  aria-hidden={true}
-                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                >
-                  <legend
-                    className="css-yjsfm1"
-                  >
-                    <span>
-                      Inicio
-                    </span>
-                  </legend>
-                </fieldset>
               </div>
             </div>
           </div>
@@ -4435,11 +4154,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root css-z3c6am-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root css-1t6k643-MuiFormControl-root-MuiTextField-root"
               onClick={[Function]}
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
                 htmlFor=":rb:"
                 id=":rb:-label"
@@ -4447,14 +4166,15 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 Fim
               </label>
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-1wy8ovw-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-jundqn-MuiInputBase-root-MuiFilledInput-root"
                 onClick={[Function]}
+                variant="filled"
               >
                 <input
                   aria-invalid={false}
                   autoComplete="off"
                   autoFocus={false}
-                  className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-10cqtbj-MuiInputBase-input-MuiOutlinedInput-input"
+                  className="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd css-9f3xj7-MuiInputBase-input-MuiFilledInput-input"
                   disabled={false}
                   id=":rb:"
                   inputMode="text"
@@ -4472,7 +4192,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   value=""
                 />
                 <div
-                  className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1kjlj86-MuiInputAdornment-root"
+                  className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-10649of-MuiInputAdornment-root"
                 >
                   <button
                     aria-label="Choose date"
@@ -4510,18 +4230,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     />
                   </button>
                 </div>
-                <fieldset
-                  aria-hidden={true}
-                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-                >
-                  <legend
-                    className="css-yjsfm1"
-                  >
-                    <span>
-                      Fim
-                    </span>
-                  </legend>
-                </fieldset>
               </div>
             </div>
           </div>
