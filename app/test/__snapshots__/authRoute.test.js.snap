@@ -3995,10 +3995,10 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
               <label
                 className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-rpgel2-MuiFormLabel-root-MuiInputLabel-root"
                 data-shrink={false}
-                htmlFor="nomePontoFocal"
-                id="nomePontoFocal-label"
+                htmlFor="nomeParceiro"
+                id="nomeParceiro-label"
               >
-                Nome Ponto Focal
+                Nome Parceiro
               </label>
               <div
                 className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-yji9hv-MuiInputBase-root-MuiOutlinedInput-root"
@@ -4009,13 +4009,13 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   autoFocus={false}
                   className="MuiInputBase-input MuiOutlinedInput-input css-ma3s50-MuiInputBase-input-MuiOutlinedInput-input"
                   disabled={false}
-                  id="nomePontoFocal"
-                  name="nomePontoFocal"
+                  id="nomeParceiro"
+                  name="nomeParceiro"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
-                  placeholder="Nome Ponto Focal"
+                  placeholder="Nome Parceiro"
                   required={false}
                   type="text"
                   value=""
@@ -4028,7 +4028,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     className="css-yjsfm1"
                   >
                     <span>
-                      Nome Ponto Focal
+                      Nome Parceiro
                     </span>
                   </legend>
                 </fieldset>
@@ -4060,7 +4060,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-labelledby="tipoDeServico"
-                className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-ab7h6o-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                className="MuiSelect-select MuiSelect-outlined MuiSelect-multiple MuiInputBase-input MuiOutlinedInput-input css-ab7h6o-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
                 id="tipoDeServico"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -4069,9 +4069,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 role="combobox"
                 tabIndex={0}
               >
-                 
-                Selecione uma opção
-                 
+                <span
+                  className="notranslate"
+                >
+                  ​
+                </span>
               </div>
               <input
                 aria-hidden={true}
@@ -4081,7 +4083,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 onAnimationStart={[Function]}
                 onChange={[Function]}
                 tabIndex={-1}
-                value="none"
+                value=""
               />
               <svg
                 aria-hidden={true}
@@ -4121,7 +4123,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
           </p>
         </div>
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-2 css-wh7pzv-MuiGrid-root"
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-1blu1sr-MuiGrid-root"
         >
           <div
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
@@ -4219,7 +4221,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
           </div>
         </div>
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-2 css-wh7pzv-MuiGrid-root"
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-1blu1sr-MuiGrid-root"
         >
           <div
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
@@ -4317,6 +4319,9 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
           </div>
         </div>
         <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-3 css-1ps7j7p-MuiGrid-root"
+        />
+        <div
           className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-sm-2 css-19kdmfi-MuiGrid-root"
         >
           <p
@@ -4326,7 +4331,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
           </p>
         </div>
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-2 css-wh7pzv-MuiGrid-root"
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-1blu1sr-MuiGrid-root"
         >
           <div
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
@@ -4424,7 +4429,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
           </div>
         </div>
         <div
-          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-2 css-wh7pzv-MuiGrid-root"
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-1blu1sr-MuiGrid-root"
         >
           <div
             className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
@@ -4453,7 +4458,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   disabled={false}
                   id=":rb:"
                   inputMode="text"
-                  name="dataDoCadastroFim"
+                  name="dataDaUltimaModificacaoFim"
                   onAnimationStart={[Function]}
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -4637,7 +4642,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
           </th>
           <th
             aria-sort={null}
-            className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-jkdeol-MuiTableCell-root"
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-17414i2-MuiTableCell-root"
             scope="col"
           >
             Razão Social
@@ -4658,21 +4663,21 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
           </th>
           <th
             aria-sort={null}
-            className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-jkdeol-MuiTableCell-root"
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-19wnjmr-MuiTableCell-root"
             scope="col"
           >
             Cadastro
           </th>
           <th
             aria-sort={null}
-            className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-jkdeol-MuiTableCell-root"
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-19wnjmr-MuiTableCell-root"
             scope="col"
           >
             Última Modificação
           </th>
           <th
             aria-sort={null}
-            className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-r2ues7-MuiTableCell-root"
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-gaj2an-MuiTableCell-root"
             scope="col"
           >
             Ações
@@ -4715,13 +4720,13 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            20-03-2024
+            20/03/2024
           </td>
           <td
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            21-03-2024
+            21/03/2024
           </td>
           <td
             aria-sort={null}
@@ -4968,13 +4973,13 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            03-03-2024
+            03/03/2024
           </td>
           <td
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            10-04-2024
+            10/04/2024
           </td>
           <td
             aria-sort={null}
@@ -5221,13 +5226,13 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            27-02-2024
+            27/02/2024
           </td>
           <td
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            15-03-2024
+            15/03/2024
           </td>
           <td
             aria-sort={null}
@@ -5474,13 +5479,13 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            11-02-2024
+            11/02/2024
           </td>
           <td
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            13-02-2024
+            13/02/2024
           </td>
           <td
             aria-sort={null}
@@ -5727,13 +5732,13 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            20-03-2024
+            20/03/2024
           </td>
           <td
             aria-sort={null}
             className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-lv7vfw-MuiTableCell-root"
           >
-            21-03-2024
+            21/03/2024
           </td>
           <td
             aria-sort={null}

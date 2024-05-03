@@ -30,6 +30,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import dayjs from "dayjs";
 import PropTypes from "prop-types";
 
 // Cada botão poderá ter uma função diferente, está é apenas um modelo
@@ -49,15 +50,15 @@ function TabelaParceiros({ data }) {
             {/* <TableCell>Status</TableCell> */}
             {/* <TableCell>CNPJ</TableCell> */}
             <TableCell>Parceiro</TableCell>
-            <TableCell>Razão Social</TableCell>
+            <TableCell sx={{ minWidth: 100 }}>Razão Social</TableCell>
             <TableCell>Nome Fantasia</TableCell>
             {/* <TableCell>Natureza Jurídica</TableCell> */}
             <TableCell>Responsável</TableCell>
             {/* <TableCell>Cidade</TableCell> */}
             {/* <TableCell>UF</TableCell> */}
-            <TableCell>Cadastro</TableCell>
-            <TableCell>Última Modificação</TableCell>
-            <TableCell sx={{ width: 300 }}>Ações</TableCell>
+            <TableCell sx={{ minWidth: 105 }}>Cadastro</TableCell>
+            <TableCell sx={{ minWidth: 105 }}>Última Modificação</TableCell>
+            <TableCell sx={{ minWidth: 275 }}>Ações</TableCell>
           </TableRow>
         </TableHead>
         {data.length != 0 ? (
@@ -74,8 +75,8 @@ function TabelaParceiros({ data }) {
                 <TableCell>{parceiro.nomeResponsavel}</TableCell>
                 {/* <TableCell>{parceiro.cidade}</TableCell> */}
                 {/* <TableCell>{parceiro.uf}</TableCell> */}
-                <TableCell>{parceiro.cadastro}</TableCell>
-                <TableCell>{parceiro.ultimaModificacao}</TableCell>
+                <TableCell>{dayjs(parceiro.cadastro).format("DD/MM/YYYY")}</TableCell>
+                <TableCell>{dayjs(parceiro.ultimaModificacao).format("DD/MM/YYYY")}</TableCell>
                 <TableCell>
                   <IconButton
                     color="primary"
@@ -118,108 +119,112 @@ function TabelaParceiros({ data }) {
             ))}
           </TableBody>
         ) : (
-          "Não foi localizado Parceiro na situação pendente de aprovação!"
+          <TableBody>
+            <TableRow>
+              <TableCell colSpan={5}>Não foi localizado Parceiro na situação pendente de aprovação!</TableCell>
+            </TableRow>
+          </TableBody>
         )}
       </Table>
     </TableContainer>
   );
 }
 
-const FormListarParceirosPendentes = () => {
-  // Dados fictícios para teste da tabela
-  const initialData = [
-    {
-      id: 1,
-      habilitacao: "Parceiro",
-      status: "Pendente",
-      cnpj: "11.111.111/1000-00",
-      nomeFantasia: "Nome 1",
-      nomeParceiro: "Fulano",
-      razaoSocial: "Razão 1",
-      naturezaJuridica: "Público",
-      nomeResponsavel: "Beltrano Gonçalves",
-      cidade: "Brasília",
-      uf: "DF",
-      cadastro: "20-03-2024",
-      ultimaModificacao: "21-03-2024",
-      tipoDeServico: "Vaga de Emprego",
-    },
-    {
-      id: 2,
-      habilitacao: "Parceiro",
-      status: "Pendente",
-      cnpj: "22.222.222/1000-00",
-      nomeFantasia: "Nome 2",
-      nomeParceiro: "Beltrano",
-      razaoSocial: "Razão 2",
-      naturezaJuridica: "Privado",
-      nomeResponsavel: "Fulano",
-      cidade: "Goiânia",
-      uf: "GO",
-      cadastro: "03-03-2024",
-      ultimaModificacao: "10-04-2024",
-      tipoDeServico: "Vaga de Estágio",
-    },
-    {
-      id: 3,
-      habilitacao: "Parceiro",
-      status: "Pendente",
-      cnpj: "33.333.333/1000-00",
-      nomeFantasia: "Nome 1",
-      nomeParceiro: "Fulano da Silva",
-      razaoSocial: "Razão 1",
-      naturezaJuridica: "Público",
-      nomeResponsavel: "Beltrano",
-      cidade: "Catalão",
-      uf: "GO",
-      cadastro: "27-02-2024",
-      ultimaModificacao: "15-03-2024",
-      tipoDeServico: "Mobilização de Público",
-    },
-    {
-      id: 4,
-      habilitacao: "Parceiro",
-      status: "Pendente",
-      cnpj: "44.444.444/1000-00",
-      nomeFantasia: "Nome 3",
-      nomeParceiro: "Beltrano Gonçalves",
-      razaoSocial: "Razão 1",
-      naturezaJuridica: "Privado",
-      nomeResponsavel: "Fulano da Silva",
-      cidade: "Belo Horizonte",
-      uf: "MG",
-      cadastro: "11-02-2024",
-      ultimaModificacao: "13-02-2024",
-      tipoDeServico: "Vaga de Emprego",
-    },
-    {
-      id: 5,
-      habilitacao: "Parceiro",
-      status: "Pendente",
-      cnpj: "55.555.555/1000-00",
-      nomeFantasia: "Nome 2",
-      nomeParceiro: "Fulano Beltrano",
-      razaoSocial: "Razão 1",
-      naturezaJuridica: "Privado",
-      nomeResponsavel: "Beltrano Fulano",
-      cidade: "Brasília",
-      uf: "DF",
-      cadastro: "20-03-2024",
-      ultimaModificacao: "21-03-2024",
-      tipoDeServico: "Vaga de Estágio",
-    },
-  ];
+// Dados fictícios para teste da tabela
+const initialData = [
+  {
+    id: 1,
+    habilitacao: "Parceiro",
+    status: "Pendente",
+    cnpj: "11.111.111/1000-00",
+    nomeFantasia: "Nome 1",
+    nomeParceiro: "Fulano",
+    razaoSocial: "Razão 1",
+    naturezaJuridica: "Público",
+    nomeResponsavel: "Beltrano Gonçalves",
+    cidade: "Brasília",
+    uf: "DF",
+    cadastro: "2024-03-20T00:00",
+    ultimaModificacao: "2024-03-21T00:00",
+    tipoDeServico: "VEP",
+  },
+  {
+    id: 2,
+    habilitacao: "Parceiro",
+    status: "Pendente",
+    cnpj: "22.222.222/1000-00",
+    nomeFantasia: "Nome 2",
+    nomeParceiro: "Beltrano",
+    razaoSocial: "Razão 2",
+    naturezaJuridica: "Privado",
+    nomeResponsavel: "Fulano",
+    cidade: "Goiânia",
+    uf: "GO",
+    cadastro: "2024-03-03T00:00",
+    ultimaModificacao: "2024-04-10T00:00",
+    tipoDeServico: "VET",
+  },
+  {
+    id: 3,
+    habilitacao: "Parceiro",
+    status: "Pendente",
+    cnpj: "33.333.333/1000-00",
+    nomeFantasia: "Nome 1",
+    nomeParceiro: "Fulano da Silva",
+    razaoSocial: "Razão 1",
+    naturezaJuridica: "Público",
+    nomeResponsavel: "Beltrano",
+    cidade: "Catalão",
+    uf: "GO",
+    cadastro: "2024-02-27T00:00",
+    ultimaModificacao: "2024-03-15T00:00",
+    tipoDeServico: "MPu",
+  },
+  {
+    id: 4,
+    habilitacao: "Parceiro",
+    status: "Pendente",
+    cnpj: "44.444.444/1000-00",
+    nomeFantasia: "Nome 3",
+    nomeParceiro: "Beltrano Gonçalves",
+    razaoSocial: "Razão 1",
+    naturezaJuridica: "Privado",
+    nomeResponsavel: "Fulano da Silva",
+    cidade: "Belo Horizonte",
+    uf: "MG",
+    cadastro: "2024-02-11T00:00",
+    ultimaModificacao: "2024-02-13T00:00",
+    tipoDeServico: "VEP",
+  },
+  {
+    id: 5,
+    habilitacao: "Parceiro",
+    status: "Pendente",
+    cnpj: "55.555.555/1000-00",
+    nomeFantasia: "Nome 2",
+    nomeParceiro: "Fulano Beltrano",
+    razaoSocial: "Razão 1",
+    naturezaJuridica: "Privado",
+    nomeResponsavel: "Beltrano Fulano",
+    cidade: "Brasília",
+    uf: "DF",
+    cadastro: "2024-03-20T00:00",
+    ultimaModificacao: "2024-03-21T00:00",
+    tipoDeServico: "VET",
+  },
+];
 
+const FormListarParceirosPendentes = () => {
   const [filter, setFilter] = useState({
     razaoSocial: "",
     nomeFantasia: "",
     nomeResponsavel: "",
-    nomePontoFocal: "",
-    tipoDeServico: "",
-    dataDoCadastroInicio: undefined,
-    dataDoCadastroFim: undefined,
-    dataDaUltimaModificacaoInicio: undefined,
-    dataDaUltimaModificacaoFim: undefined,
+    nomeParceiro: "",
+    tipoDeServico: [],
+    dataDoCadastroInicio: null,
+    dataDoCadastroFim: null,
+    dataDaUltimaModificacaoInicio: null,
+    dataDaUltimaModificacaoFim: null,
   });
 
   const [filteredData, setFilteredData] = useState(initialData);
@@ -229,9 +234,34 @@ const FormListarParceirosPendentes = () => {
     setFilter({ ...filter, [name]: value });
   };
 
+  const handleFilterSelectChange = event => {
+    const { name, value } = event.target;
+    setFilter({ ...filter, [name]: typeof value === "string" ? value.split(",") : value });
+  };
+
   const applyFilter = () => {
-    let filtered = initialData.filter(parceiro => {
-      return parceiro.nomeResponsavel.toLowerCase().includes(filter.nomeResponsavel.toLowerCase());
+    const filtered = initialData.filter(parceiro => {
+      const matchesTextFilter =
+        parceiro.nomeResponsavel.toLowerCase().includes(filter.nomeResponsavel.toLowerCase()) &&
+        parceiro.nomeParceiro.toLowerCase().includes(filter.nomeParceiro.toLowerCase()) &&
+        parceiro.nomeFantasia.toLowerCase().includes(filter.nomeFantasia.toLowerCase()) &&
+        parceiro.razaoSocial.toLowerCase().includes(filter.razaoSocial.toLowerCase()) &&
+        (filter.tipoDeServico.length === 0 || parceiro.tipoDeServico.includes(filter.tipoDeServico));
+
+      const matchesDateFilter =
+        (!filter.dataDoCadastroInicio ||
+          !filter.dataDoCadastroFim ||
+          dayjs(parceiro.cadastro).isBetween(filter.dataDoCadastroInicio, filter.dataDoCadastroFim, "day", "[]")) &&
+        (!filter.dataDaUltimaModificacaoInicio ||
+          !filter.dataDaUltimaModificacaoFim ||
+          dayjs(parceiro.ultimaModificacao).isBetween(
+            filter.dataDaUltimaModificacaoInicio,
+            filter.dataDaUltimaModificacaoFim,
+            "day",
+            "[]",
+          ));
+
+      return matchesTextFilter && matchesDateFilter;
     });
     setFilteredData(filtered);
   };
@@ -239,12 +269,12 @@ const FormListarParceirosPendentes = () => {
   const handleDownloadCSV = () => {
     // Code to download data as CSV
     // For simplicity, let's assume data is already filtered
-    const csvData = filteredData.map(student => Object.values(student).join(",")).join("\n");
+    const csvData = filteredData.map(parceiro => Object.values(parceiro).join(",")).join("\n");
     const blob = new Blob([csvData], { type: "text/csv" });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "student_data.csv";
+    a.download = "dados_parceiro.csv";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -327,11 +357,11 @@ const FormListarParceirosPendentes = () => {
               <FormGroup>
                 <TextField
                   variant="outlined"
-                  id="nomePontoFocal"
-                  name="nomePontoFocal"
-                  label="Nome Ponto Focal"
-                  placeholder="Nome Ponto Focal"
-                  value={filter.nomePontoFocal}
+                  id="nomeParceiro"
+                  name="nomeParceiro"
+                  label="Nome Parceiro"
+                  placeholder="Nome Parceiro"
+                  value={filter.nomeParceiro}
                   type="text"
                   onChange={handleFilterChange}
                 />
@@ -352,9 +382,10 @@ const FormListarParceirosPendentes = () => {
                 <Select
                   id="tipoDeServico"
                   name="tipoDeServico"
+                  multiple
                   value={filter.tipoDeServico || "none"}
                   type="text"
-                  onChange={handleFilterChange}
+                  onChange={handleFilterSelectChange}
                 >
                   <MenuItem
                     value="none"
@@ -363,13 +394,13 @@ const FormListarParceirosPendentes = () => {
                     {" "}
                     Selecione uma opção{" "}
                   </MenuItem>
-                  <MenuItem value="Vaga de Emprego"> Vaga de Emprego </MenuItem>
-                  <MenuItem value="Vaga de Estágio"> Vaga de Estágio </MenuItem>
-                  <MenuItem value="Vaga de Jovem Aprendiz"> Vaga de Jovem Aprendiz </MenuItem>
-                  <MenuItem value="Cursos"> Cursos </MenuItem>
-                  <MenuItem value="Financeiros e de Pagamentos">Financeiros e de Pagamentos</MenuItem>
-                  <MenuItem value="Mobilização de Público">Mobilização de Público</MenuItem>
-                  <MenuItem value="Mobilização de Parceiro">Mobilização de Parceiro</MenuItem>
+                  <MenuItem value="VEP"> Vaga de Emprego </MenuItem>
+                  <MenuItem value="VET"> Vaga de Estágio </MenuItem>
+                  <MenuItem value="VJA"> Vaga de Jovem Aprendiz </MenuItem>
+                  <MenuItem value="CUR"> Cursos </MenuItem>
+                  <MenuItem value="FPG">Financeiros e de Pagamentos</MenuItem>
+                  <MenuItem value="MPu">Mobilização de Público</MenuItem>
+                  <MenuItem value="MPa">Mobilização de Parceiro</MenuItem>
                 </Select>
               </FormGroup>
             </Grid>
@@ -384,7 +415,7 @@ const FormListarParceirosPendentes = () => {
             <Grid
               item
               xs={6}
-              sm={2}
+              sm={3}
             >
               <FormGroup>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -394,7 +425,7 @@ const FormListarParceirosPendentes = () => {
                     name="dataDoCadastroInicio"
                     value={filter.dataDoCadastroInicio}
                     format="DD/MM/YYYY"
-                    //onChange={handleFilterChange}
+                    onChange={valor => setFilter({ ...filter, ["dataDoCadastroInicio"]: valor })}
                   />
                 </LocalizationProvider>
               </FormGroup>
@@ -402,7 +433,7 @@ const FormListarParceirosPendentes = () => {
             <Grid
               item
               xs={6}
-              sm={2}
+              sm={3}
             >
               <FormGroup>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -411,12 +442,19 @@ const FormListarParceirosPendentes = () => {
                     name="dataDoCadastroFim"
                     value={filter.dataDoCadastroFim}
                     label="Fim"
-                    //onSelectedSectionsChange={} // Faz algo quando o range selecioando muda
                     format="DD/MM/YYYY"
+                    onChange={valor => setFilter({ ...filter, ["dataDoCadastroFim"]: valor })}
                   />
                 </LocalizationProvider>
               </FormGroup>
             </Grid>
+
+            <Grid
+              item
+              xs={1}
+              sm={3}
+            ></Grid>
+
             <Grid
               item
               xs={1}
@@ -427,7 +465,7 @@ const FormListarParceirosPendentes = () => {
             <Grid
               item
               xs={6}
-              sm={2}
+              sm={3}
             >
               <FormGroup>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -436,8 +474,8 @@ const FormListarParceirosPendentes = () => {
                     name="dataDaUltimaModificacaoInicio"
                     value={filter.dataDaUltimaModificacaoInicio}
                     label="Inicio"
-                    //onSelectedSectionsChange={} // Faz algo quando o range selecioando muda
                     format="DD/MM/YYYY"
+                    onChange={valor => setFilter({ ...filter, ["dataDaUltimaModificacaoInicio"]: valor })}
                   />
                 </LocalizationProvider>
               </FormGroup>
@@ -445,23 +483,22 @@ const FormListarParceirosPendentes = () => {
             <Grid
               item
               xs={6}
-              sm={2}
+              sm={3}
             >
               <FormGroup>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
-                    id="dataDoCadastroFim"
-                    name="dataDoCadastroFim"
-                    value={filter.dataDoCadastroFim}
+                    id="dataDaUltimaModificacaoFim"
+                    name="dataDaUltimaModificacaoFim"
+                    value={filter.dataDaUltimaModificacaoFim}
                     label="Fim"
-                    //onSelectedSectionsChange={} // Faz algo quando o range selecioando muda
                     format="DD/MM/YYYY"
+                    onChange={valor => setFilter({ ...filter, ["dataDaUltimaModificacaoFim"]: valor })}
                   />
                 </LocalizationProvider>
               </FormGroup>
             </Grid>
           </Grid>
-
           <Box sx={{ flexGrow: 1, mt: "16px" }}>
             <Grid
               container
