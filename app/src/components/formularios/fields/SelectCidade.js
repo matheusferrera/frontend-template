@@ -1,9 +1,9 @@
 import React from "react";
 
 import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
 import { capitalizarPrimeiraLetra } from "../utils";
@@ -31,7 +31,7 @@ export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSele
 
   return (
     <FormControl fullWidth>
-      <Typography sx={{ mb: "8px" }}>* Cidade</Typography>
+      <InputLabel>* Cidade</InputLabel>
       <Select
         id={idSelect}
         name={nameSelect}
@@ -49,7 +49,7 @@ export const SelectCidade = ({ idSelect, nameSelect, cidades, cidade, handleSele
           value="none"
           disabled
         >
-          Selecione uma cidade
+          <a style={{ color: "grey" }}>Selecione uma cidade</a>
         </MenuItem>
         {options.map(option => (
           <MenuItem

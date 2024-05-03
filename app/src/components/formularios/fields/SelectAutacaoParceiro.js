@@ -1,9 +1,9 @@
 import React from "react";
 
 import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 
 import { capitalizarPrimeiraLetra } from "../utils";
@@ -34,8 +34,11 @@ export const SelectAtuacaoParceiro = ({
   ));
 
   return (
-    <FormControl fullWidth>
-      <Typography sx={{ mb: "8px" }}>{label}</Typography>
+    <FormControl
+      fullWidth
+      label={label}
+    >
+      <InputLabel>{label}</InputLabel>
       <Select
         id={idSelect}
         name={nameSelect}
@@ -52,7 +55,7 @@ export const SelectAtuacaoParceiro = ({
           value="none"
           disabled
         >
-          {placeholder}
+          <a style={{ color: "grey" }}>{placeholder}</a>
         </MenuItem>
         {options}
       </Select>

@@ -5,6 +5,41 @@ import { alpha } from "@mui/material/styles";
 
 export function overrides(theme) {
   return {
+    MuiTextField: {
+      defaultProps: {
+        variant: "filled",
+      },
+      styleOverrides: {
+        root: {
+          "& .MuiInputLabel-root": {
+            color: "#9E9E9E",
+          },
+        },
+      },
+    },
+    MuiFilledInput: {
+      defaultProps: {
+        variant: "filled",
+      },
+      styleOverrides: {
+        root: {
+          borderTopLeftRadius: "0px",
+          borderTopRightRadius: "0px",
+        },
+      },
+    },
+    MuiFormControl: {
+      defaultProps: {
+        variant: "filled",
+      },
+      styleOverrides: {
+        root: {
+          "& .MuiInputLabel-filled": {
+            color: "#9E9E9E",
+          },
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: {
         "*": {
