@@ -32,7 +32,7 @@ import ConfirmacaoModal from "../modals/ConfirmacaoModal";
 import ErroDoUsuarioModal from "../modals/ErroDoUsuarioModal.js";
 import ErroModal from "../modals/ErroModal.js";
 import FinanceiroModal from "../modals/FinanceiroModal";
-import { SelectAtuacaoParceiro } from "./fields/SelectAutacaoParceiro.js";
+import { SelectAtuacaoParceiro } from "./fields/SelectAtuacaoParceiro.js";
 import { SelectCidade } from "./fields/SelectCidade.js";
 import { SelectUF } from "./fields/SelectUF.js";
 import { formatCEP, formatCNPJ, formatCPF, formatSite, formatTelefone, validarCNPJ, validarCPF } from "./utils.js";
