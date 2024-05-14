@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import PageHomeCidadao from "../../pages/cidadao/home.cidadao";
+import PageHomeCidadao from "../../pages/cidadao/PageHomeCidadao";
 import FAQ from "../../pages/FAQ";
 import NotFound from "../../pages/NotFound";
 import Profile from "../../pages/Profile";

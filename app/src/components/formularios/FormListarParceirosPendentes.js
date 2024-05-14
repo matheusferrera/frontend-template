@@ -4,6 +4,7 @@ import { useReactToPrint } from "react-to-print";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import DescriptionIcon from "@mui/icons-material/Description";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import ListIcon from "@mui/icons-material/List";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import SearchIcon from "@mui/icons-material/Search";
@@ -11,9 +12,13 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import {
   Button,
   Card,
+  CardContent,
+  FormControl,
   FormGroup,
   Grid,
   IconButton,
+  InputLabel,
+  Pagination,
   Paper,
   Select,
   Stack,
@@ -24,10 +29,11 @@ import {
   TableHead,
   TableRow,
   TextField,
-  Typography,
+  Tooltip,
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
+import { useTheme } from "@mui/material/styles";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -43,81 +49,161 @@ function handleButtonClick(id) {
 function TabelaParceiros({ data }) {
   // Responsável == Representante
   // Parceiro == PontoFocal
+
+  const theme = useTheme();
+
+  const [expandedRows, setExpandedRows] = useState([]);
+  const [page, setPage] = React.useState(1);
+
+  const handlePageChange = (event, value) => {
+    setPage(value);
+  };
+
+  const handleArrowClick = index => {
+    const newExpandedRows = [...expandedRows];
+    if (newExpandedRows.includes(index)) {
+      newExpandedRows.splice(newExpandedRows.indexOf(index), 1);
+    } else {
+      newExpandedRows.push(index);
+    }
+    setExpandedRows(newExpandedRows);
+  };
+
   return (
     <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
-            {/*<TableCell>Habilitação</TableCell>*/}
-            {/* <TableCell>Status</TableCell> */}
-            {/* <TableCell>CNPJ</TableCell> */}
-            <TableCell>Parceiro</TableCell>
-            <TableCell sx={{ minWidth: 100 }}>Razão Social</TableCell>
-            <TableCell>Nome Fantasia</TableCell>
-            {/* <TableCell>Natureza Jurídica</TableCell> */}
-            <TableCell>Responsável</TableCell>
-            {/* <TableCell>Cidade</TableCell> */}
-            {/* <TableCell>UF</TableCell> */}
-            <TableCell sx={{ minWidth: 105 }}>Cadastro</TableCell>
-            <TableCell sx={{ minWidth: 105 }}>Última Modificação</TableCell>
-            <TableCell sx={{ minWidth: 275 }}>Ações</TableCell>
+            <TableCell>Habilitação</TableCell>
+            <TableCell sx={{ minWidth: 100 }}>Status</TableCell>
+            <TableCell align="right">
+              <Tooltip title="Descrição do documento">
+                <IconButton
+                  color="primary"
+                  onClick={() => ""}
+                >
+                  <DescriptionIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Descrição do documento">
+                <IconButton
+                  color="primary"
+                  onClick={() => ""}
+                >
+                  <PostAddIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Descrição do documento">
+                <IconButton
+                  color="primary"
+                  onClick={() => ""}
+                >
+                  <ListIcon />
+                </IconButton>
+              </Tooltip>
+            </TableCell>
           </TableRow>
         </TableHead>
         {data.length != 0 ? (
           <TableBody>
-            {data.map((parceiro, index) => (
-              <TableRow key={index}>
-                {/* <TableCell>{parceiro.habilitacao}</TableCell> */}
-                {/* <TableCell>{parceiro.status}</TableCell> */}
-                {/* <TableCell>{parceiro.cnpj}</TableCell> */}
-                <TableCell>{parceiro.nomePontoFocal}</TableCell>
-                <TableCell>{parceiro.razaoSocial}</TableCell>
-                <TableCell>{parceiro.nomeFantasia}</TableCell>
-                {/* <TableCell>{parceiro.naturezaJuridica}</TableCell> */}
+            {data.slice(5 * (page - 1), 5 * page).map((parceiro, index) => (
+              <>
+                <TableRow key={index}>
+                  <TableCell style={{ color: theme.palette.primary.main }}>{parceiro.nomePontoFocal.toUpperCase()}</TableCell>
+                  <TableCell>{parceiro.razaoSocial}</TableCell>
+                  {/* <TableCell>{parceiro.nomeFantasia}</TableCell>
                 <TableCell>{parceiro.nomeResponsavel}</TableCell>
-                {/* <TableCell>{parceiro.cidade}</TableCell> */}
-                {/* <TableCell>{parceiro.uf}</TableCell> */}
                 <TableCell>{dayjs(parceiro.cadastro).format("DD/MM/YYYY")}</TableCell>
-                <TableCell>{dayjs(parceiro.ultimaModificacao).format("DD/MM/YYYY")}</TableCell>
-                <TableCell>
-                  <IconButton
-                    color="primary"
-                    onClick={() => handleButtonClick(parceiro.id)}
-                  >
-                    <DescriptionIcon />
-                  </IconButton>
-                  <IconButton
-                    color="primary"
-                    onClick={() => handleButtonClick(parceiro.id)}
-                  >
-                    <PostAddIcon />
-                  </IconButton>
-                  <IconButton
-                    color="primary"
-                    onClick={() => handleButtonClick(parceiro.id)}
-                  >
-                    <ListIcon />
-                  </IconButton>
-                  <IconButton
-                    color="primary"
-                    onClick={() => handleButtonClick(parceiro.id)}
-                  >
-                    <CheckCircleIcon />
-                  </IconButton>
-                  <IconButton
-                    color="primary"
-                    onClick={() => handleButtonClick(parceiro.id)}
-                  >
-                    <VisibilityIcon />
-                  </IconButton>
-                  <IconButton
-                    color="primary"
-                    onClick={() => handleButtonClick(parceiro.id)}
-                  >
-                    <KeyboardArrowDownIcon />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
+                <TableCell>{dayjs(parceiro.ultimaModificacao).format("DD/MM/YYYY")}</TableCell> */}
+                  <TableCell align="right">
+                    <Tooltip title="Descrição do documento">
+                      <IconButton
+                        color="primary"
+                        onClick={() => handleButtonClick(parceiro.id)}
+                      >
+                        <DescriptionIcon />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Descrição do documento">
+                      <IconButton
+                        color="primary"
+                        onClick={() => handleButtonClick(parceiro.id)}
+                      >
+                        <PostAddIcon />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Descrição do documento">
+                      <IconButton
+                        color="primary"
+                        onClick={() => handleButtonClick(parceiro.id)}
+                      >
+                        <ListIcon />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Descrição do documento">
+                      <IconButton
+                        color="primary"
+                        onClick={() => handleButtonClick(parceiro.id)}
+                      >
+                        <CheckCircleIcon />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Detalhes do item">
+                      <IconButton
+                        color="primary"
+                        onClick={() => handleButtonClick(parceiro.id)}
+                      >
+                        <VisibilityIcon />
+                      </IconButton>
+                      <IconButton
+                        color="primary"
+                        onClick={() => handleArrowClick(index)}
+                      >
+                        {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                      </IconButton>
+                    </Tooltip>
+                  </TableCell>
+                </TableRow>
+                {expandedRows.includes(index) && (
+                  <TableRow key={index}>
+                    <TableCell
+                      colSpan={10}
+                      style={{ backgroundColor: theme.palette.grey[200] }}
+                    >
+                      <Grid>
+                        <Grid
+                          container
+                          spacing={2}
+                        >
+                          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
+                            <>
+                              <Grid
+                                key={item}
+                                item
+                                xs={3}
+                              >
+                                <a style={{ fontFamily: "Rawline Bold" }}>Item {item}</a>
+                                <p style={{ fontFamily: "Rawline Medium" }}>
+                                  Descrição do Item {item} e {index}
+                                </p>
+                              </Grid>
+
+                              {(index + 1) % 4 === 0 && (
+                                <Grid
+                                  item
+                                  xs={12}
+                                >
+                                  <div style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}></div>
+                                </Grid>
+                              )}
+                            </>
+                          ))}
+                        </Grid>
+                      </Grid>
+                    </TableCell>
+                  </TableRow>
+                )}
+              </>
             ))}
           </TableBody>
         ) : (
@@ -128,6 +214,14 @@ function TabelaParceiros({ data }) {
           </TableBody>
         )}
       </Table>
+      <div style={{ borderTop: "1px solid #d3d3d3", padding: "15px", display: "flex", justifyContent: "center" }}>
+        <Pagination
+          page={page}
+          count={Math.ceil(data.length / 5)}
+          color="primary"
+          onChange={handlePageChange}
+        />
+      </div>
     </TableContainer>
   );
 }
@@ -210,6 +304,38 @@ const initialData = [
   },
   {
     id: 5,
+    habilitacao: "Parceiro",
+    status: "Pendente",
+    cnpj: "55.555.555/1000-00",
+    nomeFantasia: "Nome 2",
+    nomePontoFocal: "Fulano Beltrano",
+    razaoSocial: "Razão 1",
+    naturezaJuridica: "Privado",
+    nomeResponsavel: "Beltrano Fulano",
+    cidade: "Brasília",
+    uf: "DF",
+    cadastro: "2024-03-20T00:00",
+    ultimaModificacao: "2024-03-21T00:00",
+    tipoDeServico: "VET",
+  },
+  {
+    id: 6,
+    habilitacao: "Parceiro",
+    status: "Pendente",
+    cnpj: "55.555.555/1000-00",
+    nomeFantasia: "Nome 2",
+    nomePontoFocal: "Fulano Beltrano",
+    razaoSocial: "Razão 1",
+    naturezaJuridica: "Privado",
+    nomeResponsavel: "Beltrano Fulano",
+    cidade: "Brasília",
+    uf: "DF",
+    cadastro: "2024-03-20T00:00",
+    ultimaModificacao: "2024-03-21T00:00",
+    tipoDeServico: "VET",
+  },
+  {
+    id: 7,
     habilitacao: "Parceiro",
     status: "Pendente",
     cnpj: "55.555.555/1000-00",
@@ -325,7 +451,7 @@ const FormListarParceirosPendentes = () => {
           }}
         >
           <Grid
-            spacing={1}
+            spacing={3}
             container
           >
             <Grid
@@ -398,7 +524,8 @@ const FormListarParceirosPendentes = () => {
             </Grid>
           </Grid>
           <Grid
-            spacing={1}
+            mt={2}
+            spacing={3}
             container
           >
             <Grid
@@ -406,8 +533,8 @@ const FormListarParceirosPendentes = () => {
               xs={12}
               sm={12}
             >
-              <FormGroup>
-                <Typography sx={{ mb: "8px" }}>Tipo de Serviço</Typography>
+              <FormControl style={{ width: "100%" }}>
+                <InputLabel id="label-tipo-servico">Tipo de Serviço</InputLabel>
                 <Select
                   id="tipoDeServico"
                   name="tipoDeServico"
@@ -415,6 +542,7 @@ const FormListarParceirosPendentes = () => {
                   value={filter.tipoDeServico || "none"}
                   type="text"
                   onChange={handleFilterSelectChange}
+                  labelId="label-tipo-servico"
                 >
                   <MenuItem
                     value="none"
@@ -431,123 +559,163 @@ const FormListarParceirosPendentes = () => {
                   <MenuItem value="MPu">Mobilização de Público</MenuItem>
                   <MenuItem value="MPa">Mobilização de Parceiro</MenuItem>
                 </Select>
-              </FormGroup>
-            </Grid>
-
-            <Grid
-              item
-              xs={1}
-              sm={2}
-            >
-              <Typography sx={{ mt: "16px" }}>Data do cadastro:</Typography>
+              </FormControl>
             </Grid>
             <Grid
               item
-              xs={6}
-              sm={3}
+              xs={12}
+              sm={6}
             >
-              <FormGroup>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                    label="Inicio"
-                    id="dataDoCadastroInicio"
-                    name="dataDoCadastroInicio"
-                    value={filter.dataDoCadastroInicio}
-                    format="DD/MM/YYYY"
-                    onChange={valor => setFilter({ ...filter, ["dataDoCadastroInicio"]: valor })}
-                  />
-                </LocalizationProvider>
-              </FormGroup>
+              <Card style={{ border: "1px solid #d3d3d3" }}>
+                <CardContent>
+                  <p style={{ fontFamily: "Rawline Regular", color: "grey" }}>Data do cadastro</p>
+                  <Grid
+                    container
+                    spacing={2}
+                  >
+                    <Grid
+                      item
+                      xs={6}
+                      sm={6}
+                    >
+                      <FormGroup>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                          <DatePicker
+                            label="Inicio"
+                            id="dataDoCadastroInicio"
+                            name="dataDoCadastroInicio"
+                            value={filter.dataDoCadastroInicio}
+                            format="DD/MM/YYYY"
+                            onChange={valor => setFilter({ ...filter, ["dataDoCadastroInicio"]: valor })}
+                          />
+                        </LocalizationProvider>
+                      </FormGroup>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={6}
+                      sm={6}
+                    >
+                      <FormGroup>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                          <DatePicker
+                            id="dataDoCadastroFim"
+                            name="dataDoCadastroFim"
+                            value={filter.dataDoCadastroFim}
+                            label="Fim"
+                            format="DD/MM/YYYY"
+                            onChange={valor => setFilter({ ...filter, ["dataDoCadastroFim"]: valor })}
+                          />
+                        </LocalizationProvider>
+                      </FormGroup>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
             </Grid>
             <Grid
               item
-              xs={6}
-              sm={3}
+              xs={12}
+              sm={6}
             >
-              <FormGroup>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                    id="dataDoCadastroFim"
-                    name="dataDoCadastroFim"
-                    value={filter.dataDoCadastroFim}
-                    label="Fim"
-                    format="DD/MM/YYYY"
-                    onChange={valor => setFilter({ ...filter, ["dataDoCadastroFim"]: valor })}
-                  />
-                </LocalizationProvider>
-              </FormGroup>
-            </Grid>
-
-            <Grid
-              item
-              xs={1}
-              sm={3}
-            ></Grid>
-
-            <Grid
-              item
-              xs={1}
-              sm={2}
-            >
-              <Typography sx={{ mt: "8px" }}>Data da Última Modificação:</Typography>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              sm={3}
-            >
-              <FormGroup>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                    id="dataDaUltimaModificacaoInicio"
-                    name="dataDaUltimaModificacaoInicio"
-                    value={filter.dataDaUltimaModificacaoInicio}
-                    label="Inicio"
-                    format="DD/MM/YYYY"
-                    onChange={valor => setFilter({ ...filter, ["dataDaUltimaModificacaoInicio"]: valor })}
-                  />
-                </LocalizationProvider>
-              </FormGroup>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              sm={3}
-            >
-              <FormGroup>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                    id="dataDaUltimaModificacaoFim"
-                    name="dataDaUltimaModificacaoFim"
-                    value={filter.dataDaUltimaModificacaoFim}
-                    label="Fim"
-                    format="DD/MM/YYYY"
-                    onChange={valor => setFilter({ ...filter, ["dataDaUltimaModificacaoFim"]: valor })}
-                  />
-                </LocalizationProvider>
-              </FormGroup>
+              <Card style={{ border: "1px solid #d3d3d3" }}>
+                <CardContent>
+                  <p style={{ fontFamily: "Rawline Regular", color: "grey" }}>Data da ultima modificação</p>
+                  <Grid
+                    container
+                    spacing={2}
+                  >
+                    <Grid
+                      item
+                      xs={6}
+                      sm={6}
+                    >
+                      <FormGroup>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                          <DatePicker
+                            id="dataDaUltimaModificacaoInicio"
+                            name="dataDaUltimaModificacaoInicio"
+                            value={filter.dataDaUltimaModificacaoInicio}
+                            label="Inicio"
+                            format="DD/MM/YYYY"
+                            onChange={valor => setFilter({ ...filter, ["dataDaUltimaModificacaoInicio"]: valor })}
+                          />
+                        </LocalizationProvider>
+                      </FormGroup>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={6}
+                      sm={6}
+                    >
+                      <FormGroup>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                          <DatePicker
+                            id="dataDaUltimaModificacaoFim"
+                            name="dataDaUltimaModificacaoFim"
+                            value={filter.dataDaUltimaModificacaoFim}
+                            label="Fim"
+                            format="DD/MM/YYYY"
+                            onChange={valor => setFilter({ ...filter, ["dataDaUltimaModificacaoFim"]: valor })}
+                          />
+                        </LocalizationProvider>
+                      </FormGroup>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
             </Grid>
           </Grid>
+
           <Box sx={{ flexGrow: 1, mt: "16px" }}>
             <Grid
               container
-              spacing={3}
+              spacing={1}
+              justifyContent="flex-end"
             >
-              <Grid
-                item
-                xs={10}
-              ></Grid>
-              <Grid
-                item
-                xs
-              >
+              <Grid item>
+                <Button
+                  variant="outlined"
+                  onClick={applyFilter}
+                  sx={{ gap: "8px" }}
+                  style={{ fontFamily: "Rawline Medium" }}
+                >
+                  Cancelar
+                </Button>
+              </Grid>
+              <Grid item>
                 <Button
                   variant="contained"
                   onClick={applyFilter}
                   sx={{ gap: "8px" }}
+                  style={{ fontFamily: "Rawline Medium" }}
                 >
                   <SearchIcon />
                   Pesquisar
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
+          <Box sx={{ flexGrow: 1, mt: "40px" }}>
+            <TabelaParceiros
+              data={filteredData}
+              sx={{ mt: "16px" }}
+            />
+          </Box>
+
+          <Box sx={{ flexGrow: 1, mt: "16px" }}>
+            <Grid
+              container
+              spacing={1}
+              justifyContent="flex-end"
+            >
+              <Grid item>
+                <Button
+                  variant="text"
+                  onClick={handleDownloadCSV}
+                  style={{ fontFamily: "Rawline Medium" }}
+                >
+                  Download CSV
                 </Button>
               </Grid>
             </Grid>

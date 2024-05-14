@@ -6,12 +6,12 @@ import { describe, expect, it, jest } from "@jest/globals";
 import axios from "axios";
 
 import PageNovaInscricaoParceiro from "../src/components/parceiro/PageNovaInscricaoParceiro";
-import PageHomeAdm from "../src/pages/admin/home.admin";
-import PageParceirosPendentes from "../src/pages/admin/listarParceirosPendentes";
-import PageHomeCidadao from "../src/pages/cidadao/home.cidadao";
+import PageHomeAdm from "../src/pages/admin/PageHomeAdmin";
+import PageParceirosPendentes from "../src/pages/admin/PageListarParceirosPendentes";
+import PageHomeCidadao from "../src/pages/cidadao/PageHomeCidadao";
 import FAQ from "../src/pages/FAQ";
 import NotFound from "../src/pages/NotFound";
-import PageHomeParceiro from "../src/pages/parceiro/home.parceiro";
+import PageHomeParceiro from "../src/pages/parceiro/PageHomeParceiro";
 import { singleMockData } from "./mockData";
 import { TestWrapper } from "./testWrapper";
 
