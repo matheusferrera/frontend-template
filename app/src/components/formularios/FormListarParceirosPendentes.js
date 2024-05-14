@@ -767,6 +767,7 @@ const FormListarParceirosPendentes = () => {
           </Grid>
         </Grid>
       </Box>
+
       <div ref={tableRef}>
         <TabelaParceiros data={filteredData} />
       </div>

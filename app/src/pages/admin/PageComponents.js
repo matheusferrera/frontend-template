@@ -170,10 +170,12 @@ const PageComponents = () => {
       >
         Card Visao Geral
       </Typography>
+
       <CardVisaoGeral
-        number={"2"}
+        number={2}
         title={"title"}
       ></CardVisaoGeral>
+
       <CardVisaoGeral></CardVisaoGeral>
     </Container>
   );
