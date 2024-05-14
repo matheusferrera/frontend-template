@@ -6,7 +6,7 @@ export function palette(mode) {
   const grey = {
     0: "#FFFFFF",
     100: "#FAFAFA", //"#F9FAFB",
-    200: "#F4F6F8",
+    200: isDark ? "#333333" : "#F4F6F8",
     300: "#DFE3E8",
     400: "#C4CDD5",
     500: "#919EAB",

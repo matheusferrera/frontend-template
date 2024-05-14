@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import FAQ from "../../pages/FAQ";
 import NotFound from "../../pages/NotFound";
-import PageHomeParceiro from "../../pages/parceiro/home.parceiro";
+import PageHomeParceiro from "../../pages/parceiro/PageHomeParceiro";
 import PageNovaInscricaoParceiro from "../../pages/parceiro/PageNovaInscricaoParceiro";
 import PageVisualizacaoParceiro from "../../pages/parceiro/PageVisualizacaoParceiro";
 import Profile from "../../pages/Profile";

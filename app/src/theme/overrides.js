@@ -17,6 +17,18 @@ export function overrides(theme) {
         },
       },
     },
+    MuiSelect: {
+      defaultProps: {
+        variant: "filled",
+      },
+      styleOverrides: {
+        root: {
+          "& .MuiInputLabel-root": {
+            color: "#9E9E9E",
+          },
+        },
+      },
+    },
     MuiFilledInput: {
       defaultProps: {
         variant: "filled",
@@ -145,8 +157,22 @@ export function overrides(theme) {
     MuiTableCell: {
       styleOverrides: {
         head: {
-          color: theme.palette.text.secondary,
-          backgroundColor: theme.palette.background.neutral,
+          color: theme.palette.text.primary,
+          backgroundColor: theme.palette.grey[200],
+          fontFamily: "Rawline Bold",
+          transition: "1s",
+        },
+        body: {
+          fontFamily: "Rawline Medium",
+        },
+      },
+    },
+    MuiTableContainer: {
+      styleOverrides: {
+        root: {
+          border: "1px solid #d3d3d3",
+          borderRadius: "10px",
+          transition: "1s",
         },
       },
     },
