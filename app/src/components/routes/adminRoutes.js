@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import PageAnalisarParceiroPendente from "../../pages/admin/analisarParceiroPendente";
 import PageComponents from "../../pages/admin/PageComponents";
 import PageHomeAdm from "../../pages/admin/PageHomeAdmin";
 import PageParceirosPendentes from "../../pages/admin/PageListarParceirosPendentes";
@@ -29,6 +30,10 @@ const AdminRoutes = () => (
     <Route
       path="/listar_parceiros_pendentes"
       element={<PageParceirosPendentes />}
+    />
+    <Route
+      path="/listar_parceiros_pendentes/analisar_parceiro_pendente"
+      element={<PageAnalisarParceiroPendente />}
     />
     <Route
       path="/faq"

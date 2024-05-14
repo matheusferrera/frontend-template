@@ -143,7 +143,8 @@ function TabelaParceiros({ data }) {
                     <Tooltip title="Descrição do documento">
                       <IconButton
                         color="primary"
-                        onClick={() => handleButtonClick(parceiro.id)}
+                        href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                        onClick={() => localStorage.setItem("analisarID", JSON.stringify(parceiro.id))}
                       >
                         <CheckCircleIcon />
                       </IconButton>
