@@ -19,8 +19,9 @@ const AnalisarParceiroPendente = () => {
 
       <Typography
         variant="h4"
-        mt={2}
-        sx={{ fontFamily: "Rawline Bold", marginBottom: "20px" }}
+        mt={3}
+        mb={3}
+        sx={{ fontFamily: "Rawline Bold" }}
         style={{ transition: "1s" }}
       >
         Analisar parceiro pendente

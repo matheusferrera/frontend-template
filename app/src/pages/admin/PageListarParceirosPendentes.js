@@ -147,9 +147,10 @@ const PageParceirosPendentes = () => {
       />
 
       <Typography
-        variant="h5"
-        mt={2}
-        sx={{ fontFamily: "Rawline Bold", marginBottom: "40px" }}
+        variant="h4"
+        mt={3}
+        mb={3}
+        sx={{ fontFamily: "Rawline Bold" }}
         style={{ transition: "1s" }}
       >
         Listar Parceiros Pendentes

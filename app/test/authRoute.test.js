@@ -5,13 +5,13 @@ import renderer from "react-test-renderer";
 import { describe, expect, it, jest } from "@jest/globals";
 import axios from "axios";
 
-import PageNovaInscricaoParceiro from "../src/components/parceiro/PageNovaInscricaoParceiro";
 import PageHomeAdm from "../src/pages/admin/PageHomeAdmin";
 import PageParceirosPendentes from "../src/pages/admin/PageListarParceirosPendentes";
 import PageHomeCidadao from "../src/pages/cidadao/PageHomeCidadao";
 import FAQ from "../src/pages/FAQ";
 import NotFound from "../src/pages/NotFound";
 import PageHomeParceiro from "../src/pages/parceiro/PageHomeParceiro";
+import PageNovaInscricaoParceiro from "../src/pages/parceiro/PageNovaInscricaoParceiro";
 import { singleMockData } from "./mockData";
 import { TestWrapper } from "./testWrapper";
 

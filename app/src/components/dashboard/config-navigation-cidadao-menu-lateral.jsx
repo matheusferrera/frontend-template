@@ -1,7 +1,7 @@
-const defaultNavConfig = [
+const cidadaoNavConfig = [
   {
     title: "Página Inicial",
-    path: "/",
+    path: "/cidadao",
     color: "default",
     subTitles: {
       home: "/",
@@ -10,4 +10,4 @@ const defaultNavConfig = [
   },
 ];
 
-export default defaultNavConfig;
+export default cidadaoNavConfig;
