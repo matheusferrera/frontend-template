@@ -13,8 +13,18 @@ exports[`Teste de componentes Not found renderizada corretamente 1`] = `
 
 exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1`] = `
 <div
-  className="MuiBox-root css-1xjcxsl"
+  className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
 >
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-jac3lk-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
+  >
+    Nova inscrição
+  </h4>
   <form
     action="#"
     onReset={[Function]}
@@ -24,7 +34,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
       className="MuiStack-root css-nen11g-MuiStack-root"
     >
       <div
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-17zbd5d-MuiPaper-root-MuiCard-root"
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-3g1pj4-MuiPaper-root-MuiCard-root"
         color="#ffffff"
         style={
           {
@@ -32,11 +42,11 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
           }
         }
       >
-        <h4
-          className="MuiTypography-root MuiTypography-h4 css-1gyvjcn-MuiTypography-root"
+        <h5
+          className="MuiTypography-root MuiTypography-h5 css-1oumt4z-MuiTypography-root"
         >
           DADOS
-        </h4>
+        </h5>
         <div
           className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-a5rdam-MuiGrid-root"
         >
@@ -773,8 +783,8 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
           }
         }
       >
-        <h4
-          className="MuiTypography-root MuiTypography-h4 css-1gyvjcn-MuiTypography-root"
+        <h5
+          className="MuiTypography-root MuiTypography-h5 css-1oumt4z-MuiTypography-root"
         >
           REPRESENTANTE
            
@@ -798,7 +808,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
             />
           </svg>
-        </h4>
+        </h5>
         <div
           className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-a5rdam-MuiGrid-root"
         >
@@ -1089,8 +1099,8 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
           }
         }
       >
-        <h4
-          className="MuiTypography-root MuiTypography-h4 css-1gyvjcn-MuiTypography-root"
+        <h5
+          className="MuiTypography-root MuiTypography-h5 css-1oumt4z-MuiTypography-root"
         >
           PONTO FOCAL
            
@@ -1114,7 +1124,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
             />
           </svg>
-        </h4>
+        </h5>
         <div
           className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-a5rdam-MuiGrid-root"
         >
@@ -3600,8 +3610,8 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
 <div
   className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
 >
-  <h5
-    className="MuiTypography-root MuiTypography-h5 css-grbqxd-MuiTypography-root"
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-jac3lk-MuiTypography-root"
     style={
       {
         "transition": "1s",
@@ -3609,7 +3619,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
     }
   >
     Listar Parceiros Pendentes
-  </h5>
+  </h4>
   <div
     className="MuiStack-root css-jfdv4h-MuiStack-root"
   >

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import PageAnalisarParceiroPendente from "../../pages/admin/analisarParceiroPendente";
+import PageAnalisarParceiroPendente from "../../pages/admin/PageAnalisarParceiroPendente";
 import PageComponents from "../../pages/admin/PageComponents";
 import PageHomeAdm from "../../pages/admin/PageHomeAdmin";
 import PageParceirosPendentes from "../../pages/admin/PageListarParceirosPendentes";

@@ -397,12 +397,11 @@ const FormParceiros = ({
               sx={{
                 borderRadius: "8px",
                 padding: "16px",
-                mt: "24px",
               }}
               style={{ transition: "1s" }}
             >
               <Typography
-                variant="h4"
+                variant="h5"
                 sx={{
                   fontSize: "20",
                   mb: "16px",
@@ -901,7 +900,7 @@ const FormParceiros = ({
               style={{ transition: "1s" }}
             >
               <Typography
-                variant="h4"
+                variant="h5"
                 sx={{
                   fontSize: "20",
                   mb: "16px",
@@ -1083,7 +1082,7 @@ const FormParceiros = ({
               style={{ transition: "1s" }}
             >
               <Typography
-                variant="h4"
+                variant="h5"
                 sx={{
                   fontSize: "20",
                   mb: "16px",

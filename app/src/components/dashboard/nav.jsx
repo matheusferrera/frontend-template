@@ -10,8 +10,7 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import ListItemButton from "@mui/material/ListItemButton";
 import Stack from "@mui/material/Stack";
-import { alpha } from "@mui/material/styles";
-import { useTheme } from "@mui/material/styles";
+import { alpha, useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -22,7 +21,10 @@ import { themeProvider } from "../../theme/index";
 import Iconify from "../iconify";
 import Scrollbar from "../scrollbar";
 import { HEADER, NAV } from "./config-layout";
-import { adminNavConfig, cidadaoNavConfig, defaultNavConfig, parceiroNavConfig } from "./config-navigation-menu-lateral";
+import adminNavConfig from "./config-navigation-admin-menu-lateral";
+import cidadaoNavConfig from "./config-navigation-cidadao-menu-lateral";
+import defaultNavConfig from "./config-navigation-menu-lateral";
+import parceiroNavConfig from "./config-navigation-parceiro-menu-lateral";
 import RouterLink from "./router-link";
 
 // ----------------------------------------------------------------------

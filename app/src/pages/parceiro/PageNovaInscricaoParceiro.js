@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Stack } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
 import FormParceiros from "../../components/formularios/FormParceiros";
@@ -73,27 +73,25 @@ const PageNovaInscricaoParceiro = () => {
   };
 
   return (
-    <Stack
-      alignSelf={"center"}
-      alignItems={"center"}
-      sx={{
-        width: 1,
-        height: 1,
-        justifyContent: "center",
-      }}
+    <Container
+      maxWidth="lg"
+      sx={{ mt: 0 }}
     >
-      <Stack
-        sx={{
-          width: 1,
-          justifyContent: "flex-start",
-        }}
+      <CardBreadcrumb
+        homeLink="/parceiro/cadastro"
+        homeText="Parceiro"
+        currentPage="Cadastrar Parceiros"
+      />
+
+      <Typography
+        variant="h4"
+        mt={3}
+        mb={3}
+        sx={{ fontFamily: "Rawline Bold" }}
+        style={{ transition: "1s" }}
       >
-        <CardBreadcrumb
-          homeLink="/parceiro/cadastro"
-          homeText="Parceiro"
-          currentPage="Cadastrar Parceiros"
-        />
-      </Stack>
+        Nova inscrição
+      </Typography>
 
       <FormParceiros
         loading={loading}
@@ -105,7 +103,7 @@ const PageNovaInscricaoParceiro = () => {
         erroDoUsuarioModal={erroDoUsuarioModal}
         setErroDoUsuarioModal={setErroDoUsuarioModal}
       />
-    </Stack>
+    </Container>
   );
 };
 
