@@ -4660,12 +4660,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </button>
-                  <button
+                  <a
                     aria-label="Descrição do documento"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -4681,7 +4681,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <svg
                       aria-hidden={true}
@@ -4697,7 +4696,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <span
                     aria-label="Detalhes do item"
                     aria-labelledby={null}
@@ -4923,12 +4922,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </button>
-                  <button
+                  <a
                     aria-label="Descrição do documento"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -4944,7 +4943,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <svg
                       aria-hidden={true}
@@ -4960,7 +4958,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <span
                     aria-label="Detalhes do item"
                     aria-labelledby={null}
@@ -5186,12 +5184,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </button>
-                  <button
+                  <a
                     aria-label="Descrição do documento"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -5207,7 +5205,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <svg
                       aria-hidden={true}
@@ -5223,7 +5220,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <span
                     aria-label="Detalhes do item"
                     aria-labelledby={null}
@@ -5449,12 +5446,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </button>
-                  <button
+                  <a
                     aria-label="Descrição do documento"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -5470,7 +5467,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <svg
                       aria-hidden={true}
@@ -5486,7 +5482,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <span
                     aria-label="Detalhes do item"
                     aria-labelledby={null}
@@ -5712,12 +5708,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </button>
-                  <button
+                  <a
                     aria-label="Descrição do documento"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -5733,7 +5729,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <svg
                       aria-hidden={true}
@@ -5749,7 +5744,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <span
                     aria-label="Detalhes do item"
                     aria-labelledby={null}
@@ -6414,12 +6409,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
               </button>
-              <button
+              <a
                 aria-label="Descrição do documento"
                 aria-labelledby={null}
                 className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                 data-mui-internal-clone-element={true}
-                disabled={false}
+                href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onContextMenu={[Function]}
@@ -6435,7 +6430,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
                 tabIndex={0}
-                type="button"
               >
                 <svg
                   aria-hidden={true}
@@ -6451,7 +6445,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 <span
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
-              </button>
+              </a>
               <span
                 aria-label="Detalhes do item"
                 aria-labelledby={null}
@@ -6677,12 +6671,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
               </button>
-              <button
+              <a
                 aria-label="Descrição do documento"
                 aria-labelledby={null}
                 className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                 data-mui-internal-clone-element={true}
-                disabled={false}
+                href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onContextMenu={[Function]}
@@ -6698,7 +6692,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
                 tabIndex={0}
-                type="button"
               >
                 <svg
                   aria-hidden={true}
@@ -6714,7 +6707,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 <span
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
-              </button>
+              </a>
               <span
                 aria-label="Detalhes do item"
                 aria-labelledby={null}
@@ -6940,12 +6933,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
               </button>
-              <button
+              <a
                 aria-label="Descrição do documento"
                 aria-labelledby={null}
                 className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                 data-mui-internal-clone-element={true}
-                disabled={false}
+                href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onContextMenu={[Function]}
@@ -6961,7 +6954,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
                 tabIndex={0}
-                type="button"
               >
                 <svg
                   aria-hidden={true}
@@ -6977,7 +6969,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 <span
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
-              </button>
+              </a>
               <span
                 aria-label="Detalhes do item"
                 aria-labelledby={null}
@@ -7203,12 +7195,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
               </button>
-              <button
+              <a
                 aria-label="Descrição do documento"
                 aria-labelledby={null}
                 className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                 data-mui-internal-clone-element={true}
-                disabled={false}
+                href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onContextMenu={[Function]}
@@ -7224,7 +7216,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
                 tabIndex={0}
-                type="button"
               >
                 <svg
                   aria-hidden={true}
@@ -7240,7 +7231,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 <span
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
-              </button>
+              </a>
               <span
                 aria-label="Detalhes do item"
                 aria-labelledby={null}
@@ -7466,12 +7457,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
               </button>
-              <button
+              <a
                 aria-label="Descrição do documento"
                 aria-labelledby={null}
                 className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                 data-mui-internal-clone-element={true}
-                disabled={false}
+                href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onContextMenu={[Function]}
@@ -7487,7 +7478,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 onTouchMove={[Function]}
                 onTouchStart={[Function]}
                 tabIndex={0}
-                type="button"
               >
                 <svg
                   aria-hidden={true}
@@ -7503,7 +7493,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                 <span
                   className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
-              </button>
+              </a>
               <span
                 aria-label="Detalhes do item"
                 aria-labelledby={null}
