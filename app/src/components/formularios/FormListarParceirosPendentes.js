@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useReactToPrint } from "react-to-print";
 
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import DescriptionIcon from "@mui/icons-material/Description";
@@ -32,6 +33,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
 import PropTypes from "prop-types";
+import { utils as XLSXUtils, writeFile as writeXLSXFile } from "xlsx";
 
 // Cada botão poderá ter uma função diferente, está é apenas um modelo
 function handleButtonClick(id) {
@@ -128,6 +130,16 @@ function TabelaParceiros({ data }) {
       </Table>
     </TableContainer>
   );
+}
+
+// Converts a string to ArrayBuffer.
+export function s2ab(s) {
+  const buf = new ArrayBuffer(s.length);
+  const view = new Uint8Array(buf);
+  for (let i = 0; i < s.length; ++i) {
+    view[i] = s.charCodeAt(i) & 0xff;
+  }
+  return buf;
 }
 
 // Dados fictícios para teste da tabela
@@ -266,6 +278,8 @@ const FormListarParceirosPendentes = () => {
     setFilteredData(filtered);
   };
 
+  const tableRef = useRef();
+
   const handleDownloadCSV = () => {
     // Code to download data as CSV
     // For simplicity, let's assume data is already filtered
@@ -279,6 +293,25 @@ const FormListarParceirosPendentes = () => {
     a.click();
     document.body.removeChild(a);
   };
+
+  const handleDownloadExcel = () => {
+    // Code to download data as XLSX
+    // For simplicity, let's assume data is already filtered
+
+    // Convert data to XLSX format
+    const worksheet = XLSXUtils.json_to_sheet(filteredData);
+    const workbook = XLSXUtils.book_new();
+    XLSXUtils.book_append_sheet(workbook, worksheet, "Dados Parceiros");
+
+    // Save the workbook as an XLSX file
+    writeXLSXFile(workbook, "dados_parceiro.xlsx");
+  };
+
+  const handlePrint = useReactToPrint({
+    content: () => tableRef.current,
+    documentTitle: "Lista de Parceiros Pendentes",
+    onAfterPrint: () => console.log("Printing completed"),
+  });
 
   return (
     <>
@@ -534,6 +567,10 @@ const FormListarParceirosPendentes = () => {
           <Grid
             item
             xs
+            sx={{
+              mt: "4px",
+              mb: "4px",
+            }}
           >
             <Button
               variant="contained"
@@ -541,10 +578,30 @@ const FormListarParceirosPendentes = () => {
             >
               Download CSV
             </Button>
+            <Button
+              variant="contained"
+              onClick={handleDownloadExcel}
+              sx={{
+                mt: "4px",
+              }}
+            >
+              Download Excel
+            </Button>
+            <Button
+              variant="contained"
+              onClick={handlePrint}
+              sx={{
+                mt: "4px",
+              }}
+            >
+              Imprimir
+            </Button>
           </Grid>
         </Grid>
       </Box>
-      <TabelaParceiros data={filteredData} />
+      <div ref={tableRef}>
+        <TabelaParceiros data={filteredData} />
+      </div>
     </>
   );
 };
