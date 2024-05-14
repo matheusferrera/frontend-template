@@ -21,6 +21,14 @@ export const adminNavConfig = [
       "Listar Parceiros Pendentes": "/listar_parceiros_pendentes",
     },
   },
+  {
+    title: "DEV",
+    path: "/",
+    color: "default",
+    subTitles: {
+      componentes: "/components",
+    },
+  },
 ];
 
 export const parceiroNavConfig = [
