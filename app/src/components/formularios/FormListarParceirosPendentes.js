@@ -41,12 +41,16 @@ import dayjs from "dayjs";
 import PropTypes from "prop-types";
 import { utils as XLSXUtils, writeFile as writeXLSXFile } from "xlsx";
 
+import ServicoOfertadoModal from "../modals/ServicoOfertadoModal";
+
 // Cada botão poderá ter uma função diferente, está é apenas um modelo
 function handleButtonClick(id) {
   return id;
 }
 
-function TabelaParceiros({ data }) {
+let idSelecionado = 0;
+
+function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handlePrint, handleListaOpen }) {
   // Responsável == Representante
   // Parceiro == PontoFocal
 
@@ -77,26 +81,26 @@ function TabelaParceiros({ data }) {
             <TableCell>Habilitação</TableCell>
             <TableCell sx={{ minWidth: 100 }}>Status</TableCell>
             <TableCell align="right">
-              <Tooltip title="Descrição do documento">
+              <Tooltip title="Download CSV">
                 <IconButton
                   color="primary"
-                  onClick={() => ""}
+                  onClick={handleDownloadCSV}
                 >
                   <DescriptionIcon />
                 </IconButton>
               </Tooltip>
-              <Tooltip title="Descrição do documento">
+              <Tooltip title="Download Excel">
                 <IconButton
                   color="primary"
-                  onClick={() => ""}
+                  onClick={handleDownloadExcel}
                 >
                   <PostAddIcon />
                 </IconButton>
               </Tooltip>
-              <Tooltip title="Descrição do documento">
+              <Tooltip title="Imprimir">
                 <IconButton
                   color="primary"
-                  onClick={() => ""}
+                  onClick={handlePrint}
                 >
                   <ListIcon />
                 </IconButton>
@@ -111,10 +115,12 @@ function TabelaParceiros({ data }) {
                 <TableRow key={index}>
                   <TableCell style={{ color: theme.palette.primary.main }}>{parceiro.nomePontoFocal.toUpperCase()}</TableCell>
                   <TableCell>{parceiro.razaoSocial}</TableCell>
-                  {/* <TableCell>{parceiro.nomeFantasia}</TableCell>
+                  {/* 
+                <TableCell>{parceiro.nomeFantasia}</TableCell>
                 <TableCell>{parceiro.nomeResponsavel}</TableCell>
                 <TableCell>{dayjs(parceiro.cadastro).format("DD/MM/YYYY")}</TableCell>
-                <TableCell>{dayjs(parceiro.ultimaModificacao).format("DD/MM/YYYY")}</TableCell> */}
+                <TableCell>{dayjs(parceiro.ultimaModificacao).format("DD/MM/YYYY")}</TableCell> 
+                */}
                   <TableCell align="right">
                     <Tooltip title="Descrição do documento">
                       <IconButton
@@ -135,7 +141,7 @@ function TabelaParceiros({ data }) {
                     <Tooltip title="Descrição do documento">
                       <IconButton
                         color="primary"
-                        onClick={() => handleButtonClick(parceiro.id)}
+                        onClick={() => handleListaOpen(parceiro.id)}
                       >
                         <ListIcon />
                       </IconButton>
@@ -253,7 +259,15 @@ const initialData = [
     uf: "DF",
     cadastro: "2024-03-20T00:00",
     ultimaModificacao: "2024-03-21T00:00",
-    tipoDeServico: "VEP",
+    tipoDeServico: {
+      VEP: true,
+      VET: false,
+      VJA: false,
+      CUR: false,
+      FPG: false,
+      MPu: false,
+      MPa: false,
+    },
   },
   {
     id: 2,
@@ -269,7 +283,15 @@ const initialData = [
     uf: "GO",
     cadastro: "2024-03-03T00:00",
     ultimaModificacao: "2024-04-10T00:00",
-    tipoDeServico: "VET",
+    tipoDeServico: {
+      VEP: false,
+      VET: true,
+      VJA: false,
+      CUR: false,
+      FPG: false,
+      MPu: false,
+      MPa: false,
+    },
   },
   {
     id: 3,
@@ -285,7 +307,15 @@ const initialData = [
     uf: "GO",
     cadastro: "2024-02-27T00:00",
     ultimaModificacao: "2024-03-15T00:00",
-    tipoDeServico: "MPu",
+    tipoDeServico: {
+      VEP: false,
+      VET: false,
+      VJA: false,
+      CUR: false,
+      FPG: false,
+      MPu: true,
+      MPa: false,
+    },
   },
   {
     id: 4,
@@ -301,7 +331,15 @@ const initialData = [
     uf: "MG",
     cadastro: "2024-02-11T00:00",
     ultimaModificacao: "2024-02-13T00:00",
-    tipoDeServico: "VEP",
+    tipoDeServico: {
+      VEP: true,
+      VET: false,
+      VJA: false,
+      CUR: false,
+      FPG: false,
+      MPu: false,
+      MPa: false,
+    },
   },
   {
     id: 5,
@@ -317,7 +355,15 @@ const initialData = [
     uf: "DF",
     cadastro: "2024-03-20T00:00",
     ultimaModificacao: "2024-03-21T00:00",
-    tipoDeServico: "VET",
+    tipoDeServico: {
+      VEP: true,
+      VET: true,
+      VJA: false,
+      CUR: false,
+      FPG: false,
+      MPu: false,
+      MPa: false,
+    },
   },
   {
     id: 6,
@@ -333,7 +379,15 @@ const initialData = [
     uf: "DF",
     cadastro: "2024-03-20T00:00",
     ultimaModificacao: "2024-03-21T00:00",
-    tipoDeServico: "VET",
+    tipoDeServico: {
+      VEP: false,
+      VET: true,
+      VJA: false,
+      CUR: false,
+      FPG: false,
+      MPu: false,
+      MPa: false,
+    },
   },
   {
     id: 7,
@@ -349,11 +403,19 @@ const initialData = [
     uf: "DF",
     cadastro: "2024-03-20T00:00",
     ultimaModificacao: "2024-03-21T00:00",
-    tipoDeServico: "VET",
+    tipoDeServico: {
+      VEP: false,
+      VET: false,
+      VJA: true,
+      CUR: false,
+      FPG: false,
+      MPu: false,
+      MPa: false,
+    },
   },
 ];
 
-const FormListarParceirosPendentes = () => {
+const FormListarParceirosPendentes = ({ servicosModal, setServicosModal }) => {
   const [filter, setFilter] = useState({
     razaoSocial: "",
     nomeFantasia: "",
@@ -385,7 +447,12 @@ const FormListarParceirosPendentes = () => {
         parceiro.nomePontoFocal.toLowerCase().includes(filter.nomePontoFocal.toLowerCase()) &&
         parceiro.nomeFantasia.toLowerCase().includes(filter.nomeFantasia.toLowerCase()) &&
         parceiro.razaoSocial.toLowerCase().includes(filter.razaoSocial.toLowerCase()) &&
-        (filter.tipoDeServico.length === 0 || parceiro.tipoDeServico.includes(filter.tipoDeServico));
+        (filter.tipoDeServico.length === 0 ||
+          Object.keys(parceiro.tipoDeServico)
+            .map(servico => {
+              return parceiro.tipoDeServico[servico] == true && filter.tipoDeServico.includes(servico);
+            })
+            .includes(true));
 
       const matchesDateFilter =
         (!filter.dataDoCadastroInicio ||
@@ -403,6 +470,15 @@ const FormListarParceirosPendentes = () => {
       return matchesTextFilter && matchesDateFilter;
     });
     setFilteredData(filtered);
+  };
+
+  const handleListaOpen = id => {
+    idSelecionado = id;
+    setServicosModal(true);
+  };
+
+  const handleListaClose = () => {
+    setServicosModal(false);
   };
 
   const tableRef = useRef();
@@ -451,6 +527,7 @@ const FormListarParceirosPendentes = () => {
             mt: "24px",
           }}
         >
+          {/* Campos para filtrar */}
           <Grid
             spacing={3}
             container
@@ -668,6 +745,7 @@ const FormListarParceirosPendentes = () => {
             </Grid>
           </Grid>
 
+          {/* Botoões de pesquisa/cancelar */}
           <Box sx={{ flexGrow: 1, mt: "16px" }}>
             <Grid
               container
@@ -697,80 +775,27 @@ const FormListarParceirosPendentes = () => {
               </Grid>
             </Grid>
           </Box>
+
+          {/* Tabela */}
           <Box sx={{ flexGrow: 1, mt: "40px" }}>
             <TabelaParceiros
               data={filteredData}
+              handleDownloadCSV={handleDownloadCSV}
+              handleDownloadExcel={handleDownloadExcel}
+              handlePrint={handlePrint}
+              handleListaOpen={handleListaOpen}
               sx={{ mt: "16px" }}
             />
           </Box>
-
-          <Box sx={{ flexGrow: 1, mt: "16px" }}>
-            <Grid
-              container
-              spacing={1}
-              justifyContent="flex-end"
-            >
-              <Grid item>
-                <Button
-                  variant="text"
-                  onClick={handleDownloadCSV}
-                  style={{ fontFamily: "Rawline Medium" }}
-                >
-                  Download CSV
-                </Button>
-              </Grid>
-            </Grid>
-          </Box>
         </Card>
       </Stack>
-
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid
-          container
-          spacing={3}
-        >
-          <Grid
-            item
-            xs={10}
-          ></Grid>
-          <Grid
-            item
-            xs
-            sx={{
-              mt: "4px",
-              mb: "4px",
-            }}
-          >
-            <Button
-              variant="contained"
-              onClick={handleDownloadCSV}
-            >
-              Download CSV
-            </Button>
-            <Button
-              variant="contained"
-              onClick={handleDownloadExcel}
-              sx={{
-                mt: "4px",
-              }}
-            >
-              Download Excel
-            </Button>
-            <Button
-              variant="contained"
-              onClick={handlePrint}
-              sx={{
-                mt: "4px",
-              }}
-            >
-              Imprimir
-            </Button>
-          </Grid>
-        </Grid>
-      </Box>
-
-      <div ref={tableRef}>
-        <TabelaParceiros data={filteredData} />
+      <div>
+        {/* Modal para listar Serviços*/}
+        <ServicoOfertadoModal
+          showModal={servicosModal}
+          handleClose={handleListaClose}
+          parceiro={filteredData.filter(parceiro => parceiro.id == idSelecionado)}
+        />
       </div>
     </>
   );
@@ -778,6 +803,15 @@ const FormListarParceirosPendentes = () => {
 
 TabelaParceiros.propTypes = {
   data: PropTypes.array,
+  handleDownloadCSV: PropTypes.any,
+  handleDownloadExcel: PropTypes.any,
+  handlePrint: PropTypes.any,
+  handleListaOpen: PropTypes.func,
+};
+
+FormListarParceirosPendentes.propTypes = {
+  setServicosModal: PropTypes.func,
+  servicosModal: PropTypes.bool,
 };
 
 export default FormListarParceirosPendentes;
