@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api/";
+import API_URL from "./config";
 
 /**
  * Registers a user with the provided email, name, username, password, and password confirmation.
