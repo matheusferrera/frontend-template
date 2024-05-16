@@ -162,13 +162,13 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                       >
                         <VisibilityIcon />
                       </IconButton>
-                      <IconButton
-                        color="primary"
-                        onClick={() => handleArrowClick(index)}
-                      >
-                        {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                      </IconButton>
                     </Tooltip>
+                    <IconButton
+                      color="primary"
+                      onClick={() => handleArrowClick(index)}
+                    >
+                      {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                    </IconButton>
                   </TableCell>
                 </TableRow>
                 {expandedRows.includes(index) && (
@@ -257,8 +257,11 @@ const initialData = [
     nomeResponsavel: "Beltrano Gonçalves",
     cidade: "Brasília",
     uf: "DF",
+    email: "fulano@teste.com",
+    endereco: "Bairro tal, Rua 1",
     cadastro: "2024-03-20T00:00",
     ultimaModificacao: "2024-03-21T00:00",
+    telefone: "(00) 00000-0000",
     tipoDeServico: {
       VEP: true,
       VET: false,
@@ -281,8 +284,11 @@ const initialData = [
     nomeResponsavel: "Fulano",
     cidade: "Goiânia",
     uf: "GO",
+    email: "beltraninho@teste.com",
+    endereco: "Bairro tal, Rua 2",
     cadastro: "2024-03-03T00:00",
     ultimaModificacao: "2024-04-10T00:00",
+    telefone: "(00) 00000-0000",
     tipoDeServico: {
       VEP: false,
       VET: true,
@@ -305,15 +311,18 @@ const initialData = [
     nomeResponsavel: "Beltrano",
     cidade: "Catalão",
     uf: "GO",
+    email: "beltrano@teste.com",
+    endereco: "Bairro num sei, Rua 10",
     cadastro: "2024-02-27T00:00",
     ultimaModificacao: "2024-03-15T00:00",
+    telefone: "(00) 00000-0000",
     tipoDeServico: {
       VEP: false,
       VET: false,
-      VJA: false,
+      VJA: true,
       CUR: false,
       FPG: false,
-      MPu: true,
+      MPu: false,
       MPa: false,
     },
   },
@@ -329,8 +338,11 @@ const initialData = [
     nomeResponsavel: "Fulano da Silva",
     cidade: "Belo Horizonte",
     uf: "MG",
+    email: "beltranogo@teste.com",
+    endereco: "Bairro tal, Rua 1",
     cadastro: "2024-02-11T00:00",
     ultimaModificacao: "2024-02-13T00:00",
+    telefone: "(00) 00000-0000",
     tipoDeServico: {
       VEP: true,
       VET: false,
@@ -353,12 +365,15 @@ const initialData = [
     nomeResponsavel: "Beltrano Fulano",
     cidade: "Brasília",
     uf: "DF",
+    email: "fulanobeltrano@teste.com",
+    endereco: "Bairro num sei, Rua 2",
     cadastro: "2024-03-20T00:00",
     ultimaModificacao: "2024-03-21T00:00",
+    telefone: "(00) 00000-0000",
     tipoDeServico: {
-      VEP: true,
+      VEP: false,
       VET: true,
-      VJA: false,
+      VJA: true,
       CUR: false,
       FPG: false,
       MPu: false,
@@ -369,16 +384,18 @@ const initialData = [
     id: 6,
     habilitacao: "Parceiro",
     status: "Pendente",
-    cnpj: "55.555.555/1000-00",
-    nomeFantasia: "Nome 2",
-    nomePontoFocal: "Fulano Beltrano",
+    cnpj: "66.666.666/1000-00",
+    nomeFantasia: "Nome 1",
+    nomePontoFocal: "Fulano Bel",
     razaoSocial: "Razão 1",
     naturezaJuridica: "Privado",
-    nomeResponsavel: "Beltrano Fulano",
+    nomeResponsavel: "Be Fulano",
     cidade: "Brasília",
     uf: "DF",
-    cadastro: "2024-03-20T00:00",
-    ultimaModificacao: "2024-03-21T00:00",
+    email: "fulanobel@teste.com",
+    endereco: "Bairro sei la, Rua 1",
+    cadastro: "2024-02-28T00:00",
+    ultimaModificacao: "2024-03-10T00:00",
     tipoDeServico: {
       VEP: false,
       VET: true,
@@ -393,22 +410,24 @@ const initialData = [
     id: 7,
     habilitacao: "Parceiro",
     status: "Pendente",
-    cnpj: "55.555.555/1000-00",
+    cnpj: "77.777.777/1000-00",
     nomeFantasia: "Nome 2",
-    nomePontoFocal: "Fulano Beltrano",
+    nomePontoFocal: "Fu Beltrano",
     razaoSocial: "Razão 1",
     naturezaJuridica: "Privado",
-    nomeResponsavel: "Beltrano Fulano",
+    nomeResponsavel: "Fulano",
     cidade: "Brasília",
     uf: "DF",
-    cadastro: "2024-03-20T00:00",
-    ultimaModificacao: "2024-03-21T00:00",
+    email: "fubeltrano@teste.com",
+    endereco: "Bairro sei la, Rua 5",
+    cadastro: "2024-03-29T00:00",
+    ultimaModificacao: "2024-04-21T00:00",
     tipoDeServico: {
       VEP: false,
       VET: false,
-      VJA: true,
+      VJA: false,
       CUR: false,
-      FPG: false,
+      FPG: true,
       MPu: false,
       MPa: false,
     },

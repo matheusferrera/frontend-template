@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Container, Typography } from "@mui/material";
 
@@ -6,6 +6,9 @@ import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
 import FormAnalisarParceiroPendente from "../../components/formularios/FormAnalisarParceiro";
 
 const AnalisarParceiroPendente = () => {
+  const [mudancaDeStatusModal, setMudancaDeStatusModal] = useState(false);
+  const [informacoesModal, setInformacoesModal] = useState(false);
+
   return (
     <Container
       maxWidth="lg"
@@ -27,7 +30,12 @@ const AnalisarParceiroPendente = () => {
         Analisar parceiro pendente
       </Typography>
 
-      <FormAnalisarParceiroPendente />
+      <FormAnalisarParceiroPendente
+        mudancaDeStatusModal={mudancaDeStatusModal}
+        setMudancaDeStatusModal={setMudancaDeStatusModal}
+        informacoesModal={informacoesModal}
+        setInformacoesModal={setInformacoesModal}
+      />
     </Container>
   );
 };
