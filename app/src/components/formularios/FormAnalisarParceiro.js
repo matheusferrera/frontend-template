@@ -19,13 +19,26 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
+import PropTypes from "prop-types";
 
-const FormAnalisarParceiroPendente = () => {
+import AprovarOuReprovarModal from "../modals/AprovarOuReprovarModal";
+import InformacoesParceiroModal from "../modals/InformacoesParceiroModal";
+
+const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatusModal, informacoesModal, setInformacoesModal }) => {
   const value = JSON.parse(localStorage.getItem("analisarID"));
+  const theme = useTheme();
+
+  const openInformacoesParceiroModal = () => {
+    setInformacoesModal(true);
+  };
+  const closeInformacoesParceiroModal = () => {
+    setInformacoesModal(false);
+  };
 
   const [valores, setValores] = useState({
     nomePontoFocal: "",
@@ -33,7 +46,7 @@ const FormAnalisarParceiroPendente = () => {
     cadastro: "",
     telefone: "",
     motivo: "",
-    status: "none",
+    status: "Pendente",
     tipoDeServico: ["none"],
     novoCadastro: false,
     cadastroAlterado: false,
@@ -53,6 +66,8 @@ const FormAnalisarParceiroPendente = () => {
       nomeResponsavel: "Beltrano Gonçalves",
       cidade: "Brasília",
       uf: "DF",
+      email: "fulano@teste.com",
+      endereco: "Bairro tal, Rua 1",
       cadastro: "2024-03-20T00:00",
       ultimaModificacao: "2024-03-21T00:00",
       tipoDeServico: {
@@ -77,6 +92,8 @@ const FormAnalisarParceiroPendente = () => {
       nomeResponsavel: "Fulano",
       cidade: "Goiânia",
       uf: "GO",
+      email: "beltraninho@teste.com",
+      endereco: "Bairro tal, Rua 2",
       cadastro: "2024-03-03T00:00",
       ultimaModificacao: "2024-04-10T00:00",
       tipoDeServico: {
@@ -101,6 +118,8 @@ const FormAnalisarParceiroPendente = () => {
       nomeResponsavel: "Beltrano",
       cidade: "Catalão",
       uf: "GO",
+      email: "beltrano@teste.com",
+      endereco: "Bairro num sei, Rua 10",
       cadastro: "2024-02-27T00:00",
       ultimaModificacao: "2024-03-15T00:00",
       tipoDeServico: {
@@ -125,6 +144,8 @@ const FormAnalisarParceiroPendente = () => {
       nomeResponsavel: "Fulano da Silva",
       cidade: "Belo Horizonte",
       uf: "MG",
+      email: "beltranogo@teste.com",
+      endereco: "Bairro tal, Rua 1",
       cadastro: "2024-02-11T00:00",
       ultimaModificacao: "2024-02-13T00:00",
       tipoDeServico: {
@@ -149,6 +170,8 @@ const FormAnalisarParceiroPendente = () => {
       nomeResponsavel: "Beltrano Fulano",
       cidade: "Brasília",
       uf: "DF",
+      email: "fulanobeltrano@teste.com",
+      endereco: "Bairro num sei, Rua 2",
       cadastro: "2024-03-20T00:00",
       ultimaModificacao: "2024-03-21T00:00",
       tipoDeServico: {
@@ -209,14 +232,64 @@ const FormAnalisarParceiroPendente = () => {
         MPa: false,
       },
     },
+    {
+      id: 6,
+      habilitacao: "Parceiro",
+      status: "Pendente",
+      cnpj: "66.666.666/1000-00",
+      nomeFantasia: "Nome 1",
+      nomePontoFocal: "Fulano Bel",
+      razaoSocial: "Razão 1",
+      naturezaJuridica: "Privado",
+      nomeResponsavel: "Be Fulano",
+      cidade: "Brasília",
+      uf: "DF",
+      email: "fulanobel@teste.com",
+      endereco: "Bairro sei la, Rua 1",
+      cadastro: "2024-02-28T00:00",
+      ultimaModificacao: "2024-03-10T00:00",
+      tipoDeServico: {
+        VEP: false,
+        VET: true,
+        VJA: false,
+        CUR: false,
+        FPG: false,
+        MPu: false,
+        MPa: false,
+      },
+    },
+    {
+      id: 7,
+      habilitacao: "Parceiro",
+      status: "Pendente",
+      cnpj: "77.777.777/1000-00",
+      nomeFantasia: "Nome 2",
+      nomePontoFocal: "Fu Beltrano",
+      razaoSocial: "Razão 1",
+      naturezaJuridica: "Privado",
+      nomeResponsavel: "Fulano",
+      cidade: "Brasília",
+      uf: "DF",
+      email: "fubeltrano@teste.com",
+      endereco: "Bairro sei la, Rua 5",
+      cadastro: "2024-03-29T00:00",
+      ultimaModificacao: "2024-04-21T00:00",
+      tipoDeServico: {
+        VEP: false,
+        VET: false,
+        VJA: false,
+        CUR: false,
+        FPG: true,
+        MPu: false,
+        MPa: false,
+      },
+    },
   ];
   useEffect(() => {
     if (value) {
       for (var i = 0; i < initialData.length; i++) {
         var parceiro = initialData[i];
-        console.log(parceiro);
         if (parceiro["id"] == value) {
-          console.log("Aqui");
           var servicos = [];
           Object.keys(parceiro["tipoDeServico"]).map(servico => {
             if (parceiro["tipoDeServico"][servico]) {
@@ -252,6 +325,16 @@ const FormAnalisarParceiroPendente = () => {
               }),
       });
     }
+  };
+
+  const handleSalvar = () => {
+    if (valores.status != "Pendente") {
+      setMudancaDeStatusModal(true);
+    }
+  };
+
+  const handleCloseMudancadeStatus = () => {
+    setMudancaDeStatusModal(false);
   };
 
   return (
@@ -402,7 +485,8 @@ const FormAnalisarParceiroPendente = () => {
                 <Checkbox
                   id="novoCadastro"
                   name="novoCadastro"
-                  checked={valores.novoCadastro}
+                  style={{ color: theme.palette.text.disabled }}
+                  value={valores.novoCadastro}
                 />{" "}
                 Novo cadastro
               </Grid>
@@ -413,7 +497,8 @@ const FormAnalisarParceiroPendente = () => {
                 <Checkbox
                   id="cadastroAlterado"
                   name="cadastroAlterado"
-                  checked={valores.cadastroAlterado}
+                  style={{ color: theme.palette.text.disabled }}
+                  value={valores.cadastroAlterado}
                 />{" "}
                 Cadastro Alterado
               </Grid>
@@ -441,7 +526,7 @@ const FormAnalisarParceiroPendente = () => {
                       mb: "8px",
                     }}
                   >
-                    VIZUALIZAR ALTERAÇÕES
+                    VISUALIZAR ALTERAÇÕES
                   </Typography>
                 </Button>
               </Grid>
@@ -463,7 +548,7 @@ const FormAnalisarParceiroPendente = () => {
                       mb: "8px",
                     }}
                   >
-                    VIZUALIZAR INFORMAÇÕES COMPLEMENTARES
+                    VISUALIZAR INFORMAÇÕES COMPLEMENTARES
                   </Typography>
                 </Button>
               </Grid>
@@ -489,15 +574,14 @@ const FormAnalisarParceiroPendente = () => {
                     onChange={handleChanges}
                   >
                     <MenuItem
-                      value="none"
+                      value="Pendente"
                       disabled
                     >
                       {" "}
                       Altere o Status do Parceiro{" "}
                     </MenuItem>
-                    <MenuItem value="Negado">Negado</MenuItem>
-                    <MenuItem value="Pendente">Pendente</MenuItem>
-                    <MenuItem value="Aprovado">Aprovado</MenuItem>
+                    <MenuItem value="Reprovar">Reprovar</MenuItem>
+                    <MenuItem value="Aprovar">Aprovar</MenuItem>
                   </Select>
                 </FormControl>
               </FormGroup>
@@ -509,7 +593,7 @@ const FormAnalisarParceiroPendente = () => {
             >
               <Button
                 variant="outlined"
-                onClick={handleChanges}
+                onClick={openInformacoesParceiroModal}
                 sx={{ gap: "8px" }}
               >
                 <Typography
@@ -520,7 +604,7 @@ const FormAnalisarParceiroPendente = () => {
                     mb: "8px",
                   }}
                 >
-                  VIZUALIZAR INFORMAÇÕES DO PARCEIRO
+                  VISUALIZAR INFORMAÇÕES DO PARCEIRO
                 </Typography>
               </Button>
             </Grid>
@@ -700,7 +784,10 @@ const FormAnalisarParceiroPendente = () => {
             item
             xs={1.5}
           >
-            <Button variant="outlined">
+            <Button
+              variant="outlined"
+              href="/listar_parceiros_pendentes"
+            >
               <Typography variant={"BUTTON TEXT"}> CANCELAR </Typography>
             </Button>
           </Grid>
@@ -708,15 +795,40 @@ const FormAnalisarParceiroPendente = () => {
             item
             xs={2}
           >
-            <Button variant="contained">
+            <Button
+              variant="contained"
+              onClick={handleSalvar}
+            >
               <SaveIcon fontSize="small" />
               <Typography variant={"BUTTON TEXT"}>SALVAR</Typography>
             </Button>
           </Grid>
         </Grid>
       </Stack>
+      <div>
+        <AprovarOuReprovarModal
+          showModal={mudancaDeStatusModal}
+          handleClose={handleCloseMudancadeStatus}
+          modalTitle={valores.status + " parceiro"}
+          servicos={valores.tipoDeServico}
+        />
+      </div>
+      <div>
+        <InformacoesParceiroModal
+          showModal={informacoesModal}
+          handleClose={closeInformacoesParceiroModal}
+          parceiro={valores}
+        />
+      </div>
     </>
   );
+};
+
+FormAnalisarParceiroPendente.propTypes = {
+  mudancaDeStatusModal: PropTypes.bool,
+  setMudancaDeStatusModal: PropTypes.func,
+  informacoesModal: PropTypes.bool,
+  setInformacoesModal: PropTypes.func,
 };
 
 export default FormAnalisarParceiroPendente;
