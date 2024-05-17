@@ -58,6 +58,7 @@ export const dadosParceiros = [
     id: 3,
     habilitacao: "Parceiro",
     status: "Pendente",
+    cnpj: "33.333.333/3000-00",
     naturezaJuridica: "Terceiro Setor",
     nomeFantasia: "Ferragens de Beskar",
     nomePontoFocal: "Din Djarin",
