@@ -1,15 +1,9 @@
 import React, { useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import DescriptionIcon from "@mui/icons-material/Description";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ListIcon from "@mui/icons-material/List";
-import PostAddIcon from "@mui/icons-material/PostAdd";
-import PrintIcon from "@mui/icons-material/Print";
 import SearchIcon from "@mui/icons-material/Search";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 import {
   Button,
   Card,
@@ -68,8 +62,8 @@ const termos = {
   complemento: "Complemento",
   cidade: "Cidade",
   uf: "UF",
-  cadastro: "Data do Cadastro",
-  ultimaModificacao: "Data da última modificação",
+  dataCadastro: "Data do Cadastro",
+  dataUltimaModificacao: "Data da última modificação",
   tipoDeServico: "Tipo de Serviço",
   VEP: "Vaga de Emprego",
   VET: "Vaga de Estágio",
@@ -81,9 +75,6 @@ const termos = {
 };
 
 function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handlePrint, handleListaOpen }) {
-  // Responsável == Representante
-  // Parceiro == PontoFocal
-
   const theme = useTheme();
 
   const [expandedRows, setExpandedRows] = useState([]);
@@ -116,7 +107,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                   color="primary"
                   onClick={handleDownloadCSV}
                 >
-                  <DescriptionIcon />
+                  <span className="material-icons">sim_card_download</span>
                 </IconButton>
               </Tooltip>
               <Tooltip title="Download Excel">
@@ -124,7 +115,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                   color="primary"
                   onClick={handleDownloadExcel}
                 >
-                  <PostAddIcon />
+                  <span className="material-icons">sim_card</span>
                 </IconButton>
               </Tooltip>
               <Tooltip title="Imprimir">
@@ -132,7 +123,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                   color="primary"
                   onClick={handlePrint}
                 >
-                  <PrintIcon />
+                  <span className="material-icons">print</span>
                 </IconButton>
               </Tooltip>
             </TableCell>
@@ -149,17 +140,19 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                     <Tooltip title="Visualizar Informações Complementares">
                       <IconButton
                         color="primary"
-                        onClick={() => handleButtonClick(parceiro.id)}
+                        href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                        onClick={() => localStorage.setItem("analisarID", JSON.stringify(parceiro.id))}
                       >
-                        <DescriptionIcon />
+                        <span className="material-icons">description</span>
                       </IconButton>
                     </Tooltip>
                     <Tooltip title="Analisar Informações Complementares">
                       <IconButton
                         color="primary"
-                        onClick={() => handleButtonClick(parceiro.id)}
+                        href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                        onClick={() => localStorage.setItem("analisarID", JSON.stringify(parceiro.id))}
                       >
-                        <PostAddIcon />
+                        <span className="material-icons">post_add</span>
                       </IconButton>
                     </Tooltip>
                     <Tooltip title="Serviços Ofertados">
@@ -167,7 +160,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                         color="primary"
                         onClick={() => handleListaOpen(parceiro.id)}
                       >
-                        <ListIcon />
+                        <span className="material-icons">list</span>
                       </IconButton>
                     </Tooltip>
                     <Tooltip title="Analisar">
@@ -176,7 +169,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                         href="listar_parceiros_pendentes/analisar_parceiro_pendente"
                         onClick={() => localStorage.setItem("analisarID", JSON.stringify(parceiro.id))}
                       >
-                        <CheckCircleIcon />
+                        <span className="material-icons">check_circle</span>
                       </IconButton>
                     </Tooltip>
                     <Tooltip title="Visualizar">
@@ -184,7 +177,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                         color="primary"
                         onClick={() => handleButtonClick(parceiro.id)}
                       >
-                        <VisibilityIcon />
+                        <span className="material-icons">visibility</span>
                       </IconButton>
                     </Tooltip>
                     <Tooltip title="Mais Informações">
@@ -225,7 +218,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                                               return termos[k] + "; ";
                                             }
                                           })
-                                        : chave == "cadastro" || chave == "ultimaModificacao"
+                                        : chave == "dataCadastro" || chave == "dataUltimaModificacao"
                                           ? dayjs(parceiro[chave]).format("DD/MM/YYYY")
                                           : parceiro[chave]}
                                     </p>
@@ -337,10 +330,10 @@ const FormListarParceirosPendentes = ({ servicosModal, setServicosModal }) => {
       const matchesDateFilter =
         (!filter.dataDoCadastroInicio ||
           !filter.dataDoCadastroFim ||
-          dayjs(parceiro.cadastro).isBetween(filter.dataDoCadastroInicio, filter.dataDoCadastroFim, "day", "[]")) &&
+          dayjs(parceiro.dataCadastro).isBetween(filter.dataDoCadastroInicio, filter.dataDoCadastroFim, "day", "[]")) &&
         (!filter.dataDaUltimaModificacaoInicio ||
           !filter.dataDaUltimaModificacaoFim ||
-          dayjs(parceiro.ultimaModificacao).isBetween(
+          dayjs(parceiro.dataUltimaModificacao).isBetween(
             filter.dataDaUltimaModificacaoInicio,
             filter.dataDaUltimaModificacaoFim,
             "day",
@@ -526,7 +519,7 @@ const FormListarParceirosPendentes = ({ servicosModal, setServicosModal }) => {
             >
               <Card style={{ border: "1px solid #d3d3d3" }}>
                 <CardContent>
-                  <p style={{ fontFamily: "Rawline Regular", color: "grey" }}>Data do cadastro</p>
+                  <p style={{ fontFamily: "Rawline Regular", color: "grey" }}>Data do Cadastro</p>
                   <Grid
                     container
                     spacing={2}
@@ -578,7 +571,7 @@ const FormListarParceirosPendentes = ({ servicosModal, setServicosModal }) => {
             >
               <Card style={{ border: "1px solid #d3d3d3" }}>
                 <CardContent>
-                  <p style={{ fontFamily: "Rawline Regular", color: "grey" }}>Data da ultima modificação</p>
+                  <p style={{ fontFamily: "Rawline Regular", color: "grey" }}>Data da última modificação</p>
                   <Grid
                     container
                     spacing={2}

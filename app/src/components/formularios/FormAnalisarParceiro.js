@@ -44,14 +44,14 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
   const [valores, setValores] = useState({
     nomePontoFocal: "",
     cnpj: "",
-    cadastro: "",
+    dataCadastro: "",
     telefone: "",
     motivo: "",
     status: "Pendente",
     tipoDeServico: ["none"],
     novoCadastro: false,
     cadastroAlterado: false,
-    ultimaModificacao: null,
+    dataUltimaModificacao: null,
   });
 
   const initialData = dadosParceiros;
@@ -67,7 +67,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
             }
           });
           parceiro["tipoDeServico"] = servicos;
-          parceiro["ultimaModificacao"] = dayjs(parceiro["ultimaModificacao"]);
+          parceiro["dataUltimaModificacao"] = dayjs(parceiro["dataUltimaModificacao"]);
           setValores(parceiro);
           break;
         }
@@ -170,11 +170,11 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
             >
               <FormGroup>
                 <TextField
-                  id="cadastro"
-                  name="cadastro"
-                  label="Cadastro"
-                  placeholder="Cadastro"
-                  value={valores.cadastro}
+                  id="dataCadastro"
+                  name="dataCadastro"
+                  label="Data do cadastro"
+                  placeholder="Data do cadastro"
+                  value={valores.dataCadastro}
                   type="text"
                   onChange={handleChanges}
                 />
@@ -189,11 +189,11 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
                     label="Ultima Modificação"
-                    id="ultimaModificacao"
-                    name="ultimaModificacao"
-                    value={valores.ultimaModificacao}
+                    id="dataUltimaModificacao"
+                    name="dataUltimaModificacao"
+                    value={valores.dataUltimaModificacao}
                     format="DD/MM/YYYY"
-                    onChange={valor => setValores({ ...valores, ["ultimaModificacao"]: valor })}
+                    onChange={valor => setValores({ ...valores, ["dataUltimaModificacao"]: valor })}
                   />
                 </LocalizationProvider>
               </FormGroup>

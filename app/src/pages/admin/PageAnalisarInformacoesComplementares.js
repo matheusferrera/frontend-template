@@ -1,23 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Container, Typography } from "@mui/material";
 
 import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
-import FormAnalisarParceiroPendente from "../../components/formularios/FormAnalisarParceiro";
 
-const AnalisarParceiroPendente = () => {
-  const [mudancaDeStatusModal, setMudancaDeStatusModal] = useState(false);
-  const [informacoesModal, setInformacoesModal] = useState(false);
-
+const AnalisarInformacoesComplementares = () => {
   return (
     <Container
       maxWidth="lg"
       sx={{ mt: 0 }}
     >
       <CardBreadcrumb
-        homeLink="/listar_parceiros_pendentes"
+        homeLink="/analisar_informacoes_complementares"
         homeText="Admin > Listar Parceiros Pendentes"
-        currentPage="Listar Parceiros Pendentes"
+        currentPage="Analisar Informações Complementares"
       />
 
       <Typography
@@ -27,17 +23,17 @@ const AnalisarParceiroPendente = () => {
         sx={{ fontFamily: "Rawline Bold" }}
         style={{ transition: "1s" }}
       >
-        Analisar parceiro pendente
+        Analisar Informações Complementares
       </Typography>
 
-      <FormAnalisarParceiroPendente
+      {/* <FormAnalisarParceiroPendente
         mudancaDeStatusModal={mudancaDeStatusModal}
         setMudancaDeStatusModal={setMudancaDeStatusModal}
         informacoesModal={informacoesModal}
         setInformacoesModal={setInformacoesModal}
-      />
+      /> */}
     </Container>
   );
 };
 
-export default AnalisarParceiroPendente;
+export default AnalisarInformacoesComplementares;
