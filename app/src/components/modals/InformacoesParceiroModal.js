@@ -29,7 +29,10 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
   const modalContent = (
     <>
       <Stack spacing={1}>
-        <Grid container spacing={1}>
+        <Grid
+          container
+          spacing={1}
+        >
           <Grid
             item
             xs={6}
@@ -62,7 +65,10 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={1}>
+        <Grid
+          container
+          spacing={1}
+        >
           <Grid
             item
             xs={4}
@@ -110,7 +116,10 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={1}>
+        <Grid
+          container
+          spacing={1}
+        >
           <Grid
             item
             xs={4}
@@ -158,7 +167,10 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={1}>
+        <Grid
+          container
+          spacing={1}
+        >
           <Grid
             item
             xs={6}
@@ -191,7 +203,10 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={1}>
+        <Grid
+          container
+          spacing={1}
+        >
           <Grid
             item
             xs={6}
@@ -224,8 +239,14 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={1}>
-          <Grid item xs={12}>
+        <Grid
+          container
+          spacing={1}
+        >
+          <Grid
+            item
+            xs={12}
+          >
             <FormGroup>
               <TextField
                 id="atividadeEconomica"
