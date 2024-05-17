@@ -26,8 +26,27 @@ const getParceiroData = id => {
     });
 };
 
+const postCadastrarEmpresa = data => {
+  console.log("Data", data);
+  return axios
+    .post(API_URL + `v1/parceiros/empresa/cadastro`, data, {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    })
+    .then(response => {
+      console.log("Service parceiro", response.data);
+      return response.data.message;
+    })
+    .catch(error => {
+      console.error("Error fetching parceiro data:", error);
+      throw error;
+    });
+};
+
 const parceiroService = {
   getParceiroData,
+  postCadastrarEmpresa,
 };
 
 export default parceiroService;
