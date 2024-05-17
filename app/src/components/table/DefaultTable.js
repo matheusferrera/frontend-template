@@ -1,11 +1,8 @@
 import React, { useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 
-import BackupTableIcon from "@mui/icons-material/BackupTable";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import LocalPrintshopIcon from "@mui/icons-material/LocalPrintshop";
-import SimCardDownloadIcon from "@mui/icons-material/SimCardDownload";
 import {
   Grid,
   IconButton,
@@ -47,9 +44,7 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
     let csvDataHead = visibleColumns.join(";");
     csvDataHead = csvDataHead + "\n";
 
-    // Code to download data as CSV
     const csvDataBody = data.map(row => visibleColumns.map(column => row[column]).join(";")).join("\n");
-
     const csvData = csvDataHead + csvDataBody;
 
     const blob = new Blob([csvData], { type: "text/csv" });
@@ -63,15 +58,11 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
   };
 
   const handleDownloadExcel = data => {
-    // Code to download data as XLSX
-    // For simplicity, let's assume data is already filtered
-
-    // Convert data to XLSX format
     const worksheet = XLSXUtils.json_to_sheet(data);
     const workbook = XLSXUtils.book_new();
+
     XLSXUtils.book_append_sheet(workbook, worksheet, "Dados Parceiros");
 
-    // Save the workbook as an XLSX file
     writeXLSXFile(workbook, "dados_parceiro.xlsx");
   };
 
@@ -112,7 +103,7 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
                     )
                   }
                 >
-                  <SimCardDownloadIcon />
+                  <span className="material-icons">sim_card_download</span>
                 </IconButton>
               </Tooltip>
               <Tooltip title="Download da tabela em EXCEL">
@@ -120,7 +111,7 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
                   color="primary"
                   onClick={() => handleDownloadExcel(rows)}
                 >
-                  <BackupTableIcon />
+                  <span className="material-icons">sim_card</span>
                 </IconButton>
               </Tooltip>
               <Tooltip title="Imprimir tabela">
@@ -128,7 +119,7 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
                   color="primary"
                   onClick={() => handlePrint()}
                 >
-                  <LocalPrintshopIcon />
+                  <span className="material-icons">print</span>
                 </IconButton>
               </Tooltip>
             </TableCell>

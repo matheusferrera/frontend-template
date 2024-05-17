@@ -10,11 +10,14 @@ const adminNavConfig = [
     },
   },
   {
-    title: "DEV",
+    title: "Menu Temporário",
     path: "/",
     color: "default",
     subTitles: {
       componentes: "/components",
+      "Analisar Parceiro Pendente": "/listar_parceiros_pendentes/analisar_parceiro_pendente",
+      "Visualizar Informações Complementares": "/listar_parceiros_pendentes/visualizar_informacoes_complementares",
+      "Analisar Informações Complementares": "/listar_parceiros_pendentes/analisar_informacoes_complementares",
     },
   },
 ];
