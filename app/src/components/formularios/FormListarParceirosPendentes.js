@@ -7,6 +7,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import ListIcon from "@mui/icons-material/List";
 import PostAddIcon from "@mui/icons-material/PostAdd";
+import PrintIcon from "@mui/icons-material/Print";
 import SearchIcon from "@mui/icons-material/Search";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import {
@@ -42,6 +43,7 @@ import PropTypes from "prop-types";
 import { utils as XLSXUtils, writeFile as writeXLSXFile } from "xlsx";
 
 import ServicoOfertadoModal from "../modals/ServicoOfertadoModal";
+import { dadosParceiros } from "./dadosMockados";
 
 // Cada botão poderá ter uma função diferente, está é apenas um modelo
 function handleButtonClick(id) {
@@ -49,6 +51,34 @@ function handleButtonClick(id) {
 }
 
 let idSelecionado = 0;
+
+const termos = {
+  id: "ID",
+  habilitacao: "Habilitação",
+  status: "Status",
+  cnpj: "CNPJ",
+  nomeFantasia: "Nome Fantasia",
+  nomePontoFocal: "Nome Representante",
+  razaoSocial: "Razão Social",
+  naturezaJuridica: "Natureza Juridica",
+  nomeResponsavel: "Nome Responsável",
+  telefone: "Telefone",
+  email: "E-mail",
+  endereco: "Endereço",
+  complemento: "Complemento",
+  cidade: "Cidade",
+  uf: "UF",
+  cadastro: "Data do Cadastro",
+  ultimaModificacao: "Data da última modificação",
+  tipoDeServico: "Tipo de Serviço",
+  VEP: "Vaga de Emprego",
+  VET: "Vaga de Estágio",
+  VJA: "Vaga de Jovem Aprendiz",
+  CUR: "Cursos",
+  FPG: "Financeiros e de Pagamentos",
+  MPu: "Mobilização de Público",
+  MPa: "Mobilização de Parceiro",
+};
 
 function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handlePrint, handleListaOpen }) {
   // Responsável == Representante
@@ -102,7 +132,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                   color="primary"
                   onClick={handlePrint}
                 >
-                  <ListIcon />
+                  <PrintIcon />
                 </IconButton>
               </Tooltip>
             </TableCell>
@@ -112,17 +142,11 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
           <TableBody>
             {data.slice(5 * (page - 1), 5 * page).map((parceiro, index) => (
               <>
-                <TableRow key={index}>
-                  <TableCell style={{ color: theme.palette.primary.main }}>{parceiro.nomePontoFocal.toUpperCase()}</TableCell>
-                  <TableCell>{parceiro.razaoSocial}</TableCell>
-                  {/* 
-                <TableCell>{parceiro.nomeFantasia}</TableCell>
-                <TableCell>{parceiro.nomeResponsavel}</TableCell>
-                <TableCell>{dayjs(parceiro.cadastro).format("DD/MM/YYYY")}</TableCell>
-                <TableCell>{dayjs(parceiro.ultimaModificacao).format("DD/MM/YYYY")}</TableCell> 
-                */}
+                <TableRow key={1000 + index}>
+                  <TableCell style={{ color: theme.palette.primary.main }}>{parceiro.habilitacao.toUpperCase()}</TableCell>
+                  <TableCell>{parceiro.status}</TableCell>
                   <TableCell align="right">
-                    <Tooltip title="Descrição do documento">
+                    <Tooltip title="Visualizar Informações Complementares">
                       <IconButton
                         color="primary"
                         onClick={() => handleButtonClick(parceiro.id)}
@@ -130,7 +154,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                         <DescriptionIcon />
                       </IconButton>
                     </Tooltip>
-                    <Tooltip title="Descrição do documento">
+                    <Tooltip title="Analisar Informações Complementares">
                       <IconButton
                         color="primary"
                         onClick={() => handleButtonClick(parceiro.id)}
@@ -138,7 +162,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                         <PostAddIcon />
                       </IconButton>
                     </Tooltip>
-                    <Tooltip title="Descrição do documento">
+                    <Tooltip title="Serviços Ofertados">
                       <IconButton
                         color="primary"
                         onClick={() => handleListaOpen(parceiro.id)}
@@ -146,7 +170,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                         <ListIcon />
                       </IconButton>
                     </Tooltip>
-                    <Tooltip title="Descrição do documento">
+                    <Tooltip title="Analisar">
                       <IconButton
                         color="primary"
                         href="listar_parceiros_pendentes/analisar_parceiro_pendente"
@@ -155,7 +179,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                         <CheckCircleIcon />
                       </IconButton>
                     </Tooltip>
-                    <Tooltip title="Detalhes do item">
+                    <Tooltip title="Visualizar">
                       <IconButton
                         color="primary"
                         onClick={() => handleButtonClick(parceiro.id)}
@@ -163,16 +187,18 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                         <VisibilityIcon />
                       </IconButton>
                     </Tooltip>
-                    <IconButton
-                      color="primary"
-                      onClick={() => handleArrowClick(index)}
-                    >
-                      {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                    </IconButton>
+                    <Tooltip title="Mais Informações">
+                      <IconButton
+                        color="primary"
+                        onClick={() => handleArrowClick(index)}
+                      >
+                        {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                      </IconButton>
+                    </Tooltip>
                   </TableCell>
                 </TableRow>
                 {expandedRows.includes(index) && (
-                  <TableRow key={index}>
+                  <TableRow key={100 + index}>
                     <TableCell
                       colSpan={10}
                       style={{ backgroundColor: theme.palette.grey[200] }}
@@ -182,29 +208,41 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                           container
                           spacing={2}
                         >
-                          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
-                            <>
-                              <Grid
-                                key={item}
-                                item
-                                xs={3}
-                              >
-                                <a style={{ fontFamily: "Rawline Bold" }}>Item {item}</a>
-                                <p style={{ fontFamily: "Rawline Medium" }}>
-                                  Descrição do Item {item} e {index}
-                                </p>
-                              </Grid>
+                          {Object.keys(parceiro).map(chave => {
+                            if (chave != "id" && chave != "habilitacao" && chave != "status") {
+                              return (
+                                <>
+                                  <Grid
+                                    key={chave}
+                                    item
+                                    xs={3}
+                                  >
+                                    <a style={{ fontFamily: "Rawline Bold" }}>{termos[chave]}</a>
+                                    <p style={{ fontFamily: "Rawline Medium" }}>
+                                      {chave == "tipoDeServico"
+                                        ? Object.keys(parceiro[chave]).map(k => {
+                                            if (parceiro[chave][k]) {
+                                              return termos[k] + "; ";
+                                            }
+                                          })
+                                        : chave == "cadastro" || chave == "ultimaModificacao"
+                                          ? dayjs(parceiro[chave]).format("DD/MM/YYYY")
+                                          : parceiro[chave]}
+                                    </p>
+                                  </Grid>
 
-                              {(index + 1) % 4 === 0 && (
-                                <Grid
-                                  item
-                                  xs={12}
-                                >
-                                  <div style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}></div>
-                                </Grid>
-                              )}
-                            </>
-                          ))}
+                                  {/* {(index + 1) % 4 === 0 && (
+                                  <Grid
+                                    item
+                                    xs={12}
+                                  >
+                                    <div style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}></div>
+                                  </Grid>
+                                )} */}
+                                </>
+                              );
+                            }
+                          })}
                         </Grid>
                       </Grid>
                     </TableCell>
@@ -244,195 +282,18 @@ export function s2ab(s) {
 }
 
 // Dados fictícios para teste da tabela
-const initialData = [
-  {
-    id: 1,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "11.111.111/1000-00",
-    nomeFantasia: "Nome 1",
-    nomePontoFocal: "Fulano",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Público",
-    nomeResponsavel: "Beltrano Gonçalves",
-    cidade: "Brasília",
-    uf: "DF",
-    email: "fulano@teste.com",
-    endereco: "Bairro tal, Rua 1",
-    cadastro: "2024-03-20T00:00",
-    ultimaModificacao: "2024-03-21T00:00",
-    telefone: "(00) 00000-0000",
-    tipoDeServico: {
-      VEP: true,
-      VET: false,
-      VJA: false,
-      CUR: false,
-      FPG: false,
-      MPu: false,
-      MPa: false,
-    },
-  },
-  {
-    id: 2,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "22.222.222/1000-00",
-    nomeFantasia: "Nome 2",
-    nomePontoFocal: "Beltrano",
-    razaoSocial: "Razão 2",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Fulano",
-    cidade: "Goiânia",
-    uf: "GO",
-    email: "beltraninho@teste.com",
-    endereco: "Bairro tal, Rua 2",
-    cadastro: "2024-03-03T00:00",
-    ultimaModificacao: "2024-04-10T00:00",
-    telefone: "(00) 00000-0000",
-    tipoDeServico: {
-      VEP: false,
-      VET: true,
-      VJA: false,
-      CUR: false,
-      FPG: false,
-      MPu: false,
-      MPa: false,
-    },
-  },
-  {
-    id: 3,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "33.333.333/1000-00",
-    nomeFantasia: "Nome 1",
-    nomePontoFocal: "Fulano da Silva",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Público",
-    nomeResponsavel: "Beltrano",
-    cidade: "Catalão",
-    uf: "GO",
-    email: "beltrano@teste.com",
-    endereco: "Bairro num sei, Rua 10",
-    cadastro: "2024-02-27T00:00",
-    ultimaModificacao: "2024-03-15T00:00",
-    telefone: "(00) 00000-0000",
-    tipoDeServico: {
-      VEP: false,
-      VET: false,
-      VJA: true,
-      CUR: false,
-      FPG: false,
-      MPu: false,
-      MPa: false,
-    },
-  },
-  {
-    id: 4,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "44.444.444/1000-00",
-    nomeFantasia: "Nome 3",
-    nomePontoFocal: "Beltrano Gonçalves",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Fulano da Silva",
-    cidade: "Belo Horizonte",
-    uf: "MG",
-    email: "beltranogo@teste.com",
-    endereco: "Bairro tal, Rua 1",
-    cadastro: "2024-02-11T00:00",
-    ultimaModificacao: "2024-02-13T00:00",
-    telefone: "(00) 00000-0000",
-    tipoDeServico: {
-      VEP: true,
-      VET: false,
-      VJA: false,
-      CUR: false,
-      FPG: false,
-      MPu: false,
-      MPa: false,
-    },
-  },
-  {
-    id: 5,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "55.555.555/1000-00",
-    nomeFantasia: "Nome 2",
-    nomePontoFocal: "Fulano Beltrano",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Beltrano Fulano",
-    cidade: "Brasília",
-    uf: "DF",
-    email: "fulanobeltrano@teste.com",
-    endereco: "Bairro num sei, Rua 2",
-    cadastro: "2024-03-20T00:00",
-    ultimaModificacao: "2024-03-21T00:00",
-    telefone: "(00) 00000-0000",
-    tipoDeServico: {
-      VEP: false,
-      VET: true,
-      VJA: true,
-      CUR: false,
-      FPG: false,
-      MPu: false,
-      MPa: false,
-    },
-  },
-  {
-    id: 6,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "66.666.666/1000-00",
-    nomeFantasia: "Nome 1",
-    nomePontoFocal: "Fulano Bel",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Be Fulano",
-    cidade: "Brasília",
-    uf: "DF",
-    email: "fulanobel@teste.com",
-    endereco: "Bairro sei la, Rua 1",
-    cadastro: "2024-02-28T00:00",
-    ultimaModificacao: "2024-03-10T00:00",
-    tipoDeServico: {
-      VEP: false,
-      VET: true,
-      VJA: false,
-      CUR: false,
-      FPG: false,
-      MPu: false,
-      MPa: false,
-    },
-  },
-  {
-    id: 7,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "77.777.777/1000-00",
-    nomeFantasia: "Nome 2",
-    nomePontoFocal: "Fu Beltrano",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Fulano",
-    cidade: "Brasília",
-    uf: "DF",
-    email: "fubeltrano@teste.com",
-    endereco: "Bairro sei la, Rua 5",
-    cadastro: "2024-03-29T00:00",
-    ultimaModificacao: "2024-04-21T00:00",
-    tipoDeServico: {
-      VEP: false,
-      VET: false,
-      VJA: false,
-      CUR: false,
-      FPG: true,
-      MPu: false,
-      MPa: false,
-    },
-  },
-];
+const initialData = dadosParceiros;
+const pesquisaVazia = {
+  razaoSocial: "",
+  nomeFantasia: "",
+  nomeResponsavel: "",
+  nomePontoFocal: "",
+  tipoDeServico: [],
+  dataDoCadastroInicio: null,
+  dataDoCadastroFim: null,
+  dataDaUltimaModificacaoInicio: null,
+  dataDaUltimaModificacaoFim: null,
+};
 
 const FormListarParceirosPendentes = ({ servicosModal, setServicosModal }) => {
   const [filter, setFilter] = useState({
@@ -774,7 +635,7 @@ const FormListarParceirosPendentes = ({ servicosModal, setServicosModal }) => {
               <Grid item>
                 <Button
                   variant="outlined"
-                  onClick={applyFilter}
+                  onClick={() => setFilter(pesquisaVazia)}
                   sx={{ gap: "8px" }}
                   style={{ fontFamily: "Rawline Medium" }}
                 >
