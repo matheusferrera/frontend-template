@@ -63,22 +63,27 @@ const ConfirmacaoModal = ({ showModal, handleClose, modalTitle, servicos }) => {
           >
             <Typography variant="subtitle2"> Oferta(s) de serviço(s) selecionado(s) pelo parceiro</Typography>
           </Grid>
-          <Grid container spacing={1}>
-              {servicos.map(valor => {
-              return(<>
-                <Grid
-                  item
-                  xs={3}
-                >
-                  <Button
-                    variant="outlined"
-                    disabled
+          <Grid
+            container
+            spacing={1}
+          >
+            {servicos.map(valor => {
+              return (
+                <>
+                  <Grid
+                    item
+                    xs={3}
                   >
-                    <Typography variant={"caption"}> {termos[valor]} </Typography>
-                  </Button>
-                </Grid>
-              </>);
-              })}
+                    <Button
+                      variant="outlined"
+                      disabled
+                    >
+                      <Typography variant={"caption"}> {termos[valor]} </Typography>
+                    </Button>
+                  </Grid>
+                </>
+              );
+            })}
           </Grid>
         </Grid>
 
@@ -167,7 +172,10 @@ const ConfirmacaoModal = ({ showModal, handleClose, modalTitle, servicos }) => {
           </Grid>
         </Grid>
 
-        <Grid container spacing={1}>
+        <Grid
+          container
+          spacing={1}
+        >
           <Grid
             item
             xs={7}

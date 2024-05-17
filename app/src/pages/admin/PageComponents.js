@@ -9,7 +9,7 @@ import FormListarParceirosPendentes from "../../components/formularios/FormLista
 import DefaultTable from "../../components/table/DefaultTable";
 
 const columns = [
-  { field: "cnpj", headerName: "CNPJ", sxProps: { width: "100px" } },
+  { field: "cnpj", headerName: "CNPJ", sxProps: { width: "250px" } },
   { field: "status", headerName: "Status" },
   { field: "habilitacao", headerName: "Habilitacao" },
 ];
