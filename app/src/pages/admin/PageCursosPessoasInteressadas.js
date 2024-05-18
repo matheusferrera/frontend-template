@@ -4,7 +4,7 @@ import { Container, Typography } from "@mui/material";
 
 import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
 
-const PessoasInteressadasCurso = () => {
+const CursosPessoasInteressadas = () => {
   return (
     <Container
       maxWidth="lg"
@@ -36,4 +36,4 @@ const PessoasInteressadasCurso = () => {
   );
 };
 
-export default PessoasInteressadasCurso;
+export default CursosPessoasInteressadas;

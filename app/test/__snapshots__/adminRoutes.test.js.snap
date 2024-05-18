@@ -1,0 +1,2783 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
+>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-jac3lk-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
+  >
+    Listar Parceiros Pendentes
+  </h4>
+  <div
+    className="MuiStack-root css-jfdv4h-MuiStack-root"
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-17zbd5d-MuiPaper-root-MuiCard-root"
+      color="#ffffff"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-zow5z4-MuiGrid-root"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+        >
+          <div
+            className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+          >
+            <div
+              className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
+            >
+              <label
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                data-shrink={false}
+                htmlFor="razaoSocial"
+                id="razaoSocial-label"
+              >
+                Razão Social
+              </label>
+              <div
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
+                onClick={[Function]}
+                variant="filled"
+              >
+                <input
+                  aria-invalid={false}
+                  autoFocus={false}
+                  className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
+                  disabled={false}
+                  id="razaoSocial"
+                  name="razaoSocial"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Razão Social"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+        >
+          <div
+            className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+          >
+            <div
+              className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
+            >
+              <label
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                data-shrink={false}
+                htmlFor="nomeFantasia"
+                id="nomeFantasia-label"
+              >
+                Nome Fantasia
+              </label>
+              <div
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
+                onClick={[Function]}
+                variant="filled"
+              >
+                <input
+                  aria-invalid={false}
+                  autoFocus={false}
+                  className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
+                  disabled={false}
+                  id="nomeFantasia"
+                  name="nomeFantasia"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Nome Fantasia"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+        >
+          <div
+            className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+          >
+            <div
+              className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
+            >
+              <label
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                data-shrink={false}
+                htmlFor="nomeResponsavel"
+                id="nomeResponsavel-label"
+              >
+                Nome Responsável
+              </label>
+              <div
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
+                onClick={[Function]}
+                variant="filled"
+              >
+                <input
+                  aria-invalid={false}
+                  autoFocus={false}
+                  className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
+                  disabled={false}
+                  id="nomeResponsavel"
+                  name="nomeResponsavel"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Nome Responsável"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+        >
+          <div
+            className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+          >
+            <div
+              className="MuiFormControl-root MuiTextField-root css-1eq0ymp-MuiFormControl-root-MuiTextField-root"
+            >
+              <label
+                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                data-shrink={false}
+                htmlFor="nomePontoFocal"
+                id="nomePontoFocal-label"
+              >
+                Nome Ponto Focal
+              </label>
+              <div
+                className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl css-rwt5ya-MuiInputBase-root-MuiFilledInput-root"
+                onClick={[Function]}
+                variant="filled"
+              >
+                <input
+                  aria-invalid={false}
+                  autoFocus={false}
+                  className="MuiInputBase-input MuiFilledInput-input css-andsdq-MuiInputBase-input-MuiFilledInput-input"
+                  disabled={false}
+                  id="nomePontoFocal"
+                  name="nomePontoFocal"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Nome Ponto Focal"
+                  required={false}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-aqz1n5-MuiGrid-root"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 css-1idn90j-MuiGrid-root"
+        >
+          <div
+            className="MuiFormControl-root css-16buy1o-MuiFormControl-root"
+            style={
+              {
+                "width": "100%",
+              }
+            }
+          >
+            <label
+              className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink={false}
+              id="label-tipo-servico"
+            >
+              Tipo de Serviço
+            </label>
+            <div
+              className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl  css-1aid70r-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root"
+              onClick={[Function]}
+              variant="filled"
+            >
+              <div
+                aria-controls=":r4:"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="label-tipo-servico tipoDeServico"
+                className="MuiSelect-select MuiSelect-filled MuiSelect-multiple MuiInputBase-input MuiFilledInput-input css-xx7m2q-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input"
+                id="tipoDeServico"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="combobox"
+                tabIndex={0}
+              >
+                <span
+                  className="notranslate"
+                >
+                  ​
+                </span>
+              </div>
+              <input
+                aria-hidden={true}
+                aria-invalid={false}
+                className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                disabled={false}
+                name="tipoDeServico"
+                onAnimationStart={[Function]}
+                onChange={[Function]}
+                required={false}
+                tabIndex={-1}
+                value=""
+              />
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconFilled css-1nltdju-MuiSvgIcon-root-MuiSelect-icon"
+                data-testid="ArrowDropDownIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+        >
+          <div
+            className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
+            style={
+              {
+                "border": "1px solid #d3d3d3",
+              }
+            }
+          >
+            <div
+              className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            >
+              <p
+                style={
+                  {
+                    "color": "grey",
+                    "fontFamily": "Rawline Regular",
+                  }
+                }
+              >
+                Data do Cadastro
+              </p>
+              <div
+                className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-6 css-1osj8n2-MuiGrid-root"
+                >
+                  <div
+                    className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+                  >
+                    <div
+                      className="MuiFormControl-root MuiTextField-root css-1t6k643-MuiFormControl-root-MuiTextField-root"
+                      onClick={[Function]}
+                    >
+                      <label
+                        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                        data-shrink={false}
+                        htmlFor=":r5:"
+                        id=":r5:-label"
+                      >
+                        Inicio
+                      </label>
+                      <div
+                        className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-jundqn-MuiInputBase-root-MuiFilledInput-root"
+                        onClick={[Function]}
+                        variant="filled"
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoComplete="off"
+                          autoFocus={false}
+                          className="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd css-9f3xj7-MuiInputBase-input-MuiFilledInput-input"
+                          disabled={false}
+                          id=":r5:"
+                          inputMode="text"
+                          name="dataDoCadastroInicio"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onPaste={[Function]}
+                          placeholder="DD/MM/YYYY"
+                          readOnly={false}
+                          required={false}
+                          type="text"
+                          value=""
+                        />
+                        <div
+                          className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-10649of-MuiInputAdornment-root"
+                        >
+                          <button
+                            aria-label="Choose date"
+                            className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-17krgaq-MuiButtonBase-root-MuiIconButton-root"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onContextMenu={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="CalendarIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                              />
+                            </svg>
+                            <span
+                              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-6 css-1osj8n2-MuiGrid-root"
+                >
+                  <div
+                    className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+                  >
+                    <div
+                      className="MuiFormControl-root MuiTextField-root css-1t6k643-MuiFormControl-root-MuiTextField-root"
+                      onClick={[Function]}
+                    >
+                      <label
+                        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                        data-shrink={false}
+                        htmlFor=":r7:"
+                        id=":r7:-label"
+                      >
+                        Fim
+                      </label>
+                      <div
+                        className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-jundqn-MuiInputBase-root-MuiFilledInput-root"
+                        onClick={[Function]}
+                        variant="filled"
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoComplete="off"
+                          autoFocus={false}
+                          className="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd css-9f3xj7-MuiInputBase-input-MuiFilledInput-input"
+                          disabled={false}
+                          id=":r7:"
+                          inputMode="text"
+                          name="dataDoCadastroFim"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onPaste={[Function]}
+                          placeholder="DD/MM/YYYY"
+                          readOnly={false}
+                          required={false}
+                          type="text"
+                          value=""
+                        />
+                        <div
+                          className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-10649of-MuiInputAdornment-root"
+                        >
+                          <button
+                            aria-label="Choose date"
+                            className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-17krgaq-MuiButtonBase-root-MuiIconButton-root"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onContextMenu={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="CalendarIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                              />
+                            </svg>
+                            <span
+                              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
+        >
+          <div
+            className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
+            style={
+              {
+                "border": "1px solid #d3d3d3",
+              }
+            }
+          >
+            <div
+              className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            >
+              <p
+                style={
+                  {
+                    "color": "grey",
+                    "fontFamily": "Rawline Regular",
+                  }
+                }
+              >
+                Data da última modificação
+              </p>
+              <div
+                className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+              >
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-6 css-1osj8n2-MuiGrid-root"
+                >
+                  <div
+                    className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+                  >
+                    <div
+                      className="MuiFormControl-root MuiTextField-root css-1t6k643-MuiFormControl-root-MuiTextField-root"
+                      onClick={[Function]}
+                    >
+                      <label
+                        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                        data-shrink={false}
+                        htmlFor=":r9:"
+                        id=":r9:-label"
+                      >
+                        Inicio
+                      </label>
+                      <div
+                        className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-jundqn-MuiInputBase-root-MuiFilledInput-root"
+                        onClick={[Function]}
+                        variant="filled"
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoComplete="off"
+                          autoFocus={false}
+                          className="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd css-9f3xj7-MuiInputBase-input-MuiFilledInput-input"
+                          disabled={false}
+                          id=":r9:"
+                          inputMode="text"
+                          name="dataDaUltimaModificacaoInicio"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onPaste={[Function]}
+                          placeholder="DD/MM/YYYY"
+                          readOnly={false}
+                          required={false}
+                          type="text"
+                          value=""
+                        />
+                        <div
+                          className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-10649of-MuiInputAdornment-root"
+                        >
+                          <button
+                            aria-label="Choose date"
+                            className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-17krgaq-MuiButtonBase-root-MuiIconButton-root"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onContextMenu={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="CalendarIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                              />
+                            </svg>
+                            <span
+                              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-6 css-1osj8n2-MuiGrid-root"
+                >
+                  <div
+                    className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+                  >
+                    <div
+                      className="MuiFormControl-root MuiTextField-root css-1t6k643-MuiFormControl-root-MuiTextField-root"
+                      onClick={[Function]}
+                    >
+                      <label
+                        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-filled css-bmx3g7-MuiFormLabel-root-MuiInputLabel-root"
+                        data-shrink={false}
+                        htmlFor=":rb:"
+                        id=":rb:-label"
+                      >
+                        Fim
+                      </label>
+                      <div
+                        className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-jundqn-MuiInputBase-root-MuiFilledInput-root"
+                        onClick={[Function]}
+                        variant="filled"
+                      >
+                        <input
+                          aria-invalid={false}
+                          autoComplete="off"
+                          autoFocus={false}
+                          className="MuiInputBase-input MuiFilledInput-input MuiInputBase-inputAdornedEnd css-9f3xj7-MuiInputBase-input-MuiFilledInput-input"
+                          disabled={false}
+                          id=":rb:"
+                          inputMode="text"
+                          name="dataDaUltimaModificacaoFim"
+                          onAnimationStart={[Function]}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onPaste={[Function]}
+                          placeholder="DD/MM/YYYY"
+                          readOnly={false}
+                          required={false}
+                          type="text"
+                          value=""
+                        />
+                        <div
+                          className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-10649of-MuiInputAdornment-root"
+                        >
+                          <button
+                            aria-label="Choose date"
+                            className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-17krgaq-MuiButtonBase-root-MuiIconButton-root"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onContextMenu={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="CalendarIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                              />
+                            </svg>
+                            <span
+                              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiBox-root css-be40y1"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 css-x7kx7a-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-13bf9bb-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              style={
+                {
+                  "fontFamily": "Rawline Medium",
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              Cancelar
+              <span
+                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1m4vzu4-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              style={
+                {
+                  "fontFamily": "Rawline Medium",
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="SearchIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+              Pesquisar
+              <span
+                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiBox-root css-kjxlvr"
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiTableContainer-root css-y5rtz0-MuiPaper-root-MuiTableContainer-root"
+        >
+          <table
+            className="MuiTable-root css-1xwv5oy-MuiTable-root"
+            role={null}
+          >
+            <thead
+              className="MuiTableHead-root css-15wwp11-MuiTableHead-root"
+              role={null}
+            >
+              <tr
+                className="MuiTableRow-root MuiTableRow-head css-fbmopy-MuiTableRow-root"
+                role={null}
+              >
+                <th
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1xhedo4-MuiTableCell-root"
+                  scope="col"
+                >
+                  Habilitação
+                </th>
+                <th
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-fpwr3r-MuiTableCell-root"
+                  scope="col"
+                >
+                  Status
+                </th>
+                <th
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeMedium css-1djj6iu-MuiTableCell-root"
+                  scope="col"
+                >
+                  <button
+                    aria-label="Download CSV"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      sim_card_download
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                  <button
+                    aria-label="Download Excel"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      sim_card
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                  <button
+                    aria-label="Imprimir"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      print
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
+              <tr
+                className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
+                role={null}
+              >
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                  style={
+                    {
+                      "color": "#1351B4",
+                    }
+                  }
+                >
+                  PARCEIRO
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                >
+                  Pendente
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1g1g6o9-MuiTableCell-root"
+                >
+                  <a
+                    aria-label="Visualizar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      description
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Analisar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      post_add
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Serviços Ofertados"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      list
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                  <a
+                    aria-label="Analisar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      check_circle
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Visualizar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      visibility
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Mais Informações"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="KeyboardArrowDownIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
+              <tr
+                className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
+                role={null}
+              >
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                  style={
+                    {
+                      "color": "#1351B4",
+                    }
+                  }
+                >
+                  PARCEIRO
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                >
+                  Pendente
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1g1g6o9-MuiTableCell-root"
+                >
+                  <a
+                    aria-label="Visualizar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      description
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Analisar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      post_add
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Serviços Ofertados"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      list
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                  <a
+                    aria-label="Analisar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      check_circle
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Visualizar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      visibility
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Mais Informações"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="KeyboardArrowDownIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
+              <tr
+                className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
+                role={null}
+              >
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                  style={
+                    {
+                      "color": "#1351B4",
+                    }
+                  }
+                >
+                  PARCEIRO
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                >
+                  Pendente
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1g1g6o9-MuiTableCell-root"
+                >
+                  <a
+                    aria-label="Visualizar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      description
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Analisar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      post_add
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Serviços Ofertados"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      list
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                  <a
+                    aria-label="Analisar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      check_circle
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Visualizar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      visibility
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Mais Informações"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="KeyboardArrowDownIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
+              <tr
+                className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
+                role={null}
+              >
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                  style={
+                    {
+                      "color": "#1351B4",
+                    }
+                  }
+                >
+                  PARCEIRO
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                >
+                  Pendente
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1g1g6o9-MuiTableCell-root"
+                >
+                  <a
+                    aria-label="Visualizar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      description
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Analisar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      post_add
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Serviços Ofertados"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      list
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                  <a
+                    aria-label="Analisar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      check_circle
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Visualizar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      visibility
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Mais Informações"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="KeyboardArrowDownIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
+              <tr
+                className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
+                role={null}
+              >
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                  style={
+                    {
+                      "color": "#1351B4",
+                    }
+                  }
+                >
+                  PARCEIRO
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1okwe1i-MuiTableCell-root"
+                >
+                  Pendente
+                </td>
+                <td
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-1g1g6o9-MuiTableCell-root"
+                >
+                  <a
+                    aria-label="Visualizar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      description
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Analisar Informações Complementares"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      post_add
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Serviços Ofertados"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      list
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                  <a
+                    aria-label="Analisar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      check_circle
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <a
+                    aria-label="Visualizar"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="material-icons"
+                    >
+                      visibility
+                    </span>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </a>
+                  <button
+                    aria-label="Mais Informações"
+                    aria-labelledby={null}
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
+                    data-mui-internal-clone-element={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                      data-testid="KeyboardArrowDownIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            style={
+              {
+                "borderTop": "1px solid #d3d3d3",
+                "display": "flex",
+                "justifyContent": "center",
+                "padding": "15px",
+              }
+            }
+          >
+            <nav
+              aria-label="pagination navigation"
+              className="MuiPagination-root MuiPagination-text css-1oj2twp-MuiPagination-root"
+            >
+              <ul
+                className="MuiPagination-ul css-wjh20t-MuiPagination-ul"
+              >
+                <li>
+                  <button
+                    aria-label="Go to previous page"
+                    className="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-colorPrimary MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-previousNext css-1j8btfg-MuiButtonBase-root-MuiPaginationItem-root"
+                    disabled={true}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                      data-testid="NavigateBeforeIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    aria-current="true"
+                    aria-label="page 1"
+                    className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-colorPrimary MuiPaginationItem-textPrimary Mui-selected MuiPaginationItem-page css-1j8btfg-MuiButtonBase-root-MuiPaginationItem-root"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    1
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </li>
+                <li>
+                  <button
+                    aria-label="Go to page 2"
+                    className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-colorPrimary MuiPaginationItem-textPrimary MuiPaginationItem-page css-1j8btfg-MuiButtonBase-root-MuiPaginationItem-root"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    2
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </li>
+                <li>
+                  <button
+                    aria-label="Go to next page"
+                    className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-colorPrimary MuiPaginationItem-textPrimary MuiPaginationItem-previousNext css-1j8btfg-MuiButtonBase-root-MuiPaginationItem-root"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                      data-testid="NavigateNextIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                      />
+                    </svg>
+                    <span
+                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+</div>
+`;
+
+exports[`Teste de componentes Admin - visualizar parceiro pendente renderizada corretamente 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
+>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-jac3lk-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
+  >
+    Visualizar Parceiro Pendente
+  </h4>
+  <div>
+    Parceiro não encontrado
+  </div>
+</div>
+`;
+
+exports[`Teste de componentes Página de administrador renderizada corretamente 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg css-1l0w7oi-MuiContainer-root"
+>
+  <h5
+    className="MuiTypography-root MuiTypography-h5 css-grbqxd-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
+  >
+    Seja bem-vindo(a)
+  </h5>
+  <div
+    style={
+      {
+        "borderBottom": "1px solid #9E9E9E",
+        "height": "200px",
+        "marginTop": "-50px",
+        "overflowY": "hidden",
+        "paddingTop": "60px",
+      }
+    }
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
+    >
+      <div
+        className="MuiBox-root css-0"
+      >
+        <div
+          className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          <div
+            className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+          >
+            <h2
+              className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+            >
+              Administrativo
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root css-vj1n65-MuiGrid-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
+  >
+    Visão Geral
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container css-s5hy0i-MuiGrid-root"
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ppcprt-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
+    >
+      <div
+        className="MuiCardContent-root css-5abr63-MuiCardContent-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-msyzu8-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-b4cxbb-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 120,
+              }
+            }
+          />
+        </p>
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ppcprt-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
+    >
+      <div
+        className="MuiCardContent-root css-5abr63-MuiCardContent-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-msyzu8-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-b4cxbb-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 120,
+              }
+            }
+          />
+        </p>
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1ppcprt-MuiPaper-root-MuiCard-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
+    >
+      <div
+        className="MuiCardContent-root css-5abr63-MuiCardContent-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-1i08vct-MuiTypography-root"
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-msyzu8-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-au54wh-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          <span
+            className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse css-b4cxbb-MuiSkeleton-root"
+            style={
+              {
+                "height": 30,
+                "width": 120,
+              }
+            }
+          />
+        </p>
+      </div>
+    </div>
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
+  >
+    Serviços ofertados
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="SchoolIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
+          >
+            Cursos
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="RocketLaunchIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9.19 6.35c-2.04 2.29-3.44 5.58-3.57 5.89L2 10.69l4.05-4.05c.47-.47 1.15-.68 1.81-.55l1.33.26zM11.17 17s3.74-1.55 5.89-3.7c5.4-5.4 4.5-9.62 4.21-10.57-.95-.3-5.17-1.19-10.57 4.21C8.55 9.09 7 12.83 7 12.83L11.17 17zm6.48-2.19c-2.29 2.04-5.58 3.44-5.89 3.57L13.31 22l4.05-4.05c.47-.47.68-1.15.55-1.81l-.26-1.33zM9 18c0 .83-.34 1.58-.88 2.12C6.94 21.3 2 22 2 22s.7-4.94 1.88-6.12C4.42 15.34 5.17 15 6 15c1.66 0 3 1.34 3 3zm4-9c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
+          >
+            Empreendedorismo
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="BusinessCenterIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 16v-1H3.01L3 19c0 1.11.89 2 2 2h14c1.11 0 2-.89 2-2v-4h-7v1h-4zm10-9h-4.01V5l-2-2h-4l-2 2v2H4c-1.1 0-2 .9-2 2v3c0 1.11.89 2 2 2h6v-2h4v2h6c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-6 0h-4V5h4v2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
+          >
+            Trabalho
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ManageAccountsIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx="10"
+              cy="8"
+              r="4"
+            />
+            <path
+              d="M10.67 13.02c-.22-.01-.44-.02-.67-.02-2.42 0-4.68.67-6.61 1.82-.88.52-1.39 1.5-1.39 2.53V20h9.26c-.79-1.13-1.26-2.51-1.26-4 0-1.07.25-2.07.67-2.98zM20.75 16c0-.22-.03-.42-.06-.63l1.14-1.01-1-1.73-1.45.49c-.32-.27-.68-.48-1.08-.63L18 11h-2l-.3 1.49c-.4.15-.76.36-1.08.63l-1.45-.49-1 1.73 1.14 1.01c-.03.21-.06.41-.06.63s.03.42.06.63l-1.14 1.01 1 1.73 1.45-.49c.32.27.68.48 1.08.63L16 21h2l.3-1.49c.4-.15.76-.36 1.08-.63l1.45.49 1-1.73-1.14-1.01c.03-.21.06-.41.06-.63zM17 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
+          >
+            Estágios
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-3 css-1vm8tgf-MuiGrid-root"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1gsfb7v-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiCardContent-root css-x7w97l-MuiCardContent-root"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="PersonAddIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+          </svg>
+          <h6
+            className="MuiTypography-root MuiTypography-h6 css-1ywovuw-MuiTypography-root"
+          >
+            Jovem Aprendiz
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-1fu4c7j-MuiTypography-root"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
+  >
+    Serviços disponiveis
+  </h4>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-mhc70k-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
+    >
+      <div
+        style={
+          {
+            "borderBottom": "1px solid #9E9E9E",
+            "height": "200px",
+            "marginTop": "-50px",
+            "overflowY": "hidden",
+            "paddingTop": "60px",
+          }
+        }
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          <div
+            className="MuiBox-root css-0"
+          >
+            <div
+              className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
+            >
+              <div
+                className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+              >
+                <h2
+                  className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+                >
+                  1606
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
+            >
+              Vagas de emprego
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
+            >
+              Disponiveis em diversas áreas
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-6 css-1fyyp8j-MuiGrid-root"
+    >
+      <div
+        style={
+          {
+            "borderBottom": "1px solid #9E9E9E",
+            "height": "200px",
+            "marginTop": "-50px",
+            "overflowY": "hidden",
+            "paddingTop": "60px",
+          }
+        }
+      >
+        <div
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiCard-root css-1lo1cn8-MuiPaper-root-MuiCard-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          <div
+            className="MuiBox-root css-0"
+          >
+            <div
+              className="MuiCardHeader-root css-1ap2llq-MuiCardHeader-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
+            >
+              <div
+                className="MuiCardHeader-content css-1qbkelo-MuiCardHeader-content"
+              >
+                <h2
+                  className="MuiTypography-root MuiTypography-h2 css-wshchc-MuiTypography-root"
+                >
+                  33
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root css-1wtt2ww-MuiGrid-root"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-8kt9zc-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
+            >
+              Vagas de curso
+            </p>
+            <p
+              className="MuiTypography-root MuiTypography-body1 css-jm62mi-MuiTypography-root"
+              style={
+                {
+                  "transition": "1s",
+                }
+              }
+            >
+              Disponiveis em diversas áreas
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root css-xj9bu"
+    style={
+      {
+        "transition": "1s",
+      }
+    }
+  >
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="InfoIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+      />
+    </svg>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1lh13dg-MuiTypography-root"
+      style={
+        {
+          "transition": "1s",
+        }
+      }
+    >
+      No caso de dúvidas e/ou problemas, acesse
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1fxugtv-MuiTypography-root-MuiLink-root"
+        href="/faq"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Perguntas Frequentes
+      </a>
+      . Caso o problema persista, envie e-mail para redeprogredir.senisp@cidadania.gov.br
+    </p>
+  </div>
+</div>
+`;

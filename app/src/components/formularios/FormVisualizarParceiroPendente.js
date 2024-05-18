@@ -9,6 +9,7 @@ import dayjs from "dayjs";
 import DefaultTable from "../table/DefaultTable";
 import { dadosParceiros } from "./dadosMockados";
 
+// Primeira Tabela
 const tabelaRepresentantesColunas = [
   { field: "nome", headerName: "Nome" },
   { field: "cpf", headerName: "CPF" },
@@ -21,6 +22,7 @@ const tabelaRepresentantesLinhas = [
   { id: 3, nome: "Han Solo", cpf: "555.666.777-00", email: "han@starwars.com" },
 ];
 
+// Segunda Tabela
 const tabelaVagasColunas = [
   { field: "nome", headerName: "Nome" },
   { field: "quantidade", headerName: "Quantidade" },
@@ -72,6 +74,87 @@ const tabelaVagasHiddenLinhas = tabelaVagasLinhas.map(({ salario, dataCadastro, 
   vigencia,
 }));
 
+const tabelaVagasActions = [
+  {
+    title: "Visualizar dados da vaga",
+    href: "",
+    icon: "visibility",
+  },
+
+  {
+    title: "Visualizar a relação de pessoas interessadas na vaga",
+    href: "/listar_parceiros_pendentes/visualizar_parceiro_pendente/vagas/listar_pessoas_interessadas",
+    icon: "person",
+  },
+];
+
+// Terceira Tabela
+const tabelaCursosColunas = [
+  { field: "nome", headerName: "Nome" },
+  { field: "inicioPreMatricula", headerName: "Início Pré-Matrícula" },
+  { field: "fimPreMatricula", headerName: "Fim Pré-Matrícula" },
+];
+
+const tabelaCursosLinhas = [
+  {
+    id: 1,
+    nome: "Curso de Programação Web",
+    inicioPreMatricula: "2024-06-01",
+    fimPreMatricula: "2024-06-15",
+    vagas: 30,
+    interessados: 45,
+    situacao: "Em andamento",
+    status: "Ativo",
+  },
+  {
+    id: 2,
+    nome: "Curso de Data Science",
+    inicioPreMatricula: "2024-07-01",
+    fimPreMatricula: "2024-07-15",
+    vagas: 25,
+    interessados: 40,
+    situacao: "Pendente",
+    status: "Ativo",
+  },
+  {
+    id: 3,
+    nome: "Curso de Design Gráfico",
+    inicioPreMatricula: "2024-08-01",
+    fimPreMatricula: "2024-08-15",
+    vagas: 20,
+    interessados: 30,
+    situacao: "Concluído",
+    status: "Inativo",
+  },
+];
+
+const tabelaCursosHiddenLinhas = tabelaCursosLinhas.map(({ vagas, interessados, situacao, status }) => ({
+  vagas,
+  interessados,
+  situacao,
+  status,
+}));
+
+const tabelaCursosActions = [
+  {
+    title: "Visualizar dados do curso",
+    href: "/listar_parceiros_pendentes/visualizar_parceiro_pendente/cursos/visualizar_curso",
+    icon: "visibility",
+  },
+
+  {
+    title: "Visualizar a relação de pessoas interessadas no curso",
+    href: "/listar_parceiros_pendentes/visualizar_parceiro_pendente/cursos/listar_pessoas_interessadas",
+    icon: "person",
+  },
+  {
+    title: "Visualizar a decisão do curso",
+    href: "",
+    icon: "list",
+  },
+];
+
+// Quarta Tabela
 const tabelaPublicoMobilizadoColunas = [
   { field: "nome", headerName: "Nome", width: 250 },
   { field: "cnpj", headerName: "CNPJ", width: 200 },
@@ -127,71 +210,6 @@ const tabelaPublicoMobilizadoHiddenLinhas = tabelaPublicoMobilizadoLinhas.map(
     pessoasInteressadasEmCurso,
   }),
 );
-
-const tabelaCursosColunas = [
-  { field: "nome", headerName: "Nome" },
-  { field: "inicioPreMatricula", headerName: "Início Pré-Matrícula" },
-  { field: "fimPreMatricula", headerName: "Fim Pré-Matrícula" },
-];
-
-const tabelaCursosLinhas = [
-  {
-    id: 1,
-    nome: "Curso de Programação Web",
-    inicioPreMatricula: "2024-06-01",
-    fimPreMatricula: "2024-06-15",
-    vagas: 30,
-    interessados: 45,
-    situacao: "Em andamento",
-    status: "Ativo",
-  },
-  {
-    id: 2,
-    nome: "Curso de Data Science",
-    inicioPreMatricula: "2024-07-01",
-    fimPreMatricula: "2024-07-15",
-    vagas: 25,
-    interessados: 40,
-    situacao: "Pendente",
-    status: "Ativo",
-  },
-  {
-    id: 3,
-    nome: "Curso de Design Gráfico",
-    inicioPreMatricula: "2024-08-01",
-    fimPreMatricula: "2024-08-15",
-    vagas: 20,
-    interessados: 30,
-    situacao: "Concluído",
-    status: "Inativo",
-  },
-];
-
-const tabelaCursosHiddenLinhas = tabelaCursosLinhas.map(({ vagas, interessados, situacao, status }) => ({
-  vagas,
-  interessados,
-  situacao,
-  status,
-}));
-
-const tabelaCursosActions = [
-  {
-    title: "Visualizar dados do curso",
-    href: "",
-    icon: "visibility",
-  },
-
-  {
-    title: "Visualizar a relação de pessoas interessadas no curso",
-    href: "/listar_parceiros_pendentes/visualizar_parceiro_pendente/listar_pessoas_interessadas",
-    icon: "person",
-  },
-  {
-    title: "Visualizar a decisão do curso",
-    href: "",
-    icon: "list",
-  },
-];
 
 const FormVisualizarParceiroPendente = () => {
   const initialData = dadosParceiros;
@@ -422,6 +440,7 @@ const FormVisualizarParceiroPendente = () => {
           columns={tabelaVagasColunas}
           rows={tabelaVagasLinhas}
           hiddenRows={tabelaVagasHiddenLinhas}
+          actionButtons={tabelaVagasActions}
         ></DefaultTable>
 
         <Typography
