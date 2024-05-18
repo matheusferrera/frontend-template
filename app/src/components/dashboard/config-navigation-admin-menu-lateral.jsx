@@ -15,9 +15,11 @@ const adminNavConfig = [
     color: "default",
     subTitles: {
       componentes: "/components",
-      "Analisar Parceiro Pendente": "/listar_parceiros_pendentes/analisar_parceiro_pendente",
-      "Visualizar Informações Complementares": "/listar_parceiros_pendentes/visualizar_informacoes_complementares",
-      "Analisar Informações Complementares": "/listar_parceiros_pendentes/analisar_informacoes_complementares",
+      "Visualizar Parceiro Pendente (HU004)": "/listar_parceiros_pendentes/visualizar_parceiro_pendente",
+      "Analisar Parceiro Pendente (HU003)": "/listar_parceiros_pendentes/analisar_parceiro_pendente",
+      "Visualizar Informações Complementares (HU128)": "/listar_parceiros_pendentes/visualizar_informacoes_complementares",
+      "Analisar Informações Complementares (HU129)": "/listar_parceiros_pendentes/analisar_informacoes_complementares",
+      "Visualizar Pessoas Interessadas (HU008)": "/listar_parceiros_pendentes/visualizar_parceiro_pendente/listar_pessoas_interessadas",
     },
   },
 ];

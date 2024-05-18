@@ -5,7 +5,7 @@ import { Container, Typography } from "@mui/material";
 
 import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
 import CardVisaoGeral from "../../components/cards/CardVisaoGeral";
-import FormListarParceirosPendentes from "../../components/formularios/FormListarParceirosPendentes";
+import { dadosParceiros } from "../../components/formularios/dadosMockados";
 import DefaultTable from "../../components/table/DefaultTable";
 
 const columns = [
@@ -14,126 +14,31 @@ const columns = [
   { field: "habilitacao", headerName: "Habilitacao" },
 ];
 
-const rows = [
-  {
-    id: 1,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "11.111.111/1000-00",
-    nomeFantasia: "Nome 1",
-    nomePontoFocal: "Fulano",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Público",
-    nomeResponsavel: "Beltrano Gonçalves",
-    cidade: "Brasília",
-    uf: "DF",
-    cadastro: "2024-03-20T00:00",
-    ultimaModificacao: "2024-03-21T00:00",
-    tipoDeServico: "VEP",
-  },
-  {
-    id: 2,
-    habilitacao: "ADM",
-    status: "Pendente",
-    cnpj: "22.222.222/1000-00",
-    nomeFantasia: "Nome 2",
-    nomePontoFocal: "Beltrano",
-    razaoSocial: "Razão 2",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Fulano",
-    cidade: "Goiânia",
-    uf: "GO",
-    cadastro: "2024-03-03T00:00",
-    ultimaModificacao: "2024-04-10T00:00",
-    tipoDeServico: "VET",
-  },
-  {
-    id: 3,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "33.333.333/1000-00",
-    nomeFantasia: "Nome 1",
-    nomePontoFocal: "Fulano da Silva",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Público",
-    nomeResponsavel: "Beltrano",
-    cidade: "Catalão",
-    uf: "GO",
-    cadastro: "2024-02-27T00:00",
-    ultimaModificacao: "2024-03-15T00:00",
-    tipoDeServico: "MPu",
-  },
-  {
-    id: 4,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "44.444.444/1000-00",
-    nomeFantasia: "Nome 3",
-    nomePontoFocal: "Beltrano Gonçalves",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Fulano da Silva",
-    cidade: "Belo Horizonte",
-    uf: "MG",
-    cadastro: "2024-02-11T00:00",
-    ultimaModificacao: "2024-02-13T00:00",
-    tipoDeServico: "VEP",
-  },
-  {
-    id: 5,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "55.555.555/1000-00",
-    nomeFantasia: "Nome 2",
-    nomePontoFocal: "Fulano Beltrano",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Beltrano Fulano",
-    cidade: "Brasília",
-    uf: "DF",
-    cadastro: "2024-03-20T00:00",
-    ultimaModificacao: "2024-03-21T00:00",
-    tipoDeServico: "VET",
-  },
-  {
-    id: 6,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "55.555.555/1000-00",
-    nomeFantasia: "Nome 2",
-    nomePontoFocal: "Fulano Beltrano",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Beltrano Fulano",
-    cidade: "Brasília",
-    uf: "DF",
-    cadastro: "2024-03-20T00:00",
-    ultimaModificacao: "2024-03-21T00:00",
-    tipoDeServico: "VET",
-  },
-  {
-    id: 7,
-    habilitacao: "Parceiro",
-    status: "Pendente",
-    cnpj: "55.555.555/1000-00",
-    nomeFantasia: "Nome 2",
-    nomePontoFocal: "Fulano Beltrano",
-    razaoSocial: "Razão 1",
-    naturezaJuridica: "Privado",
-    nomeResponsavel: "Beltrano Fulano",
-    cidade: "Brasília",
-    uf: "DF",
-    cadastro: "2024-03-20T00:00",
-    ultimaModificacao: "2024-03-21T00:00",
-    tipoDeServico: "VET",
-  },
-];
+const rows = dadosParceiros;
 
-const hiddenRows = rows.map(({ cadastro, ultimaModificacao, cnpj }) => ({
-  cadastro,
-  ultimaModificacao,
+const hiddenRows = rows.map(({ dataCadastro, dataUltimaModificacao, cnpj }) => ({
+  dataCadastro,
+  dataUltimaModificacao,
   cnpj,
 }));
+
+const actionButtons = [
+  {
+    title: "Visualizar",
+    icon: "visibility",
+    href: "",
+  },
+  {
+    title: "Editar",
+    icon: "edit",
+    href: "",
+  },
+  {
+    title: "Excluir",
+    icon: "delete",
+    href: "",
+  },
+];
 
 const PageComponents = () => {
   return (
@@ -160,6 +65,34 @@ const PageComponents = () => {
         rows={rows}
         columns={columns}
         hiddenRows={hiddenRows}
+        notFoundText={"Não foram encontrados registros"}
+      ></DefaultTable>
+
+      <Typography
+        variant="h5"
+        mt={2}
+        sx={{ fontFamily: "Rawline Bold", marginBottom: "10px", marginTop: "40px" }}
+        style={{ transition: "1s" }}
+      >
+        Default Table sem nenhum dado
+      </Typography>
+
+      <DefaultTable></DefaultTable>
+
+      <Typography
+        variant="h5"
+        mt={2}
+        sx={{ fontFamily: "Rawline Bold", marginBottom: "10px", marginTop: "40px" }}
+        style={{ transition: "1s" }}
+      >
+        Default Table com action buttons
+      </Typography>
+
+      <DefaultTable
+        rows={rows}
+        columns={columns}
+        hiddenRows={hiddenRows}
+        actionButtons={actionButtons}
       ></DefaultTable>
 
       <Typography

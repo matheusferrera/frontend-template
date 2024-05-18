@@ -20,7 +20,19 @@ import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import { utils as XLSXUtils, writeFile as writeXLSXFile } from "xlsx";
 
-export default function DefaultTable({ rows, columns, hiddenRows }) {
+const defaultColumns = [
+  { field: "primeira", headerName: "Primeira coluna" },
+  { field: "segunda", headerName: "Segunda coluna" },
+  { field: "terceira", headerName: "Terceira coluna" },
+];
+
+export default function DefaultTable({
+  rows = [],
+  columns = defaultColumns,
+  hiddenRows = [],
+  actionButtons = [],
+  notFoundText = "Nenhum registro encontrado",
+}) {
   const theme = useTheme();
 
   const [expandedRows, setExpandedRows] = useState([]);
@@ -61,16 +73,16 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
     const worksheet = XLSXUtils.json_to_sheet(data);
     const workbook = XLSXUtils.book_new();
 
-    XLSXUtils.book_append_sheet(workbook, worksheet, "Dados Parceiros");
+    XLSXUtils.book_append_sheet(workbook, worksheet, "Dados Tabela");
 
-    writeXLSXFile(workbook, "dados_parceiro.xlsx");
+    writeXLSXFile(workbook, "dados_tabela.xlsx");
   };
 
   const tableRef = useRef();
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
-    documentTitle: "Lista de Parceiros Pendentes",
+    documentTitle: "Lista de Dados Tabela",
     onAfterPrint: () => console.log("Printing completed"),
   });
 
@@ -84,24 +96,20 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
       <Table>
         <TableHead>
           <TableRow>
-            {columns.map((objColumn, index) => (
-              <TableCell
-                sx={objColumn.sxProps}
-                key={index + "_" + objColumn.headerName}
-              >
-                {objColumn.headerName}
-              </TableCell>
-            ))}
+            {columns.length > 0 &&
+              columns.map((objColumn, index) => (
+                <TableCell
+                  sx={objColumn.sxProps}
+                  key={index + "_" + objColumn.headerName}
+                >
+                  {objColumn.headerName}
+                </TableCell>
+              ))}
             <TableCell align="right">
               <Tooltip title="Download da tabela em CSV">
                 <IconButton
                   color="primary"
-                  onClick={() =>
-                    handleDownloadCSV(
-                      rows,
-                      columns.map(column => column.field),
-                    )
-                  }
+                  onClick={() => handleDownloadCSV(rows, columns.length > 0 && columns.map(column => column.field))}
                 >
                   <span className="material-icons">sim_card_download</span>
                 </IconButton>
@@ -125,145 +133,39 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
             </TableCell>
           </TableRow>
         </TableHead>
-        {rows.length != 0 ? (
+        {rows && rows.length != 0 ? (
           <>
-            {rows.slice(5 * (page - 1), 5 * page).map((objRow, index) => (
-              <TableBody key={index + "_tbody"}>
-                <TableRow key={index + "_TableRow"}>
-                  {/* Verifica quais valores em rows estao presentes no array de columns, para exibir somente os valores explicitados */}
-                  {columns
-                    // eslint-disable-next-line no-prototype-builtins
-                    .filter(column => objRow.hasOwnProperty(column.field))
-                    .sort((a, b) => columns.indexOf(a) - columns.indexOf(b))
-                    .map(column => (
-                      <TableCell key={index + "_" + column.field}>{objRow[column.field]}</TableCell>
-                    ))}
-                  {/* Verifica se possui hiddenRows para exibir o dropDown */}
-                  {hiddenRows && (
-                    <TableCell align="right">
-                      <Tooltip title="Detalhes do item">
-                        <IconButton
-                          color="primary"
-                          onClick={() => handleArrowClick(index)}
-                        >
-                          {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                        </IconButton>
-                      </Tooltip>
-                    </TableCell>
-                  )}
-                </TableRow>
-                {expandedRows.includes(index) && (
-                  <TableRow key={index + "_HiddenRows"}>
-                    <TableCell
-                      colSpan={10}
-                      style={{ backgroundColor: theme.palette.grey[200] }}
-                    >
-                      <Grid>
-                        <Grid
-                          container
-                          spacing={2}
-                        >
-                          <React.Fragment key={index + "_HiddenRows_div"}>
-                            {/* Itera sobre o o object de uma posicao do array */}
-                            {Object.entries(hiddenRows[index]).map(([key, value]) => (
-                              <Grid
-                                key={index + "_HiddenRows_grid"}
-                                item
-                                xs={3}
-                              >
-                                <a style={{ fontFamily: "Rawline Bold" }}>{key}</a>
-                                <p style={{ fontFamily: "Rawline Medium" }}>{value}</p>
-                              </Grid>
-                            ))}
+            {rows.length > 0 &&
+              rows.slice(5 * (page - 1), 5 * page).map((objRow, index) => (
+                <TableBody key={index + "_tbody"}>
+                  <TableRow key={index + "_TableRow"}>
+                    {/* Verifica quais valores em rows estao presentes no array de columns, para exibir somente os valores explicitados */}
+                    {columns
+                      // eslint-disable-next-line no-prototype-builtins
+                      .filter(column => objRow.hasOwnProperty(column.field))
+                      .sort((a, b) => columns.indexOf(a) - columns.indexOf(b))
+                      .map(column => (
+                        <TableCell key={index + "_" + column.field}>{objRow[column.field]}</TableCell>
+                      ))}
 
-                            {(index + 1) % 4 === 0 && (
-                              <Grid
-                                item
-                                xs={12}
-                              >
-                                <div
-                                  key={index + "_divider"}
-                                  style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}
-                                ></div>
-                              </Grid>
-                            )}
-                          </React.Fragment>
-                        </Grid>
-                      </Grid>
+                    <TableCell align="right">
+                      {/* Verifica se tem action buttons para mostrá-los */}
+                      {actionButtons.length > 0 && <ActionButtons actions={actionButtons} />}
+                      {/* Verifica se possui hiddenRows para exibir o dropDown */}
+                      {hiddenRows.length > 0 && (
+                        <Tooltip title="Detalhes do item">
+                          <IconButton
+                            color="primary"
+                            onClick={() => handleArrowClick(index)}
+                          >
+                            {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                          </IconButton>
+                        </Tooltip>
+                      )}
                     </TableCell>
                   </TableRow>
-                )}
-              </TableBody>
-            ))}
-          </>
-        ) : (
-          <TableBody>
-            <TableRow>
-              <TableCell colSpan={5}>Não foi localizado Parceiro na situação pendente de aprovação!</TableCell>
-            </TableRow>
-          </TableBody>
-        )}
-      </Table>
-      <div style={{ borderTop: "1px solid #d3d3d3", padding: "15px", display: "flex", justifyContent: "center" }}>
-        <Pagination
-          page={page}
-          count={Math.ceil(rows.length / 5)}
-          color="primary"
-          onChange={handlePageChange}
-        />
-      </div>
-
-      {/* CRIANDO TEMPLATE DA TABELA DE IMPRESSA */}
-      <div style={{ display: "none" }}>
-        <TableContainer
-          component={Paper}
-          ref={componentRef}
-        >
-          <Table>
-            <TableHead>
-              <TableRow>
-                {columns.map((objColumn, index) => (
-                  <TableCell
-                    sx={objColumn.sxProps}
-                    key={index + "_" + objColumn.headerName + "_template"}
-                  >
-                    {objColumn.headerName}
-                  </TableCell>
-                ))}
-                <TableCell></TableCell>
-              </TableRow>
-            </TableHead>
-            {rows.length != 0 ? (
-              <>
-                {rows.map((objRow, index) => (
-                  <TableBody key={index + "_tbody" + "_template"}>
-                    <TableRow key={index + "_TableRow" + "_template"}>
-                      {/* Verifica quais valores em rows estao presentes no array de columns, para exibir somente os valores explicitados */}
-                      {columns
-                        // eslint-disable-next-line no-prototype-builtins
-                        .filter(column => objRow.hasOwnProperty(column.field))
-                        .sort((a, b) => columns.indexOf(a) - columns.indexOf(b))
-                        .map(column => (
-                          <TableCell key={index + "_" + column.field + "_template"}>{objRow[column.field]}</TableCell>
-                        ))}
-                      {/* Verifica se possui hiddenRows para exibir o dropDown */}
-                      {hiddenRows && (
-                        <TableCell align="right">
-                          <Tooltip title="Detalhes do item">
-                            <IconButton
-                              color="primary"
-                              onClick={() => handleArrowClick(index)}
-                            >
-                              {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                            </IconButton>
-                          </Tooltip>
-                        </TableCell>
-                      )}
-                    </TableRow>
-                    <TableRow
-                      key={index + "_HiddenRows" + "_template"}
-                      style={{ borderBottom: "2px solid grey" }}
-                    >
+                  {hiddenRows.length > 0 && expandedRows.includes(index) && (
+                    <TableRow key={index + "_HiddenRows"}>
                       <TableCell
                         colSpan={10}
                         style={{ backgroundColor: theme.palette.grey[200] }}
@@ -273,11 +175,11 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
                             container
                             spacing={2}
                           >
-                            <React.Fragment key={index + "_HiddenRows_div" + "_template"}>
+                            <React.Fragment key={index + "_HiddenRows_div"}>
                               {/* Itera sobre o o object de uma posicao do array */}
-                              {Object.entries(hiddenRows[index]).map(([key, value]) => (
+                              {Object.entries(hiddenRows[index]).map(([key, value], subIndex) => (
                                 <Grid
-                                  key={index + "_HiddenRows_grid" + "_template" + value}
+                                  key={index + "_HiddenRows_grid" + subIndex}
                                   item
                                   xs={3}
                                 >
@@ -292,7 +194,7 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
                                   xs={12}
                                 >
                                   <div
-                                    key={index + "_divider" + "_template"}
+                                    key={index + "_divider"}
                                     style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}
                                   ></div>
                                 </Grid>
@@ -302,13 +204,129 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
                         </Grid>
                       </TableCell>
                     </TableRow>
-                  </TableBody>
-                ))}
+                  )}
+                </TableBody>
+              ))}
+          </>
+        ) : (
+          <TableBody>
+            <TableRow>
+              <TableCell colSpan={5}>{notFoundText}</TableCell>
+            </TableRow>
+          </TableBody>
+        )}
+      </Table>
+
+      {/* PAGINACAO */}
+      <div style={{ borderTop: "1px solid #d3d3d3", padding: "15px", display: "flex", justifyContent: "center" }}>
+        <Pagination
+          page={page}
+          count={rows.length > 0 ? Math.ceil(rows.length / 5) : 1}
+          color="primary"
+          onChange={handlePageChange}
+        />
+      </div>
+
+      {/* CRIANDO TEMPLATE DA TABELA DE IMPRESSA */}
+      <div style={{ display: "none" }}>
+        <TableContainer
+          component={Paper}
+          ref={componentRef}
+        >
+          <Table>
+            <TableHead>
+              <TableRow>
+                {columns.length > 0 &&
+                  columns.map((objColumn, index) => (
+                    <TableCell
+                      sx={objColumn.sxProps}
+                      key={index + "_" + objColumn.headerName + "_template"}
+                    >
+                      {objColumn.headerName}
+                    </TableCell>
+                  ))}
+                <TableCell></TableCell>
+              </TableRow>
+            </TableHead>
+            {rows.length != 0 ? (
+              <>
+                {rows.length > 0 &&
+                  rows.map((objRow, index) => (
+                    <TableBody key={index + "_tbody" + "_template"}>
+                      <TableRow key={index + "_TableRow" + "_template"}>
+                        {/* Verifica quais valores em rows estao presentes no array de columns, para exibir somente os valores explicitados */}
+                        {columns
+                          // eslint-disable-next-line no-prototype-builtins
+                          .filter(column => objRow.hasOwnProperty(column.field))
+                          .sort((a, b) => columns.indexOf(a) - columns.indexOf(b))
+                          .map(column => (
+                            <TableCell key={index + "_" + column.field + "_template"}>{objRow[column.field]}</TableCell>
+                          ))}
+                        {/* Verifica se possui hiddenRows para exibir o dropDown */}
+                        {hiddenRows.length > 0 && (
+                          <TableCell align="right">
+                            <Tooltip title="Detalhes do item">
+                              <IconButton
+                                color="primary"
+                                onClick={() => handleArrowClick(index)}
+                              >
+                                {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                              </IconButton>
+                            </Tooltip>
+                          </TableCell>
+                        )}
+                      </TableRow>
+                      {hiddenRows.length > 0 && (
+                        <TableRow
+                          key={index + "_HiddenRows" + "_template"}
+                          style={{ borderBottom: "2px solid grey" }}
+                        >
+                          <TableCell
+                            colSpan={10}
+                            style={{ backgroundColor: theme.palette.grey[200] }}
+                          >
+                            <Grid>
+                              <Grid
+                                container
+                                spacing={2}
+                              >
+                                <React.Fragment key={index + "_HiddenRows_div" + "_template"}>
+                                  {/* Itera sobre o o object de uma posicao do array */}
+                                  {Object.entries(hiddenRows[index]).map(([key, value]) => (
+                                    <Grid
+                                      key={index + "_HiddenRows_grid" + "_template" + value}
+                                      item
+                                      xs={3}
+                                    >
+                                      <a style={{ fontFamily: "Rawline Bold" }}>{key}</a>
+                                      <p style={{ fontFamily: "Rawline Medium" }}>{value}</p>
+                                    </Grid>
+                                  ))}
+
+                                  {(index + 1) % 4 === 0 && (
+                                    <Grid
+                                      item
+                                      xs={12}
+                                    >
+                                      <div
+                                        key={index + "_divider" + "_template"}
+                                        style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}
+                                      ></div>
+                                    </Grid>
+                                  )}
+                                </React.Fragment>
+                              </Grid>
+                            </Grid>
+                          </TableCell>
+                        </TableRow>
+                      )}
+                    </TableBody>
+                  ))}
               </>
             ) : (
               <TableBody>
                 <TableRow>
-                  <TableCell colSpan={5}>Não foi localizado Parceiro na situação pendente de aprovação!</TableCell>
+                  <TableCell colSpan={5}>{notFoundText}</TableCell>
                 </TableRow>
               </TableBody>
             )}
@@ -321,7 +339,34 @@ export default function DefaultTable({ rows, columns, hiddenRows }) {
 
 // Add prop types validation
 DefaultTable.propTypes = {
-  rows: PropTypes.array.isRequired,
-  columns: PropTypes.array.isRequired,
+  rows: PropTypes.array,
+  columns: PropTypes.array,
   hiddenRows: PropTypes.array,
+  actionButtons: PropTypes.array,
+  notFoundText: PropTypes.string,
+};
+
+const ActionButtons = ({ actions }) => {
+  return (
+    <>
+      {actions.map((action, index) => (
+        <Tooltip
+          key={index}
+          title={action.title}
+        >
+          <IconButton
+            color="primary"
+            href={action.href}
+            onClick={action.onClick}
+          >
+            <span className="material-icons">{action.icon}</span>
+          </IconButton>
+        </Tooltip>
+      ))}
+    </>
+  );
+};
+
+ActionButtons.propTypes = {
+  actions: PropTypes.array,
 };
