@@ -4657,12 +4657,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </a>
-                  <button
+                  <a
                     aria-label="Visualizar"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -4678,7 +4678,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <span
                       className="material-icons"
@@ -4688,7 +4687,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <button
                     aria-label="Mais Informações"
                     aria-labelledby={null}
@@ -4729,6 +4728,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   </button>
                 </td>
               </tr>
+            </tbody>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
               <tr
                 className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
                 role={null}
@@ -4879,12 +4883,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </a>
-                  <button
+                  <a
                     aria-label="Visualizar"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -4900,7 +4904,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <span
                       className="material-icons"
@@ -4910,7 +4913,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <button
                     aria-label="Mais Informações"
                     aria-labelledby={null}
@@ -4951,6 +4954,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   </button>
                 </td>
               </tr>
+            </tbody>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
               <tr
                 className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
                 role={null}
@@ -5101,12 +5109,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </a>
-                  <button
+                  <a
                     aria-label="Visualizar"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -5122,7 +5130,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <span
                       className="material-icons"
@@ -5132,7 +5139,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <button
                     aria-label="Mais Informações"
                     aria-labelledby={null}
@@ -5173,6 +5180,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   </button>
                 </td>
               </tr>
+            </tbody>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
               <tr
                 className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
                 role={null}
@@ -5323,12 +5335,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </a>
-                  <button
+                  <a
                     aria-label="Visualizar"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -5344,7 +5356,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <span
                       className="material-icons"
@@ -5354,7 +5365,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <button
                     aria-label="Mais Informações"
                     aria-labelledby={null}
@@ -5395,6 +5406,11 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                   </button>
                 </td>
               </tr>
+            </tbody>
+            <tbody
+              className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+              role={null}
+            >
               <tr
                 className="MuiTableRow-root css-fbmopy-MuiTableRow-root"
                 role={null}
@@ -5545,12 +5561,12 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
                   </a>
-                  <button
+                  <a
                     aria-label="Visualizar"
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    disabled={false}
+                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -5566,7 +5582,6 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    type="button"
                   >
                     <span
                       className="material-icons"
@@ -5576,7 +5591,7 @@ exports[`Teste de componentes Página de administrador - listar parceiro renderi
                     <span
                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                     />
-                  </button>
+                  </a>
                   <button
                     aria-label="Mais Informações"
                     aria-labelledby={null}
