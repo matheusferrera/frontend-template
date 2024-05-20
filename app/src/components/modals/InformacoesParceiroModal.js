@@ -39,6 +39,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="cnpj"
                 name="cnpj"
                 label="CNPJ"
@@ -54,6 +55,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="razaoSocial"
                 name="razaoSocial"
                 label="Razão Social"
@@ -75,6 +77,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="endereco"
                 name="endereco"
                 label="Endereço"
@@ -90,6 +93,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="cidade"
                 name="cidade"
                 label="Cidade"
@@ -105,6 +109,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="uf"
                 name="uf"
                 label="UF"
@@ -126,6 +131,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="complemento"
                 name="complemento"
                 label="Complemento"
@@ -141,6 +147,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="telefone"
                 name="telefone"
                 label="Telefone"
@@ -156,6 +163,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="email"
                 name="email"
                 label="E-mail"
@@ -177,6 +185,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="responsavel"
                 name="responsavel"
                 label="Representante"
@@ -192,6 +201,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="pontoFocal"
                 name="pontoFocal"
                 label="Ponto Focal"
@@ -213,6 +223,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="tipo"
                 name="tipo"
                 label="Tipo"
@@ -228,6 +239,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="porte"
                 name="porte"
                 label="Porte"
@@ -249,6 +261,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
           >
             <FormGroup>
               <TextField
+                disabled
                 id="atividadeEconomica"
                 name="atividadeEconomica"
                 label="Atividade Economica"

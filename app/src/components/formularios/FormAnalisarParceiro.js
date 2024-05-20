@@ -31,7 +31,6 @@ import InformacoesParceiroModal from "../modals/InformacoesParceiroModal";
 import { dadosParceiros } from "./dadosMockados";
 
 const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatusModal, informacoesModal, setInformacoesModal }) => {
-  const value = JSON.parse(localStorage.getItem("analisarID"));
   const theme = useTheme();
 
   const openInformacoesParceiroModal = () => {
@@ -41,39 +40,37 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
     setInformacoesModal(false);
   };
 
-  const [valores, setValores] = useState({
-    nomePontoFocal: "",
-    cnpj: "",
-    dataCadastro: "",
-    telefone: "",
-    motivo: "",
-    status: "Pendente",
-    tipoDeServico: ["none"],
-    novoCadastro: false,
-    cadastroAlterado: false,
-    dataUltimaModificacao: null,
-  });
-
   const initialData = dadosParceiros;
+  const parceiroID = JSON.parse(localStorage.getItem("analisarID"));
+  const [valores, setValores] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    if (value) {
-      for (var i = 0; i < initialData.length; i++) {
-        var parceiro = initialData[i];
-        if (parceiro["id"] == value) {
-          var servicos = [];
-          Object.keys(parceiro["tipoDeServico"]).map(servico => {
-            if (parceiro["tipoDeServico"][servico]) {
-              servicos.push(servico);
-            }
-          });
-          parceiro["tipoDeServico"] = servicos;
-          parceiro["dataUltimaModificacao"] = dayjs(parceiro["dataUltimaModificacao"]);
-          setValores(parceiro);
-          break;
-        }
+    if (parceiroID) {
+      const parceiroEncontrado = initialData.find(parceiro => parceiro.id === parceiroID);
+
+      if (parceiroEncontrado) {
+        const servicos = Object.keys(parceiroEncontrado.tipoDeServico).filter(servico => parceiroEncontrado.tipoDeServico[servico]);
+
+        setValores({
+          ...parceiroEncontrado,
+          tipoDeServico: servicos,
+          dataCadastro: dayjs(parceiroEncontrado.dataCadastro),
+          dataUltimaModificacao: dayjs(parceiroEncontrado.dataUltimaModificacao),
+        });
       }
     }
+
+    setIsLoading(false);
   }, []);
+
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
+
+  if (!valores) {
+    return <div>Parceiro não encontrado</div>;
+  }
 
   const handleChanges = event => {
     const { name, value } = event.target;
@@ -129,6 +126,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
             >
               <FormGroup>
                 <TextField
+                  disabled
                   id="nomePontoFocal"
                   name="nomePontoFocal"
                   label="Nome"
@@ -146,6 +144,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
             >
               <FormGroup>
                 <TextField
+                  disabled
                   id="cnpj"
                   name="cnpj"
                   label="CNPJ"
@@ -169,15 +168,17 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
               sm={4}
             >
               <FormGroup>
-                <TextField
-                  id="dataCadastro"
-                  name="dataCadastro"
-                  label="Data do cadastro"
-                  placeholder="Data do cadastro"
-                  value={valores.dataCadastro}
-                  type="text"
-                  onChange={handleChanges}
-                />
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DatePicker
+                    disabled
+                    label="Data do Cadastro"
+                    id="dataCadastro"
+                    name="dataCadastro"
+                    value={valores.dataCadastro}
+                    format="DD/MM/YYYY"
+                    onChange={valor => setValores({ ...valores, ["dataCadastro"]: valor })}
+                  />
+                </LocalizationProvider>
               </FormGroup>
             </Grid>
             <Grid
@@ -188,6 +189,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
               <FormGroup>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
+                    disabled
                     label="Ultima Modificação"
                     id="dataUltimaModificacao"
                     name="dataUltimaModificacao"
@@ -205,6 +207,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
             >
               <FormGroup>
                 <TextField
+                  disabled
                   id="telefone"
                   name="telefone"
                   label="Telefone"
@@ -307,7 +310,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
               >
                 <Button
                   variant="outlined"
-                  onClick={handleChanges}
+                  href="/listar_parceiros_pendentes/visualizar_informacoes_complementares"
                   sx={{ gap: "8px" }}
                 >
                   <Typography
@@ -423,6 +426,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
               <FormGroup>
                 <FormControl variant="filled">
                   <Select
+                    disabled
                     id="tipoDeServico"
                     name="tipoDeServico"
                     multiple
