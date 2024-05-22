@@ -686,7 +686,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
             className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
           >
             <button
-              className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-13bf9bb-MuiButtonBase-root-MuiButton-root"
+              className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-eesfko-MuiButtonBase-root-MuiButton-root"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -719,7 +719,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
             className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
           >
             <button
-              className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1m4vzu4-MuiButtonBase-root-MuiButton-root"
+              className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1jx71up-MuiButtonBase-root-MuiButton-root"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}

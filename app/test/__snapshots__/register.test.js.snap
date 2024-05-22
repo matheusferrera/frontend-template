@@ -285,7 +285,7 @@ exports[`Teste de registro Register renderizada corretamente 1`] = `
           </p>
         </label>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-1b719fg-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-1p1ddem-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id=":r4:"
           onBlur={[Function]}
@@ -308,7 +308,7 @@ exports[`Teste de registro Register renderizada corretamente 1`] = `
         </button>
       </form>
       <a
-        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1wpq9cx-MuiButtonBase-root-MuiButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1cbccbr-MuiButtonBase-root-MuiButton-root"
         href="/parceiro_login"
         onBlur={[Function]}
         onContextMenu={[Function]}

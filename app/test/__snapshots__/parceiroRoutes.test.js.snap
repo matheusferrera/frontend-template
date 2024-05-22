@@ -2107,7 +2107,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 css-wg4xta-MuiGrid-root"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-bgs2k3-MuiButtonBase-root-MuiButton-root"
+                    className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeLarge MuiButton-outlinedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-8s8hbm-MuiButtonBase-root-MuiButton-root"
                     disabled={false}
                     onBlur={[Function]}
                     onContextMenu={[Function]}
@@ -2134,7 +2134,7 @@ exports[`Teste de componentes Página ListarParceiros renderizada corretamente 1
                   className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 css-o4bg9w-MuiGrid-root"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorSuccess MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorSuccess MuiButton-fullWidth css-1756s43-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                    className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorSuccess MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorSuccess MuiButton-fullWidth css-1n9frgk-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                     disabled={false}
                     id=":r13:"
                     onBlur={[Function]}
@@ -2256,6 +2256,26 @@ exports[`Teste de componentes Página de Parceiro renderizada corretamente 1`] =
             }
           }
         />
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-1mlx7tg-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          desde de
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-12emvm8-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          NaN/NaN/NaN
+        </h6>
       </div>
     </div>
   </div>

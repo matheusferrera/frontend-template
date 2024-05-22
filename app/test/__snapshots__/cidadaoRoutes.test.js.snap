@@ -71,6 +71,26 @@ exports[`Teste de componentes Página de Cidadão renderizada corretamente 1`] =
             }
           }
         />
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-1mlx7tg-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          desde de
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-12emvm8-MuiTypography-root"
+          style={
+            {
+              "transition": "1s",
+            }
+          }
+        >
+          NaN/NaN/NaN
+        </h6>
       </div>
     </div>
   </div>

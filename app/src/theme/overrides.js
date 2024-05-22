@@ -106,16 +106,21 @@ export function overrides(theme) {
     },
     MuiButton: {
       styleOverrides: {
+        root: {
+          fontFamily: "Rawline Bold",
+          borderRadius: "15px",
+          whiteSpace: "nowrap",
+          textAlign: "center",
+          fontSize: "14px",
+        },
         containedInherit: {
           color: theme.palette.common.white,
+
           backgroundColor: theme.palette.grey[800],
           "&:hover": {
             color: theme.palette.common.white,
             backgroundColor: theme.palette.grey[800],
           },
-        },
-        sizeLarge: {
-          minHeight: 48,
         },
       },
     },

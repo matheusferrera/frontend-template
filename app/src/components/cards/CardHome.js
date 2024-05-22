@@ -4,10 +4,13 @@ import { Box, Card, CardHeader, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
+import { useAuth } from "../../contexts/AuthContext";
 import { useResponsive } from "../../hooks/use-responsive";
 
 const CardHome = ({ title, content, imageUrl }) => {
   const theme = useTheme();
+  const { user } = useAuth();
+  const formatedDate = formatDate(user?.dh_criacao);
 
   const lgUp = useResponsive("up", "lg");
 
@@ -82,6 +85,30 @@ const CardHome = ({ title, content, imageUrl }) => {
           >
             {content}
           </Typography>
+          <Typography
+            variant="h6"
+            style={{ transition: "1s" }}
+            sx={{
+              fontWeight: 600,
+              lineHeight: "normal",
+              fontFamily: "Rawline Thin",
+              color: theme.palette.text.primary,
+            }}
+          >
+            desde de
+          </Typography>
+          <Typography
+            variant="h6"
+            style={{ transition: "1s" }}
+            sx={{
+              fontWeight: 600,
+              lineHeight: "normal",
+              fontFamily: "Rawline Bold",
+              color: theme.palette.text.primary,
+            }}
+          >
+            {formatedDate}
+          </Typography>
         </Grid>
       </Card>
 
@@ -113,3 +140,16 @@ CardHome.propTypes = {
 };
 
 export default CardHome;
+
+function formatDate(isoDate) {
+  // Parse the ISO date string
+  const date = new Date(isoDate);
+
+  // Extract day, month, and year
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+  const year = date.getFullYear();
+
+  // Format the date as dd/mm/yyyy
+  return `${day}/${month}/${year}`;
+}

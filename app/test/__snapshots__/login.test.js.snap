@@ -207,7 +207,7 @@ exports[`Teste de login Login renderizada corretamente 1`] = `
           </p>
         </label>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-1b719fg-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-fullWidth css-1p1ddem-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id=":r2:"
           onBlur={[Function]}
