@@ -38,10 +38,7 @@ const PageHomeCidadao = () => {
       maxWidth="lg"
       sx={{ mt: 0 }}
     >
-      <CardBreadcrumb
-        homeLink="/"
-        homeText="Página Inicial"
-      />
+      <CardBreadcrumb currentPage="Página inicial" />
 
       <Typography
         variant="h5"

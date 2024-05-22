@@ -8,16 +8,13 @@ import PropTypes from "prop-types";
 
 import { useResponsive } from "../../hooks/use-responsive";
 
-const CardBreadcrumb = ({ homeLink, homeText, currentPage }) => {
+const CardBreadcrumb = ({ currentPage, links }) => {
   const lgUp = useResponsive("up", "lg");
-
   const theme = useTheme();
 
   if (!lgUp) {
     return null;
   }
-
-  const isCurrentPagePresent = Boolean(currentPage);
 
   return (
     <Breadcrumbs
@@ -26,26 +23,32 @@ const CardBreadcrumb = ({ homeLink, homeText, currentPage }) => {
       style={{ color: theme.palette.text.disabled, borderBottom: "1px solid #d3d3d3", paddingBottom: "5px" }}
       separator={<NavigateNextIcon fontSize="small" />}
     >
-      <Link>
+      <Link href={"/"}>
         <HomeIcon
           sx={{ color: theme.palette.primary.main }}
+          style={{ cursor: "pointer" }}
           fontSize="inherit"
         />
       </Link>
-      <Link
-        underline="hover"
-        style={{
-          transition: "1s",
-          display: "flex",
-          alignItems: "center",
-          color: isCurrentPagePresent ? theme.palette.text.disabled : theme.palette.primary.main,
-          fontFamily: isCurrentPagePresent ? "Rawline Medium" : "Rawline Bold",
-        }}
-        href={homeLink}
-      >
-        {homeText}
-      </Link>
-      {isCurrentPagePresent && (
+
+      {links &&
+        links.map((link, index) => (
+          <Link
+            key={index}
+            underline="hover"
+            style={{
+              transition: "1s",
+              display: "flex",
+              alignItems: "center",
+              color: "#d3d3d3",
+              fontFamily: "Rawline Regular",
+            }}
+            href={link.href}
+          >
+            {link.text}
+          </Link>
+        ))}
+      {currentPage && (
         <Typography
           sx={{ display: "flex", alignItems: "center", fontSize: "inherit" }}
           color="primary.main"
@@ -59,9 +62,13 @@ const CardBreadcrumb = ({ homeLink, homeText, currentPage }) => {
 };
 
 CardBreadcrumb.propTypes = {
-  homeLink: PropTypes.string.isRequired,
-  homeText: PropTypes.string.isRequired,
   currentPage: PropTypes.string,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 export default CardBreadcrumb;
