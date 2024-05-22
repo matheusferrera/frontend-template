@@ -7,6 +7,8 @@ const adminNavConfig = [
       home: "/",
       perfil: "/profile",
       "Listar Parceiros Pendentes": "/listar_parceiros_pendentes",
+      "Listar Parceiros Aprovados": "/listar_parceiros_aprovados",
+      "Listar Parceiros Reprovados": "/listar_parceiros_reprovados",
     },
   },
   {
