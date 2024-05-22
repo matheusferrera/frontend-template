@@ -88,8 +88,8 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
           typeof value === "string"
             ? value.split(",")
             : value.filter(v => {
-              return v != "none";
-            }),
+                return v != "none";
+              }),
       });
     }
   };

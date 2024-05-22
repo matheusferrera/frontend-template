@@ -373,7 +373,7 @@ const VisualizarInformacoesComplementares = () => {
               </Grid>
             </Grid>
 
-            <Grid conatiner>
+            <Grid container>
               <Typography variant="body2">É operador de carteira de microcrédito com que tipo de recursos?</Typography>
               <FormGroup>
                 <RadioGroup

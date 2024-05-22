@@ -17,7 +17,7 @@ const PageParceirosReprovados = () => {
       <CardBreadcrumb
         homeLink="/home"
         homeText="Admin"
-        currentPage="Listar Reprovados"
+        currentPage="Listar Parceiros Reprovados"
       />
 
       <Typography
@@ -27,7 +27,7 @@ const PageParceirosReprovados = () => {
         sx={{ fontFamily: "Rawline Bold" }}
         style={{ transition: "1s" }}
       >
-        Listar Reprovados
+        Listar Parceiros Reprovados
       </Typography>
 
       <FormListarParceirosReprovados

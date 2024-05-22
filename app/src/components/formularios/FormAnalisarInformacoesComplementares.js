@@ -3,20 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import SaveIcon from "@mui/icons-material/Save";
 import UploadFileRoundedIcon from "@mui/icons-material/UploadFile";
-import {
-  Box,
-  Button,
-  Card,
-  FormControl,
-  FormGroup,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Card, FormControl, FormGroup, Grid, InputLabel, MenuItem, Select, Stack, TextField, Typography } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -39,7 +26,7 @@ const FormAnalisarInformacoesComplementares = () => {
     dataUltimaModificacao: null,
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const initialData = dadosParceiros;
   useEffect(() => {
@@ -322,7 +309,7 @@ const FormAnalisarInformacoesComplementares = () => {
                   variant="filled"
                   label="Anexar imagem"
                   InputProps={{
-                    endAdornment:
+                    endAdornment: (
                       <Button
                         component="label"
                         role={undefined}
@@ -330,7 +317,8 @@ const FormAnalisarInformacoesComplementares = () => {
                         tabIndex={-1}
                       >
                         <UploadFileRoundedIcon />
-                      </Button>,
+                      </Button>
+                    ),
                   }}
                 />
               </FormGroup>
@@ -345,8 +333,7 @@ const FormAnalisarInformacoesComplementares = () => {
               item
               xs={0}
               sm={5.5}
-            >
-            </Grid>
+            ></Grid>
             <Grid
               item
               xs={12}
@@ -356,9 +343,7 @@ const FormAnalisarInformacoesComplementares = () => {
                 variant="outlined"
                 onClick={() => navigate("/listar_parceiros_pendentes")}
               >
-                <Typography variant={"BUTTON TEXT"}>
-                  CANCELAR
-                </Typography>
+                <Typography variant={"BUTTON TEXT"}>CANCELAR</Typography>
               </Button>
             </Grid>
             <Grid
@@ -370,9 +355,7 @@ const FormAnalisarInformacoesComplementares = () => {
                 variant="outlined"
                 onClick={() => navigate("/listar_parceiros_pendentes")}
               >
-                <Typography variant={"BUTTON TEXT"}>
-                  VISUALIZAR INFORMAÇÕES COMPLEMENTARES
-                </Typography>
+                <Typography variant={"BUTTON TEXT"}>VISUALIZAR INFORMAÇÕES COMPLEMENTARES</Typography>
               </Button>
             </Grid>
             <Grid
