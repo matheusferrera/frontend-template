@@ -403,12 +403,6 @@ const FormListarParceirosAprovados = ({ servicosModal, setServicosModal }) => {
               item
               xs={12}
             >
-              <Typography variant="h6">Listar parceiros aprovados</Typography>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-            >
               <Typography variant="subtitle2">Filtros</Typography>
             </Grid>
           </Grid>

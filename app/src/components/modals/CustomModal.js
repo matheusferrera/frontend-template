@@ -4,12 +4,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from "@mui/material";
 import PropTypes from "prop-types";
 
-const CustomModal = ({ showModal, handleClose, title, content, buttons }) => {
+const CustomModal = ({ showModal, handleClose, title, content, buttons, maxWidth = "md" }) => {
   return (
     <Dialog
-      maxWidth="md"
+      maxWidth={maxWidth}
       onClose={handleClose}
       open={showModal}
+      fullWidth={true}
     >
       <DialogTitle sx={{ m: 0, p: 2 }}>{title}</DialogTitle>
       <IconButton
@@ -49,6 +50,7 @@ CustomModal.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.node.isRequired,
   buttons: PropTypes.array.isRequired,
+  maxWidth: PropTypes.string,
 };
 
 export default CustomModal;

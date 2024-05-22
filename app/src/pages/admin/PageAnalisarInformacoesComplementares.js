@@ -6,7 +6,6 @@ import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
 import FormAnalisarInformacoesComplementares from "../../components/formularios/FormAnalisarInformacoesComplementares";
 
 const AnalisarInformacoesComplementares = () => {
-
   return (
     <Container
       maxWidth="lg"

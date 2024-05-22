@@ -283,6 +283,7 @@ const InformacoesParceiroModal = ({ showModal, handleClose, parceiro }) => {
       title={modalTitle}
       content={modalContent}
       buttons={[]}
+      maxWidth="lg"
     />
   );
 };
