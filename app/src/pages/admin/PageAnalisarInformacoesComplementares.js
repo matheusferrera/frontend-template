@@ -3,8 +3,10 @@ import React from "react";
 import { Container, Typography } from "@mui/material";
 
 import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
+import FormAnalisarInformacoesComplementares from "../../components/formularios/FormAnalisarInformacoesComplementares";
 
 const AnalisarInformacoesComplementares = () => {
+
   return (
     <Container
       maxWidth="lg"
@@ -26,12 +28,7 @@ const AnalisarInformacoesComplementares = () => {
         Analisar Informações Complementares
       </Typography>
 
-      {/* <FormAnalisarParceiroPendente
-        mudancaDeStatusModal={mudancaDeStatusModal}
-        setMudancaDeStatusModal={setMudancaDeStatusModal}
-        informacoesModal={informacoesModal}
-        setInformacoesModal={setInformacoesModal}
-      /> */}
+      <FormAnalisarInformacoesComplementares />
     </Container>
   );
 };
