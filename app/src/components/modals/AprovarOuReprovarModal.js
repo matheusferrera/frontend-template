@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 import CustomModal from "./CustomModal";
 
-const ConfirmacaoModal = ({ showModal, handleClose, modalTitle, servicos }) => {
+const AprovarOuReprovarModal = ({ showModal, handleClose, modalTitle, servicos }) => {
   const [valores, setValores] = useState({
     motivo: "",
     status: "none",
@@ -71,14 +71,23 @@ const ConfirmacaoModal = ({ showModal, handleClose, modalTitle, servicos }) => {
               return (
                 <>
                   <Grid
+                    key={valor + "_grid"}
                     item
                     xs={3}
                   >
                     <Button
+                      id={valor}
+                      name={valor}
                       variant="outlined"
                       disabled
                     >
-                      <Typography variant={"caption"}> {termos[valor]} </Typography>
+                      <Typography
+                        key={valor + "_texto"}
+                        variant={"caption"}
+                      >
+                        {" "}
+                        {termos[valor]}{" "}
+                      </Typography>
                     </Button>
                   </Grid>
                 </>
@@ -92,7 +101,13 @@ const ConfirmacaoModal = ({ showModal, handleClose, modalTitle, servicos }) => {
             item
             xs={12}
           >
-            <Typography variant="subtitle2"> Anexar Documentos</Typography>
+            <Typography
+              key={"Teste"}
+              variant="subtitle2"
+            >
+              {" "}
+              Anexar Documentos
+            </Typography>
           </Grid>
           <Grid
             item
@@ -100,6 +115,8 @@ const ConfirmacaoModal = ({ showModal, handleClose, modalTitle, servicos }) => {
           >
             <FormGroup>
               <TextField
+                id="anexarImagem"
+                name="anexarImagem"
                 variant="filled"
                 label="Anexar imagem"
                 InputProps={{
@@ -216,11 +233,11 @@ const ConfirmacaoModal = ({ showModal, handleClose, modalTitle, servicos }) => {
   );
 };
 
-ConfirmacaoModal.propTypes = {
+AprovarOuReprovarModal.propTypes = {
   showModal: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
   modalTitle: PropTypes.string.isRequired,
   servicos: PropTypes.array.isRequired,
 };
 
-export default ConfirmacaoModal;
+export default AprovarOuReprovarModal;

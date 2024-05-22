@@ -7,7 +7,9 @@ import PageComponents from "../../pages/admin/PageComponents";
 import PageCursosPessoasInteressadas from "../../pages/admin/PageCursosPessoasInteressadas";
 import PageCursosVisualizar from "../../pages/admin/PageCursosVisualizar";
 import PageHomeAdm from "../../pages/admin/PageHomeAdmin";
+import PageParceirosAprovados from "../../pages/admin/PageListarParceirosAprovados";
 import PageParceirosPendentes from "../../pages/admin/PageListarParceirosPendentes";
+import PageParceirosReprovados from "../../pages/admin/PageListarParceirosReprovados";
 import PageVagasCurriculo from "../../pages/admin/PageVagasCurriculo";
 import PageVagasPessoasInteressadas from "../../pages/admin/PageVagasPessoasInteressadas";
 import PageVisualizarInformacoesComplementares from "../../pages/admin/PageVisualizarInformacoesComplementares";
@@ -37,6 +39,14 @@ const AdminRoutes = () => (
     <Route
       path="/listar_parceiros_pendentes"
       element={<PageParceirosPendentes />}
+    />
+    <Route
+      path="/listar_parceiros_aprovados"
+      element={<PageParceirosAprovados />}
+    />
+    <Route
+      path="/listar_parceiros_reprovados"
+      element={<PageParceirosReprovados />}
     />
     <Route
       path="/listar_parceiros_pendentes/analisar_parceiro_pendente"
