@@ -29,7 +29,7 @@ const ServicoOfertadoModal = ({ showModal, handleClose, parceiro }) => {
         {Object.keys(parceiro[0].tipoDeServico).map(nome => {
           if (nome in termos) {
             return (
-              <>
+              <React.Fragment key={nome}>
                 <Checkbox
                   disabled
                   id={nome}
@@ -37,7 +37,7 @@ const ServicoOfertadoModal = ({ showModal, handleClose, parceiro }) => {
                   checked={parceiro[0].tipoDeServico[nome]}
                 />{" "}
                 {termos[nome]} <br></br>
-              </>
+              </React.Fragment>
             );
           }
         })}
@@ -54,6 +54,7 @@ const ServicoOfertadoModal = ({ showModal, handleClose, parceiro }) => {
       title={modalTitle}
       content={modalContent}
       buttons={modalButtons}
+      maxWidth="xs"
     />
   );
 };

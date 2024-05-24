@@ -5,18 +5,21 @@ import renderer from "react-test-renderer";
 import { describe, expect, it, jest } from "@jest/globals";
 import axios from "axios";
 
+import PageAnalisarInformacoesComplementares from "../src/pages/admin/PageAnalisarInformacoesComplementares";
+import PageAnalisarParceiroPendente from "../src/pages/admin/PageAnalisarParceiroPendente";
+import PageComponents from "../src/pages/admin/PageComponents";
 import PageHomeAdm from "../src/pages/admin/PageHomeAdmin";
+import PageParceirosAprovados from "../src/pages/admin/PageListarParceirosAprovados";
 import PageParceirosPendentes from "../src/pages/admin/PageListarParceirosPendentes";
+import PageParceirosReprovados from "../src/pages/admin/PageListarParceirosReprovados";
 import PageVisualizarParceiroPendente from "../src/pages/admin/PageVisualizarParceiroPendente";
 import { TestWrapper } from "./testWrapper";
 
-// import PageAnalisarInformacoesComplementares from "../src/pages/admin/PageAnalisarInformacoesComplementares";
-// import PageAnalisarParceiroPendente from "../src/pages/admin/PageAnalisarParceiroPendente";
+// import PageVisualizarInformacoesComplementares from "../src/pages/admin/PageVisualizarInformacoesComplementares";
 // import PageCursosPessoasInteressadas from "../src/pages/admin/PageCursosPessoasInteressadas";
 // import PageCursosVisualizar from "../src/pages/admin/PageCursosVisualizar";
 // import PageVagasCurriculo from "../src/pages/admin/PageVagasCurriculo";
 // import PageVagasPessoasInteressadas from "../src/pages/admin/PageVagasPessoasInteressadas";
-// import PageVisualizarInformacoesComplementares from "../src/pages/admin/PageVisualizarInformacoesComplementares";
 
 describe("Teste de componentes", () => {
   it("Página de administrador renderizada corretamente", async () => {
@@ -37,7 +40,7 @@ describe("Teste de componentes", () => {
     jest.resetAllMocks();
   });
 
-  it("Admin - listar parceiro renderizada corretamente", async () => {
+  it("Admin - listar parceiros pendentes renderizada corretamente", async () => {
     axios.get = jest.fn().mockResolvedValue({});
 
     let component;
@@ -55,23 +58,23 @@ describe("Teste de componentes", () => {
     jest.resetAllMocks();
   });
 
-  // it("Admin - analisar parceiro renderizada corretamente", async () => {
-  //   axios.get = jest.fn().mockResolvedValue({});
+  it("Admin - analisar parceiro renderizada corretamente", async () => {
+    axios.get = jest.fn().mockResolvedValue({});
 
-  //   let component;
+    let component;
 
-  //   await act(async () => {
-  //     component = renderer.create(
-  //       <TestWrapper>
-  //         <PageAnalisarParceiroPendente />
-  //       </TestWrapper>,
-  //     );
-  //   });
+    await act(async () => {
+      component = renderer.create(
+        <TestWrapper>
+          <PageAnalisarParceiroPendente />
+        </TestWrapper>,
+      );
+    });
 
-  //   const tree = component.toJSON();
-  //   expect(tree).toMatchSnapshot();
-  //   jest.resetAllMocks();
-  // });
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    jest.resetAllMocks();
+  });
 
   it("Admin - visualizar parceiro pendente renderizada corretamente", async () => {
     axios.get = jest.fn().mockResolvedValue({});
@@ -91,23 +94,23 @@ describe("Teste de componentes", () => {
     jest.resetAllMocks();
   });
 
-  // it("Admin - analisar informacoes complementares renderizada corretamente", async () => {
-  //   axios.get = jest.fn().mockResolvedValue({});
+  it("Admin - analisar informacoes complementares renderizada corretamente", async () => {
+    axios.get = jest.fn().mockResolvedValue({});
 
-  //   let component;
+    let component;
 
-  //   await act(async () => {
-  //     component = renderer.create(
-  //       <TestWrapper>
-  //         <PageAnalisarInformacoesComplementares />
-  //       </TestWrapper>,
-  //     );
-  //   });
+    await act(async () => {
+      component = renderer.create(
+        <TestWrapper>
+          <PageAnalisarInformacoesComplementares />
+        </TestWrapper>,
+      );
+    });
 
-  //   const tree = component.toJSON();
-  //   expect(tree).toMatchSnapshot();
-  //   jest.resetAllMocks();
-  // });
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    jest.resetAllMocks();
+  });
 
   // it("Admin - visualizar informacoes complementares renderizada corretamente", async () => {
   //   axios.get = jest.fn().mockResolvedValue({});
@@ -198,4 +201,58 @@ describe("Teste de componentes", () => {
   //   expect(tree).toMatchSnapshot();
   //   jest.resetAllMocks();
   // });
+
+  it("Admin - listar parceiros aprovados renderizada corretamente", async () => {
+    axios.get = jest.fn().mockResolvedValue({});
+
+    let component;
+
+    await act(async () => {
+      component = renderer.create(
+        <TestWrapper>
+          <PageParceirosAprovados />
+        </TestWrapper>,
+      );
+    });
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    jest.resetAllMocks();
+  });
+
+  it("Admin - listar parceiros reprovados renderizada corretamente", async () => {
+    axios.get = jest.fn().mockResolvedValue({});
+
+    let component;
+
+    await act(async () => {
+      component = renderer.create(
+        <TestWrapper>
+          <PageParceirosReprovados />
+        </TestWrapper>,
+      );
+    });
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    jest.resetAllMocks();
+  });
+
+  it("Admin - componentes renderizada corretamente", async () => {
+    axios.get = jest.fn().mockResolvedValue({});
+
+    let component;
+
+    await act(async () => {
+      component = renderer.create(
+        <TestWrapper>
+          <PageComponents />
+        </TestWrapper>,
+      );
+    });
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    jest.resetAllMocks();
+  });
 });

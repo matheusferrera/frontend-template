@@ -28,7 +28,7 @@ import PropTypes from "prop-types";
 
 import AprovarOuReprovarModal from "../modals/AprovarOuReprovarModal";
 import InformacoesParceiroModal from "../modals/InformacoesParceiroModal";
-import { dadosParceiros } from "./dadosMockados";
+import { dadosParceirosPendentes } from "./dadosMockados";
 
 const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatusModal, informacoesModal, setInformacoesModal }) => {
   const theme = useTheme();
@@ -40,7 +40,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
     setInformacoesModal(false);
   };
 
-  const initialData = dadosParceiros;
+  const initialData = dadosParceirosPendentes;
   const parceiroID = JSON.parse(localStorage.getItem("analisarID"));
   const [valores, setValores] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

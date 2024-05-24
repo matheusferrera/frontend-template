@@ -9,45 +9,41 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
 
-import { dadosParceiros } from "./dadosMockados";
+import { dadosParceirosPendentes } from "./dadosMockados";
 
 const FormAnalisarInformacoesComplementares = () => {
-  const value = JSON.parse(localStorage.getItem("analisarID"));
-  const [valores, setValores] = useState({
-    nomePontoFocal: "",
-    cnpj: "",
-    dataCadastro: "",
-    telefone: "",
-    motivo: "",
-    status: "Pendente",
-    tipoDeServico: ["none"],
-    novoCadastro: false,
-    cadastroAlterado: false,
-    dataUltimaModificacao: null,
-  });
-
   const navigate = useNavigate();
+  const initialData = dadosParceirosPendentes;
+  const parceiroID = JSON.parse(localStorage.getItem("analisarID"));
+  const [valores, setValores] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const initialData = dadosParceiros;
   useEffect(() => {
-    if (value) {
-      for (var i = 0; i < initialData.length; i++) {
-        var parceiro = initialData[i];
-        if (parceiro["id"] == value) {
-          var servicos = [];
-          Object.keys(parceiro["tipoDeServico"]).map(servico => {
-            if (parceiro["tipoDeServico"][servico]) {
-              servicos.push(servico);
-            }
-          });
-          parceiro["tipoDeServico"] = servicos;
-          parceiro["dataUltimaModificacao"] = dayjs(parceiro["dataUltimaModificacao"]);
-          setValores(parceiro);
-          break;
-        }
+    if (parceiroID) {
+      const parceiroEncontrado = initialData.find(parceiro => parceiro.id === parceiroID);
+
+      if (parceiroEncontrado) {
+        const servicos = Object.keys(parceiroEncontrado.tipoDeServico).filter(servico => parceiroEncontrado.tipoDeServico[servico]);
+
+        setValores({
+          ...parceiroEncontrado,
+          tipoDeServico: servicos,
+          dataCadastro: dayjs(parceiroEncontrado.dataCadastro),
+          dataUltimaModificacao: dayjs(parceiroEncontrado.dataUltimaModificacao),
+        });
       }
     }
+
+    setIsLoading(false);
   }, []);
+
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
+
+  if (!valores) {
+    return <div>Parceiro não encontrado</div>;
+  }
 
   const handleChanges = event => {
     const { name, value } = event.target;
@@ -56,7 +52,7 @@ const FormAnalisarInformacoesComplementares = () => {
 
   const handleSalvar = () => {
     if (valores.status != "Pendente") {
-      console.log("Iformações salvas com sucesso!", valores);
+      console.log("Informações salvas com sucesso!", valores);
       navigate("/listar-parceiros-pendentes");
     } else {
       console.log("Status do parceiro ainda é pendente!");

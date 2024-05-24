@@ -1,43 +1,18 @@
-import React, { useRef, useState } from "react";
-import { useReactToPrint } from "react-to-print";
+import React, { useState } from "react";
 
 import { ThemeProvider } from "@emotion/react";
-import AttachFileIcon from "@mui/icons-material/AttachFile";
-import CancelIcon from "@mui/icons-material/Cancel";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import SearchIcon from "@mui/icons-material/Search";
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  FormGroup,
-  Grid,
-  IconButton,
-  Pagination,
-  Paper,
-  Stack,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Card, CardContent, FormGroup, Grid, Stack, Typography } from "@mui/material";
 import { createTheme, useTheme } from "@mui/material/styles";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
 import PropTypes from "prop-types";
-import { utils as XLSXUtils, writeFile as writeXLSXFile } from "xlsx";
 
-import { useResponsive } from "../../hooks/use-responsive";
 import ServicoOfertadoModal from "../modals/ServicoOfertadoModal";
-import { dadosParceiros } from "./dadosMockados";
+import DefaultTable from "../table/DefaultTable";
+import { dadosParceirosReprovados } from "./dadosMockados";
 
 let idSelecionado = 0;
 
@@ -70,196 +45,8 @@ const termos = {
   MPa: "Mobilização de Parceiro",
 };
 
-function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handlePrint, handleListaOpen }) {
-  const theme = useTheme();
-  const isXs = useResponsive("down", "md");
-
-  const [expandedRows, setExpandedRows] = useState([]);
-  const [page, setPage] = React.useState(1);
-
-  const chavesExcluidas = ["id", "habilitacao", "status"];
-
-  const handlePageChange = (event, value) => {
-    setPage(value);
-  };
-
-  const handleArrowClick = index => {
-    const newExpandedRows = [...expandedRows];
-    if (newExpandedRows.includes(index)) {
-      newExpandedRows.splice(newExpandedRows.indexOf(index), 1);
-    } else {
-      newExpandedRows.push(index);
-    }
-    setExpandedRows(newExpandedRows);
-  };
-
-  return (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Habilitação</TableCell>
-            <TableCell sx={{ minWidth: 100 }}>Status</TableCell>
-            <TableCell align="right">
-              <Tooltip title="Download CSV">
-                <IconButton
-                  color="primary"
-                  onClick={handleDownloadCSV}
-                >
-                  <span className="material-icons">sim_card_download</span>
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Download Excel">
-                <IconButton
-                  color="primary"
-                  onClick={handleDownloadExcel}
-                >
-                  <span className="material-icons">sim_card</span>
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Imprimir">
-                <IconButton
-                  color="primary"
-                  onClick={handlePrint}
-                >
-                  <span className="material-icons">print</span>
-                </IconButton>
-              </Tooltip>
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        {data.length != 0 ? (
-          <>
-            {data.length > 0 &&
-              data.slice(5 * (page - 1), 5 * page).map((objRow, index) => (
-                <TableBody key={index + "_tbody"}>
-                  <TableRow key={1000 + index}>
-                    <TableCell style={{ color: theme.palette.primary.main }}>{objRow.habilitacao.toUpperCase()}</TableCell>
-                    <TableCell>{objRow.status}</TableCell>
-                    <TableCell align="right">
-                      <Tooltip title="Serviços Ofertados">
-                        <IconButton
-                          color="primary"
-                          onClick={() => handleListaOpen(objRow.id)}
-                        >
-                          <span className="material-icons">list</span>
-                        </IconButton>
-                      </Tooltip>
-                      <Tooltip title="Cancelar">
-                        <IconButton
-                          color="primary"
-                          href="listar-parceiros-pendentes/analisar-parceiro-pendente"
-                          onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
-                        >
-                          <CancelIcon />
-                        </IconButton>
-                      </Tooltip>
-                      <Tooltip title="Visualizar">
-                        <IconButton
-                          color="primary"
-                          href="listar-parceiros-pendentes/visualizar-parceiro-pendente"
-                          onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
-                        >
-                          <span className="material-icons">visibility</span>
-                        </IconButton>
-                      </Tooltip>
-                      <Tooltip title="Anexar">
-                        <IconButton
-                          color="primary"
-                          href="listar-parceiros-pendentes/analisar-parceiro-pendente"
-                          onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
-                        >
-                          <AttachFileIcon />
-                        </IconButton>
-                      </Tooltip>
-                      <Tooltip title="Mais Informações">
-                        <IconButton
-                          color="primary"
-                          onClick={() => handleArrowClick(index)}
-                        >
-                          {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                        </IconButton>
-                      </Tooltip>
-                    </TableCell>
-                  </TableRow>
-
-                  {expandedRows.includes(index) && (
-                    <TableRow key={100 + index}>
-                      <TableCell
-                        colSpan={10}
-                        style={{ backgroundColor: theme.palette.grey[200] }}
-                      >
-                        <Grid
-                          key={10 + index}
-                          container
-                          spacing={2}
-                        >
-                          {Object.keys(objRow)
-                            .filter(chave => !chavesExcluidas.includes(chave))
-                            .map((chave, indexInsideRow) => {
-                              return (
-                                <React.Fragment key={chave + index + indexInsideRow}>
-                                  <Grid
-                                    key={chave + index + indexInsideRow}
-                                    item
-                                    md={3}
-                                    xs={6}
-                                  >
-                                    <a style={{ fontFamily: "Rawline Bold" }}>{termos[chave]}</a>
-                                    <p style={{ fontFamily: "Rawline Medium" }}>
-                                      {chave === "tipoDeServico"
-                                        ? Object.keys(objRow[chave])
-                                            .filter(k => objRow[chave][k])
-                                            .map(k => termos[k])
-                                            .join(", ")
-                                        : chave === "dataCadastro" || chave === "dataUltimaModificacao"
-                                          ? dayjs(objRow[chave]).format("DD/MM/YYYY")
-                                          : objRow[chave]}
-                                    </p>
-                                  </Grid>
-                                  {((isXs && (indexInsideRow + 1) % 2 === 0) || (!isXs && (indexInsideRow + 1) % 4 === 0)) && (
-                                    <Grid
-                                      key={"linha" + chave + index + indexInsideRow}
-                                      item
-                                      xs={12}
-                                    >
-                                      <div style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}></div>
-                                    </Grid>
-                                  )}
-                                </React.Fragment>
-                              );
-                            })}
-                        </Grid>
-                      </TableCell>
-                    </TableRow>
-                  )}
-                </TableBody>
-              ))}
-          </>
-        ) : (
-          <TableBody>
-            <TableRow>
-              <TableCell colSpan={5}>Não foi localizado Parceiro na situação pendente de aprovação!</TableCell>
-            </TableRow>
-          </TableBody>
-        )}
-      </Table>
-
-      {/* PAGINACAO */}
-      <div style={{ borderTop: "1px solid #d3d3d3", padding: "15px", display: "flex", justifyContent: "center" }}>
-        <Pagination
-          page={page}
-          count={Math.ceil(data.length / 5)}
-          color="primary"
-          onChange={handlePageChange}
-        />
-      </div>
-    </TableContainer>
-  );
-}
-
 // Dados fictícios para teste da tabela
-const initialData = dadosParceiros;
+const initialData = dadosParceirosReprovados;
 
 // Retornar a pesquisa vazia
 const initialFilterState = {
@@ -270,9 +57,49 @@ const initialFilterState = {
   dataDaUltimaModificacaoFim: null,
 };
 
+const initialCores = {
+  0: "naoSelecionado",
+  1: "naoSelecionado",
+  2: "naoSelecionado",
+  3: "naoSelecionado",
+  4: "naoSelecionado",
+  5: "naoSelecionado",
+  6: "naoSelecionado",
+};
+
+const tabelaColunas = [
+  { field: "habilitacao", headerName: "Habilitação", sxRowProps: { textTransform: "uppercase", color: "primary.main" } },
+  { field: "status", headerName: "Status" },
+];
+
+const keysHidden = [
+  "dataCadastro",
+  "dataUltimaModificacao",
+  "cnpj",
+  "nomeFantasia",
+  "razaoSocial",
+  "naturezaJuridica",
+  "nomeResponsavel",
+  "email",
+  "nomePontoFocal",
+  "emailPontoFocal",
+  "telefone",
+  "complemento",
+  "uf",
+  "cidade",
+  "endereco",
+];
+
 const FormListarParceirosReprovados = ({ servicosModal, setServicosModal }) => {
   const [filter, setFilter] = useState(initialFilterState);
   const [filteredData, setFilteredData] = useState(initialData);
+
+  const tabelaHiddenLinhas = filteredData.map(row =>
+    keysHidden.reduce((acc, key) => {
+      acc[key] = row[key];
+      return acc;
+    }, {}),
+  );
 
   const theme = useTheme();
   const isDark = theme.palette.mode == "dark";
@@ -290,15 +117,7 @@ const FormListarParceirosReprovados = ({ servicosModal, setServicosModal }) => {
     },
   });
 
-  const [cores, setCores] = useState({
-    0: "naoSelecionado",
-    1: "naoSelecionado",
-    2: "naoSelecionado",
-    3: "naoSelecionado",
-    4: "naoSelecionado",
-    5: "naoSelecionado",
-    6: "naoSelecionado",
-  });
+  const [cores, setCores] = useState(initialCores);
 
   const applyFilter = () => {
     const filtered = initialData.filter(parceiro => {
@@ -330,6 +149,7 @@ const FormListarParceirosReprovados = ({ servicosModal, setServicosModal }) => {
 
   const resetFilter = () => {
     setFilter(initialFilterState);
+    setCores(initialCores);
     applyFilter();
   };
 
@@ -341,6 +161,7 @@ const FormListarParceirosReprovados = ({ servicosModal, setServicosModal }) => {
   const handleListaClose = () => {
     setServicosModal(false);
   };
+
   const selectServico = event => {
     const { id, name } = event.target;
     console.log(isDark);
@@ -353,35 +174,32 @@ const FormListarParceirosReprovados = ({ servicosModal, setServicosModal }) => {
     }
   };
 
-  const tableRef = useRef();
-
-  const handleDownloadCSV = () => {
-    const csvData = filteredData.map(parceiro => Object.values(parceiro).join(",")).join("\n");
-
-    const blob = new Blob([csvData], { type: "text/csv" });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "dados_parceiro.csv";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  };
-
-  const handleDownloadExcel = () => {
-    const worksheet = XLSXUtils.json_to_sheet(filteredData);
-    const workbook = XLSXUtils.book_new();
-
-    XLSXUtils.book_append_sheet(workbook, worksheet, "Dados Parceiros");
-
-    writeXLSXFile(workbook, "dados_parceiro.xlsx");
-  };
-
-  const handlePrint = useReactToPrint({
-    content: () => tableRef.current,
-    documentTitle: "Lista de Parceiros Pendentes",
-    onAfterPrint: () => console.log("Printing completed"),
-  });
+  const getTabelaActions = () => [
+    {
+      title: "Serviços Ofertados",
+      href: "",
+      icon: "list",
+      onClick: rowId => handleListaOpen(rowId),
+    },
+    {
+      title: "Analisar",
+      href: "listar-parceiros-pendentes/analisar-parceiro-pendente",
+      icon: "check_circle",
+      onClick: rowId => localStorage.setItem("analisarID", JSON.stringify(rowId)),
+    },
+    {
+      title: "Visualizar",
+      href: "",
+      icon: "visibility",
+      // onClick: rowId => localStorage.setItem("analisarID", JSON.stringify(rowId)),
+    },
+    {
+      title: "Documentos Anexos",
+      href: "",
+      icon: "attach_file",
+      // onClick: rowId => localStorage.setItem("analisarID", JSON.stringify(rowId)),
+    },
+  ];
 
   return (
     <>
@@ -658,18 +476,15 @@ const FormListarParceirosReprovados = ({ servicosModal, setServicosModal }) => {
           </Box>
 
           {/* Tabela */}
-          <Box
-            sx={{ flexGrow: 1, mt: "40px" }}
-            ref={tableRef}
-          >
-            <TabelaParceiros
-              data={filteredData}
-              handleDownloadCSV={handleDownloadCSV}
-              handleDownloadExcel={handleDownloadExcel}
-              handlePrint={handlePrint}
-              handleListaOpen={handleListaOpen}
-              sx={{ mt: "16px" }}
-            />
+          <Box sx={{ flexGrow: 1, mt: "40px" }}>
+            <DefaultTable
+              rows={filteredData}
+              notFoundText={"Não foi localizado Parceiro na situação reprovado!"}
+              columns={tabelaColunas}
+              hiddenRows={tabelaHiddenLinhas}
+              actionButtons={getTabelaActions()}
+              termos={termos}
+            ></DefaultTable>
           </Box>
         </Card>
       </Stack>
@@ -683,14 +498,6 @@ const FormListarParceirosReprovados = ({ servicosModal, setServicosModal }) => {
       </div>
     </>
   );
-};
-
-TabelaParceiros.propTypes = {
-  data: PropTypes.array,
-  handleDownloadCSV: PropTypes.any,
-  handleDownloadExcel: PropTypes.any,
-  handlePrint: PropTypes.any,
-  handleListaOpen: PropTypes.func,
 };
 
 FormListarParceirosReprovados.propTypes = {
