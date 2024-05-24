@@ -150,7 +150,12 @@ export default function DefaultTable({
 
                     <TableCell align="right">
                       {/* Verifica se tem action buttons para mostrá-los */}
-                      {actionButtons.length > 0 && <ActionButtons actions={actionButtons} />}
+                      {actionButtons.length > 0 && (
+                        <ActionButtons
+                          id={objRow.id}
+                          actions={actionButtons}
+                        />
+                      )}
                       {/* Verifica se possui hiddenRows para exibir o dropDown */}
                       {hiddenRows.length > 0 && (
                         <Tooltip title="Detalhes do item">
@@ -346,27 +351,37 @@ DefaultTable.propTypes = {
   notFoundText: PropTypes.string,
 };
 
-const ActionButtons = ({ actions }) => {
+const ActionButtons = ({ id, actions }) => {
   return (
     <>
-      {actions.map((action, index) => (
-        <Tooltip
-          key={index}
-          title={action.title}
-        >
-          <IconButton
-            color="primary"
-            href={action.href}
-            onClick={action.onClick}
+      {actions.map((action, index) => {
+        let click = undefined;
+        if (action.onClick) {
+          click = action.onClick;
+        } else if (action.storageID) {
+          click = () => localStorage.setItem(action.storageID, JSON.stringify(id));
+        }
+        return (
+          <Tooltip
+            key={index}
+            title={action.title}
           >
-            <span className="material-icons">{action.icon}</span>
-          </IconButton>
-        </Tooltip>
-      ))}
+            <IconButton
+              id={id}
+              color="primary"
+              href={action.href}
+              onClick={click}
+            >
+              <span className="material-icons">{action.icon}</span>
+            </IconButton>
+          </Tooltip>
+        );
+      })}
     </>
   );
 };
 
 ActionButtons.propTypes = {
+  id: PropTypes.number,
   actions: PropTypes.array,
 };

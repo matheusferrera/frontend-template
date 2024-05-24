@@ -253,3 +253,108 @@ export const dadosParceiros = [
     },
   },
 ];
+
+export const dadosPessoas = [
+  {
+    id: 1,
+    status: "Pendente",
+    pcd: "Sim",
+    email: "bail@republica.com",
+    criteriosDaVaga: "Sim",
+  },
+  {
+    id: 2,
+    status: "Pendente",
+    pcd: "Não",
+    email: "anakin@jedi.com",
+    criteriosDaVaga: "Sim",
+  },
+  {
+    id: 3,
+    status: "Pendente",
+    pcd: "Não",
+    email: "paz@beskar.com",
+    criteriosDaVaga: "Não",
+  },
+  {
+    id: 4,
+    status: "Pendente",
+    pcd: "Não",
+    email: "ruwee@oraculo.com",
+    criteriosDaVaga: "Sim",
+  },
+  {
+    id: 5,
+    status: "Pendente",
+    pcd: "Sim",
+    email: "chewbacca@falcon.com",
+    criteriosDaVaga: "Sim",
+  },
+  {
+    id: 6,
+    status: "Pendente",
+    pcd: "Não",
+    email: "palpatine@sith.com",
+    criteriosDaVaga: "Não",
+  },
+  {
+    id: 7,
+    status: "Pendente",
+    pcd: "Não",
+    email: "jettster@cantina.com",
+    criteriosDaVaga: "Sim",
+  },
+  {
+    id: 8,
+    status: "Pendente",
+    pcd: "Sim",
+    email: "jango@clones.com",
+    criteriosDaVaga: "Não",
+  },
+  {
+    id: 9,
+    status: "Pendente",
+    pcd: "Sim",
+    email: "lobot@holonet.com",
+    criteriosDaVaga: "Sim",
+  },
+];
+
+export const tabelaVagas = [
+  {
+    id: 1,
+    nome: "Desenvolvedor Front-end",
+    quantidade: 3,
+    descricao: "Desenvolvimento de interfaces web",
+    salario: "R$ 6.000,00",
+    dataCadastro: "2024-05-01",
+    vigencia: 30,
+  },
+  {
+    id: 2,
+    nome: "Analista de Dados",
+    quantidade: 2,
+    descricao: "Análise e interpretação de dados",
+    salario: "R$ 7.500,00",
+    dataCadastro: "2024-04-25",
+    vigencia: 60,
+  },
+  {
+    id: 3,
+    nome: "Gerente de Projetos",
+    quantidade: 1,
+    descricao: "Gestão de projetos e equipes",
+    salario: "R$ 9.000,00",
+    dataCadastro: "2024-04-15",
+    vigencia: 45,
+  },
+  {
+    id: 4,
+    nome: "Designer UX/UI",
+    quantidade: 2,
+    descricao: "Criação de interfaces de usuário",
+    salario: "R$ 5.500,00",
+    dataCadastro: "2024-05-10",
+    vigencia: 90,
+  },
+];

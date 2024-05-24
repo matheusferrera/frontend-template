@@ -7,7 +7,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
 
 import DefaultTable from "../table/DefaultTable";
-import { dadosParceiros } from "./dadosMockados";
+import { dadosParceiros, tabelaVagas } from "./dadosMockados";
 
 // Primeira Tabela
 const tabelaRepresentantesColunas = [
@@ -29,44 +29,7 @@ const tabelaVagasColunas = [
   { field: "descricao", headerName: "Descrição" },
 ];
 
-const tabelaVagasLinhas = [
-  {
-    id: 1,
-    nome: "Desenvolvedor Front-end",
-    quantidade: 3,
-    descricao: "Desenvolvimento de interfaces web",
-    salario: "R$ 6.000,00",
-    dataCadastro: "2024-05-01",
-    vigencia: 30,
-  },
-  {
-    id: 2,
-    nome: "Analista de Dados",
-    quantidade: 2,
-    descricao: "Análise e interpretação de dados",
-    salario: "R$ 7.500,00",
-    dataCadastro: "2024-04-25",
-    vigencia: 60,
-  },
-  {
-    id: 3,
-    nome: "Gerente de Projetos",
-    quantidade: 1,
-    descricao: "Gestão de projetos e equipes",
-    salario: "R$ 9.000,00",
-    dataCadastro: "2024-04-15",
-    vigencia: 45,
-  },
-  {
-    id: 4,
-    nome: "Designer UX/UI",
-    quantidade: 2,
-    descricao: "Criação de interfaces de usuário",
-    salario: "R$ 5.500,00",
-    dataCadastro: "2024-05-10",
-    vigencia: 90,
-  },
-];
+const tabelaVagasLinhas = tabelaVagas;
 
 const tabelaVagasHiddenLinhas = tabelaVagasLinhas.map(({ salario, dataCadastro, vigencia }) => ({
   salario,
@@ -83,7 +46,8 @@ const tabelaVagasActions = [
 
   {
     title: "Visualizar a relação de pessoas interessadas na vaga",
-    href: "/listar_parceiros_pendentes/visualizar_parceiro_pendente/vagas/listar_pessoas_interessadas",
+    href: "/listar-parceiros-pendentes/visualizar-parceiro-pendente/vagas/listar-pessoas-interessadas",
+    storageID: "vagaID",
     icon: "person",
   },
 ];
@@ -138,13 +102,13 @@ const tabelaCursosHiddenLinhas = tabelaCursosLinhas.map(({ vagas, interessados, 
 const tabelaCursosActions = [
   {
     title: "Visualizar dados do curso",
-    href: "/listar_parceiros_pendentes/visualizar_parceiro_pendente/cursos/visualizar_curso",
+    href: "/listar-parceiros-pendentes/visualizar-parceiro-pendente/cursos/visualizar-curso",
     icon: "visibility",
   },
 
   {
     title: "Visualizar a relação de pessoas interessadas no curso",
-    href: "/listar_parceiros_pendentes/visualizar_parceiro_pendente/cursos/listar_pessoas_interessadas",
+    href: "/listar-parceiros-pendentes/visualizar-parceiro-pendente/cursos/listar-pessoas-interessadas",
     icon: "person",
   },
   {
@@ -536,7 +500,7 @@ const FormVisualizarParceiroPendente = () => {
         >
           <Button
             variant="outlined"
-            href="/listar_parceiros_pendentes"
+            href="/listar-parceiros-pendentes"
           >
             <Typography variant={"BUTTON TEXT"}> CANCELAR </Typography>
           </Button>

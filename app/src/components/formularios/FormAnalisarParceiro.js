@@ -310,7 +310,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
               >
                 <Button
                   variant="outlined"
-                  href="/listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                  href="/listar-parceiros-pendentes/visualizar-informacoes-complementares"
                   sx={{ gap: "8px" }}
                 >
                   <Typography
@@ -560,7 +560,7 @@ const FormAnalisarParceiroPendente = ({ mudancaDeStatusModal, setMudancaDeStatus
           >
             <Button
               variant="outlined"
-              href="/listar_parceiros_pendentes"
+              href="/listar-parceiros-pendentes"
             >
               <Typography variant={"BUTTON TEXT"}> CANCELAR </Typography>
             </Button>
