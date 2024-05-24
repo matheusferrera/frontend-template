@@ -12,8 +12,7 @@ const AnalisarInformacoesComplementares = () => {
       sx={{ mt: 0 }}
     >
       <CardBreadcrumb
-        homeLink="/analisar_informacoes_complementares"
-        homeText="Admin > Listar Parceiros Pendentes"
+        links={[{ href: "/listar-parceiros-pendentes", text: "Listar Parceiros Pendentes" }]}
         currentPage="Analisar Informações Complementares"
       />
 

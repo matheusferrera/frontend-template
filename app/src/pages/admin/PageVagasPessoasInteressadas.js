@@ -3,6 +3,7 @@ import React from "react";
 import { Container, Typography } from "@mui/material";
 
 import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
+import FormPessoasInteressadas from "../../components/formularios/FormPessoasInteressadas";
 
 const VagasPessoasInteressadas = () => {
   return (
@@ -11,8 +12,10 @@ const VagasPessoasInteressadas = () => {
       sx={{ mt: 0 }}
     >
       <CardBreadcrumb
-        homeLink="/visualizar_informacoes_complementares"
-        homeText="Admin > Listar Parceiros Pendentes > Informações do Parceiro"
+        links={[
+          { href: "/listar-parceiros-pendentes", text: "Listar Parceiros Pendentes" },
+          { href: "/listar-parceiros-pendentes/visualizar-parceiro-pendente", text: "Vizualizar Parceiro Pendente" },
+        ]}
         currentPage="Listar pessoas interessadas"
       />
 
@@ -26,12 +29,7 @@ const VagasPessoasInteressadas = () => {
         Listar pessoas interessadas
       </Typography>
 
-      {/* <FormAnalisarParceiroPendente
-        mudancaDeStatusModal={mudancaDeStatusModal}
-        setMudancaDeStatusModal={setMudancaDeStatusModal}
-        informacoesModal={informacoesModal}
-        setInformacoesModal={setInformacoesModal}
-      /> */}
+      <FormPessoasInteressadas />
     </Container>
   );
 };

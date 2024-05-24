@@ -931,7 +931,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/visualizar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -962,7 +962,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/analisar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1025,7 +1025,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/analisar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1056,7 +1056,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/visualizar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1157,7 +1157,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/visualizar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1188,7 +1188,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/analisar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1251,7 +1251,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/analisar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1282,7 +1282,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/visualizar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1383,7 +1383,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/visualizar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1414,7 +1414,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/analisar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1477,7 +1477,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/analisar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1508,7 +1508,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/visualizar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1609,7 +1609,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/visualizar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1640,7 +1640,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/analisar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1703,7 +1703,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/analisar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1734,7 +1734,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/visualizar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1835,7 +1835,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/visualizar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1866,7 +1866,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                    href="listar-parceiros-pendentes/analisar-informacoes-complementares"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1929,7 +1929,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/analisar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}
@@ -1960,7 +1960,7 @@ exports[`Teste de componentes Admin - listar parceiro renderizada corretamente 1
                     aria-labelledby={null}
                     className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1nvk1gx-MuiButtonBase-root-MuiIconButton-root"
                     data-mui-internal-clone-element={true}
-                    href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                    href="listar-parceiros-pendentes/visualizar-parceiro-pendente"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onContextMenu={[Function]}

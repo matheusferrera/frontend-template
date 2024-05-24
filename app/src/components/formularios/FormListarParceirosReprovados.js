@@ -148,7 +148,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                       <Tooltip title="Cancelar">
                         <IconButton
                           color="primary"
-                          href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                          href="listar-parceiros-pendentes/analisar-parceiro-pendente"
                           onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
                         >
                           <CancelIcon />
@@ -157,7 +157,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                       <Tooltip title="Visualizar">
                         <IconButton
                           color="primary"
-                          href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                          href="listar-parceiros-pendentes/visualizar-parceiro-pendente"
                           onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
                         >
                           <span className="material-icons">visibility</span>
@@ -166,7 +166,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                       <Tooltip title="Anexar">
                         <IconButton
                           color="primary"
-                          href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                          href="listar-parceiros-pendentes/analisar-parceiro-pendente"
                           onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
                         >
                           <AttachFileIcon />

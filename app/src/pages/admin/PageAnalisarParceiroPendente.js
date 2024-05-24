@@ -15,8 +15,7 @@ const AnalisarParceiroPendente = () => {
       sx={{ mt: 0 }}
     >
       <CardBreadcrumb
-        homeLink="/listar_parceiros_pendentes"
-        homeText="Admin > Listar Parceiros Pendentes"
+        links={[{ href: "/listar-parceiros-pendentes", text: "Listar Parceiros Pendentes" }]}
         currentPage="Analisar Parceiro Pendente"
       />
 

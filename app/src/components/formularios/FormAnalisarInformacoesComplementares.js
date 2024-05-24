@@ -57,7 +57,7 @@ const FormAnalisarInformacoesComplementares = () => {
   const handleSalvar = () => {
     if (valores.status != "Pendente") {
       console.log("Iformações salvas com sucesso!", valores);
-      navigate("/listar_parceiros_pendentes");
+      navigate("/listar-parceiros-pendentes");
     } else {
       console.log("Status do parceiro ainda é pendente!");
     }
@@ -259,7 +259,7 @@ const FormAnalisarInformacoesComplementares = () => {
             >
               <Button
                 variant="outlined"
-                onClick={() => navigate("/listar_parceiros_pendentes")}
+                onClick={() => navigate("/listar-parceiros-pendentes")}
               >
                 <Typography variant={"BUTTON TEXT"}> VISUALIZAR INFORMAÇÕES COMPLEMENTARES </Typography>
               </Button>
@@ -341,7 +341,7 @@ const FormAnalisarInformacoesComplementares = () => {
             >
               <Button
                 variant="outlined"
-                onClick={() => navigate("/listar_parceiros_pendentes")}
+                onClick={() => navigate("/listar-parceiros-pendentes")}
               >
                 <Typography variant={"BUTTON TEXT"}>CANCELAR</Typography>
               </Button>
@@ -353,7 +353,7 @@ const FormAnalisarInformacoesComplementares = () => {
             >
               <Button
                 variant="outlined"
-                onClick={() => navigate("/listar_parceiros_pendentes")}
+                onClick={() => navigate("/listar-parceiros-pendentes")}
               >
                 <Typography variant={"BUTTON TEXT"}>VISUALIZAR INFORMAÇÕES COMPLEMENTARES</Typography>
               </Button>

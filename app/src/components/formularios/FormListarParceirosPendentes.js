@@ -141,7 +141,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                       <Tooltip title="Visualizar Informações Complementares">
                         <IconButton
                           color="primary"
-                          href="listar_parceiros_pendentes/visualizar_informacoes_complementares"
+                          href="listar-parceiros-pendentes/visualizar-informacoes-complementares"
                           onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
                         >
                           <span className="material-icons">description</span>
@@ -150,7 +150,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                       <Tooltip title="Analisar Informações Complementares">
                         <IconButton
                           color="primary"
-                          href="listar_parceiros_pendentes/analisar_informacoes_complementares"
+                          href="listar-parceiros-pendentes/analisar-informacoes-complementares"
                           onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
                         >
                           <span className="material-icons">post_add</span>
@@ -167,7 +167,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                       <Tooltip title="Analisar">
                         <IconButton
                           color="primary"
-                          href="listar_parceiros_pendentes/analisar_parceiro_pendente"
+                          href="listar-parceiros-pendentes/analisar-parceiro-pendente"
                           onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
                         >
                           <span className="material-icons">check_circle</span>
@@ -176,7 +176,7 @@ function TabelaParceiros({ data, handleDownloadCSV, handleDownloadExcel, handleP
                       <Tooltip title="Visualizar">
                         <IconButton
                           color="primary"
-                          href="listar_parceiros_pendentes/visualizar_parceiro_pendente"
+                          href="listar-parceiros-pendentes/visualizar-parceiro-pendente"
                           onClick={() => localStorage.setItem("analisarID", JSON.stringify(objRow.id))}
                         >
                           <span className="material-icons">visibility</span>

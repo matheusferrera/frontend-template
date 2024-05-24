@@ -37,49 +37,49 @@ const AdminRoutes = () => (
       element={<PageComponents />}
     />
     <Route
-      path="/listar_parceiros_pendentes"
+      path="/listar-parceiros-pendentes"
       element={<PageParceirosPendentes />}
     />
     <Route
-      path="/listar_parceiros_aprovados"
+      path="/listar-parceiros-aprovados"
       element={<PageParceirosAprovados />}
     />
     <Route
-      path="/listar_parceiros_reprovados"
+      path="/listar-parceiros-reprovados"
       element={<PageParceirosReprovados />}
     />
     <Route
-      path="/listar_parceiros_pendentes/analisar_parceiro_pendente"
+      path="/listar-parceiros-pendentes/analisar-parceiro-pendente"
       element={<PageAnalisarParceiroPendente />}
     />
     <Route
-      path="/listar_parceiros_pendentes/visualizar_parceiro_pendente"
+      path="/listar-parceiros-pendentes/visualizar-parceiro-pendente"
       element={<PageVisualizarParceiroPendente />}
     />
     <Route
-      path="/listar_parceiros_pendentes/analisar_informacoes_complementares"
+      path="/listar-parceiros-pendentes/analisar-informacoes-complementares"
       element={<PageAnalisarInformacoesComplementares />}
     />
     <Route
-      path="/listar_parceiros_pendentes/visualizar_informacoes_complementares"
+      path="/listar-parceiros-pendentes/visualizar-informacoes-complementares"
       element={<PageVisualizarInformacoesComplementares />}
     />
     {/* Vagas de Trabalho */}
     <Route
-      path="/listar_parceiros_pendentes/visualizar_parceiro_pendente/vagas/listar_pessoas_interessadas"
+      path="/listar-parceiros-pendentes/visualizar-parceiro-pendente/vagas/listar-pessoas-interessadas"
       element={<PageVagasPessoasInteressadas />}
     />
     <Route
-      path="/listar_parceiros_pendentes/visualizar_parceiro_pendente/vagas/listar_pessoas_interessadas/curriculo"
+      path="/listar-parceiros-pendentes/visualizar-parceiro-pendente/vagas/listar-pessoas-interessadas/curriculo"
       element={<PageVagasCurriculo />}
     />
     {/* Cursos */}
     <Route
-      path="/listar_parceiros_pendentes/visualizar_parceiro_pendente/cursos/visualizar_curso"
+      path="/listar-parceiros-pendentes/visualizar-parceiro-pendente/cursos/visualizar-curso"
       element={<PageCursosVisualizar />}
     />
     <Route
-      path="/listar_parceiros_pendentes/visualizar_parceiro_pendente/cursos/listar_pessoas_interessadas"
+      path="/listar-parceiros-pendentes/visualizar-parceiro-pendente/cursos/listar-pessoas-interessadas"
       element={<PageCursosPessoasInteressadas />}
     />
     <Route

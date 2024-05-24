@@ -11,8 +11,10 @@ const CursosPessoasInteressadas = () => {
       sx={{ mt: 0 }}
     >
       <CardBreadcrumb
-        homeLink="/visualizar_informacoes_complementares"
-        homeText="Admin > Listar Parceiros Pendentes > Informações do Parceiro"
+        links={[
+          { href: "/listar-parceiros-pendentes", text: "Listar Parceiros Pendentes" },
+          { href: "/vizualizar-informacoes-complementares", text: "Informações do Parceiro" },
+        ]}
         currentPage="Listar pessoas interessadas"
       />
 
