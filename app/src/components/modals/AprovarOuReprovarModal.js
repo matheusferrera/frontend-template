@@ -32,6 +32,7 @@ const AprovarOuReprovarModal = ({ showModal, handleClose, modalTitle, servicos }
   const modalContent = (
     <>
       <Stack spacing={1}>
+        {/* Motivo */}
         <Grid
           container
           mt={1}
@@ -56,6 +57,7 @@ const AprovarOuReprovarModal = ({ showModal, handleClose, modalTitle, servicos }
           </Grid>
         </Grid>
 
+        {/* Oferta(s) de serviço(s) */}
         <Grid container>
           <Grid
             item
@@ -63,39 +65,36 @@ const AprovarOuReprovarModal = ({ showModal, handleClose, modalTitle, servicos }
           >
             <Typography variant="subtitle2"> Oferta(s) de serviço(s) selecionado(s) pelo parceiro</Typography>
           </Grid>
+
           <Grid
             container
             spacing={1}
           >
-            {servicos.map(valor => {
-              return (
-                <>
-                  <Grid
-                    key={valor + "_grid"}
-                    item
-                    xs={3}
+            {servicos.map((valor, index) => (
+              <Grid
+                key={valor + "_grid" + index}
+                item
+                xs={3}
+              >
+                <Button
+                  id={valor}
+                  name={valor}
+                  variant="outlined"
+                  disabled
+                >
+                  <Typography
+                    key={valor + "_texto"}
+                    variant={"caption"}
                   >
-                    <Button
-                      id={valor}
-                      name={valor}
-                      variant="outlined"
-                      disabled
-                    >
-                      <Typography
-                        key={valor + "_texto"}
-                        variant={"caption"}
-                      >
-                        {" "}
-                        {termos[valor]}{" "}
-                      </Typography>
-                    </Button>
-                  </Grid>
-                </>
-              );
-            })}
+                    {termos[valor]}
+                  </Typography>
+                </Button>
+              </Grid>
+            ))}
           </Grid>
         </Grid>
 
+        {/* Anexar Documentos */}
         <Grid container>
           <Grid
             item
@@ -189,6 +188,7 @@ const AprovarOuReprovarModal = ({ showModal, handleClose, modalTitle, servicos }
           </Grid>
         </Grid>
 
+        {/* Botões */}
         <Grid
           container
           spacing={1}

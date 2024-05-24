@@ -5,24 +5,52 @@ import { Container, Typography } from "@mui/material";
 
 import CardBreadcrumb from "../../components/cards/CardBreadcrumb";
 import CardVisaoGeral from "../../components/cards/CardVisaoGeral";
-import { dadosParceiros } from "../../components/formularios/dadosMockados";
+import { dadosParceirosPendentes } from "../../components/formularios/dadosMockados";
 import DefaultTable from "../../components/table/DefaultTable";
 
 const columns = [
   { field: "cnpj", headerName: "CNPJ", sxProps: { width: "250px" } },
   { field: "status", headerName: "Status" },
-  { field: "habilitacao", headerName: "Habilitacao" },
+  { field: "habilitacao", headerName: "Habilitação", sxRowProps: { textTransform: "uppercase", color: "primary.main" } },
 ];
 
-const rows = dadosParceiros;
+const rows = dadosParceirosPendentes;
 
-const hiddenRows = rows.map(({ dataCadastro, dataUltimaModificacao, cnpj }) => ({
-  dataCadastro,
-  dataUltimaModificacao,
-  cnpj,
-}));
+const keysHidden = ["dataCadastro", "dataUltimaModificacao", "cnpj"];
 
-const actionButtons = [
+const hiddenRows = rows.map(row =>
+  keysHidden.reduce((acc, key) => {
+    acc[key] = row[key];
+    return acc;
+  }, {}),
+);
+
+const keysHiddenSegunda = [
+  "dataCadastro",
+  "dataUltimaModificacao",
+  "cnpj",
+  "nomeFantasia",
+  "razaoSocial",
+  "naturezaJuridica",
+  "nomeResponsavel",
+  "email",
+  "nomePontoFocal",
+  "emailPontoFocal",
+  "telefone",
+  "complemento",
+  "uf",
+  "cidade",
+  "endereco",
+];
+
+const hiddenRowsSegunda = rows.map(row =>
+  keysHiddenSegunda.reduce((acc, key) => {
+    acc[key] = row[key];
+    return acc;
+  }, {}),
+);
+
+const getActionButtons = () => [
   {
     title: "Visualizar",
     icon: "visibility",
@@ -39,6 +67,35 @@ const actionButtons = [
     href: "",
   },
 ];
+
+const termos = {
+  id: "ID",
+  habilitacao: "Habilitação",
+  status: "Status",
+  cnpj: "CNPJ",
+  nomeFantasia: "Nome Fantasia",
+  razaoSocial: "Razão Social",
+  naturezaJuridica: "Natureza Juridica",
+  nomeResponsavel: "Nome do Responsável",
+  email: "E-mail do Responsável",
+  nomePontoFocal: "Nome Ponto Focal",
+  emailPontoFocal: "E-mail do Ponto Focal",
+  telefone: "Telefone",
+  endereco: "Endereço",
+  complemento: "Complemento",
+  cidade: "Cidade",
+  uf: "UF",
+  dataCadastro: "Data do Cadastro",
+  dataUltimaModificacao: "Data da última modificação",
+  tipoDeServico: "Tipo de Serviço",
+  VEP: "Vaga de Emprego",
+  VET: "Vaga de Estágio",
+  VJA: "Vaga de Jovem Aprendiz",
+  CUR: "Cursos",
+  FPG: "Financeiros e de Pagamentos",
+  MPu: "Mobilização de Público",
+  MPa: "Mobilização de Parceiro",
+};
 
 const PageComponents = () => {
   return (
@@ -58,7 +115,7 @@ const PageComponents = () => {
         sx={{ fontFamily: "Rawline Bold", marginBottom: "10px", marginTop: "40px" }}
         style={{ transition: "1s" }}
       >
-        Default Table
+        Default Table (sem termos)
       </Typography>
 
       <DefaultTable
@@ -85,14 +142,15 @@ const PageComponents = () => {
         sx={{ fontFamily: "Rawline Bold", marginBottom: "10px", marginTop: "40px" }}
         style={{ transition: "1s" }}
       >
-        Default Table com action buttons
+        Default Table com action buttons e termos
       </Typography>
 
       <DefaultTable
         rows={rows}
         columns={columns}
-        hiddenRows={hiddenRows}
-        actionButtons={actionButtons}
+        hiddenRows={hiddenRowsSegunda}
+        actionButtons={getActionButtons()}
+        termos={termos}
       ></DefaultTable>
 
       <Typography

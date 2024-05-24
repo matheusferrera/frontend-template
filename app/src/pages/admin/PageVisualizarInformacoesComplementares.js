@@ -528,7 +528,7 @@ const VisualizarInformacoesComplementares = () => {
                       placeholder="UF"
                       label="UF"
                       value={valores.uf}
-                      labelId="label-uf"
+                      // labelId="label-uf"
                     >
                       <MenuItem
                         value="none"
@@ -555,7 +555,7 @@ const VisualizarInformacoesComplementares = () => {
                       placeholder="Município"
                       label="Município"
                       value={valores.municipio}
-                      labelID="label-municipio"
+                      // labelID="label-municipio"
                     >
                       <MenuItem
                         value="none"
@@ -586,7 +586,7 @@ const VisualizarInformacoesComplementares = () => {
                       placeholder="Situação"
                       label="Situação"
                       value={valores.situacao}
-                      labelID="label-situacao"
+                      // labelID="label-situacao"
                     >
                       <MenuItem
                         value="none"

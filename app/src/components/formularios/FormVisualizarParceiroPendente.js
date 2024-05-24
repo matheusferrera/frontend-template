@@ -7,7 +7,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
 
 import DefaultTable from "../table/DefaultTable";
-import { dadosParceiros, tabelaVagas } from "./dadosMockados";
+import { dadosParceirosPendentes, tabelaVagas } from "./dadosMockados";
 
 // Primeira Tabela
 const tabelaRepresentantesColunas = [
@@ -37,7 +37,7 @@ const tabelaVagasHiddenLinhas = tabelaVagasLinhas.map(({ salario, dataCadastro, 
   vigencia,
 }));
 
-const tabelaVagasActions = [
+const getTabelaVagasActions = () => [
   {
     title: "Visualizar dados da vaga",
     href: "",
@@ -99,13 +99,12 @@ const tabelaCursosHiddenLinhas = tabelaCursosLinhas.map(({ vagas, interessados, 
   status,
 }));
 
-const tabelaCursosActions = [
+const getTabelaCursosActions = () => [
   {
     title: "Visualizar dados do curso",
     href: "/listar-parceiros-pendentes/visualizar-parceiro-pendente/cursos/visualizar-curso",
     icon: "visibility",
   },
-
   {
     title: "Visualizar a relação de pessoas interessadas no curso",
     href: "/listar-parceiros-pendentes/visualizar-parceiro-pendente/cursos/listar-pessoas-interessadas",
@@ -176,7 +175,7 @@ const tabelaPublicoMobilizadoHiddenLinhas = tabelaPublicoMobilizadoLinhas.map(
 );
 
 const FormVisualizarParceiroPendente = () => {
-  const initialData = dadosParceiros;
+  const initialData = dadosParceirosPendentes;
   const parceiroID = JSON.parse(localStorage.getItem("analisarID"));
   const [valores, setValores] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -404,7 +403,7 @@ const FormVisualizarParceiroPendente = () => {
           columns={tabelaVagasColunas}
           rows={tabelaVagasLinhas}
           hiddenRows={tabelaVagasHiddenLinhas}
-          actionButtons={tabelaVagasActions}
+          actionButtons={getTabelaVagasActions()}
         ></DefaultTable>
 
         <Typography
@@ -420,7 +419,7 @@ const FormVisualizarParceiroPendente = () => {
           columns={tabelaCursosColunas}
           rows={tabelaCursosLinhas}
           hiddenRows={tabelaCursosHiddenLinhas}
-          actionButtons={tabelaCursosActions}
+          actionButtons={getTabelaCursosActions()}
         ></DefaultTable>
       </Card>
 

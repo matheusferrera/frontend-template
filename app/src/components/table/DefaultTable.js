@@ -17,8 +17,11 @@ import {
   Tooltip,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import dayjs from "dayjs";
 import PropTypes from "prop-types";
 import { utils as XLSXUtils, writeFile as writeXLSXFile } from "xlsx";
+
+import { useResponsive } from "../../hooks/use-responsive";
 
 const defaultColumns = [
   { field: "primeira", headerName: "Primeira coluna" },
@@ -26,40 +29,73 @@ const defaultColumns = [
   { field: "terceira", headerName: "Terceira coluna" },
 ];
 
+const defaultTermos = {
+  primeira: "Primeira",
+  segunda: "Segunda",
+  terceira: "Terceira",
+};
+
 export default function DefaultTable({
   rows = [],
   columns = defaultColumns,
   hiddenRows = [],
-  actionButtons = [],
+  actionButtons = undefined,
   notFoundText = "Nenhum registro encontrado",
+  termos = defaultTermos,
 }) {
   const theme = useTheme();
+  const isXs = useResponsive("down", "md");
 
   const [expandedRows, setExpandedRows] = useState([]);
   const [page, setPage] = React.useState(1);
+  const rowsPerPage = 5; // Define quantas linhas por página
 
   const handlePageChange = (event, value) => {
     setPage(value);
   };
 
-  const handleArrowClick = index => {
+  const handleArrowClick = globalIndex => {
     const newExpandedRows = [...expandedRows];
-    if (newExpandedRows.includes(index)) {
-      newExpandedRows.splice(newExpandedRows.indexOf(index), 1);
+    if (newExpandedRows.includes(globalIndex)) {
+      newExpandedRows.splice(newExpandedRows.indexOf(globalIndex), 1);
     } else {
-      newExpandedRows.push(index);
+      newExpandedRows.push(globalIndex);
     }
     setExpandedRows(newExpandedRows);
   };
 
-  const handleDownloadCSV = (data, visibleColumns) => {
-    let csvDataHead = visibleColumns.join(";");
-    csvDataHead = csvDataHead + "\n";
+  const handleDownloadCSV = data => {
+    if (data.length === 0) {
+      console.error("Sem dados para download");
+      return;
+    }
 
-    const csvDataBody = data.map(row => visibleColumns.map(column => row[column]).join(";")).join("\n");
+    // Extract all unique keys from the data
+    const allColumns = Array.from(new Set(data.flatMap(row => Object.keys(row))));
+    const csvDataHead = allColumns.map(key => (termos[key] ? termos[key] : key)).join(";") + "\n";
+
+    const csvDataBody = data
+      .map(row =>
+        allColumns
+          .map(column => {
+            const value = row[column];
+            if (Array.isArray(value)) {
+              return value.join("; ");
+            } else if (typeof value === "object" && value !== null) {
+              return JSON.stringify(value);
+            } else {
+              return value !== undefined ? value : "";
+            }
+          })
+          .join(";"),
+      )
+      .join("\n");
+
     const csvData = csvDataHead + csvDataBody;
 
-    const blob = new Blob([csvData], { type: "text/csv" });
+    // Add BOM to ensure UTF-8 encoding
+    const bom = "\uFEFF";
+    const blob = new Blob([bom + csvData], { type: "text/csv;charset=utf-8;" });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -78,8 +114,6 @@ export default function DefaultTable({
     writeXLSXFile(workbook, "dados_tabela.xlsx");
   };
 
-  const tableRef = useRef();
-
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
     documentTitle: "Lista de Dados Tabela",
@@ -87,6 +121,7 @@ export default function DefaultTable({
   });
 
   const componentRef = useRef();
+  const tableRef = useRef();
 
   return (
     <TableContainer
@@ -109,7 +144,7 @@ export default function DefaultTable({
               <Tooltip title="Download da tabela em CSV">
                 <IconButton
                   color="primary"
-                  onClick={() => handleDownloadCSV(rows, columns.length > 0 && columns.map(column => column.field))}
+                  onClick={() => handleDownloadCSV(rows)}
                 >
                   <span className="material-icons">sim_card_download</span>
                 </IconButton>
@@ -133,85 +168,94 @@ export default function DefaultTable({
             </TableCell>
           </TableRow>
         </TableHead>
-        {rows && rows.length != 0 ? (
+        {rows && rows.length !== 0 ? (
           <>
             {rows.length > 0 &&
-              rows.slice(5 * (page - 1), 5 * page).map((objRow, index) => (
-                <TableBody key={index + "_tbody"}>
-                  <TableRow key={index + "_TableRow"}>
-                    {/* Verifica quais valores em rows estao presentes no array de columns, para exibir somente os valores explicitados */}
-                    {columns
-                      // eslint-disable-next-line no-prototype-builtins
-                      .filter(column => objRow.hasOwnProperty(column.field))
-                      .sort((a, b) => columns.indexOf(a) - columns.indexOf(b))
-                      .map(column => (
-                        <TableCell key={index + "_" + column.field}>{objRow[column.field]}</TableCell>
-                      ))}
-
-                    <TableCell align="right">
-                      {/* Verifica se tem action buttons para mostrá-los */}
-                      {actionButtons.length > 0 && (
-                        <ActionButtons
-                          id={objRow.id}
-                          actions={actionButtons}
-                        />
-                      )}
-                      {/* Verifica se possui hiddenRows para exibir o dropDown */}
-                      {hiddenRows.length > 0 && (
-                        <Tooltip title="Detalhes do item">
-                          <IconButton
-                            color="primary"
-                            onClick={() => handleArrowClick(index)}
+              rows.slice(rowsPerPage * (page - 1), rowsPerPage * page).map((objRow, localIndex) => {
+                const globalIndex = rowsPerPage * (page - 1) + localIndex;
+                return (
+                  <TableBody key={globalIndex + "_tbody"}>
+                    <TableRow key={globalIndex + "_TableRow"}>
+                      {/* Verifica quais valores em rows estao presentes no array de columns, para exibir somente os valores explicitados */}
+                      {columns
+                        // eslint-disable-next-line no-prototype-builtins
+                        .filter(column => objRow.hasOwnProperty(column.field))
+                        .sort((a, b) => columns.indexOf(a) - columns.indexOf(b))
+                        .map(column => (
+                          <TableCell
+                            key={globalIndex + "_" + column.field}
+                            sx={column.sxRowProps}
                           >
-                            {expandedRows.includes(index) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                          </IconButton>
-                        </Tooltip>
-                      )}
-                    </TableCell>
-                  </TableRow>
-                  {hiddenRows.length > 0 && expandedRows.includes(index) && (
-                    <TableRow key={index + "_HiddenRows"}>
-                      <TableCell
-                        colSpan={10}
-                        style={{ backgroundColor: theme.palette.grey[200] }}
-                      >
-                        <Grid>
+                            {objRow[column.field]}
+                          </TableCell>
+                        ))}
+                      <TableCell align="right">
+                        {/* Verifica se tem action buttons para mostrá-los */}
+                        {actionButtons && (
+                          <ActionButtons
+                            id={objRow.id}
+                            actions={actionButtons.map(action => ({
+                              ...action,
+                              onClick: action.onClick ? (objRow.id ? () => action.onClick(objRow.id) : action.onClick) : undefined,
+                            }))}
+                          />
+                        )}
+                        {/* Verifica se possui hiddenRows para exibir o dropDown */}
+                        {hiddenRows.length > 0 && (
+                          <Tooltip title="Detalhes do item">
+                            <IconButton
+                              color="primary"
+                              onClick={() => handleArrowClick(globalIndex)}
+                            >
+                              {expandedRows.includes(globalIndex) ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                            </IconButton>
+                          </Tooltip>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                    {hiddenRows.length > 0 && expandedRows.includes(globalIndex) && (
+                      <TableRow key={globalIndex + "_HiddenRows"}>
+                        <TableCell
+                          colSpan={10}
+                          style={{ backgroundColor: theme.palette.grey[200] }}
+                        >
                           <Grid
                             container
                             spacing={2}
                           >
-                            <React.Fragment key={index + "_HiddenRows_div"}>
-                              {/* Itera sobre o o object de uma posicao do array */}
-                              {Object.entries(hiddenRows[index]).map(([key, value], subIndex) => (
+                            {/* TABELA NORMAL */}
+                            {/* Itera sobre o object de uma posicao do array */}
+                            {Object.entries(hiddenRows[globalIndex]).map(([key, value], subIndex) => (
+                              <React.Fragment key={globalIndex + "_HiddenRows_fragment" + subIndex}>
                                 <Grid
-                                  key={index + "_HiddenRows_grid" + subIndex}
+                                  key={globalIndex + "_HiddenRows_grid" + subIndex}
                                   item
-                                  xs={3}
+                                  md={3}
+                                  xs={6}
                                 >
-                                  <a style={{ fontFamily: "Rawline Bold" }}>{key}</a>
-                                  <p style={{ fontFamily: "Rawline Medium" }}>{value}</p>
+                                  <a style={{ fontFamily: "Rawline Bold" }}>{termos[key] ? termos[key] : key}</a>
+                                  <p style={{ fontFamily: "Rawline Medium" }}>
+                                    {key.startsWith("data") ? dayjs(value).format("DD/MM/YYYY") : value}
+                                  </p>
                                 </Grid>
-                              ))}
-
-                              {(index + 1) % 4 === 0 && (
-                                <Grid
-                                  item
-                                  xs={12}
-                                >
-                                  <div
-                                    key={index + "_divider"}
-                                    style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}
-                                  ></div>
-                                </Grid>
-                              )}
-                            </React.Fragment>
+                                {((isXs && (subIndex + 1) % 2 === 0) || (!isXs && (subIndex + 1) % 4 === 0)) && (
+                                  <Grid
+                                    item
+                                    xs={12}
+                                    key={globalIndex + "_divider" + subIndex}
+                                  >
+                                    <div style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}></div>
+                                  </Grid>
+                                )}
+                              </React.Fragment>
+                            ))}
                           </Grid>
-                        </Grid>
-                      </TableCell>
-                    </TableRow>
-                  )}
-                </TableBody>
-              ))}
+                        </TableCell>
+                      </TableRow>
+                    )}
+                  </TableBody>
+                );
+              })}
           </>
         ) : (
           <TableBody>
@@ -226,7 +270,7 @@ export default function DefaultTable({
       <div style={{ borderTop: "1px solid #d3d3d3", padding: "15px", display: "flex", justifyContent: "center" }}>
         <Pagination
           page={page}
-          count={rows.length > 0 ? Math.ceil(rows.length / 5) : 1}
+          count={rows.length > 0 ? Math.ceil(rows.length / rowsPerPage) : 1}
           color="primary"
           onChange={handlePageChange}
         />
@@ -295,31 +339,32 @@ export default function DefaultTable({
                                 container
                                 spacing={2}
                               >
-                                <React.Fragment key={index + "_HiddenRows_div" + "_template"}>
-                                  {/* Itera sobre o o object de uma posicao do array */}
-                                  {Object.entries(hiddenRows[index]).map(([key, value]) => (
+                                {/* TABELA HIDDEN */}
+                                {/* Itera sobre o object de uma posicao do array */}
+                                {Object.entries(hiddenRows[index]).map(([key, value], subIndex) => (
+                                  <React.Fragment key={index + "_HiddenRows_fragment" + subIndex}>
                                     <Grid
-                                      key={index + "_HiddenRows_grid" + "_template" + value}
+                                      key={index + "_HiddenRows_grid" + subIndex}
                                       item
-                                      xs={3}
+                                      xs={4}
                                     >
-                                      <a style={{ fontFamily: "Rawline Bold" }}>{key}</a>
-                                      <p style={{ fontFamily: "Rawline Medium" }}>{value}</p>
+                                      <a style={{ fontFamily: "Rawline Bold" }}>{termos[key] ? termos[key] : key}</a>
+                                      <p style={{ fontFamily: "Rawline Medium" }}>
+                                        {key.startsWith("data") ? dayjs(value).format("DD/MM/YYYY") : value}
+                                      </p>
                                     </Grid>
-                                  ))}
 
-                                  {(index + 1) % 4 === 0 && (
-                                    <Grid
-                                      item
-                                      xs={12}
-                                    >
-                                      <div
-                                        key={index + "_divider" + "_template"}
-                                        style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}
-                                      ></div>
-                                    </Grid>
-                                  )}
-                                </React.Fragment>
+                                    {(subIndex + 1) % 3 === 0 && (
+                                      <Grid
+                                        item
+                                        xs={12}
+                                        key={index + "_divider" + subIndex}
+                                      >
+                                        <div style={{ borderBottom: "1px solid", borderColor: theme.palette.grey[600] }}></div>
+                                      </Grid>
+                                    )}
+                                  </React.Fragment>
+                                ))}
                               </Grid>
                             </Grid>
                           </TableCell>
@@ -349,34 +394,32 @@ DefaultTable.propTypes = {
   hiddenRows: PropTypes.array,
   actionButtons: PropTypes.array,
   notFoundText: PropTypes.string,
+  termos: PropTypes.object,
 };
 
-const ActionButtons = ({ id, actions }) => {
+const ActionButtons = ({ actions, id }) => {
   return (
     <>
-      {actions.map((action, index) => {
-        let click = undefined;
-        if (action.onClick) {
-          click = action.onClick;
-        } else if (action.storageID) {
-          click = () => localStorage.setItem(action.storageID, JSON.stringify(id));
-        }
-        return (
-          <Tooltip
-            key={index}
-            title={action.title}
+      {actions.map((action, index) => (
+        <Tooltip
+          key={index}
+          title={action.title}
+        >
+          <IconButton
+            color="primary"
+            href={action.href || undefined}
+            onClick={
+              action.onClick
+                ? id
+                  ? () => action.onClick(id)
+                  : action.onClick
+                : () => console.log(`onClick not defined for ${action.title}`)
+            }
           >
-            <IconButton
-              id={id}
-              color="primary"
-              href={action.href}
-              onClick={click}
-            >
-              <span className="material-icons">{action.icon}</span>
-            </IconButton>
-          </Tooltip>
-        );
-      })}
+            <span className="material-icons">{action.icon}</span>
+          </IconButton>
+        </Tooltip>
+      ))}
     </>
   );
 };
