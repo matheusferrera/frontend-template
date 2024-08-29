@@ -18,13 +18,14 @@ export function palette(mode) {
   };
 
   const primary = {
-    lighter: "#D0ECFE",
-    light: "#73BAFB",
+    lighter: isDark ? "#FFFFB3" : "#D0ECFE",
+    light: isDark ? "#FFFF66" : "#73BAFB",
     main: isDark ? "#FFF333" : "#1351B4",
-    dark: isDark ? "#FFF333" : "#071D41",
-    darker: "#042174",
+    dark: isDark ? "#FFFF00" : "#071D41",
+    darker: isDark ? "#CCCC00" : "#042174",
     contrastText: "#FFFFFF",
   };
+
 
   const secondary = {
     lighter: "#EFD6FF",
@@ -89,14 +90,15 @@ export function palette(mode) {
 
   const text = {
     primary: isDark ? "#FFFFFF" : "#111111",
-    secondary: isDark ? "#000000" : "#FFFFFF",
+    secondary: isDark ? grey[300] : grey[500],
     disabled: isDark ? grey[300] : grey[500],
     grey: isDark ? grey[300] : grey[601],
   };
 
   const background = {
-    paper: isDark ? "#272727" : "#FFFFFF",
-    default: isDark ? "#000000" : "#FAFAFA",
+    paper: isDark ? "#000000" : "#FFFFFF",
+    body: isDark ? "#272727" : grey[200],
+    default: isDark ? "#000000" : "#FFFFFF",
     neutral: isDark ? "#272727" : grey[200],
     dark: isDark ? "#000000" : "#071D41",
   };

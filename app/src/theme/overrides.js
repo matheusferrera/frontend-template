@@ -11,9 +11,8 @@ export function overrides(theme) {
       },
       styleOverrides: {
         root: {
-          "& .MuiInputLabel-root": {
-            color: "#9E9E9E",
-          },
+
+          color: "#9E9E9E",
         },
       },
     },
@@ -163,7 +162,7 @@ export function overrides(theme) {
       styleOverrides: {
         head: {
           color: theme.palette.text.primary,
-          backgroundColor: theme.palette.grey[200],
+          backgroundColor: theme.palette.primary.lighter,
           fontFamily: "Rawline Bold",
           transition: "1s",
         },

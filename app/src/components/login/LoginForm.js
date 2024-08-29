@@ -16,7 +16,6 @@ import { Form, Formik } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
 
-import Iconify from "../iconify";
 
 const LoginForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoShow, handleAvisoDePrivacidadeShow }) => {
   const theme = useTheme();
@@ -77,7 +76,6 @@ const LoginForm = ({ loading, recaptchaRef, handleSubmit, handleTermoDeUsoShow, 
                       onClick={() => setShowPassword(!showPassword)}
                       edge="end"
                     >
-                      <Iconify icon={showPassword ? "eva:eye-fill" : "eva:eye-off-fill"} />
                     </IconButton>
                   </InputAdornment>
                 ),

@@ -1,13 +1,27 @@
-/* Google Font Material Icons */
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
 body {
   margin: 0;
-  font-family: "Rawline Regular";
+  font-family: "Rawline Regular", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 9px; /* Adjust the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid rgb(82, 82, 82);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background: #c6c6c6;
+  border-radius: 10px;
 }

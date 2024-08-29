@@ -1,8 +1,8 @@
 import React from "react";
 
-import AppRoutes from "./components/routes/Routes";
 import { AuthProvider } from "./contexts/AuthContext";
 import { useScrollToTop } from "./hooks/use-scroll-to-top";
+import AppRoutes from "./routes/Routes";
 import ThemeProvider from "./theme";
 
 import "simplebar-react/dist/simplebar.min.css";

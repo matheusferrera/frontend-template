@@ -1,12 +1,12 @@
 import React from "react";
 
-import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
-import PeopleIcon from "@mui/icons-material/People";
-import PersonIcon from "@mui/icons-material/Person";
-import { Container, Typography } from "@mui/material";
+import { Card, Stack, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import PropTypes from "prop-types";
+
+import { useAuth } from "../../contexts/AuthContext";
+import LoginForm from "./LoginForm";
 
 const CardButton = ({ icon, title, onClick, path }) => {
   return (
@@ -44,37 +44,66 @@ CardButton.propTypes = {
 };
 
 const HubLogin = () => {
+
+  const { login } = useAuth();
+
+  const handleSubmit = (username, password) => {
+    login(username, password, "admin") // ajuste o user_type conforme necessário
+      .then(() => {
+        console.log("Login successful");
+        // Redirecionar ou realizar outras ações após o login bem-sucedido
+      })
+      .catch((error) => {
+        console.error("Login failed:", error);
+      });
+  };
+
+
+  const recaptchaRef = React.createRef();
+
   return (
-    <Container
-      maxWidth="lg"
-      sx={{ height: "80vh", display: "flex", justifyContent: "center", alignItems: "center" }}
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "100vh",
+      }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 2,
-          width: "100%",
-        }}
+      <Stack
+        alignItems="center"
+        justifyContent="center"
+        sx={{ height: 1 }}
       >
-        <CardButton
-          icon={<PeopleIcon sx={{ fontSize: 64 }} />}
-          title="Login Parceiro"
-          path="/parceiro_login"
-        />
-        <CardButton
-          icon={<ManageAccountsIcon sx={{ fontSize: 64 }} />}
-          title="Login Admin"
-          path="/admin_login"
-        />
-        <CardButton
-          icon={<PersonIcon sx={{ fontSize: 64 }} />}
-          title="Login Cidadão"
-          path="/cidadao_login"
-        />
-      </Box>
-    </Container>
+
+        <Card
+          sx={{
+            p: 5,
+            width: 1,
+            maxWidth: 625,
+            height: 1,
+            maxHeight: 700,
+          }}
+        >
+          <Typography variant="h3">Bem-vindo(a)</Typography>
+
+          <Typography
+            variant="body2"
+            sx={{ mt: 2, mb: 3, color: "text.grey" }}
+          >
+            Acesse aqui sua conta Progredir
+          </Typography>
+
+          <LoginForm
+            loading={false}
+            handleSubmit={handleSubmit}
+            recaptchaRef={recaptchaRef}
+          />
+
+
+        </Card>
+      </Stack>
+    </Box>
   );
 };
 
