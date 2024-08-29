@@ -6,9 +6,6 @@ import { alpha } from "@mui/material/styles";
 export function overrides(theme) {
   return {
     MuiTextField: {
-      defaultProps: {
-        variant: "filled",
-      },
       styleOverrides: {
         root: {
 
@@ -114,13 +111,15 @@ export function overrides(theme) {
         },
         containedInherit: {
           color: theme.palette.common.white,
-
           backgroundColor: theme.palette.grey[800],
           "&:hover": {
             color: theme.palette.common.white,
             backgroundColor: theme.palette.grey[800],
           },
         },
+        contained: {
+          color: "#171717"
+        }
       },
     },
     MuiCard: {

@@ -5,8 +5,6 @@ import authService from "../services/auth.service";
 const AuthContext = createContext();
 
 
-
-
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const storedUser = localStorage.getItem("user");
@@ -46,40 +44,10 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => { }, [token]);
 
 
-  const login = (username, password, user_type) => {
-    setToken(123)
-    setUser({ username, password, user_type })
-    // return authService
-    //   .login(username, password, user_type)
-    //   .then(token => {
-    //     // Ensure that token is truthy before setting it
-    //     if (token) {
-    //       setToken(token);
-    //       localStorage.setItem("token", token);
-    //       return authService.getAuthUser(token);
-    //     } else {
-    //       throw new Error("Invalid token received");
-    //     }
-    //   })
-    //   .then(userDetails => {
-    //     if (userDetails) {
-    //       setUser(userDetails);
-    //       localStorage.setItem("user", JSON.stringify(userDetails));
-    //       localStorage.setItem("timeRefreshToken", Date.now());
-    //     } else {
-    //       throw new Error("Invalid user details received");
-    //     }
-    //   })
-    //   .catch(error => {
-    //     setUser(null);
-    //     setToken(null);
-    //     localStorage.removeItem("token");
-    //     localStorage.removeItem("user");
-    //     localStorage.removeItem("timeRefreshToken");
-    //     console.error("Login error:", error);
-    //     // Rethrow the error to propagate it to the calling code
-    //     throw error;
-    //   });
+  const login = (username, password) => {
+    setToken(123) //Mockando token JWT
+    setUser({ username, password, user_type: "user", name: "Matheus Ferreira" }) //Mockando todos os dados que sao necessarios vir do back
+    console.log("SETOU NO LOGIN!")
   };
 
 

@@ -89,10 +89,8 @@ export default function Header({ onOpenNav }) {
         )}
 
         <Stack sx={{ g: 1 }}>
-          <TitleSistemas style={{ color: theme.palette.text.primary, transition: "1s" }}>Template</TitleSistemas>
-          <SubTitleSistema style={{ color: theme.palette.text.primary, transition: "1s" }}>
-            Template de dashboard administrativo
-          </SubTitleSistema>
+          <TitleSistemas style={{ color: theme.palette.text.primary, transition: "1s" }}>Carteira na mão</TitleSistemas>
+          <SubTitleSistema style={{ color: theme.palette.text.primary, transition: "1s" }}>Ache a CFC mais próxima de você</SubTitleSistema>
         </Stack>
       </Stack>
 
@@ -127,7 +125,7 @@ export default function Header({ onOpenNav }) {
 
           <Stack>
             <TitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>Bem vindo</TitleUser>
-            <SubTitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>{user?.no_usuario || "..."}</SubTitleUser>
+            <SubTitleUser style={{ color: theme.palette.primary.main, transition: "1s" }}>{user?.name || "..."}</SubTitleUser>
           </Stack>
 
           <IconButton

@@ -8,7 +8,7 @@ import TableContatos from "./TableContatos";
 
 const PageContatosAdmin = () => {
     return (
-        <PageLayout title="Contatos">
+        <PageLayout title="Usuarios">
             <Grid item xs={12}>
                 <CardAddContato />
             </Grid>

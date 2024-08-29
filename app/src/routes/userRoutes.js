@@ -1,15 +1,25 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import PageHomeCidadao from "../pages/cidadao/PageHomeCidadao";
+import PageContatosAdmin from "../pages/admin/contatos/index";
+import PageMensagensAdmin from "../pages/admin/mensagens";
+import PageHomeUser from "../pages/user/home";
 
-const CidadaoRoutes = () => (
+const UserRoutes = () => (
   <Routes>
     <Route
-      path="/"
-      element={<PageHomeCidadao />}
+      path="/home"
+      element={<PageHomeUser />}
+    />
+    <Route
+      path="/usuarios"
+      element={<PageContatosAdmin />}
+    />
+    <Route
+      path="/mensagens"
+      element={<PageMensagensAdmin />}
     />
   </Routes>
 );
 
-export default CidadaoRoutes;
+export default UserRoutes;

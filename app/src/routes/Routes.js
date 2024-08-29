@@ -6,6 +6,7 @@ import NotFound from "../pages/NotFound";
 import PageLogin from "../pages/PageLogin";
 import AdminRoutes from "./adminRoutes";
 import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";
+import UserRoutes from "./userRoutes";
 
 const AuthRoutes = () => {
   return (
@@ -34,6 +35,9 @@ const ProtectedRoutes = () => {
   switch (user.user_type) {
     case "admin":
       profileRoutes = AdminRoutes();
+      break;
+    case "user":
+      profileRoutes = UserRoutes();
       break;
 
     default:

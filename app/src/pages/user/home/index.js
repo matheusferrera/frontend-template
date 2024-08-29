@@ -7,9 +7,9 @@ import { PieChart } from '@mui/x-charts/PieChart';
 import PageLayout from "../../../components/page/PageLayout";
 
 
-const PageHomeAdm = () => {
+const PageHomeUser = () => {
   return (
-    <PageLayout title="Admin home page">
+    <PageLayout title="User home page">
       <Grid item xs={4}>
         <CardTotalUsers></CardTotalUsers>
       </Grid>
@@ -78,4 +78,4 @@ const BasicPie = () => {
 }
 
 
-export default PageHomeAdm;
+export default PageHomeUser;

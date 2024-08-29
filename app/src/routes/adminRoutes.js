@@ -12,7 +12,7 @@ const AdminRoutes = () => (
       element={<PageHomeAdm />}
     />
     <Route
-      path="/contatos"
+      path="/usuarios"
       element={<PageContatosAdmin />}
     />
     <Route

@@ -18,21 +18,20 @@ export function palette(mode) {
   };
 
   const primary = {
-    lighter: isDark ? "#FFFFB3" : "#D0ECFE",
-    light: isDark ? "#FFFF66" : "#73BAFB",
-    main: isDark ? "#FFF333" : "#1351B4",
-    dark: isDark ? "#FFFF00" : "#071D41",
-    darker: isDark ? "#CCCC00" : "#042174",
+    lighter: isDark ? "#FFFFB3" : "#FFFFD1",
+    light: isDark ? "#FFFF66" : "#FFFF99",
+    main: isDark ? "#FFEE00" : "#FFD700",
+    dark: isDark ? "#FFD700" : "#FFA500",
+    darker: isDark ? "#FFA500" : "#FF8C00",
     contrastText: "#FFFFFF",
   };
 
-
   const secondary = {
-    lighter: "#EFD6FF",
-    light: "#C684FF",
-    main: "#8E33FF",
-    dark: "#5119B7",
-    darker: "#27097A",
+    lighter: isDark ? "#E0E0E0" : "#F5F5F5",
+    light: isDark ? "#BDBDBD" : "#E0E0E0",
+    main: isDark ? "#757575" : "#9E9E9E",
+    dark: isDark ? "#424242" : "#616161",
+    darker: isDark ? "#212121" : "#424242",
     contrastText: "#FFFFFF",
   };
 
