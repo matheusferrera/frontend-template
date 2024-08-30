@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import PageContatosAdmin from "../pages/admin/contatos/index";
-import PageMensagensAdmin from "../pages/admin/mensagens";
+import PageProfile from "../pages/PageProfile";
+import PageFaqUser from "../pages/user/faq";
 import PageHomeUser from "../pages/user/home";
 
 const UserRoutes = () => (
@@ -12,12 +12,12 @@ const UserRoutes = () => (
       element={<PageHomeUser />}
     />
     <Route
-      path="/usuarios"
-      element={<PageContatosAdmin />}
+      path="/faq"
+      element={<PageFaqUser />}
     />
     <Route
-      path="/mensagens"
-      element={<PageMensagensAdmin />}
+      path="/profile"
+      element={<PageProfile />}
     />
   </Routes>
 );

@@ -20,6 +20,7 @@ import { useResponsive } from "../../hooks/use-responsive";
 import { themeProvider } from "../../theme/index";
 import { HEADER } from "./config-layout";
 import { MenuItemsAdm } from "./config-navigation-admin-menu-lateral";
+import { MenuItems } from "./config-navigation-user-menu-lateral";
 
 function NavItem({ text, icon, url }) {
   const navigate = useNavigate();
@@ -60,10 +61,9 @@ export default function Nav({ openNav, onCloseNav }) {
   const theme = useTheme();
   const { toggleMode } = themeProvider();
 
-  const user = JSON.parse(localStorage.getItem("user"));
-  const perfilUser = user?.ds_perfil_sso?.substring(2, user.ds_perfil_sso.length - 2);
+  const { logout, token, user } = useAuth();
 
-  const { logout, token } = useAuth();
+  const perfilUser = user?.user_type;
 
   const logoutFunction = () => {
     logout(token);
@@ -72,9 +72,13 @@ export default function Nav({ openNav, onCloseNav }) {
   const [renderNavContent, setRenderNavContent] = useState([]);
 
   useEffect(() => {
+    console.log("PERFIL USER -> ", perfilUser);
     switch (perfilUser) {
       case "admin":
         setRenderNavContent(MenuItemsAdm);
+        break;
+      case "user":
+        setRenderNavContent(MenuItems);
         break;
     }
   }, [perfilUser]);
@@ -99,11 +103,10 @@ export default function Nav({ openNav, onCloseNav }) {
         position: "fixed",
         boxShadow: "0px 6px 6px 0px rgba(51, 51, 51, 0.16)",
         height: `100vh`,
-        borderRight: theme.palette.border.layout,
       }}
     >
       <List>
-        {MenuItemsAdm.map(item => (
+        {renderNavContent.map(item => (
           <NavItem
             key={item.text}
             text={item.text}
@@ -127,7 +130,7 @@ export default function Nav({ openNav, onCloseNav }) {
         style={{ backgroundColor: theme.palette.background.default }}
       >
         <List>
-          {MenuItemsAdm.map(item => (
+          {renderNavContent.map(item => (
             <NavItem
               key={item.text}
               text={item.text}

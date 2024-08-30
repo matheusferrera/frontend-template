@@ -14,6 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import logo from "../../assets/images/icon.png";
 import { useAuth } from "../../contexts/AuthContext";
 import { useResponsive } from "../../hooks/use-responsive";
 import { bgBlur } from "../../theme/css";
@@ -87,6 +88,12 @@ export default function Header({ onOpenNav }) {
         ) : (
           <Stack sx={{ ml: 1 }}></Stack>
         )}
+
+        <img
+          src={logo}
+          alt="CFC"
+          style={{ height: 40, marginRight: 10 }}
+        />
 
         <Stack sx={{ g: 1 }}>
           <TitleSistemas style={{ color: theme.palette.text.primary, transition: "1s" }}>Carteira na mão</TitleSistemas>
@@ -163,7 +170,7 @@ export default function Header({ onOpenNav }) {
         sx={{
           height: 1,
           px: { lg: 2 },
-          borderBottom: theme.palette.border.layout,
+          borderBottom: "1px solid " + theme.palette.border.layout,
         }}
         style={{ backgroundColor: theme.palette.background.default }}
       >

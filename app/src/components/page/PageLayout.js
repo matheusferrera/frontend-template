@@ -12,7 +12,7 @@ export default function PageLayout({ title, children }) {
             maxWidth="lg"
 
         >
-            <Grid container  >
+            <Grid container>
                 <Grid item xs={12} sx={{ mb: 3 }}>
 
 
@@ -22,7 +22,7 @@ export default function PageLayout({ title, children }) {
                         {title}
                     </Typography>
                 </Grid>
-                <Grid item container spacing={2}>
+                <Grid item container>
                     {children}
                 </Grid>
             </Grid>

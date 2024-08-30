@@ -103,7 +103,7 @@ export function palette(mode) {
   };
 
   const border = {
-    layout: isDark ? "1px solid #FFFFFF" : "",
+    layout: isDark ? "1px solid #a1a1a1" : "",
     card: isDark ? "1px solid #FFFFFF" : "1px solid #9E9E9E",
   };
 

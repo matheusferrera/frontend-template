@@ -22,6 +22,7 @@ const CustomForm = ({ fields, onSubmit, buttons }) => {
               label={field.label}
               type={field.type || 'text'}
               select={field.select || false}
+              disabled={field.disabled || false}
               error={!!errors[field.name]}
               helperText={errors[field.name]?.message || field.helperText}
               fullWidth
