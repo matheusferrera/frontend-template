@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-import authService from "../services/auth.service";
 
 const AuthContext = createContext();
 
@@ -8,70 +7,51 @@ const AuthContext = createContext();
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const storedUser = localStorage.getItem("user");
-  const storedToken = localStorage.getItem("token");
 
   const [user, setUser] = useState(storedUser !== null ? JSON.parse(storedUser) : null);
-  const [token, setToken] = useState(storedToken !== null ? storedToken : null);
-  const [refreshingToken, setRefreshingToken] = useState(false);
 
 
-  //O STATE UTILIZADO DENTRO DO USEFFECT É O STATE QUE FOI SETADO NA PRIMEIRA CHAMADA ENTAO NECESSITA UTILIZAR O LOCALSTORAGE
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const _storedToken = localStorage.getItem("token");
+  const login = async (username, password) => {
+    console.log("Tentando login -> ")
+    try {
+      const response = await fetch('https://us-central1-app-carteira-na-mao.cloudfunctions.net/api/user/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: username, senha: password }),
+      });
 
-      if (!refreshingToken && Date.now() - parseInt(localStorage.getItem("timeRefreshToken")) > 30000000) {
-        setRefreshingToken(true);
-        localStorage.setItem("timeRefreshToken", Date.now());
-        authService
-          .refreshToken(_storedToken)
-          .then(resp => {
-            localStorage.setItem("token", resp.access_token);
-            setToken(resp.access_token);
-            setRefreshingToken(false);
-          })
-          .catch(e => {
-            console.log("Token expirado => ", e);
-            setRefreshingToken(false);
-            logout();
-          });
+      if (!response.ok) {
+        throw new Error('Erro ao fazer login');
       }
-    }, 60000);
-
-    return () => clearInterval(interval); // Limpa o intervalo quando o componente é desmontado
-  }, []);
-
-  useEffect(() => { }, [token]);
 
 
-  const login = (username, password) => {
-    setToken(123) //Mockando token JWT
-    setUser({ username, password, user_type: "user", name: "Matheus Ferreira" }) //Mockando todos os dados que sao necessarios vir do back
-    console.log("SETOU NO LOGIN!")
+      const data = await response.json();
+
+      let resp = {
+        dadosuser: data.dadosuser,
+        email: data.email,
+        tipouser: data.tipouser
+      }
+      console.log("RESP -> ", resp)
+      localStorage.setItem("user", JSON.stringify(resp));
+      setUser(resp);
+
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
+      return 0
+    }
   };
 
-
-  const logout = token => {
+  const logout = () => {
     setUser(null);
-    setToken(null);
-    localStorage.removeItem("token");
     localStorage.removeItem("user");
-    localStorage.removeItem("timeRefreshToken");
-    return authService
-      .logout(token)
-      .then(response => {
-        return response;
-      })
-      .catch(error => {
-        console.error("Logout error:", error);
-        throw error;
-      });
   };
 
 
   const value = {
     user,
-    token,
     login,
     logout,
   };

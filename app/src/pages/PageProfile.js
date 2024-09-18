@@ -3,17 +3,22 @@ import React from "react";
 
 import EditUserForm from "../components/login/EditUserForm";
 import PageLayout from "../components/page/PageLayout";
-
-const initialUserData = {
-    name: 'John Doe',
-    email: 'johndoe@example.com',
-    dob: '1990-01-01',  // Formato YYYY-MM-DD
-    phone: '(11) 99999-9999',
-    address: '123 Rua Exemplo, Bairro, Cidade, Estado'
-};
+import { useAuth } from "../contexts/AuthContext";
 
 
 const PageProfile = () => {
+    const { user } = useAuth();
+
+
+    console.log("USER PAGE PROFILE - ", formatDateToYYYYMMDD(user.dadosuser.datanascimento))
+
+    const initialUserData = {
+        name: user.dadosuser.nome,
+        email: user.email,
+        dob: formatDateToYYYYMMDD(user.dadosuser.datanascimento),  // Formato YYYY-MM-DD
+        phone: user.dadosuser.telefone,
+    };
+
 
     const handleEditSubmit = (updatedData) => {
         console.log('Dados atualizados:', updatedData);
@@ -27,6 +32,19 @@ const PageProfile = () => {
         </PageLayout>
     );
 };
+
+function formatDateToYYYYMMDD(dateString) {
+    // Cria um objeto Date a partir da string original
+    const dateObj = new Date(dateString);
+
+    // Extrai o ano, mês e dia
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0'); // Mês começa do 0
+    const day = String(dateObj.getDate()).padStart(2, '0');
+
+    // Retorna a data no formato yyyy-MM-dd
+    return `${year}-${month}-${day}`;
+}
 
 
 export default PageProfile;

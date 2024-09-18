@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Avatar, Box, Button, Card, CardContent, Typography } from '@mui/material';
+import { format } from 'date-fns';
 import PropTypes from 'prop-types';
 
 import CustomForm from '../form/CustomForm';
@@ -38,6 +39,11 @@ const EditUserForm = ({ onSubmit, initialData }) => {
             validation: {
                 required: 'Data de nascimento é obrigatória',
             },
+            InputProps: {
+                inputProps: {
+                    max: format(new Date(), 'yyyy-MM-dd'), // Define a data máxima como o dia atual
+                },
+            },
         },
         {
             name: 'phone',
@@ -50,15 +56,6 @@ const EditUserForm = ({ onSubmit, initialData }) => {
                     value: /^\(\d{2}\) \d{4,5}-\d{4}$/,
                     message: 'Insira um telefone válido',
                 },
-            },
-        },
-        {
-            name: 'address',
-            label: 'Endereço',
-            type: 'text',
-            defaultValue: initialData.address,
-            validation: {
-                required: 'Endereço é obrigatório',
             },
         }
     ];

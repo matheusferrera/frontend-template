@@ -8,7 +8,7 @@ import PageHomeUser from "../pages/user/home";
 const UserRoutes = () => (
   <Routes>
     <Route
-      path="/home"
+      path="/"
       element={<PageHomeUser />}
     />
     <Route

@@ -9,6 +9,11 @@ export function overrides(theme) {
       styleOverrides: {
         root: {
 
+          '& input:-webkit-autofill': {
+            '-webkit-box-shadow': '0 0 0 100px ' + alpha(theme.palette.primary.lighter, 0.9) + 'inset', // Cor de fundo desejada
+            '-webkit-text-fill-color': '#000', // Cor do texto
+          },
+
           color: "#9E9E9E",
         },
       },

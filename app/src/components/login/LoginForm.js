@@ -32,7 +32,6 @@ const LoginForm = ({ onSubmit }) => {
   ];
 
   const handleFormSubmit = (data) => {
-    console.log('[Dados do login no form] =>', data);
     onSubmit(data)
   };
 

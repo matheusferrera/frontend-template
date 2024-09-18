@@ -6,7 +6,7 @@ import MessageIcon from "@mui/icons-material/Message";
 
 // Menu items for desktop
 export const MenuItemsAdm = [
-  { text: "Home", icon: <HomeIcon />, url: "/home" },
+  { text: "Home", icon: <HomeIcon />, url: "/" },
   { text: "Contatos", icon: <ContactsIcon />, url: "/contatos" },
   { text: "Mensagens", icon: <MessageIcon />, url: "/mensagens" },
 ];

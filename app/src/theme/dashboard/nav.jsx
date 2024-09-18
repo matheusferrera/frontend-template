@@ -20,6 +20,7 @@ import { useResponsive } from "../../hooks/use-responsive";
 import { themeProvider } from "../../theme/index";
 import { HEADER } from "./config-layout";
 import { MenuItemsAdm } from "./config-navigation-admin-menu-lateral";
+import { MenuItemsCfc } from "./config-navigation-cfc-menu-lateral";
 import { MenuItems } from "./config-navigation-user-menu-lateral";
 
 function NavItem({ text, icon, url }) {
@@ -63,21 +64,20 @@ export default function Nav({ openNav, onCloseNav }) {
 
   const { logout, token, user } = useAuth();
 
-  const perfilUser = user?.user_type;
-
-  const logoutFunction = () => {
-    logout(token);
-  };
+  const perfilUser = user?.tipouser;
 
   const [renderNavContent, setRenderNavContent] = useState([]);
 
   useEffect(() => {
     console.log("PERFIL USER -> ", perfilUser);
     switch (perfilUser) {
-      case "admin":
+      case 3:
         setRenderNavContent(MenuItemsAdm);
         break;
-      case "user":
+      case 2:
+        setRenderNavContent(MenuItemsCfc);
+        break;
+      case 1:
         setRenderNavContent(MenuItems);
         break;
     }

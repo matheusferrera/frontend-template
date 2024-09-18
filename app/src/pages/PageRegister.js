@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import { Alert, Grid } from "@mui/material";
 
-import LoginForm from "../components/login/LoginForm";
+import RegisterForm from "../components/login/RegisterForm";
 import { useAuth } from '../contexts/AuthContext';
 
-const PageLogin = () => {
+const PageRegister = () => {
     const [errorMessage, setErrorMessage] = useState(null); // Estado para a mensagem de erro
     const { login } = useAuth();
 
@@ -26,18 +26,19 @@ const PageLogin = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "#f5f5f5",
-                minHeight: "100%"
+                minHeight: "100%",
+                padding: "3rem 0rem 3rem 0rem"
             }}>
-            <Grid item xs={10} sm={6} md={4}>
+            <Grid item xs={12} sm={6} md={6}>
                 {errorMessage && (
                     <Alert severity="error" sx={{ mb: 2 }}>
                         {errorMessage}
                     </Alert>
                 )}
-                <LoginForm onSubmit={handleLoginSubmit} />
+                <RegisterForm onSubmit={handleLoginSubmit} />
             </Grid>
         </Grid>
     );
 };
 
-export default PageLogin;
+export default PageRegister;

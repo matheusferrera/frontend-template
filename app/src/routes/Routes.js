@@ -4,7 +4,9 @@ import { Outlet, Route, Routes, useRoutes } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import NotFound from "../pages/NotFound";
 import PageLogin from "../pages/PageLogin";
+import PageRegister from "../pages/PageRegister";
 import AdminRoutes from "./adminRoutes";
+import CfcRoutes from "./cfcRoutes";
 import { DashboardLayoutWithSuspense, NoDashboardLayout } from "./RoutesLayout";
 import UserRoutes from "./userRoutes";
 
@@ -14,6 +16,10 @@ const AuthRoutes = () => {
       <Route
         path="/login"
         element={<PageLogin />}
+      />
+      <Route
+        path="/register"
+        element={<PageRegister />}
       />
       <Route
         path="*"
@@ -28,16 +34,19 @@ const AuthRoutes = () => {
 const ProtectedRoutes = () => {
   const { user } = useAuth();
 
-  console.log("USER -> ", user.user_type)
+  console.log("USER -> ", user)
 
   let profileRoutes;
 
-  switch (user.user_type) {
-    case "admin":
-      profileRoutes = AdminRoutes();
-      break;
-    case "user":
+  switch (user.tipouser) {
+    case 1:
       profileRoutes = UserRoutes();
+      break;
+    case 2:
+      profileRoutes = CfcRoutes();
+      break;
+    case 3:
+      profileRoutes = AdminRoutes();
       break;
 
     default:
@@ -56,11 +65,11 @@ const ProtectedRoutes = () => {
 };
 
 const AppRoutes = () => {
-  const { token } = useAuth();
+  const { user } = useAuth();
 
   const routes = useRoutes([
     {
-      element: token ? (
+      element: user ? (
         <DashboardLayoutWithSuspense>
           <Outlet />
         </DashboardLayoutWithSuspense>
@@ -69,7 +78,7 @@ const AppRoutes = () => {
           <Outlet />
         </NoDashboardLayout>
       ),
-      children: [{ path: "*", element: token ? <ProtectedRoutes /> : <AuthRoutes /> }],
+      children: [{ path: "*", element: user ? <ProtectedRoutes /> : <AuthRoutes /> }],
     },
     {
       path: "*",

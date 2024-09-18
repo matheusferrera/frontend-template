@@ -8,7 +8,7 @@ import PageMensagensAdmin from "../pages/admin/mensagens";
 const AdminRoutes = () => (
   <Routes>
     <Route
-      path="/home"
+      path="/"
       element={<PageHomeAdm />}
     />
     <Route
