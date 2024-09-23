@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Avatar, Box, Button, Card, CardContent, Typography } from '@mui/material';
+import { Avatar, Box, Button, Card, CardContent, CircularProgress, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 
 import CustomForm from '../form/CustomForm';
 
 const LoginForm = ({ onSubmit }) => {
+
+  const [isLoading, setIsLoading] = useState(false);
+
+
   const formFields = [
     {
       name: 'email',
@@ -31,14 +35,25 @@ const LoginForm = ({ onSubmit }) => {
     },
   ];
 
-  const handleFormSubmit = (data) => {
-    onSubmit(data)
+  const handleFormSubmit = async (data) => {
+    setIsLoading(true);
+    try {
+      await onSubmit(data);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const customButtons = (
     <Box display="flex" justifyContent="center" mt={2}>
-      <Button type="submit" variant="contained" style={{ width: "50%" }} color="primary">
-        Entrar
+      <Button
+        type="submit"
+        variant="contained"
+        style={{ width: "50%" }}
+        color="primary"
+        disabled={isLoading}
+      >
+        {isLoading ? <CircularProgress size={24} color="inherit" /> : 'Entrar'}
       </Button>
     </Box>
   );
